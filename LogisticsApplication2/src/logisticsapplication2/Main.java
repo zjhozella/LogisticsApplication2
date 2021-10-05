@@ -17,9 +17,11 @@ public class Main {
     public static void main(String[] args) {
         
         // Take input from ConfirmationView, feed into Load object constructor
-        public void CreateLoad(){
+        // public void CreateLoad(){
             
-        }
+        // }
+
+        System.out.println("Java");
         
         // Send Load object attributes to database using an sql statement
         
