@@ -16,16 +16,19 @@ public class Main {
      */
     public static void main(String[] args) {
         
-        // Take input from ConfirmationView, feed into Load object constructor
-        // public void CreateLoad(){
-            
-        // }
 
-        System.out.println("Java");
         
         // Send Load object attributes to database using an sql statement
+
         
+    }
+    
+    
+    // Take input from ConfirmationView, feed into Load object constructor
+    public void CreateLoad(int truckNumber, int trailerNumber, enum Dunnage, int storeNumber, int sealNumber, 
+            Timestamp outgoingTS, Timestamp incomingTS, bool LoadComplete, int loadNumber){
         
+        //Load object created here
         
     }
     
