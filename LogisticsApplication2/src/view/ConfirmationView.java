@@ -10,5 +10,5 @@ package view;
  * @author jprince
  */
 public class ConfirmationView {
-    
+    //confirm view here
 }
