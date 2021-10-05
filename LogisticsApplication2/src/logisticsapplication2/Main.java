@@ -9,7 +9,7 @@ package logisticsapplication2;
  *
  * @author zjhoz
  */
-public class LogisticsApplication2 {
+public class Main {
 
     /**
      * @param args the command line arguments
