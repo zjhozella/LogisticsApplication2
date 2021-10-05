@@ -10,5 +10,10 @@ package model;
  * @author jprince
  */
 public class driver {
+    // What else should be put in here.
+    // 
     
+    int dlNumber; 
+    String company = ""; //Should we track company as a string or assign as a company number?
+    int 
 }
