@@ -12,8 +12,10 @@ package model;
 public class driver {
     // What else should be put in here.
     // 
-    
+    //Default constructor
     int dlNumber; 
+    String firstName;
+    String lastName;
     String company = ""; //Should we track company as a string or assign as a company number?
-    int 
+    
 }
