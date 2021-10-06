@@ -4,9 +4,9 @@
  * and open the template in the editor.
  */
 package model;
-
 import java.sql.Timestamp;
 import java.util.Date;
+import java.util.Arrays;
 
 /**
  *
@@ -16,11 +16,22 @@ public class Load {
     // Default constructor
     private int truckNumber   = 0;
     private int trailerNumber = 0;
+
+    String[] dunnage = new String[5];
+    dunnage[0] = "Empty";
+    dunnage[1] = "1/4";
+    dunnage[2] = "1/2";
+    dunnage[3] = "3/4";
+    dunnage[4] = "Full";
+
     //dunnage could be an array of strings.  0 = null, 1 = 1/4, 2 = 1/2, 3 = 3/4, 4 = FULL.
+
     private int storeNumber   = 0;
     private int sealNumber    = 0;
     private int driverNumber  = 0;
     private boolean loadComplete = false;
+
+    
     Date date = new Date();
     long time = date.getTime();
     Timestamp ts = new Timestamp(time);
