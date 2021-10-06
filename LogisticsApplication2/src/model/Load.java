@@ -37,6 +37,7 @@ public class Load {
         System.out.println(outgoingTime.toString());
     }
 
+    // Getter and setters for load
     /**
      * @return the truckNumber
      */
