@@ -17,35 +17,35 @@ public class Load {
     private int trailerNumber = 0;
 
     //Dunnage Array
-    String[] dunnage = {"empty", "1/4", "1/2", "3/4", "Full"};
+    private String[] dunnage = {"empty", "1/4", "1/2", "3/4", "Full"};
 
-    private int storeNumber   = 0;
-    private int sealNumber    = 0;
-    private String driverNumber  = "";
+    private int storeNumber  = 0;
+    private int loadNumber   = 0;
+    private int sealNumber   = 0;
+    private int driverNumber = 0;
+    
     private boolean loadComplete = false;
 
-    
-    Date date = new Date();
-    long time = date.getTime();
-    Timestamp ts = new Timestamp(time);
-
+    private Date date = new Date();
+    private long time = date.getTime();
+    private Timestamp tsOut = new Timestamp(time);
+    private Timestamp tsIn = new Timestamp(time);
 
     // Constructor for load class
-    public Load (int loadNumber, int newTruckNumber, int newTrailerNumber, int newStoreNumber , int newSealNumber , String newDriverNumber ,
-                 boolean newLoadComplete, Timestamp newTS){
+    public Load (int newloadNumber, int newTruckNumber, int newTrailerNumber, int newStoreNumber , int newSealNumber , int newDriverNumber ,
+                 boolean newLoadComplete, Timestamp newTSout, Timestamp newTSin){
+        this.loadNumber    = newloadNumber;
         this.trailerNumber = newTrailerNumber;
         this.truckNumber   = newTruckNumber;
         this.storeNumber   = newStoreNumber;
         this.sealNumber    = newSealNumber;
         this.driverNumber  = newDriverNumber;
         this.loadComplete  = newLoadComplete;
-        this.ts = newTS;
-        
-        // Need to figure this part out still
+        this.tsOut         = newTSout;
+        this.tsIn          = newTSin;
 
     }
 
-    // Getter and setters for load
     /**
      * @return the truckNumber
      */
@@ -75,6 +75,20 @@ public class Load {
     }
 
     /**
+     * @return the dunnage
+     */
+    public String[] getDunnage() {
+        return dunnage;
+    }
+
+    /**
+     * @param dunnage the dunnage to set
+     */
+    public void setDunnage(String[] dunnage) {
+        this.dunnage = dunnage;
+    }
+
+    /**
      * @return the storeNumber
      */
     public int getStoreNumber() {
@@ -86,6 +100,20 @@ public class Load {
      */
     public void setStoreNumber(int storeNumber) {
         this.storeNumber = storeNumber;
+    }
+
+    /**
+     * @return the loadNumber
+     */
+    public int getLoadNumber() {
+        return loadNumber;
+    }
+
+    /**
+     * @param loadNumber the loadNumber to set
+     */
+    public void setLoadNumber(int loadNumber) {
+        this.loadNumber = loadNumber;
     }
 
     /**
@@ -105,14 +133,14 @@ public class Load {
     /**
      * @return the driverNumber
      */
-    public String getDriverNumber() {
+    public int getDriverNumber() {
         return driverNumber;
     }
 
     /**
      * @param driverNumber the driverNumber to set
      */
-    public void setDriverNumber(String driverNumber) {
+    public void setDriverNumber(int driverNumber) {
         this.driverNumber = driverNumber;
     }
 
@@ -129,6 +157,63 @@ public class Load {
     public void setLoadComplete(boolean loadComplete) {
         this.loadComplete = loadComplete;
     }
+
+    /**
+     * @return the date
+     */
+    public Date getDate() {
+        return date;
+    }
+
+    /**
+     * @param date the date to set
+     */
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    /**
+     * @return the time
+     */
+    public long getTime() {
+        return time;
+    }
+
+    /**
+     * @param time the time to set
+     */
+    public void setTime(long time) {
+        this.time = time;
+    }
+
+    /**
+     * @return the tsOut
+     */
+    public Timestamp getTsOut() {
+        return tsOut;
+    }
+
+    /**
+     * @param tsOut the tsOut to set
+     */
+    public void setTsOut(Timestamp tsOut) {
+        this.tsOut = tsOut;
+    }
+
+    /**
+     * @return the tsIn
+     */
+    public Timestamp getTsIn() {
+        return tsIn;
+    }
+
+    /**
+     * @param tsIn the tsIn to set
+     */
+    public void setTsIn(Timestamp tsIn) {
+        this.tsIn = tsIn;
+    }
+
 
   
 }
