@@ -28,13 +28,13 @@ public class Main {
     }
    
     // Take input from ConfirmationView, feed into Load object constructor
-    public void CreateLoad(int loadNumber, int truckNumber, int trailerNumber, int Dunnage, int storeNumber, int sealNumber, String driverNumber,  
+    public void CreateLoad(int loadNumber, int truckNumber, int trailerNumber, String dunnage, int storeNumber, int sealNumber, String driverNumber,  
             boolean loadComplete, Timestamp outgoingTS, Timestamp incomingTS, String driverFN, String driverLN, String driverCompany){
         
         //Driver object creation
         driver driver = new driver("12345678", "Bob", "Smith", "CompanyName");
         //Load object creation
-        Load load = new Load(loadNumber, truckNumber, trailerNumber, storeNumber, sealNumber, driverNumber, loadComplete, outgoingTS);
+        Load load = new Load(loadNumber, truckNumber, trailerNumber, storeNumber, sealNumber, driverNumber, loadComplete);
         
     }
     
