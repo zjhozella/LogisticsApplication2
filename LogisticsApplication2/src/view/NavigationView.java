@@ -11,4 +11,6 @@ package view;
  */
 public class NavigationView {
     
+    //Just requires the GUI for the Incoming and Outgoing buttons
+    
 }

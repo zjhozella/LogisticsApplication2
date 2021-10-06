@@ -5,6 +5,9 @@
  */
 package logisticsapplication2;
 
+import java.sql.Timestamp;
+import model.Load;
+
 /**
  *
  * @author zjhoz
@@ -24,11 +27,15 @@ public class Main {
     }
     
     
+    // Do we create a separate createLoad method for incoming and outgoing? ex. createIncomingLoad createOutgoingLoad.
+    // then have 2 different constructors in the load object that accepts only the required values for incoming and outgoing
+    
     // Take input from ConfirmationView, feed into Load object constructor
-    public void CreateLoad(int truckNumber, int trailerNumber, enum Dunnage, int storeNumber, int sealNumber, 
-            Timestamp outgoingTS, Timestamp incomingTS, bool LoadComplete, int loadNumber){
+    public void CreateLoad(int truckNumber, int trailerNumber, int Dunnage, int storeNumber, int sealNumber, 
+            Timestamp outgoingTS, Timestamp incomingTS, boolean LoadComplete, int loadNumber){
         
         //Load object created here
+        Load load = new Load(1, 1, 1, 1, 1, false, Timestamp.valueOf(""));
         
     }
     
