@@ -13,9 +13,18 @@ public class driver {
     // What else should be put in here.
     // 
     //Default constructor
-    int dlNumber; 
-    String firstName;
-    String lastName;
-    String company = ""; //Should we track company as a string or assign as a company number?
+    int dlNumber     = 0; 
+    String firstName = "";
+    String lastName  = "";
+    String company   = ""; //Should we track company as a string or assign as a company number?
+
+
+    //Constructor for driver class
+    public driver (int newDlNumber, String newFirstName, String newLastName, String newCompany){
+        this.dlNumber  = newDlNumber;
+        this.firstName = newFirstName;
+        this.lastName  = newLastName;
+        this.company   = newCompany;
+    }
     
 }
