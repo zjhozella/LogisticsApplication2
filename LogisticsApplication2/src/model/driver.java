@@ -13,13 +13,13 @@ public class driver {
     // What else should be put in here.
     // 
     //Default constructor
-    private int dlNumber     = 0; 
+    private String dlNumber  = ""; 
     private String firstName = "";
     private String lastName  = "";
     private String company   = "";
 
     //Constructor for driver class
-    public driver (int newDlNumber, String newFirstName, String newLastName, String newCompany){
+    public driver (String newDlNumber, String newFirstName, String newLastName, String newCompany){
         this.dlNumber  = newDlNumber;
         this.firstName = newFirstName;
         this.lastName  = newLastName;

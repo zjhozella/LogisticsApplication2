@@ -17,6 +17,7 @@ public class Load {
     private int truckNumber   = 0;
     private int trailerNumber = 0;
 
+    //Change to a double
     String[] dunnage = new String[5];
     dunnage[0] = "Empty";
     dunnage[1] = "1/4";
