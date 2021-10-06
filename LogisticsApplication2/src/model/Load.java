@@ -17,14 +17,9 @@ public class Load {
     private int truckNumber   = 0;
     private int trailerNumber = 0;
 
-    //Change to a double
-    String[] dunnage = new String[5];
-    dunnage[0] = "Empty";
-    dunnage[1] = "1/4";
-    dunnage[2] = "1/2";
-    dunnage[3] = "3/4";
-    dunnage[4] = "Full";
-        
+    //Dunnage Array
+    String[] dunnage = {"empty", "1/4", "1/2", "3/4", "Full"};
+
     private int storeNumber   = 0;
     private int sealNumber    = 0;
     private int driverNumber  = 0;

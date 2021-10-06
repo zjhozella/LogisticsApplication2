@@ -30,14 +30,14 @@ public class driver {
     /**
      * @return the dlNumber
      */
-    public int getDlNumber() {
+    public String getDlNumber() {
         return dlNumber;
     }
 
     /**
      * @param dlNumber the dlNumber to set
      */
-    public void setDlNumber(int dlNumber) {
+    public void setDlNumber(String dlNumber) {
         this.dlNumber = dlNumber;
     }
 
