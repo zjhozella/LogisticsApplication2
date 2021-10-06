@@ -6,7 +6,6 @@
 package model;
 import java.sql.Timestamp;
 import java.util.Date;
-import java.util.Arrays;
 
 /**
  *
@@ -106,14 +105,14 @@ public class Load {
     /**
      * @return the driverNumber
      */
-    public int getDriverNumber() {
+    public String getDriverNumber() {
         return driverNumber;
     }
 
     /**
      * @param driverNumber the driverNumber to set
      */
-    public void setDriverNumber(int driverNumber) {
+    public void setDriverNumber(String driverNumber) {
         this.driverNumber = driverNumber;
     }
 
