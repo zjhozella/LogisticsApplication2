@@ -17,7 +17,26 @@ public class ConfirmationView {
     private int storeNumber;
     private String dunnage;
     private int sealNumber;
+    private String driverNumber;
+    private String driverFN;
+    private String driverLN;
+    private String driverCompany;
 
+    public ConfirmationView(int loadNumber, int truckNumber, int trailerNumber, int storeNumber, String dunnage, 
+            int sealNumber, String driverNumber, String driverFN, String driverLN, String driverCompany){
+        this.loadNumber = loadNumber;
+        this.truckNumber = truckNumber;
+        this.trailerNumber = trailerNumber;
+        this.storeNumber = storeNumber;
+        this.dunnage = dunnage;
+        this.sealNumber = sealNumber;
+        this.driverNumber = driverNumber;
+        this.driverFN = driverFN;
+        this.driverLN = driverLN;
+        this.driverCompany = driverCompany;
+        
+    }
+    
     /**
      * @return the loadNumber
      */
@@ -100,6 +119,62 @@ public class ConfirmationView {
      */
     public void setSealNumber(int sealNumber) {
         this.sealNumber = sealNumber;
+    }
+
+    /**
+     * @return the driverNumber
+     */
+    public String getDriverNumber() {
+        return driverNumber;
+    }
+
+    /**
+     * @param driverNumber the driverNumber to set
+     */
+    public void setDriverNumber(String driverNumber) {
+        this.driverNumber = driverNumber;
+    }
+
+    /**
+     * @return the driverFN
+     */
+    public String getDriverFN() {
+        return driverFN;
+    }
+
+    /**
+     * @param driverFN the driverFN to set
+     */
+    public void setDriverFN(String driverFN) {
+        this.driverFN = driverFN;
+    }
+
+    /**
+     * @return the driverLN
+     */
+    public String getDriverLN() {
+        return driverLN;
+    }
+
+    /**
+     * @param driverLN the driverLN to set
+     */
+    public void setDriverLN(String driverLN) {
+        this.driverLN = driverLN;
+    }
+
+    /**
+     * @return the driverCompany
+     */
+    public String getDriverCompany() {
+        return driverCompany;
+    }
+
+    /**
+     * @param driverCompany the driverCompany to set
+     */
+    public void setDriverCompany(String driverCompany) {
+        this.driverCompany = driverCompany;
     }
     
 }
