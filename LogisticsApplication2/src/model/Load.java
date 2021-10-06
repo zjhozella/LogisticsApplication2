@@ -6,6 +6,7 @@
 package model;
 
 import java.sql.Timestamp;
+import java.util.Date;
 
 /**
  *
@@ -19,22 +20,24 @@ public class Load {
     private int sealNumber    = 0;
     private int driverNumber  = 0;
     private boolean loadComplete = false;
-    private Timestamp outgoingTime = new Timestamp(2000);
-    //Need to input timestamps
+    Date date = new Date();
+    long time = date.getTime();
+    Timestamp ts = new Timestamp(time);
 
 
     // Constructor for load class
     public Load (int newTrailerNumber, int newTruckNumber, int newStoreNumber , int newSealNumber , int newDriverNumber ,
-                 boolean newLoadComplete, Timestamp outgoingTime ){
+                 boolean newLoadComplete, Timestamp newTS){
         this.trailerNumber = newTrailerNumber;
         this.truckNumber   = newTruckNumber;
         this.storeNumber   = newStoreNumber;
         this.sealNumber    = newSealNumber;
         this.driverNumber  = newDriverNumber;
         this.loadComplete  = newLoadComplete;
+        this.ts = newTS;
         
         // Need to figure this part out still
-        System.out.println(outgoingTime.toString());
+
     }
 
     // Getter and setters for load
@@ -120,20 +123,6 @@ public class Load {
      */
     public void setLoadComplete(boolean loadComplete) {
         this.loadComplete = loadComplete;
-    }
-
-    /**
-     * @return the outgoingTime
-     */
-    public Timestamp getOutgoingTime() {
-        return outgoingTime;
-    }
-
-    /**
-     * @param outgoingTime the outgoingTime to set
-     */
-    public void setOutgoingTime(Timestamp outgoingTime) {
-        this.outgoingTime = outgoingTime;
     }
 
   

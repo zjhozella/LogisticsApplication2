@@ -16,8 +16,7 @@ public class driver {
     private int dlNumber     = 0; 
     private String firstName = "";
     private String lastName  = "";
-    private String company   = ""; //Should we track company as a string or assign as a company number?
-
+    private String company   = "";
 
     //Constructor for driver class
     public driver (int newDlNumber, String newFirstName, String newLastName, String newCompany){
