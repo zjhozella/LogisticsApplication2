@@ -32,13 +32,13 @@ public class Main {
     // then have 2 different constructors in the load object that accepts only the required values for incoming and outgoing
     
     // Take input from ConfirmationView, feed into Load object constructor
-    public void CreateLoad(int truckNumber, int trailerNumber, int Dunnage, int storeNumber, int sealNumber, 
-            Timestamp outgoingTS, Timestamp incomingTS, boolean LoadComplete, int loadNumber){
+    public void CreateLoad(int loadNumber, int truckNumber, int trailerNumber, int Dunnage, int storeNumber, int sealNumber, String driverNumber,  
+            boolean loadComplete, Timestamp outgoingTS, Timestamp incomingTS, String driverFN, String driverLN, String driverCompany){
         
         //Driver object creation
         driver driver = new driver("12345678", "Bob", "Smith", "CompanyName");
         //Load object creation
-        Load load = new Load(1, 1, 1, 1, 1, false, Timestamp.valueOf(""));
+        Load load = new Load(loadNumber, truckNumber, trailerNumber, storeNumber, sealNumber, driverNumber, loadComplete, outgoingTS);
         
     }
     
