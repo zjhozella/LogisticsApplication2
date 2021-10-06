@@ -11,26 +11,11 @@ package view;
  */
 public class OutgoingView {
 
-    private int loadNumber;
     private int truckNumber;
     private int trailerNumber;
+    private String dunnage = "empty";
     private int storeNumber;
     private int sealNumber;
-    
-    
-    /**
-     * @return the loadNumber
-     */
-    public int getLoadNumber() {
-        return loadNumber;
-    }
-
-    /**
-     * @param loadNumber the loadNumber to set
-     */
-    public void setLoadNumber(int loadNumber) {
-        this.loadNumber = loadNumber;
-    }
 
     /**
      * @return the truckNumber
@@ -86,6 +71,20 @@ public class OutgoingView {
      */
     public void setSealNumber(int sealNumber) {
         this.sealNumber = sealNumber;
+    }
+
+    /**
+     * @return the dunnage
+     */
+    public String getDunnage() {
+        return dunnage;
+    }
+
+    /**
+     * @param dunnage the dunnage to set
+     */
+    public void setDunnage(String dunnage) {
+        this.dunnage = dunnage;
     }
     
     

@@ -13,41 +13,59 @@ import javax.swing.JFrame;
  */
 public class IncomingView {
     
-    private int loadNumber;
-    private int dunnage;
+    private int truckNumber;
+    private int trailerNumber;
+    private String dunnage;
 
+    
+    
     /**
-     * @return the loadNumber
+     * @return the truckNumber
      */
-    public int getLoadNumber() {
-        return loadNumber;
+    public int getTruckNumber() {
+        return truckNumber;
     }
 
     /**
-     * @param loadNumber the loadNumber to set
+     * @param truckNumber the truckNumber to set
      */
-    public void setLoadNumber(int loadNumber) {
-        this.loadNumber = loadNumber;
+    public void setTruckNumber(int truckNumber) {
+        this.truckNumber = truckNumber;
+    }
+
+    /**
+     * @return the trailerNumber
+     */
+    public int getTrailerNumber() {
+        return trailerNumber;
+    }
+
+    /**
+     * @param trailerNumber the trailerNumber to set
+     */
+    public void setTrailerNumber(int trailerNumber) {
+        this.trailerNumber = trailerNumber;
     }
 
     /**
      * @return the dunnage
      */
-    public int getDunnage() {
+    public String getDunnage() {
         return dunnage;
     }
 
     /**
      * @param dunnage the dunnage to set
      */
-    public void setDunnage(int dunnage) {
+    public void setDunnage(String dunnage) {
         this.dunnage = dunnage;
     }
+
+
     
     
 }
 
-//Would this work to create the GUI so we do not have a ton of different classes?
 class InitialFrame extends JFrame {
     
 }

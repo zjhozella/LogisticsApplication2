@@ -26,11 +26,7 @@ public class Main {
 
         
     }
-    
-    
-    // Do we create a separate createLoad method for incoming and outgoing? ex. createIncomingLoad createOutgoingLoad.
-    // then have 2 different constructors in the load object that accepts only the required values for incoming and outgoing
-    
+   
     // Take input from ConfirmationView, feed into Load object constructor
     public void CreateLoad(int loadNumber, int truckNumber, int trailerNumber, int Dunnage, int storeNumber, int sealNumber, String driverNumber,  
             boolean loadComplete, Timestamp outgoingTS, Timestamp incomingTS, String driverFN, String driverLN, String driverCompany){

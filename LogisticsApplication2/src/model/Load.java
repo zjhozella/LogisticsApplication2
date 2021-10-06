@@ -22,7 +22,7 @@ public class Load {
 
     private int storeNumber   = 0;
     private int sealNumber    = 0;
-    private int driverNumber  = 0;
+    private String driverNumber  = "";
     private boolean loadComplete = false;
 
     
@@ -32,7 +32,7 @@ public class Load {
 
 
     // Constructor for load class
-    public Load (int loadNumber, int newTruckNumber, int newTrailerNumber, int newStoreNumber , int newSealNumber , int newDriverNumber ,
+    public Load (int loadNumber, int newTruckNumber, int newTrailerNumber, int newStoreNumber , int newSealNumber , String newDriverNumber ,
                  boolean newLoadComplete, Timestamp newTS){
         this.trailerNumber = newTrailerNumber;
         this.truckNumber   = newTruckNumber;

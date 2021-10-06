@@ -15,7 +15,7 @@ public class ConfirmationView {
     private int truckNumber;
     private int trailerNumber;
     private int storeNumber;
-    private int dunnage;
+    private String dunnage;
     private int sealNumber;
 
     /**
@@ -77,14 +77,14 @@ public class ConfirmationView {
     /**
      * @return the dunnage
      */
-    public int getDunnage() {
+    public String getDunnage() {
         return dunnage;
     }
 
     /**
      * @param dunnage the dunnage to set
      */
-    public void setDunnage(int dunnage) {
+    public void setDunnage(String dunnage) {
         this.dunnage = dunnage;
     }
 
