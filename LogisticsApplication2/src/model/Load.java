@@ -23,9 +23,7 @@ public class Load {
     dunnage[2] = "1/2";
     dunnage[3] = "3/4";
     dunnage[4] = "Full";
-
-    //dunnage could be an array of strings.  0 = null, 1 = 1/4, 2 = 1/2, 3 = 3/4, 4 = FULL.
-
+        
     private int storeNumber   = 0;
     private int sealNumber    = 0;
     private int driverNumber  = 0;
