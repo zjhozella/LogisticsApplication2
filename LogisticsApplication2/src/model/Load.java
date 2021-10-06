@@ -21,27 +21,25 @@ public class Load {
 
     private int storeNumber   = 0;
     private int sealNumber    = 0;
-    private String driverNumber  = "";
+    private int driverNumber  = 0;
     private boolean loadComplete = false;
 
-    
     Date date = new Date();
     long time = date.getTime();
-    Timestamp ts = new Timestamp(time);
-
+    Timestamp tsOut = new Timestamp(time);
+    Timestamp tsIn = new Timestamp(time);
 
     // Constructor for load class
-    public Load (int loadNumber, int newTruckNumber, int newTrailerNumber, int newStoreNumber , int newSealNumber , String newDriverNumber ,
-                 boolean newLoadComplete, Timestamp newTS){
+    public Load (int loadNumber, int newTruckNumber, int newTrailerNumber, int newStoreNumber , int newSealNumber , int newDriverNumber ,
+                 boolean newLoadComplete, Timestamp newTSout, Timestamp newTSin){
         this.trailerNumber = newTrailerNumber;
         this.truckNumber   = newTruckNumber;
         this.storeNumber   = newStoreNumber;
         this.sealNumber    = newSealNumber;
         this.driverNumber  = newDriverNumber;
         this.loadComplete  = newLoadComplete;
-        this.ts = newTS;
-        
-        // Need to figure this part out still
+        this.tsOut         = newTSout;
+        this.tsIn          = newTSin;
 
     }
 
