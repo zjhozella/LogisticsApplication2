@@ -37,7 +37,7 @@ public class Load {
 
 
     // Constructor for load class
-    public Load (int newTrailerNumber, int newTruckNumber, int newStoreNumber , int newSealNumber , int newDriverNumber ,
+    public Load (int newTruckNumber, int newTrailerNumber, int newStoreNumber , int newSealNumber , int newDriverNumber ,
                  boolean newLoadComplete, Timestamp newTS){
         this.trailerNumber = newTrailerNumber;
         this.truckNumber   = newTruckNumber;
