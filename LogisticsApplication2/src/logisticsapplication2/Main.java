@@ -7,6 +7,7 @@ package logisticsapplication2;
 
 import java.sql.Timestamp;
 import model.Load;
+import model.driver;
 
 /**
  *
@@ -34,7 +35,9 @@ public class Main {
     public void CreateLoad(int truckNumber, int trailerNumber, int Dunnage, int storeNumber, int sealNumber, 
             Timestamp outgoingTS, Timestamp incomingTS, boolean LoadComplete, int loadNumber){
         
-        //Load object created here
+        //Driver object creation
+        driver driver = new driver("12345678", "Bob", "Smith", "CompanyName");
+        //Load object creation
         Load load = new Load(1, 1, 1, 1, 1, false, Timestamp.valueOf(""));
         
     }
