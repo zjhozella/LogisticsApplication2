@@ -9,7 +9,7 @@ import java.util.Date;
 
 /**
  *
- * @author zjhoz
+ * @author zjhoz, jprince
  */
 public class Load {
     // Default constructor
@@ -22,7 +22,7 @@ public class Load {
     private int storeNumber  = 0;
     private int loadNumber   = 0;
     private int sealNumber   = 0;
-    private int driverNumber = 0;
+    private String driverNumber = "";
     
     private boolean loadComplete = false;
 
@@ -32,7 +32,7 @@ public class Load {
     private Timestamp tsIn = new Timestamp(time);
 
     // Constructor for load class
-    public Load (int newloadNumber, int newTruckNumber, int newTrailerNumber, int newStoreNumber , int newSealNumber , int newDriverNumber ,
+    public Load (int newloadNumber, int newTruckNumber, int newTrailerNumber, int newStoreNumber , int newSealNumber , String newDriverNumber ,
                  boolean newLoadComplete, Timestamp newTSout, Timestamp newTSin){
         this.loadNumber    = newloadNumber;
         this.trailerNumber = newTrailerNumber;
@@ -133,14 +133,14 @@ public class Load {
     /**
      * @return the driverNumber
      */
-    public int getDriverNumber() {
+    public String getDriverNumber() {
         return driverNumber;
     }
 
     /**
      * @param driverNumber the driverNumber to set
      */
-    public void setDriverNumber(int driverNumber) {
+    public void setDriverNumber(String driverNumber) {
         this.driverNumber = driverNumber;
     }
 

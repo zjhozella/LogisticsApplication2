@@ -9,7 +9,7 @@ import javax.swing.JFrame;
 
 /**
  *
- * @author jprince
+ * @author jprince, zjhoz
  */
 public class IncomingView {
     

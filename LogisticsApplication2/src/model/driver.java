@@ -7,7 +7,7 @@ package model;
 
 /**
  *
- * @author jprince
+ * @author jprince, zjhoz
  */
 public class driver {
    

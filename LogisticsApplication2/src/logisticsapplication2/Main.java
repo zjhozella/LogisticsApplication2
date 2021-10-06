@@ -11,7 +11,7 @@ import model.driver;
 
 /**
  *
- * @author zjhoz
+ * @author zjhoz, jprince
  */
 public class Main {
 
@@ -21,20 +21,20 @@ public class Main {
     public static void main(String[] args) {
         
 
-        
+        // CreateLoad
         // Send Load object attributes to database using an sql statement
 
         
     }
    
     // Take input from ConfirmationView, feed into Load object constructor
-    public void CreateLoad(int loadNumber, int truckNumber, int trailerNumber, String dunnage, int storeNumber, int sealNumber, String driverNumber,  
+    public void createLoad(int loadNumber, int truckNumber, int trailerNumber, String dunnage, int storeNumber, int sealNumber, String driverNumber,  
             boolean loadComplete, Timestamp outgoingTS, Timestamp incomingTS, String driverFN, String driverLN, String driverCompany){
         
         //Driver object creation
-        driver driver = new driver("12345678", "Bob", "Smith", "CompanyName");
+        driver driver = new driver(driverNumber, driverFN, driverLN, driverCompany);
         //Load object creation
-        Load load = new Load(loadNumber, truckNumber, trailerNumber, storeNumber, sealNumber, driverNumber, loadComplete);
+        Load load = new Load(loadNumber, truckNumber, trailerNumber, storeNumber, sealNumber, driverNumber, loadComplete, outgoingTS, incomingTS);
         
     }
     

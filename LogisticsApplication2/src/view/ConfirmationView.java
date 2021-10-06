@@ -7,7 +7,7 @@ package view;
 
 /**
  *
- * @author jprince
+ * @author jprince, zjhoz
  */
 public class ConfirmationView {
     
@@ -36,6 +36,10 @@ public class ConfirmationView {
         this.driverCompany = driverCompany;
         
     }
+    
+    // Will display all attributes from previous view
+    // Will display a Confirm button
+    // Once button is pressed, it will call the createLoad method in Main, passing all attributes
     
     /**
      * @return the loadNumber

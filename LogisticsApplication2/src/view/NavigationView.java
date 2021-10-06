@@ -7,7 +7,7 @@ package view;
 
 /**
  *
- * @author jprince
+ * @author jprince, zjhoz
  */
 public class NavigationView {
     
