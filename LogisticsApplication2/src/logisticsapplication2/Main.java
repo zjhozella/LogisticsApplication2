@@ -5,6 +5,7 @@
  */
 package logisticsapplication2;
 
+import Tests.TestHarness;
 import java.sql.Timestamp;
 import model.Load;
 import model.Driver;
@@ -24,7 +25,7 @@ public class Main {
         // CreateLoad
         // Send Load object attributes to database using an sql statement
 
-      
+      TestHarness test = new TestHarness();
         
     }
    

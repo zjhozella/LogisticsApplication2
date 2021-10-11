@@ -24,7 +24,14 @@ public class TestHarness {
     
     public TestHarness(){
         Load l1 = new Load(1, 458, 2318, 61, 753146798, "12345678", false, tsOut, null);
-        
+        if(l1 != null){
+            System.out.println("Test load created sucessfully");
+            System.out.println("Load info: " + l1.getLoadNumber() + " " + l1.getSealNumber() + " " + l1.getTruckNumber());
+            //Change the object
+            l1.setTruckNumber(460);
+            System.out.println("Load info: " + l1.getLoadNumber() + " " + l1.getSealNumber() + " " + l1.getTruckNumber());
+        }else
+            System.out.println("Test load has not been created");
     }
     
 }
