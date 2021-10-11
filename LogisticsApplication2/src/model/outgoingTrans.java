@@ -12,7 +12,7 @@ import java.util.Date;
  *
  * @author Jprince
  */
-public class OutgoingTrans extends Transaction {
+public class OutgoingTrans {
     private int employeeID = 0;
     private boolean insectDetected = false;
     
@@ -20,10 +20,10 @@ public class OutgoingTrans extends Transaction {
     private long time = date.getTime();
     private Timestamp tsOut = new Timestamp(time);
 
-    OutgoingTrans(int transID, Load loadNumber, int employeeID, boolean insectDetected){
-        super(transID, loadNumber);
+    public OutgoingTrans(int employeeID, boolean insectDetected, Timestamp newTSout){
         this.employeeID = employeeID;
         this.insectDetected = insectDetected;
+        this.tsOut = newTSout;
     }
 
     /**
@@ -52,5 +52,47 @@ public class OutgoingTrans extends Transaction {
      */
     public void setInsectDetected(boolean insectDetected) {
         this.insectDetected = insectDetected;
+    }
+
+    /**
+     * @return the date
+     */
+    public Date getDate() {
+        return date;
+    }
+
+    /**
+     * @param date the date to set
+     */
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    /**
+     * @return the time
+     */
+    public long getTime() {
+        return time;
+    }
+
+    /**
+     * @param time the time to set
+     */
+    public void setTime(long time) {
+        this.time = time;
+    }
+
+    /**
+     * @return the tsOut
+     */
+    public Timestamp getTsOut() {
+        return tsOut;
+    }
+
+    /**
+     * @param tsOut the tsOut to set
+     */
+    public void setTsOut(Timestamp tsOut) {
+        this.tsOut = tsOut;
     }
 }

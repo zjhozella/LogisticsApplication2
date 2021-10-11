@@ -10,33 +10,47 @@ package model;
  * @author zjhoz, jprince
  */
 public class Load {
-    // Default constructor
+    
+    //Intializing attributes
     private int truckNumber   = 0;
     private int trailerNumber = 0;
 
-    //Dunnage Array
+    //Dunnage Array -- uses dunnageIndex to determine what string to insert into database (0-5)
     private String[] dunnage = {"Empty", "1/4", "1/2", "3/4", "Full"};
     private int dunnageIndex = 0;
 
     private int storeNumber  = 0;
     private int loadNumber   = 0;
     private int sealNumber   = 0;
-    private String driverNumber = "";
     
     private boolean loadComplete = false;
+    
+    //Initializing model objects
+    private OutgoingTrans ot;
+    private Driver dr;
+    private IncomingTrans it;
 
-    // Constructor for load class
-    public Load (int newloadNumber, int newTruckNumber, int newTrailerNumber, int newDunnageIndex, int newStoreNumber , int newSealNumber , String newDriverNumber ,
-                 boolean newLoadComplete){
-        this.loadNumber    = newloadNumber;
-        this.truckNumber   = newTruckNumber;
-        this.trailerNumber = newTrailerNumber;
-        this.dunnageIndex = newDunnageIndex;
-        this.storeNumber   = newStoreNumber;
-        this.sealNumber    = newSealNumber;
-        this.driverNumber  = newDriverNumber;
-        this.loadComplete  = newLoadComplete;
+    // Outgoing constructor for Load
+    public Load (int newTruckNumber, int newTrailerNumber, int newDunnageIndex, int newStoreNumber,
+            int newSealNumber, boolean newLoadComplete, OutgoingTrans newOt, Driver newDr){
+        truckNumber   = newTruckNumber;
+        trailerNumber = newTrailerNumber;
+        dunnageIndex = newDunnageIndex;
+        storeNumber   = newStoreNumber;
+        sealNumber    = newSealNumber;
+        loadComplete  = newLoadComplete;
+        ot = newOt;
+        dr = newDr;
+        
 
+    }
+    
+    // Incoming constructor for Load
+    public Load(int newLoadNumber, int newDunnageIndex, boolean newLoadComplete, IncomingTrans newIt){
+        loadNumber = newLoadNumber;
+        dunnageIndex = newDunnageIndex;
+        loadComplete = newLoadComplete;
+        it = newIt;
     }
 
     /**
@@ -121,20 +135,6 @@ public class Load {
      */
     public void setSealNumber(int sealNumber) {
         this.sealNumber = sealNumber;
-    }
-
-    /**
-     * @return the driverNumber
-     */
-    public String getDriverNumber() {
-        return driverNumber;
-    }
-
-    /**
-     * @param driverNumber the driverNumber to set
-     */
-    public void setDriverNumber(String driverNumber) {
-        this.driverNumber = driverNumber;
     }
 
     /**
