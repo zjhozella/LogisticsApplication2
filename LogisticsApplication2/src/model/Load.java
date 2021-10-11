@@ -45,6 +45,7 @@ public class Load {
         this.tsIn          = newTSin;
 
     }
+   
 
     /**
      * @return the truckNumber

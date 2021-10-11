@@ -24,6 +24,7 @@ public class Main {
         // CreateLoad
         // Send Load object attributes to database using an sql statement
 
+      
         
     }
    

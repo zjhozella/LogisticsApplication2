@@ -5,6 +5,8 @@
  */
 package view;
 
+import model.Load;
+
 /**
  *
  * @author jprince, zjhoz
@@ -12,5 +14,6 @@ package view;
 public class NavigationView {
     
     //Just requires the GUI for the Incoming and Outgoing buttons
+    
     
 }
