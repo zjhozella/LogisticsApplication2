@@ -11,5 +11,39 @@ package model;
  */
 public class Transaction {
     //Default constructor
-    
+    private int transID = 0;
+    private Load loadNumber;
+
+    public Transaction (int transID, Load loadNumber){
+        this.transID = transID;
+        this.loadNumber = loadNumber;
+    }
+
+    /**
+     * @return the transID
+     */
+    public int getTransID() {
+        return transID;
+    }
+
+    /**
+     * @param transID the transID to set
+     */
+    public void setTransID(int transID) {
+        this.transID = transID;
+    }
+
+    /**
+     * @return the loadNumber
+     */
+    public Load getLoadNumber() {
+        return loadNumber;
+    }
+
+    /**
+     * @param loadNumber the loadNumber to set
+     */
+    public void setLoadNumber(Load loadNumber) {
+        this.loadNumber = loadNumber;
+    }
 }
