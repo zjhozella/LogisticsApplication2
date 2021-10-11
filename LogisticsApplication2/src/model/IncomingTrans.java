@@ -5,6 +5,9 @@
  */
 package model;
 
+import java.sql.Timestamp;
+import java.util.Date;
+
 /**
  *
  * @author Jprince
@@ -13,6 +16,10 @@ public class IncomingTrans extends Transaction {
     // Default incomingTrans Constructor
     int employeeID = 0;
     boolean insectDetected = false;
+    
+    private Date date = new Date();
+    private long time = date.getTime();
+    private Timestamp tsIn = new Timestamp(time);
 
     // incomingTrans Constructor that extends Transaction
     IncomingTrans(int transID, Load loadNumber, int employeeID, boolean insectDetected){

@@ -5,6 +5,9 @@
  */
 package model;
 
+import java.sql.Timestamp;
+import java.util.Date;
+
 /**
  *
  * @author Jprince
@@ -12,6 +15,10 @@ package model;
 public class OutgoingTrans extends Transaction {
     private int employeeID = 0;
     private boolean insectDetected = false;
+    
+    private Date date = new Date();
+    private long time = date.getTime();
+    private Timestamp tsOut = new Timestamp(time);
 
     OutgoingTrans(int transID, Load loadNumber, int employeeID, boolean insectDetected){
         super(transID, loadNumber);

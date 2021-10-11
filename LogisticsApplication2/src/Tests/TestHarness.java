@@ -23,7 +23,7 @@ public class TestHarness {
     //Load l1 = new Load(1, 458, 2318, 61, 753146798, "12345678", false, tsOut, null);
     
     public TestHarness(){
-        Load l1 = new Load(1, 458, 2318, 61, 753146798, "12345678", false, tsOut, null);
+        Load l1 = new Load(1, 458, 2318, 1, 61, 753146798, "12345678", false);
         if(l1 != null){
             System.out.println("Test load created sucessfully");
             System.out.println("Load info: " + l1.getLoadNumber() + " " + l1.getSealNumber() + " " + l1.getTruckNumber());
