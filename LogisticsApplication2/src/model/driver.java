@@ -9,7 +9,7 @@ package model;
  *
  * @author jprince, zjhoz
  */
-public class driver {
+public class Driver {
    
     //Default constructor
     private String dlNumber  = ""; 
@@ -18,7 +18,7 @@ public class driver {
     private String company   = "";
 
     //Constructor for driver class
-    public driver (String newDlNumber, String newFirstName, String newLastName, String newCompany){
+    public Driver (String newDlNumber, String newFirstName, String newLastName, String newCompany){
         this.dlNumber  = newDlNumber;
         this.firstName = newFirstName;
         this.lastName  = newLastName;

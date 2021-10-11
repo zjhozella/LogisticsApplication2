@@ -9,13 +9,13 @@ package model;
  *
  * @author Jprince
  */
-public class incomingTrans extends Transaction {
+public class IncomingTras extends Transaction {
     // Default incomingTrans Constructor
     int employeeID = 0;
     boolean insectDetected = false;
 
     // incomingTrans Constructor that extends Transaction
-    incomingTrans(int transID, Load loadNumber, int employeeID, boolean insectDetected){
+    IncomingTras(int transID, Load loadNumber, int employeeID, boolean insectDetected){
         super(transID, loadNumber);
         this.employeeID = employeeID;
         this.insectDetected = insectDetected;

@@ -9,11 +9,11 @@ package model;
  *
  * @author Jprince
  */
-public class outgoingTrans extends Transaction {
+public class OutgoingTrans extends Transaction {
     private int employeeID = 0;
     private boolean insectDetected = false;
 
-    outgoingTrans(int transID, Load loadNumber, int employeeID, boolean insectDetected){
+    OutgoingTrans(int transID, Load loadNumber, int employeeID, boolean insectDetected){
         super(transID, loadNumber);
         this.employeeID = employeeID;
         this.insectDetected = insectDetected;
