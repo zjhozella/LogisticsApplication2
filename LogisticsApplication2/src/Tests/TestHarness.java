@@ -10,6 +10,7 @@ import java.util.Date;
 import model.Driver;
 import model.Load;
 import model.OutgoingTrans;
+import model.IncomingTrans;
 
 /**
  *
@@ -22,7 +23,7 @@ public class TestHarness {
     private Timestamp tsOut = new Timestamp(time);
     private Timestamp tsIn = new Timestamp(time);
     
-    //Load l1 = new Load(1, 458, 2318, 61, 753146798, "12345678", false, tsOut, null);
+    //Load l2 = new Load(1, 458, 2318, 61, 753146798, "12345678", false, tsOut, null);
     
     public TestHarness(){
         
@@ -30,25 +31,59 @@ public class TestHarness {
         Driver dr1 = new Driver("12345678", "John", "Smith", "Company");
         OutgoingTrans ot1 = new OutgoingTrans(1279466832, false, tsOut);
         Load l1 = new Load(458, 2318, 1, 61, 753146798, false, ot1, dr1);
-        if(l1 != null){
+        if(l1 != null && dr1 !=  null && ot1 != null){
             
             System.out.println("Test load created sucessfully");
             
             System.out.println("Load info: Load Number:" + l1.getLoadNumber() + " Truck Number:" + l1.getTruckNumber() + " Trailer Number:" +
                     l1.getTrailerNumber() + " Dunnage Index: " + l1.getDunnageIndex() + " Store Number: " + l1.getStoreNumber() +
-                    " Load Complete: " + l1.isLoadComplete() + " Employee ID: " + ot1.getEmployeeID() + " Insect Detected: " +
-                    ot1.isInsectDetected() + " Out Timestamp: " + ot1.getTsOut() + " Driver License Number: " + dr1.getDlNumber() +
-                    " Driver FN: " + dr1.getFirstName() + " Driver LN: " + dr1.getLastName() + " Driver Company: " + dr1.getCompany());
+                    " Load Complete: " + l1.isLoadComplete() + " Employee ID: " + l1.getOt().getEmployeeID() + " Insect Detected: " +
+                    l1.getOt().isInsectDetected() + " Out Timestamp: " + l1.getOt().getTsOut() + " Driver License Number: " + l1.getDr().getDlNumber() +
+                    " Driver FN: " + l1.getDr().getFirstName() + " Driver LN: " + l1.getDr().getLastName() + " Driver Company: " + l1.getDr().getCompany());
             
             //Change the object
             l1.setTruckNumber(460);
+            l1.setDunnageIndex(4);
+            l1.setStoreNumber(62);
+            l1.getDr().setFirstName("Frank");
+            l1.getDr().setLastName("Woods");
+            l1.getDr().setCompany("Werner");
+            l1.getOt().setInsectDetected(true);
+            
             System.out.println("Load info: Load Number:" + l1.getLoadNumber() + " Truck Number:" + l1.getTruckNumber() + " Trailer Number:" +
                     l1.getTrailerNumber() + " Dunnage Index: " + l1.getDunnageIndex() + " Store Number: " + l1.getStoreNumber() +
-                    " Load Complete: " + l1.isLoadComplete() + " Employee ID: " + ot1.getEmployeeID() + " Insect Detected: " +
-                    ot1.isInsectDetected() + " Out Timestamp: " + ot1.getTsOut() + " Driver License Number: " + dr1.getDlNumber() +
-                    " Driver FN: " + dr1.getFirstName() + " Driver LN: " + dr1.getLastName() + " Driver Company: " + dr1.getCompany());
+                    " Load Complete: " + l1.isLoadComplete() + " Out Employee ID: " + l1.getOt().getEmployeeID() + " Insect Detected: " +
+                    l1.getOt().isInsectDetected() + " Out Timestamp: " + l1.getOt().getTsOut() + " Driver License Number: " + l1.getDr().getDlNumber() +
+                    " Driver FN: " + l1.getDr().getFirstName() + " Driver LN: " + l1.getDr().getLastName() + " Driver Company: " + l1.getDr().getCompany());
         }else
             System.out.println("Test load has not been created sucessfully");
+        
+        //Incoming Load Test
+        IncomingTrans it1 = new IncomingTrans(1279466832, false, tsOut);
+        Load l2 = new Load(47, 1, true, it1);
+        if(l2 != null && it1 != null){
+            
+            System.out.println("Test load created sucessfully");
+            
+            System.out.println("Load info: Load Number:" + l2.getLoadNumber() + " Truck Number:" + l2.getTruckNumber() + " Trailer Number:" +
+                    l2.getTrailerNumber() + " Dunnage Index: " + l2.getDunnageIndex() + " Store Number: " + l2.getStoreNumber() +
+                    " Load Complete: " + l2.isLoadComplete() + " In Employee ID: " + l2.getIt().getEmployeeID() + " Insect Detected: " +
+                    l2.getIt().isInsectDetected() + " In Timestamp: " + l2.getIt().getTsIn());
+            
+            //Change the object
+            l2.setTruckNumber(460);
+            l2.setDunnageIndex(4);
+            l2.setStoreNumber(62);
+            l2.getIt().setEmployeeID(1279455832);
+            
+            System.out.println("Load info: Load Number:" + l2.getLoadNumber() + " Truck Number:" + l2.getTruckNumber() + " Trailer Number:" +
+                    l2.getTrailerNumber() + " Dunnage Index: " + l2.getDunnageIndex() + " Store Number: " + l2.getStoreNumber() +
+                    " Load Complete: " + l2.isLoadComplete() + " In Employee ID: " + l2.getIt().getEmployeeID() + " Insect Detected: " +
+                    l2.getIt().isInsectDetected() + " In Timestamp: " + l2.getIt().getTsIn());
+        }else
+            System.out.println("Test load has not been created sucessfully");
+        
+        
     }
     
 }

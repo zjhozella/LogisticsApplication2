@@ -26,7 +26,8 @@ public class Main {
         // CreateLoad
         // Send Load object attributes to database using an sql statement
 
-      TestHarness test = new TestHarness();
+        /*** Test Harness ***/
+        TestHarness test = new TestHarness();
         
     }
    

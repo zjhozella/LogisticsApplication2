@@ -33,24 +33,25 @@ public class Load {
     // Outgoing constructor for Load
     public Load (int newTruckNumber, int newTrailerNumber, int newDunnageIndex, int newStoreNumber,
             int newSealNumber, boolean newLoadComplete, OutgoingTrans newOt, Driver newDr){
+        //Generate Load Number
         truckNumber   = newTruckNumber;
         trailerNumber = newTrailerNumber;
-        dunnageIndex = newDunnageIndex;
+        dunnageIndex  = newDunnageIndex;
         storeNumber   = newStoreNumber;
         sealNumber    = newSealNumber;
         loadComplete  = newLoadComplete;
-        ot = newOt;
-        dr = newDr;
+        ot            = newOt;
+        dr            = newDr;
         
 
     }
     
     // Incoming constructor for Load
     public Load(int newLoadNumber, int newDunnageIndex, boolean newLoadComplete, IncomingTrans newIt){
-        loadNumber = newLoadNumber;
+        loadNumber   = newLoadNumber;
         dunnageIndex = newDunnageIndex;
         loadComplete = newLoadComplete;
-        it = newIt;
+        it           = newIt;
     }
 
     /**
@@ -92,7 +93,7 @@ public class Load {
      * @param dunnage the dunnage to set
      */
     public void setDunnage(String[] dunnage) {
-        this.dunnage = dunnage;
+        this.setDunnage(dunnage);
     }
 
     /**
@@ -163,6 +164,48 @@ public class Load {
      */
     public void setDunnageIndex(int dunnageIndex) {
         this.dunnageIndex = dunnageIndex;
+    }
+
+    /**
+     * @return the ot
+     */
+    public OutgoingTrans getOt() {
+        return ot;
+    }
+
+    /**
+     * @param ot the ot to set
+     */
+    public void setOt(OutgoingTrans ot) {
+        this.ot = ot;
+    }
+
+    /**
+     * @return the dr
+     */
+    public Driver getDr() {
+        return dr;
+    }
+
+    /**
+     * @param dr the dr to set
+     */
+    public void setDr(Driver dr) {
+        this.dr = dr;
+    }
+
+    /**
+     * @return the it
+     */
+    public IncomingTrans getIt() {
+        return it;
+    }
+
+    /**
+     * @param it the it to set
+     */
+    public void setIt(IncomingTrans it) {
+        this.it = it;
     }
 
 
