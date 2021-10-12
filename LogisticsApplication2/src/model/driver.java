@@ -11,7 +11,7 @@ package model;
  */
 public class Driver {
    
-    //Default constructor
+    //Default constructor for driver
     private String dlNumber  = ""; 
     private String firstName = "";
     private String lastName  = "";
