@@ -13,31 +13,20 @@ import java.util.Date;
  * @author Jprince
  */
 public class OutgoingTrans {
-    private int employeeID = 0;
+    
+    //Initialize attributes
     private boolean insectDetected = false;
     
     private Date date = new Date();
     private long time = date.getTime();
     private Timestamp tsOut = new Timestamp(time);
 
-    public OutgoingTrans(int employeeID, boolean insectDetected, Timestamp newTSout){
-        this.employeeID = employeeID;
+    private Employee employee;
+    
+    public OutgoingTrans(Employee employee, boolean insectDetected, Timestamp newTSout){
+        this.employee = employee;
         this.insectDetected = insectDetected;
         this.tsOut = newTSout;
-    }
-
-    /**
-     * @return the employeeID
-     */
-    public int getEmployeeID() {
-        return employeeID;
-    }
-
-    /**
-     * @param employeeID the employeeID to set
-     */
-    public void setEmployeeID(int employeeID) {
-        this.employeeID = employeeID;
     }
 
     /**
@@ -94,5 +83,19 @@ public class OutgoingTrans {
      */
     public void setTsOut(Timestamp tsOut) {
         this.tsOut = tsOut;
+    }
+
+    /**
+     * @return the employee
+     */
+    public Employee getEmployee() {
+        return employee;
+    }
+
+    /**
+     * @param employee the employee to set
+     */
+    public void setEmployee(Employee employee) {
+        this.employee = employee;
     }
 }

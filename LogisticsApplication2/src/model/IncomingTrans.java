@@ -13,34 +13,23 @@ import java.util.Date;
  * @author Jprince
  */
 public class IncomingTrans {
+    
     // Default incomingTrans Constructor
-    private int employeeID = 0;
     private boolean insectDetected = false;
     
     private Date date = new Date();
     private long time = date.getTime();
     private Timestamp tsIn = new Timestamp(time);
 
+    private Employee employee;
+    
     // incomingTrans Constructor that extends Transaction
-    public IncomingTrans(int employeeID, boolean insectDetected, Timestamp newTSin){
-        this.employeeID = employeeID;
+    public IncomingTrans(Employee employee, boolean insectDetected, Timestamp newTSin){
+        this.employee = employee;
         this.insectDetected = insectDetected;
         this.tsIn = newTSin;
     }
 
-    /**
-     * @return the employeeID
-     */
-    public int getEmployeeID() {
-        return employeeID;
-    }
-
-    /**
-     * @param employeeID the employeeID to set
-     */
-    public void setEmployeeID(int employeeID) {
-        this.employeeID = employeeID;
-    }
 
     /**
      * @return the insectDetected
@@ -96,5 +85,19 @@ public class IncomingTrans {
      */
     public void setTsIn(Timestamp tsIn) {
         this.tsIn = tsIn;
+    }
+
+    /**
+     * @return the employee
+     */
+    public Employee getEmployee() {
+        return employee;
+    }
+
+    /**
+     * @param employee the employee to set
+     */
+    public void setEmployee(Employee employee) {
+        this.employee = employee;
     }
 }
