@@ -7,7 +7,6 @@ package logisticsapplication2;
 
 import Tests.TestHarness;
 import java.sql.Timestamp;
-import model.Load;
 import model.Driver;
 import model.Employee;
 import model.IncomingTrans;
@@ -45,23 +44,17 @@ public class Main {
         Employee employee = new Employee(employeeID, employeeFN, employeeLN);
         
         //OutgoingTrans object creation
-        OutgoingTrans ot = new OutgoingTrans(employee, insectDetected, outTS);
-        
-        //Load object creation -- feeds in the objects created above, each with their own attrubutes.
-        Load load = new Load(truckNumber, trailerNumber, dunnageIndex, storeNumber, sealNumber, loadComplete, ot, driver);
+        OutgoingTrans ot = new OutgoingTrans(loadNumber, truckNumber, trailerNumber, dunnageIndex, loadComplete, storeNumber, sealNumber, employee, driver, insectDetected, outTS);
         
     }
     
-    public void createIncomingLoad(int loadNumber, int dunnageIndex, boolean loadComplete, int employeeID, String employeeFN, String employeeLN, boolean insectDetected, Timestamp inTS){
+    public void createIncomingLoad(int loadNumber, int truckNumber, int trailerNumber, int dunnageIndex, boolean loadComplete, int employeeID, String employeeFN, String employeeLN, boolean insectDetected, Timestamp inTS){
         
         //Employee object creation
         Employee employee = new Employee(employeeID, employeeFN, employeeLN);
         
         //IncomingTrans object creation
-        IncomingTrans it = new IncomingTrans(employee, insectDetected, inTS);
-        
-        //Load object creation
-        Load load = new Load(loadNumber, dunnageIndex, loadComplete, it);
+        IncomingTrans it = new IncomingTrans(loadNumber, truckNumber, trailerNumber, dunnageIndex, loadComplete, employee, insectDetected, inTS);
     }
     
 }

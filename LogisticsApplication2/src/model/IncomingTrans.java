@@ -12,7 +12,7 @@ import java.util.Date;
  *
  * @author Jprince
  */
-public class IncomingTrans {
+public class IncomingTrans extends Load{
     
     // Default incomingTrans Constructor
     private boolean insectDetected;
@@ -24,7 +24,8 @@ public class IncomingTrans {
     private Employee employee;
     
     // incomingTrans Constructor that extends Transaction
-    public IncomingTrans(Employee employee, boolean insectDetected, Timestamp newTSin){
+    public IncomingTrans(int newLoadNumber, int newTruckNumber, int newTrailerNumber, int newDunnageIndex, boolean newLoadComplete, Employee employee, boolean insectDetected, Timestamp newTSin){
+        super(newLoadNumber, newTruckNumber, newTrailerNumber, newDunnageIndex, newLoadComplete);
         this.employee = employee;
         this.insectDetected = insectDetected;
         this.tsIn = newTSin;

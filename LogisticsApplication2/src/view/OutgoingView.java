@@ -16,7 +16,7 @@ public class OutgoingView {
     //All variables used for storage of data entered into the fields
     
     //Load attribute initialization
-    private int truckNumber, trailerNumber, dunnageIndex, storeNumber, sealNumber;
+    private int loadNumber, truckNumber, trailerNumber, dunnageIndex, storeNumber, sealNumber;
     private boolean loadComplete;
     
     //Driver attribute initialization
@@ -34,6 +34,20 @@ public class OutgoingView {
     public OutgoingView(){
         //Will contain all fields to collect data required for an outgoing load
         //Submit button will transfer all data into the ConfirmationView for confirmation from the user
+    }
+    
+    /**
+     * @return the loadNumber
+     */
+    public int getLoadNumber() {
+        return loadNumber;
+    }
+
+    /**
+     * @param loadNumber the loadNumber to set
+     */
+    public void setLoadNumber(int loadNumber) {
+        this.loadNumber = loadNumber;
     }
     
     /**
