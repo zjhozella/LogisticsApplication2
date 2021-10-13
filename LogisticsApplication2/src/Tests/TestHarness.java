@@ -24,8 +24,6 @@ public class TestHarness {
     private Timestamp tsOut = new Timestamp(time);
     private Timestamp tsIn = new Timestamp(time);
     
-    //Load l2 = new Load(1, 458, 2318, 61, 753146798, "12345678", false, tsOut, null);
-    
     public TestHarness(){
         
         //Outgoing Load Test

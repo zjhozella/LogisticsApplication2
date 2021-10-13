@@ -12,16 +12,16 @@ package model;
 public class Load {
     
     //Intializing attributes
-    private int truckNumber   = 0;
-    private int trailerNumber = 0;
+    private int truckNumber;
+    private int trailerNumber;
 
     //Dunnage Array -- uses dunnageIndex to determine what string to insert into database (0-5)
     private String[] dunnage = {"Empty", "1/4", "1/2", "3/4", "Full"};
-    private int dunnageIndex = 0;
+    private int dunnageIndex;
 
-    private int storeNumber  = 0;
-    private int loadNumber   = 0;
-    private int sealNumber   = 0;
+    private int storeNumber;
+    private int loadNumber;
+    private int sealNumber;
     
     private boolean loadComplete = false;
     

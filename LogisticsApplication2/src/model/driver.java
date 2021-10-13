@@ -11,11 +11,8 @@ package model;
  */
 public class Driver {
    
-    //Default constructor for driver
-    private String dlNumber  = ""; 
-    private String firstName = "";
-    private String lastName  = "";
-    private String company   = "";
+    //variable initialization
+    private String dlNumber, firstName, lastName, company;
 
     //Constructor for driver class
     public Driver (String newDlNumber, String newFirstName, String newLastName, String newCompany){

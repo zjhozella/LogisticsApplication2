@@ -15,7 +15,7 @@ import java.util.Date;
 public class OutgoingTrans {
     
     //Initialize attributes
-    private boolean insectDetected = false;
+    private boolean insectDetected;
     
     private Date date = new Date();
     private long time = date.getTime();

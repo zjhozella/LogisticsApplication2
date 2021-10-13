@@ -5,7 +5,7 @@
  */
 package view;
 
-import javax.swing.JFrame;
+import java.security.Timestamp;
 
 /**
  *
@@ -13,12 +13,27 @@ import javax.swing.JFrame;
  */
 public class IncomingView {
     
-    private int truckNumber;
-    private int trailerNumber;
-    private String dunnage;
+    //All variables used for storage of data entered into the fields
+    
+    //Load attribute initialization
+    private int truckNumber, trailerNumber, dunnageIndex;
+    private boolean loadComplete;
+    
+    //Employee attrubute initialization
+    private int employeeID;
+    private String employeeFN;
+    private String employeeLN;
+    
+    //IncomingTrans attribute initialization
+    private boolean insectDetected;
+    private Timestamp inTS;
+    
+    public IncomingView(){
+        //Will contain all fields to collect data required for an incoming load
+        //Submit button will transfer all data into the ConfirmationView for confirmation from the user
+        //Use the truckNumber and trailerNumber pair to find matching loadNumber to send to confirmationView
+    }
 
-    
-    
     /**
      * @return the truckNumber
      */
@@ -48,24 +63,101 @@ public class IncomingView {
     }
 
     /**
-     * @return the dunnage
+     * @return the dunnageIndex
      */
-    public String getDunnage() {
-        return dunnage;
+    public int getDunnageIndex() {
+        return dunnageIndex;
     }
 
     /**
-     * @param dunnage the dunnage to set
+     * @param dunnageIndex the dunnageIndex to set
      */
-    public void setDunnage(String dunnage) {
-        this.dunnage = dunnage;
+    public void setDunnageIndex(int dunnageIndex) {
+        this.dunnageIndex = dunnageIndex;
     }
 
+    /**
+     * @return the loadComplete
+     */
+    public boolean isLoadComplete() {
+        return loadComplete;
+    }
 
-    
-    
-}
+    /**
+     * @param loadComplete the loadComplete to set
+     */
+    public void setLoadComplete(boolean loadComplete) {
+        this.loadComplete = loadComplete;
+    }
 
-class InitialFrame extends JFrame {
-    
+    /**
+     * @return the employeeID
+     */
+    public int getEmployeeID() {
+        return employeeID;
+    }
+
+    /**
+     * @param employeeID the employeeID to set
+     */
+    public void setEmployeeID(int employeeID) {
+        this.employeeID = employeeID;
+    }
+
+    /**
+     * @return the employeeFN
+     */
+    public String getEmployeeFN() {
+        return employeeFN;
+    }
+
+    /**
+     * @param employeeFN the employeeFN to set
+     */
+    public void setEmployeeFN(String employeeFN) {
+        this.employeeFN = employeeFN;
+    }
+
+    /**
+     * @return the employeeLN
+     */
+    public String getEmployeeLN() {
+        return employeeLN;
+    }
+
+    /**
+     * @param employeeLN the employeeLN to set
+     */
+    public void setEmployeeLN(String employeeLN) {
+        this.employeeLN = employeeLN;
+    }
+
+    /**
+     * @return the insectDetected
+     */
+    public boolean isInsectDetected() {
+        return insectDetected;
+    }
+
+    /**
+     * @param insectDetected the insectDetected to set
+     */
+    public void setInsectDetected(boolean insectDetected) {
+        this.insectDetected = insectDetected;
+    }
+
+    /**
+     * @return the inTS
+     */
+    public Timestamp getInTS() {
+        return inTS;
+    }
+
+    /**
+     * @param inTS the inTS to set
+     */
+    public void setInTS(Timestamp inTS) {
+        this.inTS = inTS;
+    }
+
 }

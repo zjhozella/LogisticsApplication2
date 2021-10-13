@@ -25,7 +25,7 @@ public class Main {
     public static void main(String[] args) {
         
 
-        // CreateLoad
+        
         // Send Load object attributes to database using an sql statement
 
         /*** Test Harness ***/
