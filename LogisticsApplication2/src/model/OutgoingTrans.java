@@ -52,6 +52,34 @@ public class OutgoingTrans extends Load{
     }
 
     /**
+     * @return the storeNumber
+     */
+    public int getStoreNumber() {
+        return storeNumber;
+    }
+
+    /**
+     * @param storeNumber the storeNumber to set
+     */
+    public void setStoreNumber(int storeNumber) {
+        this.storeNumber = storeNumber;
+    }
+
+    /**
+     * @return the sealNumber
+     */
+    public int getSealNumber() {
+        return sealNumber;
+    }
+
+    /**
+     * @param sealNumber the sealNumber to set
+     */
+    public void setSealNumber(int sealNumber) {
+        this.sealNumber = sealNumber;
+    }
+
+    /**
      * @return the date
      */
     public Date getDate() {
@@ -108,20 +136,6 @@ public class OutgoingTrans extends Load{
     }
 
     /**
-     * @return the sealNumber
-     */
-    public int getSealNumber() {
-        return sealNumber;
-    }
-
-    /**
-     * @param sealNumber the sealNumber to set
-     */
-    public void setSealNumber(int sealNumber) {
-        this.sealNumber = sealNumber;
-    }
-
-    /**
      * @return the dr
      */
     public Driver getDr() {
@@ -134,4 +148,5 @@ public class OutgoingTrans extends Load{
     public void setDr(Driver dr) {
         this.dr = dr;
     }
+
 }

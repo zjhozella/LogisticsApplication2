@@ -33,7 +33,6 @@ public class IncomingTrans extends Load{
         this.tsIn = newTSin;
     }
 
-
     /**
      * @return the insectDetected
      */
@@ -103,4 +102,5 @@ public class IncomingTrans extends Load{
     public void setEmployee(Employee employee) {
         this.employee = employee;
     }
+
 }
