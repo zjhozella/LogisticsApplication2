@@ -15,7 +15,7 @@ public class Load {
     private int truckNumber;
     private int trailerNumber;
 
-    //Dunnage Array -- uses dunnageIndex to determine what string to insert into database (0-5)
+    //Dunnage Array -- uses dunnageIndex to determine what string to insert into database (0-4)
     private String[] dunnage = {"Empty", "1/4", "1/2", "3/4", "Full"};
     private int dunnageIndex;
 
@@ -131,5 +131,10 @@ public class Load {
      */
     public void setDunnageIndex(int dunnageIndex) {
         this.dunnageIndex = dunnageIndex;
+    }
+
+    public String printLoadDunn(){
+        return "Dunnage Index= " + dunnageIndex + " Dunnage String = " + dunnage[dunnageIndex];
+    
     }
 }

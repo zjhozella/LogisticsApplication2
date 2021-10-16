@@ -149,4 +149,9 @@ public class OutgoingTrans extends Load{
         this.dr = dr;
     }
 
+    @Override
+    public String printLoadDunn(){
+        return super.printLoadDunn() + "Hello";
+    }
+
 }
