@@ -12,9 +12,9 @@ package model;
 public class Employee {
     
     //Initialize attributes
-    private int ID;
-    private String firstName;
-    private String lastName;
+    private int ID = 0;
+    private String firstName = "";
+    private String lastName = "";
  
     //Constructor
     public Employee(int id, String firstName, String lastName){

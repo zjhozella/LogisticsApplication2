@@ -13,7 +13,6 @@ import java.util.Date;
  * @author Jprince
  */
 public class OutgoingTrans extends Load{
-    
     //Initialize attributes
     private boolean insectDetected;
     private int storeNumber;
@@ -27,7 +26,9 @@ public class OutgoingTrans extends Load{
     private Driver dr;
     
     public OutgoingTrans(int newLoadNumber, int newTruckNumber, int newTrailerNumber, int newDunnageIndex, boolean newLoadComplete, int newStoreNumber, int newSealNumber, Employee employee, Driver dr, boolean insectDetected, Timestamp newTSout){
+        
         super(newLoadNumber, newTruckNumber, newTrailerNumber, newDunnageIndex, newLoadComplete);
+        
         storeNumber = newStoreNumber;
         sealNumber = newSealNumber;
         this.employee = employee;

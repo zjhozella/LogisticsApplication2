@@ -24,6 +24,7 @@ public class Load {
     
     private boolean loadComplete = false;
 
+    
 
     //Load Parent Constructor
     public Load (int newLoadNumber, int newTruckNumber, int newTrailerNumber, int newDunnageIndex, boolean newLoadComplete){

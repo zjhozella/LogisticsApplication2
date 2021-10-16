@@ -15,7 +15,7 @@ import java.util.Date;
 public class IncomingTrans extends Load{
     
     // Default incomingTrans Constructor
-    private boolean insectDetected;
+    private boolean insectDetected = false;
     
     private Date date = new Date();
     private long time = date.getTime();
@@ -25,7 +25,9 @@ public class IncomingTrans extends Load{
     
     // incomingTrans Constructor that extends Transaction
     public IncomingTrans(int newLoadNumber, int newTruckNumber, int newTrailerNumber, int newDunnageIndex, boolean newLoadComplete, Employee employee, boolean insectDetected, Timestamp newTSin){
+        
         super(newLoadNumber, newTruckNumber, newTrailerNumber, newDunnageIndex, newLoadComplete);
+        
         this.employee = employee;
         this.insectDetected = insectDetected;
         this.tsIn = newTSin;
