@@ -15,8 +15,7 @@ public class Load {
     private int truckNumber;
     private int trailerNumber;
 
-    //Dunnage Array -- uses dunnageIndex to determine what string to insert into database (0-4)
-    //private String[] dunnage = {"Empty", "1/4", "1/2", "3/4", "Full"}; This is not used
+    // 0 - "Empty" 1 - "1/4" 2 - "1/2" 3 - "3/4" 4 - "Full"
     private int dunnageIndex;
 
     private int storeNumber;
@@ -59,24 +58,6 @@ public class Load {
      */
     public void setTrailerNumber(int trailerNumber) {
         this.trailerNumber = trailerNumber;
-    }
-
-    /**
-     * @return the dunnage
-     See above, I don't think this is needed because we are not going to call the dunnage array 
-     in the load class. This array is only needed in the IncomingTrans for displaying the DunnageIndex
-     to an array of dunnage strings.
-    public String[] getDunnage() {
-        return dunnage;
-    }
-    */
-
-
-    /**
-     * @param dunnage the dunnage to set
-     */
-    public void setDunnage(String[] dunnage) {
-        this.setDunnage(dunnage);
     }
 
     /**

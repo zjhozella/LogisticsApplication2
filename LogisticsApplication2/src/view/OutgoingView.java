@@ -33,7 +33,8 @@ public class OutgoingView {
 
     public OutgoingView(){
         //Will contain all fields to collect data required for an outgoing load
-        //Submit button will transfer all data into the ConfirmationView for confirmation from the user
+        //Submit button will transfer all data into the ConfirmationView outgoing constructor 
+        //for confirmation from the user
     }
     
     /**

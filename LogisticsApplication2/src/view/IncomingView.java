@@ -30,7 +30,8 @@ public class IncomingView {
     
     public IncomingView(){
         //Will contain all fields to collect data required for an incoming load
-        //Submit button will transfer all data into the ConfirmationView for confirmation from the user
+        //Submit button will transfer all data into the ConfirmationView incoming constructor 
+        //for confirmation from the user
         //Use the truckNumber and trailerNumber pair to find matching loadNumber to send to confirmationView
     }
 
