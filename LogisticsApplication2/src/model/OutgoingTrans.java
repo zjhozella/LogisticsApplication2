@@ -26,9 +26,9 @@ public class OutgoingTrans extends Load{
     private Driver dr;
     
     public OutgoingTrans(int newLoadNumber, int newTruckNumber, int newTrailerNumber, int newDunnageIndex, boolean newLoadComplete, int newStoreNumber, int newSealNumber, Employee employee, Driver dr, boolean insectDetected, Timestamp newTSout){
-        
+        // Parameters inherited from super class Load
         super(newLoadNumber, newTruckNumber, newTrailerNumber, newDunnageIndex, newLoadComplete);
-        
+        // Parameters that are unique to outgoingTrans
         storeNumber = newStoreNumber;
         sealNumber = newSealNumber;
         this.employee = employee;
