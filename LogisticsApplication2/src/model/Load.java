@@ -133,8 +133,9 @@ public class Load {
         this.dunnageIndex = dunnageIndex;
     }
 
-    public String printLoadDunn(){
-        return "Dunnage Index= " + dunnageIndex + " Dunnage String = " + dunnage[dunnageIndex];
+    public String printLoad(){
+        return "Load Number: " + getLoadNumber() + " TruckNumber: " + getTruckNumber() + " TrailerNumber: " + getTrailerNumber()
+            + " Dunnage Index: " + getDunnageIndex() + " Load Complete: " + isLoadComplete();
     
     }
 }

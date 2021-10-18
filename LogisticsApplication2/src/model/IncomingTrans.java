@@ -21,16 +21,22 @@ public class IncomingTrans extends Load{
     private long time = date.getTime();
     private Timestamp tsIn = new Timestamp(time);
 
+    //Dunnage Array -- uses dunnageIndex to determine what string to insert into database (0-4)
+    private String[] dunnage = {"Empty", "1/4", "1/2", "3/4", "Full"};
+    private int dunnageIndex = 0;
+
     private Employee employee;
     
     // incomingTrans Constructor that extends Transaction
     public IncomingTrans(int newLoadNumber, int newTruckNumber, int newTrailerNumber, int newDunnageIndex, boolean newLoadComplete, Employee employee, boolean insectDetected, Timestamp newTSin){
-        
+        // Parameters inherited from Super class: Load
         super(newLoadNumber, newTruckNumber, newTrailerNumber, newDunnageIndex, newLoadComplete);
         
+        // Parameters that are unique to IncomingTrans
         this.employee = employee;
         this.insectDetected = insectDetected;
         this.tsIn = newTSin;
+        this.dunnageIndex = newDunnageIndex;
     }
 
     /**
@@ -101,6 +107,12 @@ public class IncomingTrans extends Load{
      */
     public void setEmployee(Employee employee) {
         this.employee = employee;
+    }
+
+    public String printLoad(){
+        return super.printLoad() + "\n" + "Incoming Load Information: " + "\n" + "Employee Number: " + getEmployee() +
+            " Insecst Detected: " + isInsectDetected() + " Time: " + getTsIn() + " Dunnage Index: " + getDunnageIndex() +
+                " Dunnage String: " + dunnage[getDunnageIndex()];
     }
 
 }
