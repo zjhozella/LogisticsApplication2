@@ -16,15 +16,13 @@ public class Load {
     private int trailerNumber;
 
     //Dunnage Array -- uses dunnageIndex to determine what string to insert into database (0-4)
-    private String[] dunnage = {"Empty", "1/4", "1/2", "3/4", "Full"};
+    //private String[] dunnage = {"Empty", "1/4", "1/2", "3/4", "Full"}; This is not used
     private int dunnageIndex;
 
     private int storeNumber;
     private int loadNumber;
     
     private boolean loadComplete = false;
-
-    
 
     //Load Parent Constructor
     public Load (int newLoadNumber, int newTruckNumber, int newTrailerNumber, int newDunnageIndex, boolean newLoadComplete){
@@ -65,10 +63,14 @@ public class Load {
 
     /**
      * @return the dunnage
-     */
+     See above, I don't think this is needed because we are not going to call the dunnage array 
+     in the load class. This array is only needed in the IncomingTrans for displaying the DunnageIndex
+     to an array of dunnage strings.
     public String[] getDunnage() {
         return dunnage;
     }
+    */
+
 
     /**
      * @param dunnage the dunnage to set

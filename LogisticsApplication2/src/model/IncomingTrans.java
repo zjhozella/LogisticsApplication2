@@ -109,6 +109,8 @@ public class IncomingTrans extends Load{
         this.employee = employee;
     }
 
+    // Override printLoad from super class
+    @Override
     public String printLoad(){
         return super.printLoad() + "\n" + "Incoming Load Information: " + "\n" + "Employee Number: " + getEmployee() +
             " Insecst Detected: " + isInsectDetected() + " Time: " + getTsIn() + " Dunnage Index: " + getDunnageIndex() +
