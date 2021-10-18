@@ -25,9 +25,9 @@ public class IncomingTrans extends Load{
     
     // incomingTrans Constructor that extends Transaction
     public IncomingTrans(int newLoadNumber, int newTruckNumber, int newTrailerNumber, int newDunnageIndex, boolean newLoadComplete, Employee employee, boolean insectDetected, Timestamp newTSin){
-        // Parameters inherited from Super class: Load
+        
         super(newLoadNumber, newTruckNumber, newTrailerNumber, newDunnageIndex, newLoadComplete);
-        // Parameters that are unique to IncomingTrans
+        
         this.employee = employee;
         this.insectDetected = insectDetected;
         this.tsIn = newTSin;

@@ -133,8 +133,8 @@ public class Load {
         this.dunnageIndex = dunnageIndex;
     }
 
-    // Print status of Dunnage array
     public String printLoadDunn(){
-        return "Dunnage Index= " + getDunnageIndex() + " Dunnage String = " + getDunnageIndex();
+        return "Dunnage Index= " + dunnageIndex + " Dunnage String = " + dunnage[dunnageIndex];
+    
     }
 }
