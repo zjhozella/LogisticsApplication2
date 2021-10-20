@@ -76,26 +76,23 @@ public class TestHarness {
     
     public void testClassHierarchy(){
         ArrayList<Load> loadList = new ArrayList<>();
-        
+        //Create Driver objects
         Driver dr1 = new Driver("12345678", "John", "Smith", "Company");
-        Employee ep1 = new Employee(1279466832, "Bob", "Jones");
         
+        //Create employee objects
+        Employee ep1 = new Employee(1279466832, "Bob", "Jones");
+        Employee ep2 = new Employee(1279466832, "Bob", "Jones");
+
+        //Create OutgoinTrans
         loadList.add(new OutgoingTrans(1, 458, 2318, 0, false, 61, 753146798, ep1, dr1, false, tsOut));
         
-        Employee ep2 = new Employee(1279466832, "Bob", "Jones");
-        
+        //Create IncomingTrans
         loadList.add(new IncomingTrans(1, 460, 2317, 3, true, ep2, false, tsIn));
 
         for (int i = 0; i < loadList.size(); ++i){
             System.out.println("---- TEST CLASS HIERARCHY "+ (i+1) + " ----");
             
             System.out.println(loadList.get(i).printLoad());
-            
-    
-
-
-            
         }
-        
     }
 }

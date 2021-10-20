@@ -64,10 +64,12 @@ public class Employee {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
+
     
     public String printEmployee(){
         return "\n" + "Employee Information: " + "\n" + " Employee ID: " + getID() + ", Employee Name: " 
                     + getFirstName() + " " + getLastName();
+
     }
    
 }
