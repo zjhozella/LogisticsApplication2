@@ -34,14 +34,9 @@ public class TestHarness {
         
         if(ot1 != null && dr1 !=  null && ep1 != null){
             
-            System.out.println("Test outgoing load created sucessfully");
+            System.out.println("Test outgoing load created sucessfully\n");
             
-            System.out.println("Load info: Load Number:" + ot1.getLoadNumber() + " Truck Number:" + ot1.getTruckNumber() + " Trailer Number:" +
-                    ot1.getTrailerNumber() + " Dunnage Index: " + ot1.getDunnageIndex() + " Store Number: " + ot1.getStoreNumber() +
-                    " Load Complete: " + ot1.isLoadComplete() + " Out Employee ID: " + ot1.getEmployee().getID() + " Employee Name: " 
-                    + ot1.getEmployee().getFirstName() + " " + ot1.getEmployee().getLastName() + " Insect Detected: " +
-                    ot1.isInsectDetected() + " Out Timestamp: " + ot1.getTsOut() + " Driver License Number: " + ot1.getDr().getDlNumber() +
-                    " Driver FN: " + ot1.getDr().getFirstName() + " Driver LN: " + ot1.getDr().getLastName() + " Driver Company: " + ot1.getDr().getCompany());
+            System.out.println(ot1.printLoad() + ot1.printEmployee() + ot1.printDriver() + "\n");
             
             //Change the object
             ot1.setTruckNumber(460);
@@ -53,14 +48,10 @@ public class TestHarness {
             ot1.getEmployee().setFirstName("Steve");
             ot1.setInsectDetected(true);
             
-            System.out.println("Load info: Load Number:" + ot1.getLoadNumber() + " Truck Number:" + ot1.getTruckNumber() + " Trailer Number:" +
-                    ot1.getTrailerNumber() + " Dunnage Index: " + ot1.getDunnageIndex() + " Store Number: " + ot1.getStoreNumber() +
-                    " Load Complete: " + ot1.isLoadComplete() + " Out Employee ID: " + ot1.getEmployee().getID() + " Employee Name: " 
-                    + ot1.getEmployee().getFirstName() + " " + ot1.getEmployee().getLastName() + " Insect Detected: " +
-                    ot1.isInsectDetected() + " Out Timestamp: " + ot1.getTsOut() + " Driver License Number: " + ot1.getDr().getDlNumber() +
-                    " Driver FN: " + ot1.getDr().getFirstName() + " Driver LN: " + ot1.getDr().getLastName() + " Driver Company: " + ot1.getDr().getCompany());
+            System.out.println(ot1.printLoad() + ot1.printEmployee() + ot1.printDriver() + "\n");
+            
         }else
-            System.out.println("Test load has not been created sucessfully");
+            System.out.println("Test load has not been created sucessfully\n");
         
         //Incoming Load Test
         Employee ep2 = new Employee(1279466832, "Bob", "Jones");
@@ -68,13 +59,9 @@ public class TestHarness {
 
         if(it1 != null && it1 != null){
             
-            System.out.println("Test incoming load created sucessfully");
+            System.out.println("Test incoming load created sucessfully\n");
             
-            System.out.println("Load info: Load Number:" + it1.getLoadNumber() + " Truck Number:" + it1.getTruckNumber() + " Trailer Number:" +
-                    it1.getTrailerNumber() + " Dunnage Index: " + it1.getDunnageIndex() + " Store Number: " + it1.getStoreNumber() +
-                    " Load Complete: " + it1.isLoadComplete() + " In Employee ID: " + it1.getEmployee().getID() + " Employee Name: " 
-                    + it1.getEmployee().getFirstName() + " " + it1.getEmployee().getLastName() + " Insect Detected: " +
-                    it1.isInsectDetected() + " In Timestamp: " + it1.getTsIn());
+            System.out.println(it1.printLoad() + it1.printEmployee() + "\n");
             
             //Change the object
             it1.setTruckNumber(458);
@@ -82,15 +69,9 @@ public class TestHarness {
             it1.setDunnageIndex(4);
             it1.getEmployee().setID(1279455832);
             
-            System.out.println("Load info: Load Number:" + it1.getLoadNumber() + " Truck Number:" + it1.getTruckNumber() + " Trailer Number:" +
-                    it1.getTrailerNumber() + " Dunnage Index: " + it1.getDunnageIndex() + " Store Number: " + it1.getStoreNumber() +
-                    " Load Complete: " + it1.isLoadComplete() + " In Employee ID: " + it1.getEmployee().getID() + " Employee Name: " 
-                    + it1.getEmployee().getFirstName() + " " + it1.getEmployee().getLastName() + " Insect Detected: " +
-                    it1.isInsectDetected() + " In Timestamp: " + it1.getTsIn());
+            System.out.println(it1.printLoad() + it1.printEmployee() + "\n");
         }else
-            System.out.println("Test load has not been created sucessfully");
-        
-        testClassHierarchy();
+            System.out.println("Test load has not been created sucessfully\n");
     }
     
     public void testClassHierarchy(){
@@ -104,6 +85,8 @@ public class TestHarness {
         loadList.add(new IncomingTrans(1, 460, 2317, 3, true, ep2, false, tsIn));
         
         for (int i = 0; i < loadList.size(); ++i){
+            System.out.println("---- TEST CLASS HIERARCHY ----");
+            
             loadList.get(i).printLoad();
         }
         

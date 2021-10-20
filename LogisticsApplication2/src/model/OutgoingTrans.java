@@ -154,8 +154,18 @@ public class OutgoingTrans extends Load{
     @Override
     public String printLoad(){
         return super.printLoad() + "\n" + "Outgoing Load Info "+ "\n Store Number: " + getStoreNumber()
-            + " Seal Number: " + getSealNumber() + " Employee Number: " + getEmployee() + " Driver Number: "+ getDr()
-                + " Insect Detected: " + isInsectDetected() + " Time: " + getTsOut();
+            + ", Seal Number: " + getSealNumber() + ", Insect Detected: " + isInsectDetected() + ", Time: " + getTsOut();
     }
+    
+    public String printEmployee(){
+        return "\n" + "Outgoing Employee Information: " + "\n" + " Out Employee ID: " + getEmployee().getID() + ", Employee Name: " 
+                    + getEmployee().getFirstName() + " " + getEmployee().getLastName();
+    }
+    
+    public String printDriver(){
+        return "\n" + "Outgoing Driver Information: " + "\n" + " Driver License Number: " + getDr().getDlNumber() + ", Driver Name: " + getDr().getFirstName() + " " + getDr().getLastName() + ", Driver Company: " + getDr().getCompany();
+    }
+    
+    
 
 }

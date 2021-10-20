@@ -21,8 +21,7 @@ public class IncomingTrans extends Load{
     private long time = date.getTime();
     private Timestamp tsIn = new Timestamp(time);
 
-    //Dunnage Array -- uses dunnageIndex to determine what string to insert into database (0-4)
-    private String[] dunnage = {"Empty", "1/4", "1/2", "3/4", "Full"};
+    // 0 - "Empty" 1 - "1/4" 2 - "1/2" 3 - "3/4" 4 - "Full"
     private int dunnageIndex = 0;
 
     private Employee employee;
@@ -112,9 +111,13 @@ public class IncomingTrans extends Load{
     // Override printLoad from super class
     @Override
     public String printLoad(){
-        return super.printLoad() + "\n" + "Incoming Load Information: " + "\n" + "Employee Number: " + getEmployee() +
-            " Insecst Detected: " + isInsectDetected() + " Time: " + getTsIn() + " Dunnage Index: " + getDunnageIndex() +
-                " Dunnage String: " + dunnage[getDunnageIndex()];
+        return super.printLoad() + "\n" + "Incoming Load Information: " + "\n" +
+            " Insect Detected: " + isInsectDetected() + ", Time: " + getTsIn() + ", Dunnage Index: " + getDunnageIndex();
+    }
+    
+    public String printEmployee(){
+        return "\n" + "Incoming Employee Information: " + "\n" + " Employee ID: " + getEmployee().getID() + ", Employee Name: " 
+                    + getEmployee().getFirstName() + " " + getEmployee().getLastName();
     }
 
 }

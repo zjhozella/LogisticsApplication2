@@ -29,6 +29,7 @@ public class Main {
 
         /*** Test Harness ***/
         TestHarness test = new TestHarness();
+        test.testClassHierarchy();
         
     }
    

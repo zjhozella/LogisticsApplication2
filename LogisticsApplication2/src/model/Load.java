@@ -117,8 +117,8 @@ public class Load {
     }
 
     public String printLoad(){
-        return "Load Number: " + getLoadNumber() + " TruckNumber: " + getTruckNumber() + " TrailerNumber: " + getTrailerNumber()
-            + " Dunnage Index: " + getDunnageIndex() + " Load Complete: " + isLoadComplete();
+        return "Load Information: " + "\n" + "Load Number: " + getLoadNumber() + ", TruckNumber: " + getTruckNumber() + ", TrailerNumber: " + getTrailerNumber()
+            + ", Dunnage Index: " + getDunnageIndex() + ", Load Complete: " + isLoadComplete();
     
     }
 }
