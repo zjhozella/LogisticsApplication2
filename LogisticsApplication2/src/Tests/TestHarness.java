@@ -98,8 +98,10 @@ public class TestHarness {
             /* TODO: THIS IS NOT PRINTING ANY INFORMATION FOR SOME REASON? 
             I think it is because there are no LOAD objects created, only incoming and outgoing load. It is always going to print the overrides.
             See Line 89-91 to create Load object
-            Ln. 95 to print the load information. 
+            Ln. 96 to print the load information. 
             */
+
+
             
         }
         
