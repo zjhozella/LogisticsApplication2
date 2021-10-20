@@ -114,10 +114,5 @@ public class IncomingTrans extends Load{
         return super.printLoad() + "\n" + "Incoming Load Information: " + "\n" +
             " Insect Detected: " + isInsectDetected() + ", Time: " + getTsIn() + ", Dunnage Index: " + getDunnageIndex();
     }
-    
-    public String printEmployee(){
-        return "\n" + "Incoming Employee Information: " + "\n" + " Employee ID: " + getEmployee().getID() + ", Employee Name: " 
-                    + getEmployee().getFirstName() + " " + getEmployee().getLastName();
-    }
 
 }

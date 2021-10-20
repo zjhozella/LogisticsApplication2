@@ -36,7 +36,7 @@ public class TestHarness {
             
             System.out.println("Test outgoing load created sucessfully\n");
             
-            System.out.println(ot1.printLoad() + ot1.printEmployee() + ot1.printDriver() + "\n");
+            System.out.println(ot1.printLoad() + ot1.getEmployee().printEmployee() + ot1.getDr().printDriver() + "\n");
             
             //Change the object
             ot1.setTruckNumber(460);
@@ -48,7 +48,7 @@ public class TestHarness {
             ot1.getEmployee().setFirstName("Steve");
             ot1.setInsectDetected(true);
             
-            System.out.println(ot1.printLoad() + ot1.printEmployee() + ot1.printDriver() + "\n");
+            System.out.println(ot1.printLoad() + ot1.getEmployee().printEmployee() + ot1.getDr().printDriver() + "\n");
             
         }else
             System.out.println("Test load has not been created sucessfully\n");
@@ -61,7 +61,7 @@ public class TestHarness {
             
             System.out.println("Test incoming load created sucessfully\n");
             
-            System.out.println(it1.printLoad() + it1.printEmployee() + "\n");
+            System.out.println(it1.printLoad() + it1.getEmployee().printEmployee() + "\n");
             
             //Change the object
             it1.setTruckNumber(458);
@@ -69,7 +69,7 @@ public class TestHarness {
             it1.setDunnageIndex(4);
             it1.getEmployee().setID(1279455832);
             
-            System.out.println(it1.printLoad() + it1.printEmployee() + "\n");
+            System.out.println(it1.printLoad() + it1.getEmployee().printEmployee() + "\n");
         }else
             System.out.println("Test load has not been created sucessfully\n");
     }
@@ -86,20 +86,12 @@ public class TestHarness {
         
         loadList.add(new IncomingTrans(1, 460, 2317, 3, true, ep2, false, tsIn));
 
-        // Create load object to test printLoad()
-        Load load1 = new Load(75, 71066, 101088, 0, false);
-        loadList.add(load1);
-
         for (int i = 0; i < loadList.size(); ++i){
-            System.out.println("---- TEST CLASS HIERARCHY ----");
-            // A test to make sure printLoad is working, need to get it iterating through the loadlist
-            System.out.println(load1.printLoad());
+            System.out.println("---- TEST CLASS HIERARCHY "+ (i+1) + " ----");
             
-            /* TODO: THIS IS NOT PRINTING ANY INFORMATION FOR SOME REASON? 
-            I think it is because there are no LOAD objects created, only incoming and outgoing load. It is always going to print the overrides.
-            See Line 89-91 to create Load object
-            Ln. 96 to print the load information. 
-            */
+            System.out.println(loadList.get(i).printLoad());
+            
+    
 
 
             
