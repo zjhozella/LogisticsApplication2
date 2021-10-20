@@ -65,7 +65,7 @@ public class Employee {
         this.lastName = lastName;
     }
 
-    
+    //Prints base employee information
     public String printEmployee(){
         return "\n" + "Employee Information: " + "\n" + " Employee ID: " + getID() + ", Employee Name: " 
                     + getFirstName() + " " + getLastName();

@@ -115,6 +115,7 @@ public class Load {
         this.dunnageIndex = dunnageIndex;
     }
 
+    //Prints base load information, overriden by child
     public String printLoad(){
         return "Load Information: " + "\n" + "Load Number: " + getLoadNumber() + ", TruckNumber: " + getTruckNumber() + ", TrailerNumber: " + getTrailerNumber()
             + ", Dunnage Index: " + getDunnageIndex() + ", Load Complete: " + isLoadComplete();
