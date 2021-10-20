@@ -89,6 +89,8 @@ public class TestHarness {
         //Create IncomingTrans
         loadList.add(new IncomingTrans(1, 460, 2317, 3, true, ep2, false, tsIn));
 
+        //Iterate through each Load object type in the array and use the printLoad method that has
+        // an override in each child class
         for (int i = 0; i < loadList.size(); ++i){
             System.out.println("---- TEST CLASS HIERARCHY "+ (i+1) + " ----");
             
