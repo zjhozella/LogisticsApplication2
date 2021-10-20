@@ -64,5 +64,9 @@ public class Employee {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
+    // Added for testing the loadList arrayList
+    public String printEmployeeFull(){
+        return "Employee Information: " + "\n" + "ID Number: " + getID() + " Name: " + getFirstName() + " " + getLastName();
+    }
    
 }

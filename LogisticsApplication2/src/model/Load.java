@@ -17,7 +17,6 @@ public class Load {
 
     // 0 - "Empty" 1 - "1/4" 2 - "1/2" 3 - "3/4" 4 - "Full"
     private int dunnageIndex;
-
     private int storeNumber;
     private int loadNumber;
     
@@ -121,4 +120,5 @@ public class Load {
             + ", Dunnage Index: " + getDunnageIndex() + ", Load Complete: " + isLoadComplete();
     
     }
+
 }

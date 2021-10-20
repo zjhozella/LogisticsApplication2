@@ -92,14 +92,18 @@ public class TestHarness {
 
         for (int i = 0; i < loadList.size(); ++i){
             System.out.println("---- TEST CLASS HIERARCHY ----");
-            // A test to make sure printLoad is working, need to get it iterating through the loadlist
-            System.out.println(load1.printLoad());
+            // Test for printing employee information through array
+            System.out.println(loadList.get(i).printLoad());
+            System.out.println(loadList);
+            // Test for printing driver information through array
             
             /* TODO: THIS IS NOT PRINTING ANY INFORMATION FOR SOME REASON? 
             I think it is because there are no LOAD objects created, only incoming and outgoing load. It is always going to print the overrides.
             See Line 89-91 to create Load object
             Ln. 96 to print the load information. 
             */
+
+            
 
 
             

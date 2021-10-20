@@ -78,5 +78,10 @@ public class Driver {
     public void setCompany(String company) {
         this.company = company;
     }
+
+    public String printDriverFull(){
+        return "Driver Information: " + "\n" + "Driver Number: " + getDlNumber() + " Name: " 
+            + getFirstName() + " " + getLastName() + " Company: " + getCompany();
+    }
     
 }
