@@ -79,16 +79,27 @@ public class TestHarness {
         
         Driver dr1 = new Driver("12345678", "John", "Smith", "Company");
         Employee ep1 = new Employee(1279466832, "Bob", "Jones");
+        
         loadList.add(new OutgoingTrans(1, 458, 2318, 0, false, 61, 753146798, ep1, dr1, false, tsOut));
         
         Employee ep2 = new Employee(1279466832, "Bob", "Jones");
-        loadList.add(new IncomingTrans(1, 460, 2317, 3, true, ep2, false, tsIn));
         
+        loadList.add(new IncomingTrans(1, 460, 2317, 3, true, ep2, false, tsIn));
+
+        // Create load object to test printLoad()
+        Load load1 = new Load(75, 71066, 101088, 0, false);
+        loadList.add(load1);
+
         for (int i = 0; i < loadList.size(); ++i){
             System.out.println("---- TEST CLASS HIERARCHY ----");
+            System.out.println(load1.printLoad());
             
-            /* TODO: THIS IS NOT PRINTING ANY INFORMATION FOR SOME REASON? */
-            loadList.get(i).printLoad();
+            /* TODO: THIS IS NOT PRINTING ANY INFORMATION FOR SOME REASON? 
+            I think it is because there are no LOAD objects created, only incoming and outgoing load. It is always going to print the overrides.
+            See Line 89-91 to create Load object
+            Ln. 95 to print the load information. 
+            */
+            
         }
         
     }
