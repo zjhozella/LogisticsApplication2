@@ -92,6 +92,7 @@ public class TestHarness {
 
         for (int i = 0; i < loadList.size(); ++i){
             System.out.println("---- TEST CLASS HIERARCHY ----");
+            // A test to make sure printLoad is working, need to get it iterating through the loadlist
             System.out.println(load1.printLoad());
             
             /* TODO: THIS IS NOT PRINTING ANY INFORMATION FOR SOME REASON? 
