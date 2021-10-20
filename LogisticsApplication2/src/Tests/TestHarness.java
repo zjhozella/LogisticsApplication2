@@ -87,6 +87,7 @@ public class TestHarness {
         for (int i = 0; i < loadList.size(); ++i){
             System.out.println("---- TEST CLASS HIERARCHY ----");
             
+            /* TODO: THIS IS NOT PRINTING ANY INFORMATION FOR SOME REASON? */
             loadList.get(i).printLoad();
         }
         
