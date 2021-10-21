@@ -112,7 +112,7 @@ public class IncomingTrans extends Load{
     @Override
     public String printLoad(){
         return super.printLoad() + "\n" + "Incoming Load Information: " + "\n" +
-            " Insect Detected: " + isInsectDetected() + ", Time: " + getTsIn() + ", Dunnage Index: " + getDunnageIndex();
+            " Insect Detected: " + isInsectDetected() + ", Time: " + getTsIn() + ", Dunnage Index: " + getDunnageIndex() + ", Employee Number: " + getEmployee().getID();
     }
 
 }

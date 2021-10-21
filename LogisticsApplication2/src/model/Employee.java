@@ -67,8 +67,7 @@ public class Employee {
 
     //Prints base employee information
     public String printEmployee(){
-        return "\n" + "Employee Information: " + "\n" + " Employee ID: " + getID() + ", Employee Name: " 
-                    + getFirstName() + " " + getLastName();
+        return "\n" + "Employee Information: " + "\n" + " Employee ID: " + getID() + ", Employee Name: " + getFirstName() + " " + getLastName();
 
     }
    

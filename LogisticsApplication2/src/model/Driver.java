@@ -79,6 +79,7 @@ public class Driver {
         this.company = company;
     }
 
+    
     //Print base driver information    
     public String printDriver(){
         return "\n" + "Outgoing Driver Information: " + "\n" + " Driver License Number: " + getDlNumber() + ", Driver Name: " + getFirstName() + " " + getLastName() + ", Driver Company: " + getCompany();
