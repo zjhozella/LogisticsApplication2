@@ -90,7 +90,7 @@ public class TestHarness {
         //Create IncomingTrans and add to loadList array
         loadList.add(new IncomingTrans(1, 460, 2317, 3, true, ep2, false, tsIn));
 
-        /* Iterate through each Load object type in the array and use the printLoad method that has an override in each child class of the super printLoad() method. Prints Everny parameter from Load, IncomingTrans, OutgoingTrans. Includes DunnageIndex only for testing purpose. Only print Employee Number.
+        /* Iterate through each Load object type in the array and use the printLoad method that has an override in each child class of the super printLoad() method. Prints Every parameter from Load, IncomingTrans, OutgoingTrans. Includes DunnageIndex only for testing purpose.
         */
         for (int i = 0; i < loadList.size(); ++i){
             System.out.println("---- TEST CLASS HIERARCHY "+ (i+1) + " ----");
