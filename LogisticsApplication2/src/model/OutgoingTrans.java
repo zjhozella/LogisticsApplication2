@@ -154,7 +154,8 @@ public class OutgoingTrans extends Load{
     @Override
     public String printLoad(){
         return super.printLoad() + "\n" + "Outgoing Load Info "+ "\n Store Number: " + getStoreNumber()
-            + ", Seal Number: " + getSealNumber() + ", Insect Detected: " + isInsectDetected() + ", Time: " + getTsOut() + ", Employee Number: " + getEmployee().getID();
+            + ", Seal Number: " + getSealNumber() + ", Insect Detected: " + isInsectDetected() + ", Time: " + getTsOut() + ", Employee Number: " + getEmployee().getID() 
+            + ", Driver Number: " + getDr().getDlNumber();
     }
 
 }
