@@ -16,6 +16,8 @@ public class Load {
     private int trailerNumber;
 
     // 0 - "Empty" 1 - "1/4" 2 - "1/2" 3 - "3/4" 4 - "Full"
+    private String[] dunnageString = {"Empty", "1/4","1/2", "3/4", "Full"};
+
     private int dunnageIndex;
     private int storeNumber;
     private int loadNumber;
@@ -114,12 +116,28 @@ public class Load {
     public void setDunnageIndex(int dunnageIndex) {
         this.dunnageIndex = dunnageIndex;
     }
+    
+        /**
+     * @return the dunnageString
+     */
+    public String[] getDunnageString() {
+        return dunnageString;
+    }
 
+    /**
+     * @param dunnageString the dunnageString to set
+     */
+    public void setDunnageString(String[] dunnageString) {
+        this.dunnageString = dunnageString;
+    }
+    
     //Prints base load information, overriden by child
     public String printLoad(){
-        return "Load Information: " + "\n" + "Load Number: " + getLoadNumber() + ", TruckNumber: " + getTruckNumber() + ", TrailerNumber: " + getTrailerNumber()
-            + ", Dunnage Index: " + getDunnageIndex() + ", Load Complete: " + isLoadComplete();
+        return "Load Information: " + "\n" + "Load Number: " + getLoadNumber() + ", Truck Number: " + getTruckNumber() + ", TrailerNumber: " + getTrailerNumber()
+            + ", Dunnage Index: " + getDunnageIndex() + ", Dunnage String: " + getDunnageString()[dunnageIndex] + ", Load Complete: " + isLoadComplete();
     
     }
+
+
 
 }

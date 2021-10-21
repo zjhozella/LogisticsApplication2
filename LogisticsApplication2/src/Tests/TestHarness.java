@@ -28,7 +28,7 @@ public class TestHarness {
     public TestHarness(){
         
         //Outgoing Load Test
-        Driver dr1 = new Driver("12345678", "John", "Smith", "Company");
+        Driver dr1 = new Driver("12345678", "John", "Smith", "Landaire");
         Employee ep1 = new Employee(1279466832, "Bob", "Jones");
         OutgoingTrans ot1 = new OutgoingTrans(1, 458, 2318, 0, false, 61, 753146798, ep1, dr1, false, tsOut);
         
@@ -78,7 +78,7 @@ public class TestHarness {
         ArrayList<Load> loadList = new ArrayList<>();
         
         //Create Driver object
-        Driver dr1 = new Driver("12345678", "John", "Smith", "Company");
+        Driver dr1 = new Driver("12345678", "John", "Smith", "US Express");
         
         //Create employee objects
         Employee ep1 = new Employee(946, "Bob", "Jones");
@@ -90,7 +90,8 @@ public class TestHarness {
         //Create IncomingTrans and add to loadList array
         loadList.add(new IncomingTrans(1, 460, 2317, 3, true, ep2, false, tsIn));
 
-        //Iterate through each Load object type in the array and use the printLoad method that ////has an override in each child class of the super printLoad() method
+        /* Iterate through each Load object type in the array and use the printLoad method that has an override in each child class of the super printLoad() method. Prints Everny parameter from Load, IncomingTrans, OutgoingTrans. Includes DunnageIndex only for testing purpose. Only print Employee Number.
+        */
         for (int i = 0; i < loadList.size(); ++i){
             System.out.println("---- TEST CLASS HIERARCHY "+ (i+1) + " ----");
             System.out.println(loadList.get(i).printLoad());

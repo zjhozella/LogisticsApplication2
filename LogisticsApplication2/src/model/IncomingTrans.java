@@ -21,7 +21,7 @@ public class IncomingTrans extends Load{
     private long time = date.getTime();
     private Timestamp tsIn = new Timestamp(time);
 
-    // 0 - "Empty" 1 - "1/4" 2 - "1/2" 3 - "3/4" 4 - "Full"
+    // 0 - "Empty", 1 - "1/4", 2 - "1/2", 3 - "3/4", 4 - "Full"
     private int dunnageIndex = 0;
 
     private Employee employee;
@@ -112,7 +112,7 @@ public class IncomingTrans extends Load{
     @Override
     public String printLoad(){
         return super.printLoad() + "\n" + "Incoming Load Information: " + "\n" +
-            " Insect Detected: " + isInsectDetected() + ", Time: " + getTsIn() + ", Dunnage Index: " + getDunnageIndex() + ", Employee Number: " + getEmployee().getID();
+            " Insect Detected: " + isInsectDetected() + ", Time: " + getTsIn() + ", Dunnage Index: " + getDunnageIndex() + ", Dunnage String: " + getDunnageString()[getDunnageIndex()] + ", Employee Number: " + getEmployee().getID();
     }
 
 }
