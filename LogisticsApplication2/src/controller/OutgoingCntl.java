@@ -7,6 +7,7 @@ package controller;
 import java.sql.Timestamp;
 import model.Driver;
 import model.Employee;
+import model.Model;
 import model.OutgoingTrans;
 
 /**
@@ -28,7 +29,6 @@ public class OutgoingCntl {
         
         //OutgoingTrans object creation
         OutgoingTrans ot = new OutgoingTrans(loadNumber, truckNumber, trailerNumber, dunnageIndex, loadComplete, storeNumber, sealNumber, employee, driver, insectDetected, outTS);
-        
     }
     
 }
