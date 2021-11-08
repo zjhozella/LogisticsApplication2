@@ -25,7 +25,7 @@ public class Model {
     
     //Default Constructor
     public Model(){
-        
+        loadData();
     }
     
     //Method used to load example transactions into the array lists. This will not be needed in the actual application. Here for ease of testing.

@@ -38,13 +38,6 @@ public class Main {
    
     
     
-    public void createIncomingLoad(int loadNumber, int truckNumber, int trailerNumber, int dunnageIndex, boolean loadComplete, int employeeID, String employeeFN, String employeeLN, boolean insectDetected, Timestamp inTS){
-        
-        //Employee object creation
-        Employee employee = new Employee(employeeID, employeeFN, employeeLN);
-        
-        //IncomingTrans object creation
-        IncomingTrans it = new IncomingTrans(loadNumber, truckNumber, trailerNumber, dunnageIndex, loadComplete, employee, insectDetected, inTS);
-    }
+    
     
 }
