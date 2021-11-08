@@ -8,6 +8,6 @@ package controller;
  *
  * @author zjhoz
  */
-public class ConfirmationViewCntl {
+public class ConfirmationCntl {
     
 }
