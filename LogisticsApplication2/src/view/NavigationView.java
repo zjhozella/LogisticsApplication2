@@ -23,8 +23,9 @@ public class NavigationView {
         System.out.println("Welcome to Logistics Application\nPlease select one of the options below:");
         System.out.println("(1) - Enter New Outgoing Load");
         System.out.println("(2) - Enter New Incoming Load");
-        System.out.println("(3) - Delete Outgoing Load");
-        System.out.println("(4) - Delete Incoming Load");
+        System.out.println("(3) - Edit Outgoing Load");
+        System.out.println("(4) - Edit Incoming Load");
+
 
         System.out.print("Enter your choice: ");
         int option = scnr.nextInt();
@@ -37,10 +38,13 @@ public class NavigationView {
                 IncomingCntl inLoad = new IncomingCntl();
                 break;
             case 3:
+            //create new editOutLoadCntl
                 break;
             case 4:
+            //create new editInLoadCntl
                 break;
             case 5:
+            //create new edit
                 break;
         }
     }
