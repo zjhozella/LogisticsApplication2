@@ -13,7 +13,7 @@ import model.OutgoingTrans;
  *
  * @author zjhoz
  */
-public class OutgoingViewCntl {
+public class OutgoingCntl {
     
     // Take input from ConfirmationView, feed into Load object constructor for an outgoing load
     public void createOutgoingLoad(int loadNumber, int truckNumber, int trailerNumber, int dunnageIndex, int storeNumber,
