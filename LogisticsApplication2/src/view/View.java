@@ -10,4 +10,8 @@ package view;
  */
 public class View {
     
+    //Default Constructor
+    public View(){
+        
+    }
 }

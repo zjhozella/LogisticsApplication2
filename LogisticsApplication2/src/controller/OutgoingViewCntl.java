@@ -4,10 +4,31 @@
  */
 package controller;
 
+import java.sql.Timestamp;
+import model.Driver;
+import model.Employee;
+import model.OutgoingTrans;
+
 /**
  *
  * @author zjhoz
  */
 public class OutgoingViewCntl {
+    
+    // Take input from ConfirmationView, feed into Load object constructor for an outgoing load
+    public void createOutgoingLoad(int loadNumber, int truckNumber, int trailerNumber, int dunnageIndex, int storeNumber,
+            int sealNumber, String driverNumber,  boolean loadComplete, String driverFN, String driverLN, String driverCompany,
+            int employeeID, String employeeFN, String employeeLN, boolean insectDetected, Timestamp outTS){
+        
+        //Driver object creation
+        Driver driver = new Driver(driverNumber, driverFN, driverLN, driverCompany);
+        
+        //Employee object creation
+        Employee employee = new Employee(employeeID, employeeFN, employeeLN);
+        
+        //OutgoingTrans object creation
+        OutgoingTrans ot = new OutgoingTrans(loadNumber, truckNumber, trailerNumber, dunnageIndex, loadComplete, storeNumber, sealNumber, employee, driver, insectDetected, outTS);
+        
+    }
     
 }

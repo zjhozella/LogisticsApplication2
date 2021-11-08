@@ -6,11 +6,14 @@
 package logisticsapplication2;
 
 import Tests.TestHarness;
+import controller.Controller;
 import java.sql.Timestamp;
 import model.Driver;
 import model.Employee;
 import model.IncomingTrans;
+import model.Model;
 import model.OutgoingTrans;
+import view.View;
 
 /**
  *
@@ -23,29 +26,17 @@ public class Main {
      */
     public static void main(String[] args) {
                 
-        // Send Load object attributes to database using an sql statement
-
+        Model model = new Model();
+        View view = new View();
+        Controller controller = new Controller(model, view);
+        
         /*** Test Harness ***/
-        TestHarness test = new TestHarness();
-        test.testClassHierarchy();
+        /*TestHarness test = new TestHarness();
+        test.testClassHierarchy();*/
         
     }
    
-    // Take input from ConfirmationView, feed into Load object constructor for an outgoing load
-    public void createOutgoingLoad(int loadNumber, int truckNumber, int trailerNumber, int dunnageIndex, int storeNumber,
-            int sealNumber, String driverNumber,  boolean loadComplete, String driverFN, String driverLN, String driverCompany,
-            int employeeID, String employeeFN, String employeeLN, boolean insectDetected, Timestamp outTS){
-        
-        //Driver object creation
-        Driver driver = new Driver(driverNumber, driverFN, driverLN, driverCompany);
-        
-        //Employee object creation
-        Employee employee = new Employee(employeeID, employeeFN, employeeLN);
-        
-        //OutgoingTrans object creation
-        OutgoingTrans ot = new OutgoingTrans(loadNumber, truckNumber, trailerNumber, dunnageIndex, loadComplete, storeNumber, sealNumber, employee, driver, insectDetected, outTS);
-        
-    }
+    
     
     public void createIncomingLoad(int loadNumber, int truckNumber, int trailerNumber, int dunnageIndex, boolean loadComplete, int employeeID, String employeeFN, String employeeLN, boolean insectDetected, Timestamp inTS){
         
