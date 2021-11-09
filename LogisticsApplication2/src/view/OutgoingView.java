@@ -47,8 +47,11 @@ public class OutgoingView {
         truckNumber = scnr.nextInt();
         System.out.print("Enter Trailer Number:");
         trailerNumber = scnr.nextInt();
+
+        //I think we should leave this to default of 0 since there will be no dunnage for an outgoing load
         System.out.print("Enter Dunnage (0)-EMPTY, (1)-1/4, (2)-1/2, (3)-1/3, (4)-FULL :");
         dunnageIndex = scnr.nextInt();
+        
         System.out.print("Enter Store Number:");
         storeNumber = scnr.nextInt();
         System.out.print("Enter Seal Number:");
