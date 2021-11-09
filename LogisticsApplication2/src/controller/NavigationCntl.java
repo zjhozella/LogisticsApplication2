@@ -31,12 +31,14 @@ public class NavigationCntl { //NavigationCntl should call NavView to print
             case 4: 
                 editInLoadCntl editInLoad = new editInLoadCntl();
                 break;
-            default:
-                System.out.println("Invalid option, please try again!");
+            case 9:
+                System.out.println("Goodbye!");
+                System.exit(0);
+            default: 
+                System.out.println("Invalid Option, choose again!");
                 break;
         }
 
-        
     }
 
 }

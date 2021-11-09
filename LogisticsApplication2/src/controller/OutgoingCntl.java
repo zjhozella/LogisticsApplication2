@@ -5,6 +5,9 @@
 package controller;
 
 import java.sql.Timestamp;
+
+import javax.print.attribute.standard.MediaSize.NA;
+
 import model.Driver;
 import model.Employee;
 import model.Model;
@@ -20,8 +23,6 @@ public class OutgoingCntl {
     public OutgoingCntl(){
         System.out.println("Welcome to the OutgoingCntl");
     }
-
-    
 
     // Take input from ConfirmationView, feed into Load object constructor for an outgoing load
     public void createOutgoingLoad(int loadNumber, int truckNumber, int trailerNumber, int dunnageIndex, int storeNumber,
