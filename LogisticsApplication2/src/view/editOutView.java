@@ -22,9 +22,16 @@ public class editOutView {
         System.out.println("(4) - Edit Seal Number");
         System.out.println("(5) - Edit Driver Number");
         System.out.println("(6) - Edit Insect Status");
-        System.out.println("(9) - Exit");
+        System.out.println("(9) - Exit to main menu");
 
 
+    }
+
+    public String editTruckNum() {
+        System.out.print("Enter new value for Truck Number: ");
+        String newTruckNum = scnr.next();
+        System.out.println("New Truck Number for load is now: " + newTruckNum);
+        return newTruckNum;
     }
 
 
