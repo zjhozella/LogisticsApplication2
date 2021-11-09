@@ -22,9 +22,20 @@ public class editOutLoadCntl{
                 // method for editing trailer number
                 break;
 
+            case 3:
+                // method call for editing store number
+                break;
+            case 4:
+                // method call for editing seal num
+                break;
+            case 5:
+                // method call for editing driver num
+                break;
+            case 6:
+                // method call for editing insect status
+                break;
 
-
-            case 9:
+            case 9: // Return to main menu
                 NavigationCntl returnUI = new NavigationCntl();
         }
 
