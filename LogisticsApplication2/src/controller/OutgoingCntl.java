@@ -36,7 +36,7 @@ public class OutgoingCntl {
         Employee employee = new Employee(employeeID, employeeFN, employeeLN);
         //OutgoingTrans object creation
         OutgoingTrans ot = new OutgoingTrans(loadNumber, truckNumber, trailerNumber, dunnageIndex, loadComplete, storeNumber, sealNumber, employee, driver, insectDetected, outTS);
-        
+        Model.addToOutList(ot);
     }
     
 }
