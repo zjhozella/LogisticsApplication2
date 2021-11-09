@@ -16,6 +16,13 @@ import model.OutgoingTrans;
  */
 public class OutgoingCntl {
     
+    //Navigation Test
+    public OutgoingCntl(){
+        System.out.println("Welcome to the OutgoingCntl");
+    }
+
+    
+
     // Take input from ConfirmationView, feed into Load object constructor for an outgoing load
     public void createOutgoingLoad(int loadNumber, int truckNumber, int trailerNumber, int dunnageIndex, int storeNumber,
             int sealNumber, String driverNumber,  boolean loadComplete, String driverFN, String driverLN, String driverCompany,
@@ -26,9 +33,9 @@ public class OutgoingCntl {
         
         //Employee object creation
         Employee employee = new Employee(employeeID, employeeFN, employeeLN);
-        
         //OutgoingTrans object creation
         OutgoingTrans ot = new OutgoingTrans(loadNumber, truckNumber, trailerNumber, dunnageIndex, loadComplete, storeNumber, sealNumber, employee, driver, insectDetected, outTS);
+        
     }
     
 }

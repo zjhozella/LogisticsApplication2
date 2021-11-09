@@ -15,6 +15,10 @@ import model.Model;
  */
 public class IncomingCntl {
     
+    //Navigation Test
+    public IncomingCntl(){
+        System.out.println("Welcome to the IncomingCntl");
+    }
     
     public void createIncomingLoad(int loadNumber, int truckNumber, int trailerNumber, int dunnageIndex, boolean loadComplete, int employeeID, String employeeFN, String employeeLN, boolean insectDetected, Timestamp inTS){
         
@@ -24,5 +28,8 @@ public class IncomingCntl {
         //IncomingTrans object creation
         IncomingTrans it = new IncomingTrans(loadNumber, truckNumber, trailerNumber, dunnageIndex, loadComplete, employee, insectDetected, inTS);
         Model.addToInList(it);
+
+        System.out.println("Hello from the IncomingCntl"); // Testing Navigation
     }
+
 }

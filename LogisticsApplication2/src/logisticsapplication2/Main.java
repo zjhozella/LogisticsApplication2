@@ -6,14 +6,9 @@
 package logisticsapplication2;
 
 import Tests.TestHarness;
-import controller.Controller;
-import java.sql.Timestamp;
-import model.Driver;
-import model.Employee;
-import model.IncomingTrans;
-import model.Model;
-import model.OutgoingTrans;
-import view.View;
+import controller.*;
+import model.*;
+import view.*;
 
 /**
  *
@@ -29,7 +24,11 @@ public class Main {
         Model model = new Model();
         View view = new View();
         Controller controller = new Controller(model, view);
+        NavigationCntl navCntl = new NavigationCntl();
         
+        
+        //Main has to create a NavigationCntl 
+
         /*** Test Harness ***/
         /*TestHarness test = new TestHarness();
         test.testClassHierarchy();*/
