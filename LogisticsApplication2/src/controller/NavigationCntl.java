@@ -3,9 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package controller;
-import model.Load;
 import view.NavigationView;
 import java.util.Scanner;
+import view.OutgoingView;
 
 /**
  *
@@ -27,7 +27,7 @@ public class NavigationCntl { //NavigationCntl should call NavView to print
         
             switch (option){
                 case 1: 
-                    OutgoingCntl outLoad = new OutgoingCntl();
+                    OutgoingView outLoad = new OutgoingView();
                     nav = false;
                     break;
                 case 2:
