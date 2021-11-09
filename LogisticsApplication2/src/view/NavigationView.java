@@ -20,6 +20,7 @@ public class NavigationView {
         System.out.println("(2) - Enter New Incoming Load");
         System.out.println("(3) - Edit Outgoing Load");
         System.out.println("(4) - Edit Incoming Load");
+        System.out.println("(9) - Quit");
         System.out.print("Enter your choice: ");
     }
     
