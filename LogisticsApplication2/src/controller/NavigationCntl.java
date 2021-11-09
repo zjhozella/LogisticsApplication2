@@ -20,12 +20,11 @@ public class NavigationCntl { //NavigationCntl should call NavView to print
         //Wrapped in a while loop, to handle unexpected input.
         //Can change behavior by editing status of nav in each case.
         //Currently program sends to selected controller then EXITS. 
-        //If nav changed to true in case then menu would re-load.
+        //If nav changed to true in case then menu would re-load. (This is prob how it should be)
         while(nav){
             NavigationView navMenu= new NavigationView();
             int option = scnr.nextInt();
         
-
             switch (option){
                 case 1: 
                     OutgoingCntl outLoad = new OutgoingCntl();
