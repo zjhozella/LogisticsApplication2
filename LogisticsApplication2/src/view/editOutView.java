@@ -14,9 +14,9 @@ public class editOutView {
         System.out.print("Please enter load number to edit: ");
     }
 
+    // Menu For editing outTrans paramaters
+    // Not all parameters are editable for security reasons
     public void editOutMenu(){
-        // Menu For editing outTrans paramaters
-        // Not all parameters are editable for security reasons
         System.out.println("Select an attribute to edit from list below: ");
         System.out.println("(1) - Edit Truck Number");   //Truck Number = Int
         System.out.println("(2) - Edit Trailer Number"); // Trailer Number = Int 
@@ -27,8 +27,14 @@ public class editOutView {
         System.out.println("(9) - Exit to main menu");
     }
 
+    //Menu for editing truck number parameter
     public void editTruckNum(){
         System.out.println("Enter new Truck Number: ");
+    }
+
+    //Menu for editing trailer number
+    public void editTrailerNum(){
+        System.out.println("Enter new Trailer Number: ");
     }
 
 
