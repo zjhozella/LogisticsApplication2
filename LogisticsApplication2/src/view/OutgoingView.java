@@ -6,9 +6,8 @@
 package view;
 
 import controller.OutgoingCntl;
-import java.sql.Timestamp;
-import java.util.Date;
-import java.util.Scanner;
+
+
 
 /**
  *
@@ -16,326 +15,76 @@ import java.util.Scanner;
  */
 public class OutgoingView {
 
-    Scanner scnr = new Scanner(System.in);
-    //All variables used for storage of data entered into the fields
-    
-    //Load attribute initialization
-    private int truckNumber, trailerNumber, dunnageIndex, storeNumber, sealNumber;
-    private boolean loadComplete;
-    
-    //Driver attribute initialization
-    private String DLNumber, DFirstName, DLastName, DCompany;
-    
-    //Employee attrubute initialization
-    private int EID;
-    private String EFirstName, ELastName;
-    
-    //OutgoingTrans attribute initialization
-    private boolean insectDetected = false;
-    private Timestamp outTS;
-    
+    OutgoingCntl outCntl = new OutgoingCntl();
 
     public OutgoingView(){
         //Will contain all fields to collect data required for an outgoing load
         //Submit button will transfer all data into the ConfirmationView outgoing constructor 
         //for confirmation from the user
-        
-        
-        
+
         System.out.println("Outgoing Load:\n");
-        
-        truckNumber = scnr.nextInt();
-        
-        trailerNumber = scnr.nextInt();
-        
-        storeNumber = scnr.nextInt();
-        
-        sealNumber = scnr.nextInt();
-        
-        DLNumber = scnr.next();
-        
-        DFirstName = scnr.next();
-        
-        DLastName = scnr.next();
-        
-        DCompany = scnr.next();
-        
-        EID = scnr.nextInt();
-        
-        EFirstName = scnr.next();
-        
-        ELastName = scnr.next();
-        
-        if (scnr.nextInt() != 0){
-            insectDetected = true;
-        }
-        
-        OutgoingCntl outCntl = new OutgoingCntl();
-        Date date = new Date();
-        long time = date.getTime();
-        outTS = new Timestamp(time);
-        outCntl.createOutgoingLoad(truckNumber, trailerNumber, dunnageIndex, storeNumber, sealNumber, DLNumber, 
-                loadComplete, DLNumber, DLNumber, DCompany, EID, DLNumber, DLNumber, insectDetected, outTS);
-        
-        
-        
+  
     }
 
-    public void enterTruckNum(){
+    
+    public void printTruckNum(){
         System.out.print("Enter Truck Number:");
+        outCntl.enterTruckNum();
     }
     
-    public void enterTrailerNum(){
+    public void printTrailerNum(){
         System.out.print("Enter Trailer Number:");
+        outCntl.enterTrailerNum();
     }
     
-    public void enterStoreNum(){
+    public void printStoreNum(){
         System.out.print("Enter Store Number:");
+        outCntl.enterStoreNum();
     }
     
-    public void enterSealNum() {
+    public void printSealNum() {
         System.out.print("Enter Seal Number:");
+        outCntl.enterSealNum();
     }
     
-    public void enterDLNum(){
+    public void printDLNum(){
         System.out.print("Enter Driver License Number:");
+        outCntl.enterDLNum();
     }
     
-    public void enterDFirstName(){
+    public void printDFirstName(){
         System.out.print("Enter Driver First Name:");
+        outCntl.enterDFirstName();
     }
     
-    public void enterDLastName(){
+    public void printDLastName(){
         System.out.print("Enter Driver Last Name:");
+        outCntl.enterDLastName();
     }
     
-    public void enterDCompany(){
+    public void printDCompany(){
         System.out.print("Enter Driver Company:");
+        outCntl.enterDCompany();
     }
     
-    public void enterEID(){
+    public void printEID(){
         System.out.print("Enter Employee ID:");
+        outCntl.enterEID();
     }
     
-    public void enterEFirstName(){
+    public void printEFirstName(){
         System.out.print("Enter Employee First Name:");
+        outCntl.enterEFirstName();
     }
     
-    public void enterELastName(){
+    public void printELastName(){
         System.out.print("Enter Employee Last Name:");
+        outCntl.enterELastName();
     }
     
-    public void enterInsect(){
+    public void printInsect(){
         System.out.print("Are there insects detected? (0)-No, (1)-Yes:");
+        outCntl.enterInsect();
     }
     
-    /**
-     * @return the truckNumber
-     */
-    public int getTruckNumber() {
-        return truckNumber;
-    }
-
-    /**
-     * @param truckNumber the truckNumber to set
-     */
-    public void setTruckNumber(int truckNumber) {
-        this.truckNumber = truckNumber;
-    }
-
-    /**
-     * @return the trailerNumber
-     */
-    public int getTrailerNumber() {
-        return trailerNumber;
-    }
-
-    /**
-     * @param trailerNumber the trailerNumber to set
-     */
-    public void setTrailerNumber(int trailerNumber) {
-        this.trailerNumber = trailerNumber;
-    }
-
-    /**
-     * @return the storeNumber
-     */
-    public int getStoreNumber() {
-        return storeNumber;
-    }
-
-    /**
-     * @param storeNumber the storeNumber to set
-     */
-    public void setStoreNumber(int storeNumber) {
-        this.storeNumber = storeNumber;
-    }
-
-    /**
-     * @return the sealNumber
-     */
-    public int getSealNumber() {
-        return sealNumber;
-    }
-
-    /**
-     * @param sealNumber the sealNumber to set
-     */
-    public void setSealNumber(int sealNumber) {
-        this.sealNumber = sealNumber;
-    }    
-
-    /**
-     * @return the dunnageIndex
-     */
-    public int getDunnageIndex() {
-        return dunnageIndex;
-    }
-
-    /**
-     * @param dunnageIndex the dunnageIndex to set
-     */
-    public void setDunnageIndex(int dunnageIndex) {
-        this.dunnageIndex = dunnageIndex;
-    }
-
-    /**
-     * @return the loadComplete
-     */
-    public boolean isLoadComplete() {
-        return loadComplete;
-    }
-
-    /**
-     * @param loadComplete the loadComplete to set
-     */
-    public void setLoadComplete(boolean loadComplete) {
-        this.loadComplete = loadComplete;
-    }
-
-    /**
-     * @return the newDlNumber
-     */
-    public String getNewDlNumber() {
-        return DLNumber;
-    }
-
-    /**
-     * @param newDlNumber the newDlNumber to set
-     */
-    public void setNewDlNumber(String newDlNumber) {
-        this.DLNumber = newDlNumber;
-    }
-
-    /**
-     * @return the newFirstName
-     */
-    public String getNewFirstName() {
-        return DFirstName;
-    }
-
-    /**
-     * @param newFirstName the newFirstName to set
-     */
-    public void setNewFirstName(String newFirstName) {
-        this.DFirstName = newFirstName;
-    }
-
-    /**
-     * @return the newLastName
-     */
-    public String getNewLastName() {
-        return DLastName;
-    }
-
-    /**
-     * @param newLastName the newLastName to set
-     */
-    public void setNewLastName(String newLastName) {
-        this.DLastName = newLastName;
-    }
-
-    /**
-     * @return the newCompany
-     */
-    public String getNewCompany() {
-        return DCompany;
-    }
-
-    /**
-     * @param newCompany the newCompany to set
-     */
-    public void setNewCompany(String newCompany) {
-        this.DCompany = newCompany;
-    }
-
-    /**
-     * @return the id
-     */
-    public int getId() {
-        return EID;
-    }
-
-    /**
-     * @param id the id to set
-     */
-    public void setId(int id) {
-        this.EID = id;
-    }
-
-    /**
-     * @return the firstName
-     */
-    public String getFirstName() {
-        return EFirstName;
-    }
-
-    /**
-     * @param firstName the firstName to set
-     */
-    public void setFirstName(String firstName) {
-        this.EFirstName = firstName;
-    }
-
-    /**
-     * @return the lastName
-     */
-    public String getLastName() {
-        return ELastName;
-    }
-
-    /**
-     * @param lastName the lastName to set
-     */
-    public void setLastName(String lastName) {
-        this.ELastName = lastName;
-    }
-
-    /**
-     * @return the insectDetected
-     */
-    public boolean isInsectDetected() {
-        return insectDetected;
-    }
-
-    /**
-     * @param insectDetected the insectDetected to set
-     */
-    public void setInsectDetected(boolean insectDetected) {
-        this.insectDetected = insectDetected;
-    }
-
-    /**
-     * @return the outTS
-     */
-    public Timestamp getOutTS() {
-        return outTS;
-    }
-
-    /**
-     * @param outTS the outTS to set
-     */
-    public void setOutTS(Timestamp outTS) {
-        this.outTS = outTS;
-    }
 }
