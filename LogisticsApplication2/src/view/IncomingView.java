@@ -11,8 +11,6 @@ package view;
  */
 public class IncomingView {
     
-   
-    
     public IncomingView(){
         //Will contain all fields to collect data required for an incoming load
         //Submit button will transfer all data into the ConfirmationView incoming constructor 

@@ -23,7 +23,7 @@ public class editOutLoadCntl{
                 //method for editing truck number
                 editOut.editTruckNum();
                 int newTruckNum = scnr.nextInt();
-                Model.getOutList()
+                Model.getOutList();
 
 
                 break;

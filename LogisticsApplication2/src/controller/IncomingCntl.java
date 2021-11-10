@@ -5,10 +5,12 @@
 package controller;
 
 import java.sql.Timestamp;
+import java.util.Date;
 import java.util.Scanner;
 import model.Employee;
 import model.IncomingTrans;
 import model.Model;
+import view.IncomingView;
 
 /**
  *
@@ -17,11 +19,12 @@ import model.Model;
 public class IncomingCntl {
     
     private Scanner scnr = new Scanner(System.in);
+    public IncomingView view = new IncomingView();
     
     //All variables used for storage of data entered into the fields
     
     //Load attribute initialization
-    private int truckNumber, trailerNumber, dunnageIndex;
+    private int loadNumber, truckNumber, trailerNumber, dunnageIndex;
     private boolean loadComplete;
     
     //Employee attrubute initialization
@@ -34,10 +37,15 @@ public class IncomingCntl {
     
     //Navigation Test
     public IncomingCntl(){
-        System.out.println("Welcome to the IncomingCntl");
+        view.printTruckNum();
+        
     }
     
-    public void createIncomingLoad(int loadNumber, int truckNumber, int trailerNumber, int dunnageIndex, boolean loadComplete, int employeeID, String employeeFN, String employeeLN, boolean insectDetected, Timestamp inTS){
+    public void createIncomingLoad(){
+        
+        Date date = new Date();
+        long time = date.getTime();
+        Timestamp inTS = new Timestamp(time);
         
         //Employee object creation
         Employee employee = new Employee(employeeID, employeeFN, employeeLN);
@@ -46,31 +54,37 @@ public class IncomingCntl {
         IncomingTrans it = new IncomingTrans(loadNumber, truckNumber, trailerNumber, dunnageIndex, loadComplete, employee, insectDetected, inTS);
         Model.addToInList(it);
 
-        System.out.println("Hello from the IncomingCntl"); // Testing Navigation
+       
     }
     
     public void enterTruckNum(){
         setTruckNumber(getScnr().nextInt());
+        view.printTrailerNum();
     }
     
     public void enterTrailerNum(){
         setTrailerNumber(getScnr().nextInt());
+        view.printDunnage();
     }
     
     public void enterDunnage(){
         setDunnageIndex(getScnr().nextInt());
+        view.printEID();
     }
     
     public void enterEID(){
         setEmployeeID(getScnr().nextInt());
+        view.printEFirstName();
     }
     
     public void enterEFirstName(){
         setEmployeeFN(getScnr().next());
+        view.printELastName();
     }
     
     public void enterELastName(){
         setEmployeeLN(getScnr().next());
+        view.printInsect();
     }
     
     public void enterInsect(){
