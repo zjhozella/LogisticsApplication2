@@ -121,6 +121,7 @@ public class OutgoingCntl {
         if (getScnr().nextInt() != 0){
             setInsectDetected(true);
         }
+        createOutgoingLoad();
     }
 
     /**

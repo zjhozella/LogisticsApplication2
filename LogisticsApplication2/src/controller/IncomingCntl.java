@@ -91,6 +91,7 @@ public class IncomingCntl {
         if (getScnr().nextInt() != 0){
             setInsectDetected(true);
         }
+        createIncomingLoad();
     }
 
     /**
