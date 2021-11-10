@@ -13,13 +13,14 @@ public class editOutLoadCntl{
 
         editOutView editOut = new editOutView();
         int loadNum = scnr.nextInt();
+        System.out.println(Model.getOutList().get(loadNum).printLoad());
         editOut.editOutMenu();
         int option = scnr.nextInt();
         
         switch (option){
             case 1:
                 //method for editing truck number
-                
+
                 break;
             case 2:
                 // method for editing trailer number
