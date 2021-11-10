@@ -6,12 +6,15 @@
 package view;
 
 import java.security.Timestamp;
+import java.util.Scanner;
 
 /**
  *
  * @author jprince, zjhoz
  */
 public class IncomingView {
+    
+    Scanner scnr = new Scanner(System.in);
     
     //All variables used for storage of data entered into the fields
     
@@ -33,6 +36,28 @@ public class IncomingView {
         //Submit button will transfer all data into the ConfirmationView incoming constructor 
         //for confirmation from the user
         //Use the truckNumber and trailerNumber pair to find matching loadNumber to send to confirmationView
+        
+        System.out.println("Outgoing Load:\n");
+        System.out.print("Enter Truck Number:");
+        truckNumber = scnr.nextInt();
+        System.out.print("Enter Trailer Number:");
+        trailerNumber = scnr.nextInt();
+        System.out.print("Enter Dunnage Number:");
+        dunnageIndex = scnr.nextInt();
+        System.out.print("Enter Employee ID:");
+        employeeID = scnr.nextInt();
+        System.out.print("Enter Employee First Name:");
+        employeeFN = scnr.next();
+        System.out.print("Enter Truck Number:");
+        employeeLN = scnr.next();
+        System.out.print("Are there insects detected? (0)-No, (1)-Yes:");
+        if (scnr.nextInt() == 0){
+            insectDetected = false;
+        }else{
+            insectDetected = true;
+        }
+        
+        
     }
 
     /**

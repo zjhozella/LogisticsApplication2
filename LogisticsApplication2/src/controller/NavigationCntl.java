@@ -5,6 +5,7 @@
 package controller;
 import view.NavigationView;
 import java.util.Scanner;
+import view.IncomingView;
 import view.OutgoingView;
 
 /**
@@ -31,7 +32,7 @@ public class NavigationCntl { //NavigationCntl should call NavView to print
                     nav = false;
                     break;
                 case 2:
-                    IncomingCntl inLoad = new IncomingCntl();
+                    IncomingView inLoad = new IncomingView();
                     nav = false;
                     break;
                 case 3:

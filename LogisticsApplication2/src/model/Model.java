@@ -32,6 +32,17 @@ public class Model {
     public void loadData(){
     
         //Outgoing Load Test
+        Driver dr0 = new Driver("null", "null", "null", "null");
+        Employee ep0 = new Employee(1279466832, "null", "null");
+        OutgoingTrans ot0 = new OutgoingTrans(0, 0, 0, 0, false, 0, 0, ep0, dr0, false, tsOut);
+        addToOutList(ot0);
+        
+        //Incoming Load Test
+        Employee ep01 = new Employee(0, "null", "null");
+        IncomingTrans it0 = new IncomingTrans(0, 0, 0, 0, true, ep01, false, tsIn);
+        addToInList(it0);
+        
+        //Outgoing Load Test
         Driver dr1 = new Driver("12345678", "John", "Smith", "Landaire");
         Employee ep1 = new Employee(1279466832, "Bob", "Jones");
         OutgoingTrans ot1 = new OutgoingTrans(1, 458, 2318, 0, false, 61, 753146798, ep1, dr1, false, tsOut);

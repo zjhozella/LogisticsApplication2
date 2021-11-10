@@ -20,7 +20,7 @@ public class OutgoingView {
     //All variables used for storage of data entered into the fields
     
     //Load attribute initialization
-    private int loadNumber, truckNumber, trailerNumber, dunnageIndex, storeNumber, sealNumber;
+    private int truckNumber, trailerNumber, dunnageIndex, storeNumber, sealNumber;
     private boolean loadComplete;
     
     //Driver attribute initialization
@@ -47,11 +47,6 @@ public class OutgoingView {
         truckNumber = scnr.nextInt();
         System.out.print("Enter Trailer Number:");
         trailerNumber = scnr.nextInt();
-
-        //I think we should leave this to default of 0 since there will be no dunnage for an outgoing load
-        System.out.print("Enter Dunnage (0)-EMPTY, (1)-1/4, (2)-1/2, (3)-1/3, (4)-FULL :");
-        dunnageIndex = scnr.nextInt();
-        
         System.out.print("Enter Store Number:");
         storeNumber = scnr.nextInt();
         System.out.print("Enter Seal Number:");
@@ -81,26 +76,15 @@ public class OutgoingView {
         Date date = new Date();
         long time = date.getTime();
         outTS = new Timestamp(time);
-        outCntl.createOutgoingLoad(loadNumber, truckNumber, trailerNumber, dunnageIndex, storeNumber, sealNumber, DLNumber, 
+        outCntl.createOutgoingLoad(truckNumber, trailerNumber, dunnageIndex, storeNumber, sealNumber, DLNumber, 
                 loadComplete, DLNumber, DLNumber, DCompany, EID, DLNumber, DLNumber, insectDetected, outTS);
         
         
         
     }
-    
-    /**
-     * @return the loadNumber
-     */
-    public int getLoadNumber() {
-        return loadNumber;
-    }
 
-    /**
-     * @param loadNumber the loadNumber to set
-     */
-    public void setLoadNumber(int loadNumber) {
-        this.loadNumber = loadNumber;
-    }
+    
+    
     
     /**
      * @return the truckNumber
