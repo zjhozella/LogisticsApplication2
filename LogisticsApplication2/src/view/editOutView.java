@@ -30,6 +30,7 @@ public class editOutView {
     //Menu for editing truck number parameter
     public void editTruckNum(){
         System.out.println("Enter new Truck Number: ");
+        
     }
 
     //Menu for editing trailer number

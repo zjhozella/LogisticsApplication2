@@ -57,7 +57,7 @@ public class Model {
         Driver dr2 = new Driver("87654321", "Joe", "Shmo", "Landaire");
         Employee ep3 = new Employee(1398466024, "Wade", "Rake");
         OutgoingTrans ot2 = new OutgoingTrans(2, 765, 1073, 0, false, 86, 757965123, ep3, dr2, false, tsOut);
-        addToOutList(ot1);
+        addToOutList(ot2);
         
         //Incoming Load Test
         Employee ep4 = new Employee(1279466832, "Steven", "Brisk");
