@@ -31,7 +31,7 @@ public class OutgoingView {
     private String EFirstName, ELastName;
     
     //OutgoingTrans attribute initialization
-    private boolean insectDetected;
+    private boolean insectDetected = false;
     private Timestamp outTS;
     
 
@@ -43,32 +43,30 @@ public class OutgoingView {
         
         
         System.out.println("Outgoing Load:\n");
-        System.out.print("Enter Truck Number:");
+        
         truckNumber = scnr.nextInt();
-        System.out.print("Enter Trailer Number:");
+        
         trailerNumber = scnr.nextInt();
-        System.out.print("Enter Store Number:");
+        
         storeNumber = scnr.nextInt();
-        System.out.print("Enter Seal Number:");
+        
         sealNumber = scnr.nextInt();
-        System.out.print("Enter Driver License Number:");
+        
         DLNumber = scnr.next();
-        System.out.print("Enter Driver First Name:");
+        
         DFirstName = scnr.next();
-        System.out.print("Enter Driver Last Name:");
+        
         DLastName = scnr.next();
-        System.out.print("Enter Driver Company:");
+        
         DCompany = scnr.next();
-        System.out.print("Enter Employee ID:");
+        
         EID = scnr.nextInt();
-        System.out.print("Enter Employee First Name:");
+        
         EFirstName = scnr.next();
-        System.out.print("Enter Employee Last Name:");
+        
         ELastName = scnr.next();
-        System.out.print("Are there insects detected? (0)-No, (1)-Yes:");
-        if (scnr.nextInt() == 0){
-            insectDetected = false;
-        }else{
+        
+        if (scnr.nextInt() != 0){
             insectDetected = true;
         }
         
@@ -83,8 +81,53 @@ public class OutgoingView {
         
     }
 
+    public void enterTruckNum(){
+        System.out.print("Enter Truck Number:");
+    }
     
+    public void enterTrailerNum(){
+        System.out.print("Enter Trailer Number:");
+    }
     
+    public void enterStoreNum(){
+        System.out.print("Enter Store Number:");
+    }
+    
+    public void enterSealNum() {
+        System.out.print("Enter Seal Number:");
+    }
+    
+    public void enterDLNum(){
+        System.out.print("Enter Driver License Number:");
+    }
+    
+    public void enterDFirstName(){
+        System.out.print("Enter Driver First Name:");
+    }
+    
+    public void enterDLastName(){
+        System.out.print("Enter Driver Last Name:");
+    }
+    
+    public void enterDCompany(){
+        System.out.print("Enter Driver Company:");
+    }
+    
+    public void enterEID(){
+        System.out.print("Enter Employee ID:");
+    }
+    
+    public void enterEFirstName(){
+        System.out.print("Enter Employee First Name:");
+    }
+    
+    public void enterELastName(){
+        System.out.print("Enter Employee Last Name:");
+    }
+    
+    public void enterInsect(){
+        System.out.print("Are there insects detected? (0)-No, (1)-Yes:");
+    }
     
     /**
      * @return the truckNumber

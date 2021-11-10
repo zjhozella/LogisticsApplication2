@@ -38,28 +38,54 @@ public class IncomingView {
         //Use the truckNumber and trailerNumber pair to find matching loadNumber to send to confirmationView
         
         System.out.println("Outgoing Load:\n");
-        System.out.print("Enter Truck Number:");
+        
         truckNumber = scnr.nextInt();
-        System.out.print("Enter Trailer Number:");
+        
         trailerNumber = scnr.nextInt();
-        System.out.print("Enter Dunnage Number:");
+        
         dunnageIndex = scnr.nextInt();
-        System.out.print("Enter Employee ID:");
+        
         employeeID = scnr.nextInt();
-        System.out.print("Enter Employee First Name:");
+        
         employeeFN = scnr.next();
-        System.out.print("Enter Truck Number:");
+        
         employeeLN = scnr.next();
-        System.out.print("Are there insects detected? (0)-No, (1)-Yes:");
-        if (scnr.nextInt() == 0){
-            insectDetected = false;
-        }else{
+        
+        if (scnr.nextInt() != 0){
             insectDetected = true;
         }
         
         
     }
 
+    public void enterTruckNum(){
+        System.out.print("Enter Truck Number:");
+    }
+    
+    public void enterTrailerNum(){
+        System.out.print("Enter Trailer Number:");
+    }
+    
+    public void enterDunnage(){
+        System.out.print("Enter Dunnage Number:");
+    }
+    
+    public void enterEID(){
+        System.out.print("Enter Employee ID:");
+    }
+    
+    public void enterEFirstName(){
+        System.out.print("Enter Employee First Name:");
+    }
+    
+    public void enterELastName(){
+        System.out.print("Enter Employee Last Name:");
+    }
+    
+    public void enterInsect(){
+        System.out.print("Are there insects detected? (0)-No, (1)-Yes:");
+    }
+    
     /**
      * @return the truckNumber
      */
