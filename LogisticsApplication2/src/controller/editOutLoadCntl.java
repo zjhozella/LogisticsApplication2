@@ -2,26 +2,28 @@ package controller;
 import model.*;
 import view.*;
 import java.util.Scanner;
-import java.util.Set;
 
 public class editOutLoadCntl{
     Scanner scnr = new Scanner(System.in);
     boolean nav = true;
 
-    public  editOutLoadCntl(){
+    public editOutLoadCntl(){
         //Test for navigation
         System.out.println("Welcome to editOutLoadCntl");
-        editOutView editOut = new editOutView();
-        int option = scnr.nextInt();
 
+        editOutView editOut = new editOutView();
+        int loadNum = scnr.nextInt();
+        editOut.editOutMenu();
+        int option = scnr.nextInt();
+        
         switch (option){
             case 1:
-                editOut.editTruckNum();
+                //method for editing truck number
+                
                 break;
             case 2:
                 // method for editing trailer number
                 break;
-
             case 3:
                 // method call for editing store number
                 break;
