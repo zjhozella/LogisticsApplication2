@@ -29,13 +29,32 @@ public class editOutView {
 
     //Menu for editing truck number parameter
     public void editTruckNum(){
-        System.out.println("Enter new Truck Number: ");
-        
+        System.out.print("Enter new Truck Number: ");
     }
 
     //Menu for editing trailer number
     public void editTrailerNum(){
-        System.out.println("Enter new Trailer Number: ");
+        System.out.print("Enter new Trailer Number: ");
+    }
+
+    //Menu for editing Store number
+    public void editStoreNum(){
+        System.out.print("Enter new Store Number: ");
+    }
+
+    //Menu for editing Seal number
+    public void editSealNum(){
+        System.out.print("Enter new Seal Number: ");
+    }
+
+    //Menu for editing Driver Number
+    public void editDriverNum(){
+        System.out.print("Enter new Driver Number: ");
+    }
+
+    //Menu for editing Insect Status
+    public void editInsectStatus(){
+        System.out.print("Enter new Insect Status (['y' = Insect Detected] ['n' = Insect NOT Detected]): ");
     }
 
 

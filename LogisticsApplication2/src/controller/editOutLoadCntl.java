@@ -13,39 +13,92 @@ public class editOutLoadCntl{
 
         editOutView editOut = new editOutView();
         int loadNum = scnr.nextInt();
+        //Print Selected Load
         System.out.println(Model.getOutList().get(loadNum).printLoad());
 
         editOut.editOutMenu();
         int option = scnr.nextInt();
         
-        switch (option){
-            case 1:
-                //method for editing truck number
-                editOut.editTruckNum();
-                int newTruckNum = scnr.nextInt();
-                Model.getOutList();
+        while(nav){
+            switch (option){
+                case 1:
+                    //method for editing truck number
+                    editOut.editTruckNum();
+                    int newTruckNum = scnr.nextInt();
+                    Model.getOutList().get(loadNum).setTruckNumber(newTruckNum);
+                    System.out.println("Truck Number for Load #" + loadNum + " has been updated to: "+ 
+                        Model.getOutList().get(loadNum).getTruckNumber());
+                    System.out.println();
+                    nav = false;
+                    break;
+                case 2:
+                    // method for editing trailer number
+                    editOut.editTrailerNum();
+                    int newTrailerNum = scnr.nextInt();
+                    Model.getOutList().get(loadNum).setTrailerNumber(newTrailerNum);
+                    System.out.println("Trailer Number for Load #" + loadNum + " has been updated to: "+
+                        Model.getOutList().get(loadNum).getTrailerNumber());
+                    System.out.println();
+                    nav = false;
+                    break;
+                case 3:
+                    // method call for editing store number
+                    editOut.editStoreNum();
+                    int newStoreNum = scnr.nextInt();
+                    Model.getOutList().get(loadNum).setStoreNumber(newStoreNum);
+                    System.out.println("Store Number for Load #" +loadNum+ " has been updated to: "+ 
+                        Model.getOutList().get(loadNum).getStoreNumber());
+                    System.out.println();
+                    nav = false;
+                    break;
+                case 4:
+                    // method call for editing seal num
+                    editOut.editSealNum();
+                    int newSealNum = scnr.nextInt();
+                    Model.getOutList().get(loadNum).setSealNumber(newSealNum);
+                    System.out.println("Seal Number for Load #"+loadNum+ " has been updated to: "+
+                        Model.getOutList().get(loadNum).getSealNumber());
+                    System.out.println();
+                    nav = false;
+                    break;
+                case 5:
+                    // method call for editing driver num
+                    editOut.editDriverNum();
+                    String newDriverNum = scnr.next();
+                    Model.getOutList().get(loadNum).getDr().setDlNumber(newDriverNum);
+                    System.out.println("Driver Number for Load #"+loadNum+" has been updated to: "+
+                        Model.getOutList().get(loadNum).getDr().getDlNumber());
+                    System.out.println();
+                    nav = false;
+                    break;
+                case 6:
+                    // method call for editing insect status
+                    editOut.editInsectStatus();
+                    Character newInsectStatus = scnr.next().charAt(0);
+                    if (newInsectStatus == 'y' || newInsectStatus == 'Y'){
+                        Model.getOutList().get(loadNum).setInsectDetected(true);
+                        System.out.println("Insect Status of Load #"+loadNum+ " has been updated to: "
+                        + Model.getOutList().get(loadNum).isInsectDetected());
+                        System.out.println();
+                    }
+                    if (newInsectStatus == 'n' || newInsectStatus == 'N'){
+                        Model.getOutList().get(loadNum).setInsectDetected(false);
+                        System.out.println("Insect Status of Load #"+loadNum+ " has been updated to: "
+                        + Model.getOutList().get(loadNum).isInsectDetected());
+                        System.out.println();
+                    }
+                    else {System.out.print("Invalid input!");};
+                    System.out.println();
+                    nav = false;
+                    break;
 
-
-                break;
-            case 2:
-                // method for editing trailer number
-                break;
-            case 3:
-                // method call for editing store number
-                break;
-            case 4:
-                // method call for editing seal num
-                break;
-            case 5:
-                // method call for editing driver num
-                break;
-            case 6:
-                // method call for editing insect status
-                break;
-
-            case 9: // Return to main menu
-                NavigationCntl returnUI = new NavigationCntl();
+                case 9: // Return to main menu
+                    nav=false;
+                    break;
+                }
         }
+        // Create new NavigationCntl to return to main Menu
+        NavigationCntl returnUI = new NavigationCntl();
 
     }
 
