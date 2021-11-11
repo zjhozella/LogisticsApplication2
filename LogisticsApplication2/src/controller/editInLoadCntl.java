@@ -49,8 +49,6 @@ public class editInLoadCntl{
                 Model.getInList().get(loadNum).setDunnageIndex(newDunnage);
                 System.out.println("Dunnage Index for Load #" +loadNum+ " has been updated to: "+ 
                     Model.getInList().get(loadNum).getDunnageIndex());
-                System.out.println("Dunnage String for Load #" +loadNum+ " has been updated to: "+
-                    Model.getInList().get(loadNum).getDunnageString().toString());
                 System.out.println();
                 nav = false;
                 break;
