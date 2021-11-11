@@ -21,7 +21,7 @@ public class editInLoadCntl{
         while (nav){
             switch(option){
                 case 1: 
-                //Method for editing Truck Numer
+                //Method for editing Truck Number
                 editIn.editTruckNum();
                 int newTruckNum = scnr.nextInt();
                 Model.getInList().get(loadNum).setTruckNumber(newTruckNum);
