@@ -31,12 +31,7 @@ public class editInView {
 
     //Menu for editing Dunnage inder
     public void editDunnage(){
-        System.out.println("Enter new Dunnage Amount: ");
-        System.out.println("(0) - Empty");
-        System.out.println("(1) - 1/4");
-        System.out.println("(2) - 1/2");
-        System.out.println("(3) - 3/4");
-        System.out.println("(4) - Full");
+        System.out.print("Enter new Dunnage Amount: ");
     }
 
     //Menu for editing Driver number
