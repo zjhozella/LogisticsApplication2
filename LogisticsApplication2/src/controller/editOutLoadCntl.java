@@ -16,7 +16,7 @@ public class editOutLoadCntl{
         //Print Selected Load
         System.out.println(Model.getOutList().get(loadNum).printLoad());
 
-        editOut.editOutMenu();
+        editOut.editOutMenu();// Display edit Out Nav menu
         int option = scnr.nextInt();
         
         while(nav){
@@ -77,18 +77,20 @@ public class editOutLoadCntl{
                     Character newInsectStatus = scnr.next().charAt(0);
                     if (newInsectStatus == 'y' || newInsectStatus == 'Y'){
                         Model.getOutList().get(loadNum).setInsectDetected(true);
-                        System.out.println("Insect Status of Load #"+loadNum+ " has been updated to: "
+                        System.out.println("Insect Detected Status of Load #"+loadNum+ " has been updated to: "
                         + Model.getOutList().get(loadNum).isInsectDetected());
                         System.out.println();
                     }
-                    if (newInsectStatus == 'n' || newInsectStatus == 'N'){
+                    else if (newInsectStatus == 'n' || newInsectStatus == 'N'){
                         Model.getOutList().get(loadNum).setInsectDetected(false);
-                        System.out.println("Insect Status of Load #"+loadNum+ " has been updated to: "
+                        System.out.println("Insect Detected Status of Load #"+loadNum+ " has been updated to: "
                         + Model.getOutList().get(loadNum).isInsectDetected());
                         System.out.println();
                     }
-                    else {System.out.print("Invalid input!");};
-                    System.out.println();
+                    else {
+                        System.out.println("Invalid input!");
+
+                    }
                     nav = false;
                     break;
 
