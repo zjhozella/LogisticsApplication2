@@ -28,7 +28,7 @@ public class NavigationCntl { //NavigationCntl should call NavView to print
         
             switch (option){
                 case 1: 
-                    OutgoingView outLoad = new OutgoingView();
+                    OutgoingCntl outLoad = new OutgoingCntl();
                     nav = false;
                     break;
                 case 2:

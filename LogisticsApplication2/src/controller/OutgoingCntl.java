@@ -21,7 +21,7 @@ import view.OutgoingView;
 public class OutgoingCntl {
     
     private Scanner scnr = new Scanner(System.in);
-    public OutgoingView view = new OutgoingView();
+    //public OutgoingView view = new OutgoingView();
 
     //All variables used for storage of data entered into the fields
     
@@ -42,7 +42,51 @@ public class OutgoingCntl {
     //Navigation Test
     public OutgoingCntl(){
         
-        view.printTruckNum();
+        OutgoingView view = new OutgoingView();
+        
+        System.out.print("Enter Truck Number:");
+        setTruckNumber(getScnr().nextInt());
+        
+        System.out.print("Enter Trailer Number:");
+        setTrailerNumber(getScnr().nextInt());
+        
+        System.out.print("Enter Store Number:");
+        setStoreNumber(getScnr().nextInt());
+        
+        System.out.print("Enter Seal Number:");
+        setSealNumber(getScnr().nextInt());
+        
+        System.out.print("Enter Driver License Number:");
+        setDLNumber(getScnr().next());
+        
+        System.out.print("Enter Driver First Name:");
+        setDFirstName(getScnr().next());
+        
+        System.out.print("Enter Driver Last Name:");
+        setDLastName(getScnr().next());
+        
+        System.out.print("Enter Driver Company:");
+        setDCompany(getScnr().next());
+        
+        System.out.print("Enter Employee ID:");
+        setEID(getScnr().nextInt());
+        
+        System.out.print("Enter Employee First Name:");
+        setEFirstName(getScnr().next());
+        
+        System.out.print("Enter Employee Last Name:");
+        setELastName(getScnr().next());
+        
+        System.out.print("Are there insects detected? (0)-No, (1)-Yes:");
+        if (getScnr().nextInt() != 0){
+            setInsectDetected(true);
+        }
+        
+        createOutgoingLoad();
+        
+        view.exitView();
+        
+        //view.printTruckNum();
     }
 
     // Take input from ConfirmationView, feed into Load object constructor for an outgoing load
@@ -61,7 +105,7 @@ public class OutgoingCntl {
         OutgoingTrans ot = new OutgoingTrans(Model.getOutList().size() , truckNumber, trailerNumber, dunnageIndex, loadComplete, storeNumber, sealNumber, employee, driver, insectDetected, outTS);
         Model.addToOutList(ot);
     }
-    
+    /*
     public void enterTruckNum(){
         setTruckNumber(getScnr().nextInt());
         view.printTrailerNum();
@@ -122,7 +166,7 @@ public class OutgoingCntl {
             setInsectDetected(true);
         }
         createOutgoingLoad();
-    }
+    }*/
 
     /**
      * @return the scnr

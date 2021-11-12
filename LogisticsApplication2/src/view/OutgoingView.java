@@ -7,26 +7,29 @@ package view;
 
 import controller.OutgoingCntl;
 
-
-
 /**
  *
  * @author jprince, zjhoz
  */
 public class OutgoingView {
 
-    OutgoingCntl outCntl = new OutgoingCntl();
+    //OutgoingCntl outCntl = new OutgoingCntl();
 
     public OutgoingView(){
         //Will contain all fields to collect data required for an outgoing load
         //Submit button will transfer all data into the ConfirmationView outgoing constructor 
         //for confirmation from the user
 
+        //Outgoing entry header
         System.out.println("Outgoing Load:\n");
   
     }
-
     
+    public void exitView(){
+        System.out.println("Move on to ConfirmationView");
+    }
+
+    /*
     public void printTruckNum(){
         System.out.print("Enter Truck Number:");
         outCntl.enterTruckNum();
@@ -85,6 +88,6 @@ public class OutgoingView {
     public void printInsect(){
         System.out.print("Are there insects detected? (0)-No, (1)-Yes:");
         outCntl.enterInsect();
-    }
+    }*/
     
 }
