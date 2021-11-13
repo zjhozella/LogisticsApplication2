@@ -15,6 +15,7 @@ import view.OutgoingView;
 public class NavigationCntl { //NavigationCntl should call NavView to print
     Scanner scnr = new Scanner(System.in);
     boolean nav = true;
+    OutgoingCntl outLoad = new OutgoingCntl();
 
     public NavigationCntl(){
 
@@ -28,7 +29,7 @@ public class NavigationCntl { //NavigationCntl should call NavView to print
         
             switch (option){
                 case 1: 
-                    OutgoingCntl outLoad = new OutgoingCntl();
+                    outLoad.createOutgoingLoad();
                     nav = false;
                     break;
                 case 2:
@@ -42,6 +43,9 @@ public class NavigationCntl { //NavigationCntl should call NavView to print
                 case 4: 
                     editInLoadCntl editInLoad = new editInLoadCntl();
                     nav = false;
+                    break;
+                case 5:
+                    outLoad.showAllOutgoing();
                     break;
                 case 9:
                     System.out.println("Goodbye!");

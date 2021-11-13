@@ -5,7 +5,8 @@
  */
 package view;
 
-import controller.OutgoingCntl;
+import model.Model;
+
 
 /**
  *
@@ -28,66 +29,24 @@ public class OutgoingView {
     public void exitView(){
         System.out.println("Move on to ConfirmationView");
     }
-
-    /*
-    public void printTruckNum(){
-        System.out.print("Enter Truck Number:");
-        outCntl.enterTruckNum();
-    }
     
-    public void printTrailerNum(){
-        System.out.print("Enter Trailer Number:");
-        outCntl.enterTrailerNum();
+    public static void displayAllOutgoingLoad() {
+        for (int i = 1; i < Model.getOutList().size(); ++i){
+            System.out.println(">>>Outgoing Load Record " + (i) + ":");
+            System.out.println("Timestamp: " + Model.getOutList().get(i).getTsOut());
+            System.out.println("Date: " + Model.getOutList().get(i).getDate());
+            System.out.println("Time: " + Model.getOutList().get(i).getTime());
+            System.out.println("Driver License Number: " + Model.getOutList().get(i).getDr().getDlNumber());
+            System.out.println("Driver Company: " + Model.getOutList().get(i).getDr().getCompany());
+            System.out.println("Driver First Name: " + Model.getOutList().get(i).getDr().getFirstName());
+            System.out.println("Driver Last Name: " + Model.getOutList().get(i).getDr().getLastName());
+            System.out.println("Employee First Name: " + Model.getOutList().get(i).getEmployee().getFirstName());
+            System.out.println("Employee Last Name: " + Model.getOutList().get(i).getEmployee().getLastName());
+            System.out.println("Truck Number: " + Model.getOutList().get(i).getTruckNumber());
+            System.out.println("Trailer Number: " + Model.getOutList().get(i).getTrailerNumber());
+            System.out.println("Store Number: " + Model.getOutList().get(i).getStoreNumber());
+            System.out.println("Seal Number: " + Model.getOutList().get(i).getSealNumber());
+        }
     }
-    
-    public void printStoreNum(){
-        System.out.print("Enter Store Number:");
-        outCntl.enterStoreNum();
-    }
-    
-    public void printSealNum() {
-        System.out.print("Enter Seal Number:");
-        outCntl.enterSealNum();
-    }
-    
-    public void printDLNum(){
-        System.out.print("Enter Driver License Number:");
-        outCntl.enterDLNum();
-    }
-    
-    public void printDFirstName(){
-        System.out.print("Enter Driver First Name:");
-        outCntl.enterDFirstName();
-    }
-    
-    public void printDLastName(){
-        System.out.print("Enter Driver Last Name:");
-        outCntl.enterDLastName();
-    }
-    
-    public void printDCompany(){
-        System.out.print("Enter Driver Company:");
-        outCntl.enterDCompany();
-    }
-    
-    public void printEID(){
-        System.out.print("Enter Employee ID:");
-        outCntl.enterEID();
-    }
-    
-    public void printEFirstName(){
-        System.out.print("Enter Employee First Name:");
-        outCntl.enterEFirstName();
-    }
-    
-    public void printELastName(){
-        System.out.print("Enter Employee Last Name:");
-        outCntl.enterELastName();
-    }
-    
-    public void printInsect(){
-        System.out.print("Are there insects detected? (0)-No, (1)-Yes:");
-        outCntl.enterInsect();
-    }*/
     
 }

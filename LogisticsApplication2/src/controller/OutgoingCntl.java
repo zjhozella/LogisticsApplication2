@@ -21,7 +21,6 @@ import view.OutgoingView;
 public class OutgoingCntl {
     
     private Scanner scnr = new Scanner(System.in);
-    //public OutgoingView view = new OutgoingView();
 
     //All variables used for storage of data entered into the fields
     
@@ -42,7 +41,15 @@ public class OutgoingCntl {
     //Navigation Test
     public OutgoingCntl(){
         
-        OutgoingView view = new OutgoingView();
+        
+    }
+
+    // Take input from ConfirmationView, feed into Load object constructor for an outgoing load
+    public void createOutgoingLoad(){
+        
+        Date date = new Date();
+        long time = date.getTime();
+        Timestamp outTS = new Timestamp(time);
         
         System.out.print("Enter Truck Number:");
         setTruckNumber(getScnr().nextInt());
@@ -77,24 +84,11 @@ public class OutgoingCntl {
         System.out.print("Enter Employee Last Name:");
         setELastName(getScnr().next());
         
-        System.out.print("Are there insects detected? (0)-No, (1)-Yes:");
+        System.out.print("Are there insects detected? (true/false):");
+        setInsectDetected(getScnr().nextBoolean());
         if (getScnr().nextInt() != 0){
             setInsectDetected(true);
         }
-        
-        createOutgoingLoad();
-        
-        view.exitView();
-        
-        //view.printTruckNum();
-    }
-
-    // Take input from ConfirmationView, feed into Load object constructor for an outgoing load
-    public void createOutgoingLoad(){
-        
-        Date date = new Date();
-        long time = date.getTime();
-        Timestamp outTS = new Timestamp(time);
         
         //Driver object creation
         Driver driver = new Driver(DLNumber, DFirstName, DLastName, DCompany);
@@ -105,68 +99,10 @@ public class OutgoingCntl {
         OutgoingTrans ot = new OutgoingTrans(Model.getOutList().size() , truckNumber, trailerNumber, dunnageIndex, loadComplete, storeNumber, sealNumber, employee, driver, insectDetected, outTS);
         Model.addToOutList(ot);
     }
-    /*
-    public void enterTruckNum(){
-        setTruckNumber(getScnr().nextInt());
-        view.printTrailerNum();
-    }
     
-    public void enterTrailerNum(){
-        setTrailerNumber(getScnr().nextInt());
-        view.printStoreNum();
+    public void showAllOutgoing(){
+            OutgoingView.displayAllOutgoingLoad();
     }
-    
-    public void enterStoreNum(){
-        setStoreNumber(getScnr().nextInt());
-        view.printSealNum();
-    }
-    
-    public void enterSealNum() {
-        setSealNumber(getScnr().nextInt());
-        view.printDLNum();
-    }
-    
-    public void enterDLNum(){
-        setDLNumber(getScnr().next());
-        view.printDFirstName();
-    }
-    
-    public void enterDFirstName(){
-        setDFirstName(getScnr().next());
-        view.printDLastName();
-    }
-    
-    public void enterDLastName(){
-        setDLastName(getScnr().next());
-        view.printDCompany();
-    }
-    
-    public void enterDCompany(){
-        setDCompany(getScnr().next());
-        view.printEID();
-    }
-    
-    public void enterEID(){
-        setEID(getScnr().nextInt());
-        view.printEFirstName();
-    }
-    
-    public void enterEFirstName(){
-        setEFirstName(getScnr().next());
-        view.printELastName();
-    }
-    
-    public void enterELastName(){
-        setELastName(getScnr().next());
-        view.printInsect();
-    }
-    
-    public void enterInsect(){
-        if (getScnr().nextInt() != 0){
-            setInsectDetected(true);
-        }
-        createOutgoingLoad();
-    }*/
 
     /**
      * @return the scnr
