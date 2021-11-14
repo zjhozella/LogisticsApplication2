@@ -15,7 +15,11 @@ public class NavigationView {
     //Will contain a frame, a panel within that frame, and 2 buttons (Outgoing, Incoming).
     //Button functionality will move the user to the respective screen
     public NavigationView(){
-        System.out.println("Welcome to Logistics Application\nPlease select one of the options below:");
+        System.out.println("Welcome to Logistics Application\n");
+    }
+    
+    public static void printMenu(){
+        System.out.println("Please select one of the options below:");
         System.out.println("(1) - Enter New Outgoing Load");
         System.out.println("(2) - Enter New Incoming Load");
         System.out.println("(3) - Edit Outgoing Load");

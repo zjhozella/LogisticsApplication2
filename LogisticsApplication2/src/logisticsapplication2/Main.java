@@ -22,9 +22,12 @@ public class Main {
     public static void main(String[] args) {
                 
         Model model = new Model();
-        View view = new View();
+        //Maybe NavigationView can be our main View instead since the View clas
+        // was doing nothing before?
+        //View view = new View(); 
+        NavigationView view = new NavigationView();
         Controller controller = new Controller(model, view);
-        NavigationCntl navCntl = new NavigationCntl();
+        //NavigationCntl navCntl = new NavigationCntl(); //Moved into the Controller class
         
         
         //Main has to create a NavigationCntl 
@@ -34,9 +37,4 @@ public class Main {
         test.testClassHierarchy();*/
         
     }
-   
-    
-    
-    
-    
 }

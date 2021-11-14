@@ -26,7 +26,7 @@ public class OutgoingView {
   
     }
     
-    public void exitView(){
+    public static void exitViewMessage(){
         System.out.println("Move on to ConfirmationView");
     }
     

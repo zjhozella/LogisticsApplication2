@@ -19,7 +19,6 @@ import view.IncomingView;
 public class IncomingCntl {
     
     private Scanner scnr = new Scanner(System.in);
-    public IncomingView view = new IncomingView();
     
     //All variables used for storage of data entered into the fields
     
@@ -37,7 +36,7 @@ public class IncomingCntl {
     
     //Navigation Test
     public IncomingCntl(){
-        view.printTruckNum();
+        
         
     }
     
@@ -46,6 +45,35 @@ public class IncomingCntl {
         Date date = new Date();
         long time = date.getTime();
         Timestamp inTS = new Timestamp(time);
+        
+        System.out.println("CREATE INCOMING LOAD:\n");
+        
+        System.out.print("Enter Truck Number:");
+        setTruckNumber(getScnr().nextInt());
+        
+        System.out.print("Enter Trailer Number:");
+        setTrailerNumber(getScnr().nextInt());
+       
+        loadComplete = true;
+        
+        System.out.print("Enter Dunnage Number:");
+        setDunnageIndex(getScnr().nextInt());
+        
+        System.out.print("Enter Employee ID:");
+        setEmployeeID(getScnr().nextInt());
+        
+        System.out.print("Enter Employee First Name:");
+        setEmployeeFN(getScnr().next());
+        
+        System.out.print("Enter Employee Last Name:");
+        setEmployeeLN(getScnr().next());
+        
+        System.out.print("Are there insects detected? 0 - No, 1 - Yes:");
+        if (getScnr().nextInt() != 0){
+            setInsectDetected(true);
+        }
+        
+        IncomingView.exitViewMessage();
         
         //Employee object creation
         Employee employee = new Employee(employeeID, employeeFN, employeeLN);
@@ -57,41 +85,8 @@ public class IncomingCntl {
        
     }
     
-    public void enterTruckNum(){
-        setTruckNumber(getScnr().nextInt());
-        view.printTrailerNum();
-    }
-    
-    public void enterTrailerNum(){
-        setTrailerNumber(getScnr().nextInt());
-        view.printDunnage();
-    }
-    
-    public void enterDunnage(){
-        setDunnageIndex(getScnr().nextInt());
-        view.printEID();
-    }
-    
-    public void enterEID(){
-        setEmployeeID(getScnr().nextInt());
-        view.printEFirstName();
-    }
-    
-    public void enterEFirstName(){
-        setEmployeeFN(getScnr().next());
-        view.printELastName();
-    }
-    
-    public void enterELastName(){
-        setEmployeeLN(getScnr().next());
-        view.printInsect();
-    }
-    
-    public void enterInsect(){
-        if (getScnr().nextInt() != 0){
-            setInsectDetected(true);
-        }
-        createIncomingLoad();
+    public void showAllIncoming(){
+        IncomingView.displayAllIncomingOutgoingLoad();
     }
 
     /**

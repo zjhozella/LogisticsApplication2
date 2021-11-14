@@ -6,6 +6,7 @@
 package view;
 
 import controller.IncomingCntl;
+import model.Model;
 
 /**
  *
@@ -20,46 +21,22 @@ public class IncomingView {
         //Submit button will transfer all data into the ConfirmationView incoming constructor 
         //for confirmation from the user
         //Use the truckNumber and trailerNumber pair to find matching loadNumber to send to confirmationView
-        
-        System.out.println("Outgoing Load:\n");
-  
     }
 
-    public void printTruckNum(){
-        System.out.print("Enter Truck Number:");
-        inCntl.enterTruckNum();
+    public static void exitViewMessage(){
+        System.out.println("Move on to ConfirmationView");
     }
     
-    public void printTrailerNum(){
-        System.out.print("Enter Trailer Number:");
-        inCntl.enterTrailerNum();
+    public static void displayAllIncomingOutgoingLoad() {
+        for (int i = 1; i < Model.getInList().size(); ++i){
+            System.out.println(">>>Incoming Load Record " + (i) + ":");
+            System.out.println("Timestamp: " + Model.getInList().get(i).getTsIn());
+            System.out.println("Date: " + Model.getInList().get(i).getDate());
+            System.out.println("Time: " + Model.getInList().get(i).getTime());
+            System.out.println("Employee First Name: " + Model.getInList().get(i).getEmployee().getFirstName());
+            System.out.println("Employee Last Name: " + Model.getInList().get(i).getEmployee().getLastName());
+            System.out.println("Truck Number: " + Model.getInList().get(i).getTruckNumber());
+            System.out.println("Trailer Number: " + Model.getInList().get(i).getTrailerNumber());
+        }
     }
-    
-    public void printDunnage(){
-        System.out.print("Enter Dunnage Number:");
-        inCntl.enterDunnage();
-    }
-    
-    public void printEID(){
-        System.out.print("Enter Employee ID:");
-        inCntl.enterEID();
-    }
-    
-    public void printEFirstName(){
-        System.out.print("Enter Employee First Name:");
-        inCntl.enterEFirstName();
-    }
-    
-    public void printELastName(){
-        System.out.print("Enter Employee Last Name:");
-        inCntl.enterELastName();
-    }
-    
-    public void printInsect(){
-        System.out.print("Are there insects detected? (0)-No, (1)-Yes:");
-        inCntl.enterInsect();
-    }
-    
-    
-
 }

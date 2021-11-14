@@ -5,7 +5,8 @@
 package controller;
 
 import model.Model;
-import view.View;
+import view.NavigationView;
+//import view.View;
 
 /**
  *
@@ -14,11 +15,14 @@ import view.View;
 public class Controller {
     
     private Model model;
-    private View view;
+    private NavigationView view;
+    //private View view;
     
-    public Controller(Model model, View view){
+    public Controller(Model model, NavigationView view){
         this.model = model;
         this.view = view;
+        
+        NavigationCntl navCntl = new NavigationCntl();
     }
 
     /**
@@ -38,16 +42,29 @@ public class Controller {
     /**
      * @return the view
      */
-    public View getView() {
+    public NavigationView getView() {
         return view;
     }
 
     /**
      * @param view the view to set
      */
-    public void setView(View view) {
+    public void setView(NavigationView view) {
         this.view = view;
     }
-
     
+    
+    /**
+     * @return the view
+     */
+    /*public View getView() {
+        return view;
+    }*/
+
+    /**
+     * @param view the view to set
+     */
+    /*public void setView(View view) {
+        this.view = view;
+    }*/
 }

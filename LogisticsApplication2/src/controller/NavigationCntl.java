@@ -6,7 +6,6 @@ package controller;
 import view.NavigationView;
 import java.util.Scanner;
 import view.IncomingView;
-import view.OutgoingView;
 
 /**
  *
@@ -14,8 +13,10 @@ import view.OutgoingView;
  */
 public class NavigationCntl { //NavigationCntl should call NavView to print
     Scanner scnr = new Scanner(System.in);
-    boolean nav = true;
+    boolean nav = true; 
+    
     OutgoingCntl outLoad = new OutgoingCntl();
+    IncomingCntl inLoad = new IncomingCntl();
 
     public NavigationCntl(){
 
@@ -24,17 +25,18 @@ public class NavigationCntl { //NavigationCntl should call NavView to print
         //Currently program sends to selected controller then EXITS. 
         //If nav changed to true in case then menu would re-load. (This is prob how it should be)
         while(nav){
-            NavigationView navMenu= new NavigationView();
+            //NavigationView navMenu= new NavigationView();
+            NavigationView.printMenu();
             int option = scnr.nextInt();
         
             switch (option){
                 case 1: 
                     outLoad.createOutgoingLoad();
-                    nav = false;
+                    nav = true;
                     break;
                 case 2:
-                    IncomingView inLoad = new IncomingView();
-                    nav = false;
+                    inLoad.createIncomingLoad();
+                    nav = true;
                     break;
                 case 3:
                     editOutLoadCntl editOutLoad = new editOutLoadCntl();
@@ -46,6 +48,12 @@ public class NavigationCntl { //NavigationCntl should call NavView to print
                     break;
                 case 5:
                     outLoad.showAllOutgoing();
+                    break;
+                case 6:
+                    inLoad.showAllIncoming();
+                    break;
+                case 7:
+                    //View all loads (Outgoing and Incoming transactions together)
                     break;
                 case 9:
                     System.out.println("Goodbye!");

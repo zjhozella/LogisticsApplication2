@@ -51,11 +51,16 @@ public class OutgoingCntl {
         long time = date.getTime();
         Timestamp outTS = new Timestamp(time);
         
+        System.out.println("CREATE OUTGOING LOAD:\n");
+        
         System.out.print("Enter Truck Number:");
         setTruckNumber(getScnr().nextInt());
         
         System.out.print("Enter Trailer Number:");
         setTrailerNumber(getScnr().nextInt());
+        
+        dunnageIndex = 0; //default
+        loadComplete = false; //default
         
         System.out.print("Enter Store Number:");
         setStoreNumber(getScnr().nextInt());
@@ -84,11 +89,12 @@ public class OutgoingCntl {
         System.out.print("Enter Employee Last Name:");
         setELastName(getScnr().next());
         
-        System.out.print("Are there insects detected? (true/false):");
-        setInsectDetected(getScnr().nextBoolean());
+        System.out.print("Are there insects detected? 0 - No, 1 - Yes:");
         if (getScnr().nextInt() != 0){
             setInsectDetected(true);
         }
+        
+        OutgoingView.exitViewMessage();
         
         //Driver object creation
         Driver driver = new Driver(DLNumber, DFirstName, DLastName, DCompany);
