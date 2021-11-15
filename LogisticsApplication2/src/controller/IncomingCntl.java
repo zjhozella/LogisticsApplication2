@@ -34,9 +34,8 @@ public class IncomingCntl {
     //IncomingTrans attribute initialization
     private boolean insectDetected;
     
-    //Navigation Test
+    //Default incoming controller
     public IncomingCntl(){
-        
         
     }
     
