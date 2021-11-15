@@ -8,9 +8,6 @@ public class editOutLoadCntl{
     boolean nav = true;
 
     public editOutLoadCntl(){
-        //Test for navigation
-        System.out.println("Welcome to editOutLoadCntl");
-
         editOutView editOut = new editOutView();
         int loadNum = scnr.nextInt();
         //Print Selected Load

@@ -22,7 +22,8 @@ public class ConfirmationCntl {
             cView.confirmation();
             if (scnr.nextInt() != 1)
             {
-                //Can we tie this into the outgoing edit view?
+                editOutLoadCntl editOut = new editOutLoadCntl();
+                
             }
                 
         }else{
@@ -30,7 +31,7 @@ public class ConfirmationCntl {
             cView.confirmation();
             if (scnr.nextInt() != 1)
             {
-                //Can we tie this into the incoming edit view?
+                editInLoadCntl editIn = new editInLoadCntl();
             }
         }
         
