@@ -4,8 +4,7 @@
  * and open the template in the editor.
  */
 package view;
-import java.util.Scanner;
-import controller.*;
+
 /**
  *
  * @author jprince, zjhoz
@@ -18,6 +17,7 @@ public class NavigationView {
         System.out.println("Welcome to Logistics Application\n");
     }
     
+    //Prints menu for the user to select a choice
     public static void printMenu(){
         System.out.println("Please select one of the options below:");
         System.out.println("(1) - Enter New Outgoing Load");
