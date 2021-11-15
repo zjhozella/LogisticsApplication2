@@ -32,10 +32,12 @@ public class NavigationCntl { //NavigationCntl should call NavView to print
             switch (option){
                 case 1: 
                     outLoad.createOutgoingLoad();
+                    ConfirmationCntl outC = new ConfirmationCntl(true);
                     nav = true;
                     break;
                 case 2:
                     inLoad.createIncomingLoad();
+                    ConfirmationCntl inC = new ConfirmationCntl(false);
                     nav = true;
                     break;
                 case 3:
@@ -51,9 +53,6 @@ public class NavigationCntl { //NavigationCntl should call NavView to print
                     break;
                 case 6:
                     inLoad.showAllIncoming();
-                    break;
-                case 7:
-                    //View all loads (Outgoing and Incoming transactions together)
                     break;
                 case 9:
                     System.out.println("Goodbye!");

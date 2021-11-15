@@ -62,7 +62,7 @@ public class Model {
         //Incoming Load Test
         Employee ep4 = new Employee(1279466832, "Steven", "Brisk");
         IncomingTrans it2 = new IncomingTrans(2, 765, 1073, 1, true, ep4, true, tsIn);
-        addToInList(it1);
+        addToInList(it2);
         
     }
 

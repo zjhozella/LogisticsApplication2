@@ -153,9 +153,8 @@ public class OutgoingTrans extends Load{
     // Override printLoad from super class 
     @Override
     public String printLoad(){
-        return super.printLoad() + "\n" + "Outgoing Load Info "+ "\n Store Number: " + getStoreNumber()
-            + ", Seal Number: " + getSealNumber() + ", Insect Detected: " + isInsectDetected() + ", Time: " + getTsOut() + ", Employee Number: " + getEmployee().getID() 
-            + ", Driver Number: " + getDr().getDlNumber();
+        return super.printLoad() + "Store Number: " + getStoreNumber()
+            + "\nSeal Number: " + getSealNumber() + "\nInsect Detected: " + isInsectDetected() + "\nTime: " + getTsOut() + "\n";
     }
 
 }

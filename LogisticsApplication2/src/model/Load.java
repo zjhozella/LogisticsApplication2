@@ -133,8 +133,8 @@ public class Load {
     
     //Prints base load information, overriden by child
     public String printLoad(){
-        return "Load Information: " + "\n" + "Load Number: " + getLoadNumber() + ", Truck Number: " + getTruckNumber() + ", TrailerNumber: " + getTrailerNumber()
-            + ", Dunnage Index: " + getDunnageIndex() + ", Dunnage String: " + getDunnageString()[dunnageIndex] + ", Load Complete: " + isLoadComplete();
+        return "Load Number: " + getLoadNumber() + "\nTruck Number: " + getTruckNumber() + "\nTrailerNumber: " + getTrailerNumber()
+            + "\nDunnage Index: " + getDunnageIndex() + "\nDunnage String: " + getDunnageString()[dunnageIndex] + "\nLoad Complete: " + isLoadComplete() + "\n";
     
     }
 

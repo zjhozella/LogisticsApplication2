@@ -6,6 +6,7 @@
 package view;
 
 import java.sql.Timestamp;
+import model.Model;
 
 /**
  *
@@ -29,7 +30,26 @@ public class ConfirmationView {
     private int employeeID;
     private String employeeFN, employeeLN;
     private boolean insectDetected;
+    
+    public ConfirmationView(){
+        System.out.println("Please validate the following information:");
+    }
 
+    public void confirmOutgoing(){
+        System.out.println(Model.getOutList().get(Model.getOutList().size() - 1).printLoad());
+        System.out.println(Model.getOutList().get(Model.getOutList().size() - 1).getDr().printDriver());
+        System.out.println(Model.getOutList().get(Model.getOutList().size() - 1).getEmployee().printEmployee());
+    }
+    
+    public void confirmIncoming(){
+        System.out.println(Model.getInList().get(Model.getInList().size() - 1).printLoad());
+        System.out.println(Model.getInList().get(Model.getInList().size() - 1).getEmployee().printEmployee());
+    }
+    
+    public void confirmation(){
+        System.out.println("Is the information above valid? 1 to confirm, 0 to deny");
+    }
+    
     public ConfirmationView(int truckNumber, int trailerNumber, int dunnageIndex, int storeNumber,
             int sealNumber, boolean loadComplete, String driverNumber, String driverFN, String driverLN, String driverCompany,
             int employeeID, String employeeFN, String employeeLN, boolean insectDetected, Timestamp outTS){

@@ -33,19 +33,26 @@ public class OutgoingView {
     public static void displayAllOutgoingLoad() {
         for (int i = 1; i < Model.getOutList().size(); ++i){
             System.out.println(">>>Outgoing Load Record " + (i) + ":");
-            System.out.println("Timestamp: " + Model.getOutList().get(i).getTsOut());
-            System.out.println("Date: " + Model.getOutList().get(i).getDate());
-            System.out.println("Time: " + Model.getOutList().get(i).getTime());
-            System.out.println("Driver License Number: " + Model.getOutList().get(i).getDr().getDlNumber());
-            System.out.println("Driver Company: " + Model.getOutList().get(i).getDr().getCompany());
-            System.out.println("Driver First Name: " + Model.getOutList().get(i).getDr().getFirstName());
-            System.out.println("Driver Last Name: " + Model.getOutList().get(i).getDr().getLastName());
-            System.out.println("Employee First Name: " + Model.getOutList().get(i).getEmployee().getFirstName());
-            System.out.println("Employee Last Name: " + Model.getOutList().get(i).getEmployee().getLastName());
+            System.out.println(Model.getOutList().get(i).printLoad());
+            System.out.println(Model.getOutList().get(i).getDr().printDriver());
+            System.out.println(Model.getOutList().get(i).getEmployee().printEmployee());
+            System.out.println(">>>Outgoing Load Record  " + (i) + " END<<<\n");
+            /*System.out.println("Timestamp: " + Model.getOutList().get(i).getTsOut());
+            System.out.println("Load Number: " + Model.getOutList().get(i).getLoadNumber());
             System.out.println("Truck Number: " + Model.getOutList().get(i).getTruckNumber());
             System.out.println("Trailer Number: " + Model.getOutList().get(i).getTrailerNumber());
             System.out.println("Store Number: " + Model.getOutList().get(i).getStoreNumber());
             System.out.println("Seal Number: " + Model.getOutList().get(i).getSealNumber());
+            System.out.println("Driver License Number: " + Model.getOutList().get(i).getDr().getDlNumber());
+            System.out.println("Driver Company: " + Model.getOutList().get(i).getDr().getCompany());
+            System.out.println("Driver First Name: " + Model.getOutList().get(i).getDr().getFirstName());
+            System.out.println("Driver Last Name: " + Model.getOutList().get(i).getDr().getLastName());
+            System.out.println("Employee ID: " + Model.getOutList().get(i).getEmployee().getID());
+            System.out.println("Employee First Name: " + Model.getOutList().get(i).getEmployee().getFirstName());
+            System.out.println("Employee Last Name: " + Model.getOutList().get(i).getEmployee().getLastName());
+            System.out.println("Insect Detected? : " + Model.getOutList().get(i).isInsectDetected());*/
+            
+            
         }
     }
     
