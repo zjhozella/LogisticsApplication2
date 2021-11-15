@@ -73,8 +73,6 @@ public class IncomingCntl {
             setInsectDetected(true);
         }
         
-        IncomingView.exitViewMessage();
-        
         //Employee object creation
         Employee employee = new Employee(employeeID, employeeFN, employeeLN);
         

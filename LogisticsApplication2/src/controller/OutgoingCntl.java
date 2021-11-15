@@ -94,8 +94,6 @@ public class OutgoingCntl {
             setInsectDetected(true);
         }
         
-        OutgoingView.exitViewMessage();
-        
         //Driver object creation
         Driver driver = new Driver(DLNumber, DFirstName, DLastName, DCompany);
         
@@ -106,6 +104,7 @@ public class OutgoingCntl {
         Model.addToOutList(ot);
     }
     
+    //Prints all outgoing load information
     public void showAllOutgoing(){
             OutgoingView.displayAllOutgoingLoad();
     }

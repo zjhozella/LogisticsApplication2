@@ -137,7 +137,4 @@ public class Load {
             + "\nDunnage Index: " + getDunnageIndex() + "\nDunnage String: " + getDunnageString()[dunnageIndex] + "\nLoad Complete: " + isLoadComplete() + "\n";
     
     }
-
-
-
 }
