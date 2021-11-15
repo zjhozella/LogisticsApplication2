@@ -25,36 +25,36 @@ public class NavigationCntl { //NavigationCntl should call NavView to print
         //Currently program sends to selected controller then EXITS. 
         //If nav changed to true in case then menu would re-load. (This is prob how it should be)
         while(nav){
-            //NavigationView navMenu= new NavigationView();
+            
             NavigationView.printMenu();
             int option = scnr.nextInt();
-        
+            
             switch (option){
-                case 1: 
+                case 1://Create new Outgoing Load
                     outLoad.createOutgoingLoad();
                     ConfirmationCntl outC = new ConfirmationCntl(true);
                     nav = true;
                     break;
-                case 2:
+                case 2://Create new Incoming Load
                     inLoad.createIncomingLoad();
                     ConfirmationCntl inC = new ConfirmationCntl(false);
                     nav = true;
                     break;
-                case 3:
+                case 3://Edit an Outgoing Load
                     editOutLoadCntl editOutLoad = new editOutLoadCntl();
                     nav = false;
                     break;
-                case 4: 
+                case 4: //Edit an Incoming Load
                     editInLoadCntl editInLoad = new editInLoadCntl();
                     nav = false;
                     break;
-                case 5:
+                case 5://Show all Outgoing Loads
                     outLoad.showAllOutgoing();
                     break;
-                case 6:
+                case 6://Show all Incoming Loads
                     inLoad.showAllIncoming();
                     break;
-                case 9:
+                case 9://Exit the program
                     System.out.println("Goodbye!");
                     System.exit(0);
                 default: 
