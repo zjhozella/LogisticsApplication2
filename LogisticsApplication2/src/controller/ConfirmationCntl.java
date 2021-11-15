@@ -22,6 +22,7 @@ public class ConfirmationCntl {
             cView.confirmation();
             if (scnr.nextInt() != 1)
             {
+                //Create new editOutLoad controller and send user to edit
                 editOutLoadCntl editOut = new editOutLoadCntl();
                 
             }
@@ -31,6 +32,7 @@ public class ConfirmationCntl {
             cView.confirmation();
             if (scnr.nextInt() != 1)
             {
+                //Create new editInLoad controller for user to edit inLoad
                 editInLoadCntl editIn = new editInLoadCntl();
             }
         }
