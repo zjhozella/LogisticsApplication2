@@ -16,17 +16,18 @@ public class ConfirmationCntl {
     public ConfirmationView cView = new ConfirmationView();
     Scanner scnr = new Scanner(System.in);
     
+    //if statement will run if user is currently in the outgoingLoad controller
     public ConfirmationCntl(boolean isOutgoing){
         if (isOutgoing){
             cView.confirmOutgoing();
             cView.confirmation();
             if (scnr.nextInt() != 1)
             {
-                //Create new editOutLoad controller and send user to edit
+                //Create new editOutLoad controller and send user to edit outLoad
                 editOutLoadCntl editOut = new editOutLoadCntl();
                 
             }
-                
+        //Else branch will run if user is NOT in outgoingload controller (instead in incomingLoad controller)
         }else{
             cView.confirmIncoming();
             cView.confirmation();
