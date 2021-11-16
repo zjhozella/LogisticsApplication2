@@ -34,6 +34,6 @@ public class ConfirmationView {
     
     //Prints instruction statement for the user
     public void confirmation(){
-        System.out.println("Is the information above valid? 1 to confirm, 0 to deny");
+        System.out.println("Is the information above valid? 1 to confirm, 0 to edit load");
     }
 }

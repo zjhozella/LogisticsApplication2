@@ -7,12 +7,11 @@ public class editInLoadCntl{
     Scanner scnr = new Scanner(System.in);
     boolean nav = true;
     public editInLoadCntl(){
-        //Navigation Test
-        System.out.println("Welcome to editInLoadCntl");
-
         editInView editIn = new editInView(); //Create new view for editIncoming loads
         int loadNum = scnr.nextInt();
+        
         //Print selected load
+        System.out.println("\n" + "Current Values for Load #" + loadNum);
         System.out.println(Model.getInList().get(loadNum).printLoad());
 
         editIn.editInMenu(); //Display Nav menu

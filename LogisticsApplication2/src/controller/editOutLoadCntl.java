@@ -3,6 +3,8 @@ import model.*;
 import view.*;
 import java.util.Scanner;
 
+import javax.swing.text.Style;
+
 public class editOutLoadCntl{
     Scanner scnr = new Scanner(System.in);
     boolean nav = true;
@@ -10,7 +12,9 @@ public class editOutLoadCntl{
     public editOutLoadCntl(){
         editOutView editOut = new editOutView();
         int loadNum = scnr.nextInt();
+        
         //Print Selected Load
+        System.out.println("\n" + "Current Values for Load #" + loadNum);
         System.out.println(Model.getOutList().get(loadNum).printLoad());
 
         editOut.editOutMenu();// Display edit Out Nav menu

@@ -7,9 +7,7 @@ package controller;
 import java.sql.Timestamp;
 import java.util.Date;
 import java.util.Scanner;
-import model.Employee;
-import model.IncomingTrans;
-import model.Model;
+import model.*;
 import view.IncomingView;
 
 /**
@@ -67,8 +65,11 @@ public class IncomingCntl {
         System.out.print("Enter Employee Last Name:");
         setEmployeeLN(getScnr().next());
         
-        System.out.print("Are there insects detected? 0 - No, 1 - Yes:");
-        if (getScnr().nextInt() != 0){
+        System.out.print("Are insects detected? 'n' - No || 'y' - Yes: ");
+        //Take input of next char 'y' or 'Y' will setInsectDetected to true, otherwise, false = default.
+        char char1 = getScnr().next().charAt(0);
+        
+        if (char1 == 'y' || char1== 'Y'){
             setInsectDetected(true);
         }
         
