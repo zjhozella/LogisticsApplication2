@@ -53,7 +53,7 @@ public class IncomingCntl {
        
         loadComplete = true;
         
-        System.out.print("Enter Dunnage Number:");
+        System.out.print("Enter Dunnage Number( (0) = Empty || (1) = 1/4 || (2) = 1/2 || (3) = 3/4 || (4) = Full ) :");
         setDunnageIndex(getScnr().nextInt());
         
         System.out.print("Enter Employee ID:");

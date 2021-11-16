@@ -34,10 +34,8 @@ public class OutgoingCntl {
     //OutgoingTrans attribute initialization
     private boolean insectDetected = false;
     
-    //Navigation Test
     public OutgoingCntl(){
-        
-        
+
     }
 
     // Take input from ConfirmationView, feed into Load object constructor for an outgoing load
