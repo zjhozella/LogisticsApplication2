@@ -16,15 +16,36 @@ public class Controller {
     
     private Model model;
     private NavigationView view;
-    //private View view;
+    
+    //Stores the number that will be used for the loadNumber when we create the next load.
+    private static int nextLoadNumber;
     
     public Controller(Model model, NavigationView view){
         this.model = model;
         this.view = view;
+
+        //Sets the next load number that will be used
+        setNextLoadNumber();
         
+        //Shows main menu
         NavigationCntl navCntl = new NavigationCntl();
     }
-
+    
+    /**
+     * 
+     * @return the nextLoadNumber
+     */
+    public static int getNextLoadNumber(){
+        return nextLoadNumber;
+    }
+    
+    /**
+     * Sets the nextLoadNumber to the loadNumber of the last item in the OutgoingTrans ArrayList
+     */
+    public static void setNextLoadNumber(){
+        nextLoadNumber = Model.getOutList().get(Model.getOutList().size() - 1).getLoadNumber() + 1;
+    }
+    
     /**
      * @return the model
      */

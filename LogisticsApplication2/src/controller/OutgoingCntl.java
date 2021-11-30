@@ -46,7 +46,7 @@ public class OutgoingCntl {
         Timestamp outTS = new Timestamp(time);
         
         System.out.println("CREATE OUTGOING LOAD:\n");
-        
+
         System.out.print("Enter Truck Number:");
         setTruckNumber(getScnr().nextInt());
         
@@ -97,8 +97,11 @@ public class OutgoingCntl {
         //Employee object creation
         Employee employee = new Employee(EID, EFirstName, ELastName);
         //OutgoingTrans object creation
-        OutgoingTrans ot = new OutgoingTrans(Model.getOutList().size() , truckNumber, trailerNumber, dunnageIndex, loadComplete, storeNumber, sealNumber, employee, driver, insectDetected, outTS);
+        OutgoingTrans ot = new OutgoingTrans(Controller.getNextLoadNumber(), truckNumber, trailerNumber, dunnageIndex, loadComplete, storeNumber, sealNumber, employee, driver, insectDetected, outTS);
         Model.addToOutList(ot);
+        
+        // Re-sets the next load number since we just created another load.
+        Controller.setNextLoadNumber();
     }
     
     //Prints all outgoing load information
