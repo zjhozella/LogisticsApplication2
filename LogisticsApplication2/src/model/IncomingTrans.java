@@ -35,7 +35,7 @@ public class IncomingTrans extends Load{
         this.employee = employee;
         this.insectDetected = insectDetected;
         this.tsIn = newTSin;
-        this.dunnageIndex = newDunnageIndex;
+        //this.dunnageIndex = newDunnageIndex;
     }
 
     /**
