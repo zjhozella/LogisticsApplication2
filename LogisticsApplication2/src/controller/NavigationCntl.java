@@ -24,7 +24,7 @@ public class NavigationCntl { //NavigationCntl should call NavView to print
         //Can change behavior by editing status of nav in each case.
         while(nav){
             
-            System.out.println(Controller.getNextLoadNumber());
+            
             NavigationView.printMenu();
             
             int option = scnr.nextInt();
