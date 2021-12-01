@@ -22,7 +22,7 @@ public class IncomingView {
     }
     
     //Prints all attributes of all incoming loads
-    public static void displayAllIncomingOutgoingLoad() {
+    public static void displayAllIncomingLoad() {
         for (int i = 1; i < Model.getInList().size(); ++i){
             System.out.println(">>>Incoming Load Record " + (i) + ":");
             System.out.println(Model.getInList().get(i).printLoad());

@@ -84,7 +84,7 @@ public class IncomingCntl {
     }
     
     public void showAllIncoming(){
-        IncomingView.displayAllIncomingOutgoingLoad();
+        IncomingView.displayAllIncomingLoad();
     }
 
     /**

@@ -24,6 +24,14 @@ public class OutgoingView {
   
     }
     
+    public static void printIncompleteOutgoing(){
+        for (int i = 1; i < Model.getOutList().size(); ++i){
+            if (!Model.getOutList().get(i).isLoadComplete()){
+                Model.getOutList().get(i).printLoad();
+            }
+        }
+    }
+    
     //Prints all attributes of all outgoing loads
     public static void displayAllOutgoingLoad() {
         for (int i = 1; i < Model.getOutList().size(); ++i){
