@@ -14,7 +14,7 @@ import javax.swing.table.AbstractTableModel;
  */
 public class IncomingTableModel extends AbstractTableModel{
     
-    public String[] columnNames = {"Load Number", "Truck Number", "Trailer Number", "Dunnage Index", "Load Complete", "Employee ID", "Employee First Name", "Employee Last Name", "Insect Detected", "Timestamp"};
+    public String[] columnNames = {"Load Number", "Truck Number", "Trailer Number","Load Complete"};
     public ArrayList<IncomingTrans> inList;
     
     public IncomingTableModel(ArrayList<IncomingTrans> inList){
@@ -41,19 +41,7 @@ public class IncomingTableModel extends AbstractTableModel{
             case 2:
                 return (Object) inList.get(row).getTrailerNumber();
             case 3:
-                return (Object) inList.get(row).getDunnageIndex();
-            case 4:
                 return (Object) inList.get(row).isLoadComplete();
-            case 7:
-                return (Object) inList.get(row).getEmployee().getID();
-            case 8:
-                return (Object) inList.get(row).getEmployee().getFirstName();
-            case 9:
-                return (Object) inList.get(row).getEmployee().getLastName();
-            case 13:
-                return (Object) inList.get(row).isInsectDetected();
-            case 14:
-                return (Object) inList.get(row).getTsIn();
             default:
                 return null;
         }
@@ -74,19 +62,7 @@ public class IncomingTableModel extends AbstractTableModel{
             case 2:
                  inList.get(row).setTrailerNumber((int) value);
             case 3:
-                 inList.get(row).setDunnageIndex((int) value);
-            case 4:
                  inList.get(row).setLoadComplete((boolean) value);
-            case 7:
-                 inList.get(row).getEmployee().setID((int) value);
-            case 8:
-                 inList.get(row).getEmployee().setFirstName((String) value);
-            case 9:
-                 inList.get(row).getEmployee().setLastName((String) value);
-            case 13:
-                 inList.get(row).setInsectDetected((boolean) value);
-            case 14:
-                 inList.get(row).setTsIn((Timestamp) value);
                  
             fireTableCellUpdated(row, col);
         }
