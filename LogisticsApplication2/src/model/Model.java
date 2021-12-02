@@ -34,7 +34,7 @@ public class Model {
         //Outgoing Load Test
         Driver dr0 = new Driver("null", "null", "null", "null");
         Employee ep0 = new Employee(1279466832, "null", "null");
-        OutgoingTrans ot0 = new OutgoingTrans(0, 0, 0, 0, false, 0, 0, ep0, dr0, false, tsOut);
+        OutgoingTrans ot0 = new OutgoingTrans(0, 0, 0, 0, true, 0, 0, ep0, dr0, false, tsOut);
         addToOutList(ot0);
         
         //Incoming Load Test

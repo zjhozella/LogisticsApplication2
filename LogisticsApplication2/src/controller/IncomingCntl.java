@@ -9,6 +9,7 @@ import java.util.Date;
 import java.util.Scanner;
 import model.*;
 import view.IncomingView;
+import view.OutgoingView;
 
 /**
  *
@@ -45,26 +46,34 @@ public class IncomingCntl {
         
         System.out.println("CREATE INCOMING LOAD:\n");
         
-        System.out.print("Enter Truck Number:");
-        setTruckNumber(getScnr().nextInt());
+        //Shows all Outgoing Transactions that have loadComplete = false, meaning the attached incoming transaction is incomplete
+        NavigationCntl.outLoad.showAllIncompleteOutgoing();
         
-        System.out.print("Enter Trailer Number:");
-        setTrailerNumber(getScnr().nextInt());
+        //Prompts the user to choose which load they have incoming
+        System.out.print("Please enter the load number that is incoming: ");
+        setLoadNumber(getScnr().nextInt());
        
+        //Sets loadComplete to true for both the Outgoing and Incoming transaction
         loadComplete = true;
+        Model.getOutList().get(loadNumber).setLoadComplete(loadComplete);
         
+        //Gets the new dunnage index from the user
         System.out.print("Enter Dunnage Number( (0) = Empty || (1) = 1/4 || (2) = 1/2 || (3) = 3/4 || (4) = Full ) :");
         setDunnageIndex(getScnr().nextInt());
         
+        //Gets the new employee ID from the user
         System.out.print("Enter Employee ID:");
         setEmployeeID(getScnr().nextInt());
         
+        //Gets the new employee first name from the user
         System.out.print("Enter Employee First Name:");
         setEmployeeFN(getScnr().next());
         
+        //Gets the new employee last name from the user
         System.out.print("Enter Employee Last Name:");
         setEmployeeLN(getScnr().next());
         
+        //Gets whether or not there is an insect detected on the incoming load
         System.out.print("Are insects detected? 'n' - No || 'y' - Yes: ");
         //Take input of next char 'y' or 'Y' will setInsectDetected to true, otherwise, false = default.
         char char1 = getScnr().next().charAt(0);
@@ -73,16 +82,25 @@ public class IncomingCntl {
             setInsectDetected(true);
         }
         
-        //Employee object creation
+        //Employee object creation for the incoming transaction
         Employee employee = new Employee(employeeID, employeeFN, employeeLN);
-        
-        //IncomingTrans object creation
-        IncomingTrans it = new IncomingTrans(loadNumber, truckNumber, trailerNumber, dunnageIndex, loadComplete, employee, insectDetected, inTS);
-        Model.addToInList(it);
+
+        /*
+            Takes all of the information we collected from the user and sets it in the respective 
+            place of the already created incoming transaction.
+        */
+        Model.getInList().get(loadNumber).setLoadComplete(loadComplete);
+        Model.getInList().get(loadNumber).setDunnageIndex(dunnageIndex);
+        Model.getInList().get(loadNumber).setEmployee(employee);
+        Model.getInList().get(loadNumber).setInsectDetected(insectDetected);
+        Model.getInList().get(loadNumber).setTsIn(inTS);
 
        
     }
     
+    /*
+        Shows all Incoming Load's information
+    */
     public void showAllIncoming(){
         IncomingView.displayAllIncomingLoad();
     }
@@ -211,6 +229,20 @@ public class IncomingCntl {
      */
     public void setInsectDetected(boolean insectDetected) {
         this.insectDetected = insectDetected;
+    }
+
+    /**
+     * @return the loadNumber
+     */
+    public int getLoadNumber() {
+        return loadNumber;
+    }
+
+    /**
+     * @param loadNumber the loadNumber to set
+     */
+    public void setLoadNumber(int loadNumber) {
+        this.loadNumber = loadNumber;
     }
 
 }

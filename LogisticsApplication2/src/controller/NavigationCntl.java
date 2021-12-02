@@ -15,8 +15,8 @@ public class NavigationCntl { //NavigationCntl should call NavView to print
     Scanner scnr = new Scanner(System.in);
     boolean nav = true; 
     
-    OutgoingCntl outLoad = new OutgoingCntl(); //Create new OutgoingCntl object
-    IncomingCntl inLoad = new IncomingCntl();  //Create new IncomingCntl object
+    public static OutgoingCntl outLoad = new OutgoingCntl(); //Create new OutgoingCntl object
+    public static IncomingCntl inLoad = new IncomingCntl();  //Create new IncomingCntl object
 
     public NavigationCntl(){
 

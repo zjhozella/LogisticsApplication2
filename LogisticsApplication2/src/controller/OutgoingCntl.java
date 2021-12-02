@@ -14,7 +14,7 @@ import view.OutgoingView;
  *
  * @author zjhoz
  */
-public class OutgoingCntl {
+    public class OutgoingCntl {
     
     private Scanner scnr = new Scanner(System.in);
 
@@ -96,9 +96,21 @@ public class OutgoingCntl {
         
         //Employee object creation
         Employee employee = new Employee(EID, EFirstName, ELastName);
+        //Blank Employee object creation
+        Employee blankEmployee = new Employee(0, null, null);
+        
         //OutgoingTrans object creation
         OutgoingTrans ot = new OutgoingTrans(Controller.getNextLoadNumber(), truckNumber, trailerNumber, dunnageIndex, loadComplete, storeNumber, sealNumber, employee, driver, insectDetected, outTS);
         Model.addToOutList(ot);
+        
+        /*
+            Creates a blank Incoming Transaction to match every Outgoing Transaction that is created. This links both
+            transactions together to be consistent with the same load number, truck number, and trailer number.
+            The Incoming Transaction record will be updated when the user creates a new Incoming Transaction.
+        */
+        //Blank IncomingTrans object creation
+        IncomingTrans it = new IncomingTrans(Controller.getNextLoadNumber(), truckNumber, trailerNumber, dunnageIndex, loadComplete, blankEmployee, insectDetected, outTS);
+        Model.addToInList(it);
         
         // Re-sets the next load number since we just created another load.
         Controller.setNextLoadNumber();
@@ -107,6 +119,11 @@ public class OutgoingCntl {
     //Prints all outgoing load information
     public void showAllOutgoing(){
             OutgoingView.displayAllOutgoingLoad();
+    }
+    
+    //Prints all incomplete outgoing basic load information
+    public void showAllIncompleteOutgoing(){
+        OutgoingView.printIncompleteOutgoing();
     }
 
     /**

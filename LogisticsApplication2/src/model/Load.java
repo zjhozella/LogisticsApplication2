@@ -137,4 +137,10 @@ public class Load {
             + "\nDunnage Index: " + getDunnageIndex() + "\nDunnage String: " + getDunnageString()[dunnageIndex] + "\nLoad Complete: " + isLoadComplete() + "\n";
     
     }
+    
+    //Prints basic load information
+    public String printBasicLoad(){
+        return "Load Number: " + getLoadNumber() + "\nTruck Number: " + getTruckNumber() + "\nTrailerNumber: " + getTrailerNumber() +
+                "\nLoad Complete: " + isLoadComplete() + "\n";
+    }
 }
