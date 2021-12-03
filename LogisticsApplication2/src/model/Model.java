@@ -23,9 +23,13 @@ public class Model {
     private static ArrayList<OutgoingTrans> outList = new ArrayList<>();
     private static ArrayList<IncomingTrans> inList = new ArrayList<>();
     
+    public static OutgoingTableModel outgoingTableModel;
+    
     //Default Constructor
     public Model(){
         loadData();
+        
+        outgoingTableModel = new OutgoingTableModel(getOutList());
     }
     
     //Method used to load example transactions into the array lists. This will not be needed in the actual application. Here for ease of testing.

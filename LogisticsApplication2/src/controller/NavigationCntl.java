@@ -27,6 +27,7 @@ public class NavigationCntl { //NavigationCntl should call NavView to print
             
             NavigationView.printMenu();
             
+            
             int option = scnr.nextInt();
             
             
