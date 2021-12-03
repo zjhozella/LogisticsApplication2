@@ -4,6 +4,8 @@
  */
 package controller;
 import view.NavigationView;
+import view.outgoingListUI;
+
 import java.util.Scanner;
 import view.IncomingView;
 
@@ -51,7 +53,9 @@ public class NavigationCntl { //NavigationCntl should call NavView to print
                     nav = false;
                     break;
                 case 5://Show all Outgoing Loads
-                    outLoad.showAllOutgoing();
+                    //outLoad.showAllOutgoing();
+                    outgoingListUI outListUI = new outgoingListUI();//create new instance of outgoingListUI
+                    
                     break;
                 case 6://Show all Incoming Loads
                     inLoad.showAllIncoming();

@@ -41,6 +41,8 @@ import view.OutgoingView;
     // Take input from ConfirmationView, feed into Load object constructor for an outgoing load
     public void createOutgoingLoad(){
         
+        
+
         Date date = new Date();
         long time = date.getTime();
         Timestamp outTS = new Timestamp(time);
