@@ -8,6 +8,7 @@ OutgoingTableModel outList???? JP 12/02
 
 public class outLoadList {
     public ArrayList<OutgoingTrans> outgoingLoads = new ArrayList<>();
+    
 
     public outLoadList(){
         outgoingLoads = loadOutArrayList();

@@ -5,9 +5,11 @@
 package controller;
 
 import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Scanner;
 import model.*;
+import static model.Model.outgoingTableModel;
 import view.OutgoingView;
 
 /**
@@ -34,8 +36,27 @@ import view.OutgoingView;
     //OutgoingTrans attribute initialization
     private boolean insectDetected = false;
     
-    public OutgoingCntl(){
+    private NavigationCntl navigationCntl;
+    private static ArrayList<OutgoingTrans> outList;
+  
+    
+    public OutgoingCntl(NavigationCntl newNavigationCntl){
+        
+        //supports navigating back to the Main Menu
+        navigationCntl = newNavigationCntl;
 
+        //Get the instrument list
+        //When instantiated it will get the individual Instruments
+        //outList = outgoingTableModel;
+        outList = Model.getOutList();
+
+        //Show the list of model objects in the UI
+        //this.theInstrumentListUI = new InstrumentListUI();
+        //theInstrumentListUI.setVisible(true);
+        
+        //Once the InstrumentList is instantiated, instantiate the InstrumentTableModel
+        //BG theInstrumentTableModel = new InstrumentTableModel(theInstrumentList.getInstrumentList()); //from example
+        outgoingTableModel = new OutgoingTableModel(outList);
     }
 
     // Take input from ConfirmationView, feed into Load object constructor for an outgoing load

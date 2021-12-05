@@ -28,8 +28,7 @@ public class Model {
     //Default Constructor
     public Model(){
         loadData();
-        
-        outgoingTableModel = new OutgoingTableModel(getOutList());
+        //outgoingTableModel = new OutgoingTableModel(outList);
     }
     
     //Method used to load example transactions into the array lists. This will not be needed in the actual application. Here for ease of testing.
@@ -82,6 +81,7 @@ public class Model {
      */
     public static void addToOutList(OutgoingTrans outTrans) {
         outList.add(outTrans);
+        //outgoingTableModel.fireTableDataChanged(); //refreshes table
     }
 
     /**

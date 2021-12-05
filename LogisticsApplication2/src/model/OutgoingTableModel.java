@@ -4,9 +4,11 @@
  */
 package model;
 
+import controller.Controller;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import javax.swing.table.AbstractTableModel;
+import static view.outgoingListUI.outTrans;
 
 /**
  *
@@ -14,8 +16,10 @@ import javax.swing.table.AbstractTableModel;
  */
 public class OutgoingTableModel extends AbstractTableModel{
 
-    public String[] columnNames = {"Load Number", "Truck Number", "Trailer Number","Load Complete",};
+    public String[] columnNames = {"Load Number", "Truck Number", "Trailer Number", "Load Complete"};
     public ArrayList<OutgoingTrans> outList;
+    public int nextOutLoadNumber;
+    
     
     public OutgoingTableModel(ArrayList<OutgoingTrans> outList){
         this.outList = outList;
@@ -66,6 +70,18 @@ public class OutgoingTableModel extends AbstractTableModel{
                  
             fireTableCellUpdated(row, col);
         }
+    }
+    
+    public void newInstrument(){
+        if (outList.size() > 0){   
+            nextOutLoadNumber = outList.get(outList.size() - 1).getLoadNumber() + 1;
+            outTrans = new OutgoingTrans(nextOutLoadNumber, 0, 0, 0, false, 0, 0, new Employee(0,"Santa", "Claus"), new Driver("dlNumber", "fn", "ln", "company"), false, new Timestamp(System.currentTimeMillis()));
+            outList.add(outTrans);
+        } else {
+            outTrans = new OutgoingTrans(0, 0, 0, 0, false, 0, 0, new Employee(0,"Santa", "Claus"), new Driver("dlNumber", "fn", "ln", "company"), false, new Timestamp(System.currentTimeMillis()));
+            outList.add(outTrans);
+        }
+        fireTableDataChanged(); //refreshes table
     }
     
     public void deleteOutgoing(int index){

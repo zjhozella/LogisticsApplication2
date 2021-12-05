@@ -19,6 +19,7 @@ public class Controller {
     
     //Stores the number that will be used for the loadNumber when we create the next load.
     private static int nextLoadNumber;
+    public static NavigationCntl navCntl;
     
     public Controller(Model model, NavigationView view){
         this.model = model;
@@ -28,7 +29,7 @@ public class Controller {
         setNextLoadNumber();
         
         //Shows main menu
-        NavigationCntl navCntl = new NavigationCntl();
+        navCntl = new NavigationCntl();
     }
     
     /**

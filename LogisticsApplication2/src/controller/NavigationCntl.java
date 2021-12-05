@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package controller;
+import static controller.Controller.navCntl;
 import view.NavigationView;
 import view.outgoingListUI;
 
@@ -17,7 +18,7 @@ public class NavigationCntl { //NavigationCntl should call NavView to print
     Scanner scnr = new Scanner(System.in);
     boolean nav = true; 
     
-    public static OutgoingCntl outLoad = new OutgoingCntl(); //Create new OutgoingCntl object
+    public static OutgoingCntl outLoad = new OutgoingCntl(navCntl); //Create new OutgoingCntl object
     public static IncomingCntl inLoad = new IncomingCntl();  //Create new IncomingCntl object
 
     public NavigationCntl(){
@@ -28,7 +29,6 @@ public class NavigationCntl { //NavigationCntl should call NavView to print
             
             
             NavigationView.printMenu();
-            
             
             int option = scnr.nextInt();
             
