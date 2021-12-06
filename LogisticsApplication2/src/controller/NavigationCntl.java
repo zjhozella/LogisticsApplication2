@@ -21,6 +21,7 @@ public class NavigationCntl {
 
     public NavigationCntl(){
 
+        //Will create in instance of the NavigationView that will spawn main menu navigation.
         NavigationView navUI = new NavigationView();
 
     }
