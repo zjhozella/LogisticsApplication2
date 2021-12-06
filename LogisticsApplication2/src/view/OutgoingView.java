@@ -83,7 +83,6 @@ public class OutgoingView extends JFrame{
         this.getContentPane().add(bottomPanel, BorderLayout.SOUTH);
         this.setTitle("Create New Outgoing Transaction");
         this.setVisible(true);
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
     
     public static void printIncompleteOutgoing(){
