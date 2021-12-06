@@ -114,7 +114,7 @@ public class NavigationView extends JFrame{
             public void actionPerformed(ActionEvent evt) {
                 
                 outLoad.createOutgoingLoad();
-                ConfirmationCntl outC = new ConfirmationCntl(true);
+                //ConfirmationCntl outC = new ConfirmationCntl(true);
         }
     }
     
@@ -123,7 +123,7 @@ public class NavigationView extends JFrame{
             @Override
             public void actionPerformed(ActionEvent evt) {
                 inLoad.createIncomingLoad();
-                ConfirmationCntl outC = new ConfirmationCntl(false);
+                //ConfirmationCntl outC = new ConfirmationCntl(false);
         }
     }
     

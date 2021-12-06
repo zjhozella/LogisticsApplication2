@@ -24,8 +24,8 @@ import model.Model;
 public class OutgoingView extends JFrame{
 
     public JPanel detailPanel, msgPanel, bottomPanel, buttonPanel;
-    public JLabel msgLabel, truckNumberL;
-    public JTextField truckNumberF;
+    public JLabel msgLabel, truckNumberL, trailerNumberL;
+    public JTextField truckNumberF, trailerNumberF;
     public JButton submitButton, cancelButton;
     
     public OutgoingView(){
@@ -41,7 +41,7 @@ public class OutgoingView extends JFrame{
     public void initComponents(){
         
         detailPanel = new JPanel();
-        detailPanel.setLayout(new GridLayout(1, 2));
+        detailPanel.setLayout(new GridLayout(2, 2));
         detailPanel.setBorder(BorderFactory.createEmptyBorder(20, 0, 20, 50));
         
         msgPanel = new JPanel();
@@ -50,9 +50,13 @@ public class OutgoingView extends JFrame{
         bottomPanel.setLayout(new GridLayout(2, 1));
         buttonPanel = new JPanel(new GridLayout(1,5));
         
-        truckNumberL = new JLabel("Serial #: ", SwingConstants.RIGHT);
+        truckNumberL = new JLabel("Truck #: ", SwingConstants.RIGHT);
         truckNumberF = new JTextField();
         truckNumberF.setHorizontalAlignment(JTextField.LEFT);
+        
+        trailerNumberL = new JLabel("Trailer #: ", SwingConstants.RIGHT);
+        trailerNumberF = new JTextField();
+        trailerNumberF.setHorizontalAlignment(JTextField.LEFT);
         
         msgLabel = new JLabel("");
         
