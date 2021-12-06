@@ -33,38 +33,27 @@ public class Model {
     
     //Method used to load example transactions into the array lists. This will not be needed in the actual application. Here for ease of testing.
     public void loadData(){
-    
-        //Outgoing Load Test
-        Driver dr0 = new Driver("null", "null", "null", "null");
-        Employee ep0 = new Employee(1279466832, "null", "null");
-        OutgoingTrans ot0 = new OutgoingTrans(0, 0, 0, 0, true, 0, 0, ep0, dr0, false, tsOut);
-        addToOutList(ot0);
-        
-        //Incoming Load Test
-        Employee ep01 = new Employee(0, "null", "null");
-        IncomingTrans it0 = new IncomingTrans(0, 0, 0, 0, true, ep01, false, tsIn);
-        addToInList(it0);
         
         //Outgoing Load Test
         Driver dr1 = new Driver("12345678", "John", "Smith", "Landaire");
         Employee ep1 = new Employee(1279466832, "Bob", "Jones");
-        OutgoingTrans ot1 = new OutgoingTrans(1, 458, 2318, 0, false, 61, 753146798, ep1, dr1, false, tsOut);
+        OutgoingTrans ot1 = new OutgoingTrans(0, 458, 2318, 0, false, 61, 753146798, ep1, dr1, false, tsOut);
         addToOutList(ot1);
         
         //Incoming Load Test
         Employee ep2 = new Employee(1279466832, "Bob", "Jones");
-        IncomingTrans it1 = new IncomingTrans(1, 460, 2317, 3, true, ep2, false, tsIn);
+        IncomingTrans it1 = new IncomingTrans(0, 460, 2317, 3, true, ep2, false, tsIn);
         addToInList(it1);
         
         //Outgoing Load Test
         Driver dr2 = new Driver("87654321", "Joe", "Shmo", "Landaire");
         Employee ep3 = new Employee(1398466024, "Wade", "Rake");
-        OutgoingTrans ot2 = new OutgoingTrans(2, 765, 1073, 0, false, 86, 757965123, ep3, dr2, false, tsOut);
+        OutgoingTrans ot2 = new OutgoingTrans(1, 765, 1073, 0, false, 86, 757965123, ep3, dr2, false, tsOut);
         addToOutList(ot2);
         
         //Incoming Load Test
         Employee ep4 = new Employee(1279466832, "Steven", "Brisk");
-        IncomingTrans it2 = new IncomingTrans(2, 765, 1073, 1, true, ep4, true, tsIn);
+        IncomingTrans it2 = new IncomingTrans(1, 765, 1073, 1, true, ep4, true, tsIn);
         addToInList(it2);
         
     }
