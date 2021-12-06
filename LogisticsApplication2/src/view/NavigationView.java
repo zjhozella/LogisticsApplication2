@@ -5,7 +5,9 @@
  */
 package view;
 
-import controller.NavigationCntl.NewOutgoingButtonListener;
+import controller.ConfirmationCntl;
+import static controller.NavigationCntl.inLoad;
+import static controller.NavigationCntl.outLoad;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
@@ -47,6 +49,8 @@ public class NavigationView extends JFrame{
         newOut.addActionListener(new NewOutgoingButtonListener());
 
         newIn = new JButton("New Incoming Load");
+        
+        newIn.addActionListener(new NewIncomingButtonListener());
         
         listOut = new JButton("View All Outgoing Loads");
         listOut.addActionListener(new outListButtonListener());        
@@ -104,6 +108,25 @@ public class NavigationView extends JFrame{
     }
     */
 
+    private static class NewOutgoingButtonListener implements ActionListener {
+
+            @Override
+            public void actionPerformed(ActionEvent evt) {
+                
+                outLoad.createOutgoingLoad();
+                ConfirmationCntl outC = new ConfirmationCntl(true);
+        }
+    }
+    
+    private static class NewIncomingButtonListener implements ActionListener {
+
+            @Override
+            public void actionPerformed(ActionEvent evt) {
+                inLoad.createIncomingLoad();
+                ConfirmationCntl outC = new ConfirmationCntl(false);
+        }
+    }
+    
     public class exitButtonListener implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent evt){

@@ -21,7 +21,6 @@ public class NavigationCntl {
     
     public static OutgoingCntl outLoad = new OutgoingCntl(navCntl); //Create new OutgoingCntl object
     public static IncomingCntl inLoad = new IncomingCntl();  //Create new IncomingCntl object
-    public static NavigationView navUI;
 
     public NavigationCntl(){
 
@@ -29,29 +28,5 @@ public class NavigationCntl {
         //Will create in instance of the NavigationView that will spawn main menu navigation.
         NavigationView navUI = new NavigationView();
 
-        navUI = new NavigationView();
-
-
     }
-    
-    public static class NewOutgoingButtonListener implements ActionListener {
-
-            @Override
-            public void actionPerformed(ActionEvent evt) {
-                
-                outLoad.createOutgoingLoad();
-                navUI.disableNav();
-                ConfirmationCntl outC = new ConfirmationCntl(true);
-        }
-    }
-    
-    public static class NewIncomingButtonListener implements ActionListener {
-
-            @Override
-            public void actionPerformed(ActionEvent evt) {
-                inLoad.createIncomingLoad();
-                ConfirmationCntl outC = new ConfirmationCntl(false);
-        }
-    }
-
 }

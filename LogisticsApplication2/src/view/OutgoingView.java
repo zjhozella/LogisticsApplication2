@@ -80,8 +80,6 @@ public class OutgoingView extends JFrame{
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
     
-    
-    
     public static void printIncompleteOutgoing(){
         for (int i = 1; i < Model.getOutList().size(); ++i){
             if (!Model.getOutList().get(i).isLoadComplete()){
