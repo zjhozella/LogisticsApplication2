@@ -21,15 +21,12 @@ public class Controller {
     private static int nextLoadNumber;
     public static NavigationCntl navCntl;
     
-    public Controller(Model model, NavigationView view){
+    public Controller(Model model){
         this.model = model;
         this.view = view;
 
         //Sets the next load number that will be used
         setNextLoadNumber();
-        
-        //Shows main menu
-        navCntl = new NavigationCntl();
     }
     
     /**

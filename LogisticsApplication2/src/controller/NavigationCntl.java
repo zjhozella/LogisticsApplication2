@@ -14,60 +14,14 @@ import view.IncomingView;
  *
  * @author zjhoz
  */
-public class NavigationCntl { //NavigationCntl should call NavView to print
-    Scanner scnr = new Scanner(System.in);
-    boolean nav = true; 
+public class NavigationCntl { 
     
     public static OutgoingCntl outLoad = new OutgoingCntl(navCntl); //Create new OutgoingCntl object
     public static IncomingCntl inLoad = new IncomingCntl();  //Create new IncomingCntl object
 
     public NavigationCntl(){
 
-        //Wrapped in a while loop, to handle unexpected input.
-        //Can change behavior by editing status of nav in each case.
-        while(nav){
-            
-            
-            NavigationView.printMenu();
-            
-            int option = scnr.nextInt();
-            
-            
-            switch (option){
-                case 1://Create new Outgoing Load
-                    outLoad.createOutgoingLoad();
-                    ConfirmationCntl outC = new ConfirmationCntl(true); //Create new confirmationCntl
-                    nav = true;
-                    break;
-                case 2://Create new Incoming Load
-                    inLoad.createIncomingLoad();
-                    ConfirmationCntl inC = new ConfirmationCntl(false); //Create new confirmationCntl 
-                    nav = true;
-                    break;
-                case 3://Edit an Outgoing Load
-                    editOutLoadCntl editOutLoad = new editOutLoadCntl(); //Create new instance of editOutLoadCntl
-                    nav = false;
-                    break;
-                case 4: //Edit an Incoming Load
-                    editInLoadCntl editInLoad = new editInLoadCntl();//create new instance of editInLoadCntl
-                    nav = false;
-                    break;
-                case 5://Show all Outgoing Loads
-                    //outLoad.showAllOutgoing();
-                    outgoingListUI outListUI = new outgoingListUI();//create new instance of outgoingListUI
-                    
-                    break;
-                case 6://Show all Incoming Loads
-                    inLoad.showAllIncoming();
-                    break;
-                case 9://Exit the program
-                    System.out.println("Goodbye!");
-                    System.exit(0); //Program will exit if 9 is selected
-                default: 
-                    System.out.println("Invalid Option, choose again!");
-                    break;
-            }
-        }
+        NavigationView navUI = new NavigationView();
 
     }
 

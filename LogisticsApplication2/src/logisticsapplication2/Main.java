@@ -23,12 +23,9 @@ public class Main {
                 
         //Creation of Model, View, and Controller
         Model model = new Model();
-        NavigationView view = new NavigationView();
-        Controller controller = new Controller(model, view);
-
-        /*** Test Harness ***/
-        /*TestHarness test = new TestHarness();
-        test.testClassHierarchy();*/
+        // NavigationView view = new NavigationView();
+        Controller controller = new Controller(model);
+        NavigationCntl navCntl = new NavigationCntl();
         
     }
 }
