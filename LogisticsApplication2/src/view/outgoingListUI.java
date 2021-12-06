@@ -73,7 +73,6 @@ public class outgoingListUI extends JFrame{
         this.getContentPane().add(tablePanel, BorderLayout.CENTER);
         this.setTitle("Vintage Sounds Instrument Inventory");
         this.setVisible(true);
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         //OutgoingCntl outCntl = new OutgoingCntl();
         //outTable = new JTable(Model.getOutList().get());//HELP!!!! 
