@@ -5,6 +5,7 @@
  */
 package view;
 
+import controller.NavigationCntl.NewOutgoingButtonListener;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
@@ -42,7 +43,9 @@ public class NavigationView extends JFrame{
         buttonPanel = new JPanel(new GridLayout(5,1));
         
         newOut = new JButton("New Outgoing Load");
-        
+
+        newOut.addActionListener(new NewOutgoingButtonListener());
+
         newIn = new JButton("New Incoming Load");
         
         listOut = new JButton("View All Outgoing Loads");
@@ -81,6 +84,10 @@ public class NavigationView extends JFrame{
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
         
+    }
+    
+    public void disableNav(){
+        this.setVisible(false);
     }
     /* Depreciated Code
     //Prints menu for the user to select a choice

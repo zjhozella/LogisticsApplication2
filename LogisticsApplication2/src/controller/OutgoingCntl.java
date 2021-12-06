@@ -62,8 +62,9 @@ import view.OutgoingView;
     // Take input from ConfirmationView, feed into Load object constructor for an outgoing load
     public void createOutgoingLoad(){
         
+        OutgoingView outUI = new OutgoingView();
         
-
+        /*
         Date date = new Date();
         long time = date.getTime();
         Timestamp outTS = new Timestamp(time);
@@ -125,18 +126,18 @@ import view.OutgoingView;
         //OutgoingTrans object creation
         OutgoingTrans ot = new OutgoingTrans(Controller.getNextLoadNumber(), truckNumber, trailerNumber, dunnageIndex, loadComplete, storeNumber, sealNumber, employee, driver, insectDetected, outTS);
         Model.addToOutList(ot);
-        
+        */
         /*
             Creates a blank Incoming Transaction to match every Outgoing Transaction that is created. This links both
             transactions together to be consistent with the same load number, truck number, and trailer number.
             The Incoming Transaction record will be updated when the user creates a new Incoming Transaction.
         */
         //Blank IncomingTrans object creation
-        IncomingTrans it = new IncomingTrans(Controller.getNextLoadNumber(), truckNumber, trailerNumber, dunnageIndex, loadComplete, blankEmployee, insectDetected, outTS);
+        /*IncomingTrans it = new IncomingTrans(Controller.getNextLoadNumber(), truckNumber, trailerNumber, dunnageIndex, loadComplete, blankEmployee, insectDetected, outTS);
         Model.addToInList(it);
         
         // Re-sets the next load number since we just created another load.
-        Controller.setNextLoadNumber();
+        Controller.setNextLoadNumber();*/
     }
     
     //Prints all outgoing load information
