@@ -25,6 +25,7 @@ public class Main {
         Model model = new Model();
         // NavigationView view = new NavigationView();
         Controller controller = new Controller(model);
+        // Create new NavigationCntl
         NavigationCntl navCntl = new NavigationCntl();
         
     }

@@ -23,7 +23,7 @@ public class Controller {
     
     public Controller(Model model){
         this.model = model;
-        this.view = view;
+        //this.view = view;
 
         //Sets the next load number that will be used
         setNextLoadNumber();

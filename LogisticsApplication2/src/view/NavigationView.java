@@ -13,6 +13,11 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import controller.OutListCntl;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  *
@@ -33,12 +38,21 @@ public class NavigationView extends JFrame{
     
     public void initNav(){
         centerPanel = new JPanel(new GridLayout(1, 1));
+        
         buttonPanel = new JPanel(new GridLayout(5,1));
+        
         newOut = new JButton("New Outgoing Load");
+        
         newIn = new JButton("New Incoming Load");
+        
         listOut = new JButton("View All Outgoing Loads");
+        listOut.addActionListener(new outListButtonListener());        
+        //View Incoming load button
         listIn = new JButton("View All Incoming Loads");
+        //listOut.addActionListener(new inListButtonListener());
+
         exit = new JButton("Exit Application");
+        exit.addActionListener(new exitButtonListener());
         
         centerPanel.setBorder(BorderFactory.createEmptyBorder(0, 50, 0, 50));
         buttonPanel.setBorder(BorderFactory.createEmptyBorder(25, 25, 25, 25));
@@ -48,6 +62,8 @@ public class NavigationView extends JFrame{
         buttonPanel.add(listOut);
         buttonPanel.add(listIn);
         buttonPanel.add(exit);
+
+        
         
         centerPanel.add(buttonPanel);
         titlePanel = new JPanel(new FlowLayout());
@@ -66,7 +82,7 @@ public class NavigationView extends JFrame{
         
         
     }
-    
+    /* Depreciated Code
     //Prints menu for the user to select a choice
     public static void printMenu(){
         System.out.println("Please select one of the options below:");
@@ -79,5 +95,28 @@ public class NavigationView extends JFrame{
         System.out.println("(9) - Quit");
         System.out.print("Enter your choice: ");
     }
-    
+    */
+
+    public class exitButtonListener implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent evt){
+            System.exit(0);
+        }
+    }
+
+    private static class outListButtonListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent evt) {
+            OutListCntl outListUI = new OutListCntl();
+        }
+    }
+
+    /*
+    private static class inListButtonListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent evt) {
+            inListCntl inListUI = new inListCntl();//Still need to make the inListCntl
+        }
+    }
+    */
 }
