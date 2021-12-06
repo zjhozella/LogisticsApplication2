@@ -62,6 +62,8 @@ public class OutgoingView extends JFrame{
         
         detailPanel.add(truckNumberL);
         detailPanel.add(truckNumberF);
+        detailPanel.add(trailerNumberL);
+        detailPanel.add(trailerNumberF);
         
         msgPanel.add(msgLabel);
         
