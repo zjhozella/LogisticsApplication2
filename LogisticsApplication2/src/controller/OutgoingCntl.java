@@ -38,6 +38,7 @@ import view.OutgoingView;
     
     private NavigationCntl navigationCntl;
     private static ArrayList<OutgoingTrans> outList;
+    public OutgoingView outUI;
   
     
     public OutgoingCntl(NavigationCntl newNavigationCntl){
@@ -60,9 +61,11 @@ import view.OutgoingView;
     }
 
     // Take input from ConfirmationView, feed into Load object constructor for an outgoing load
-    public void createOutgoingLoad(){
+    public void showCreateOutgoingLoadUI(){
         
-        OutgoingView outUI = new OutgoingView();
+        outUI = new OutgoingView();
+        
+        
         
         /*
         Date date = new Date();
@@ -138,6 +141,14 @@ import view.OutgoingView;
         
         // Re-sets the next load number since we just created another load.
         Controller.setNextLoadNumber();*/
+    }
+    
+    public void createOutgoingLoad(){
+        setTruckNumber(Integer.parseInt(outUI.truckNumberF.getText()));
+        //System.out.println("TRUCK NUMBER: " + getTruckNumber());
+        
+        
+        //outUI.setVisible(false);
     }
     
     //Prints all outgoing load information

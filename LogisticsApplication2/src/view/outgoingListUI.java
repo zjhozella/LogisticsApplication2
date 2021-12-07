@@ -5,12 +5,8 @@ import javax.swing.*;
 import controller.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.Timestamp;
-import model.Model;
-import model.OutgoingTableModel;
 import model.*;
 import static model.Model.outgoingTableModel;
-import java.sql.Timestamp;
 
 public class outgoingListUI extends JFrame{
     public OutgoingCntl outCntl;

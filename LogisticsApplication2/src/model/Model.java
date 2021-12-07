@@ -22,6 +22,8 @@ public class Model {
     //Application-wide Array Lists to store all Load data.
     private static ArrayList<OutgoingTrans> outList = new ArrayList<>();
     private static ArrayList<IncomingTrans> inList = new ArrayList<>();
+    private static ArrayList<Driver> drList = new ArrayList<>();
+    private static ArrayList<Employee> empList = new ArrayList<>();
     
     public static OutgoingTableModel outgoingTableModel;
     
@@ -36,25 +38,29 @@ public class Model {
         
         //Outgoing Load Test
         Driver dr1 = new Driver("12345678", "John", "Smith", "Landaire");
-        Employee ep1 = new Employee(1279466832, "Bob", "Jones");
+        Employee ep1 = new Employee(127946683, "Bob", "Jones");
         OutgoingTrans ot1 = new OutgoingTrans(0, 458, 2318, 0, false, 61, 753146798, ep1, dr1, false, tsOut);
         addToOutList(ot1);
+        addToDrList(dr1);
+        addToEmpList(ep1);
         
         //Incoming Load Test
-        Employee ep2 = new Employee(1279466832, "Bob", "Jones");
-        IncomingTrans it1 = new IncomingTrans(0, 460, 2317, 3, true, ep2, false, tsIn);
+        IncomingTrans it1 = new IncomingTrans(0, 460, 2317, 3, true, ep1, false, tsIn);
         addToInList(it1);
         
         //Outgoing Load Test
-        Driver dr2 = new Driver("87654321", "Joe", "Shmo", "Landaire");
-        Employee ep3 = new Employee(1398466024, "Wade", "Rake");
-        OutgoingTrans ot2 = new OutgoingTrans(1, 765, 1073, 0, false, 86, 757965123, ep3, dr2, false, tsOut);
+        Driver dr2 = new Driver("87654321", "Joe", "Shmo", "CFL");
+        Employee ep2 = new Employee(139846602, "Wade", "Rake");
+        OutgoingTrans ot2 = new OutgoingTrans(1, 765, 1073, 0, false, 86, 757965123, ep2, dr2, false, tsOut);
         addToOutList(ot2);
+        addToDrList(dr2);
+        addToEmpList(ep2);
         
         //Incoming Load Test
-        Employee ep4 = new Employee(1279466832, "Steven", "Brisk");
-        IncomingTrans it2 = new IncomingTrans(1, 765, 1073, 1, true, ep4, true, tsIn);
+        Employee ep3 = new Employee(165431246, "Steven", "Brisk");
+        IncomingTrans it2 = new IncomingTrans(1, 765, 1073, 1, true, ep3, true, tsIn);
         addToInList(it2);
+        addToEmpList(ep3);
         
     }
 
@@ -85,6 +91,34 @@ public class Model {
      */
     public static void addToInList(IncomingTrans inTrans) {
         inList.add(inTrans);
+    }
+
+    /**
+     * @return the drList
+     */
+    public static ArrayList<Driver> getDrList() {
+        return drList;
+    }
+
+    /**
+     * @param driver the driver to add to the list
+     */
+    public static void addToDrList(Driver driver) {
+        drList.add(driver);
+    }
+
+    /**
+     * @return the empList
+     */
+    public static ArrayList<Employee> getEmpList() {
+        return empList;
+    }
+
+    /**
+     * @param employee the employee to add to the list
+     */
+    public static void addToEmpList(Employee employee) {
+        empList.add(employee);
     }
     
     

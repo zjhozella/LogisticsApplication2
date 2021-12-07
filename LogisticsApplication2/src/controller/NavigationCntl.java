@@ -4,14 +4,8 @@
  */
 package controller;
 import static controller.Controller.navCntl;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import view.NavigationView;
-import view.outgoingListUI;
 
-import java.util.Scanner;
-import static model.Model.outgoingTableModel;
-import view.IncomingView;
 
 /**
  *
@@ -19,8 +13,8 @@ import view.IncomingView;
  */
 public class NavigationCntl { 
     
-    public static OutgoingCntl outLoad = new OutgoingCntl(navCntl); //Create new OutgoingCntl object
-    public static IncomingCntl inLoad = new IncomingCntl();  //Create new IncomingCntl object
+    public static OutgoingCntl outCntl = new OutgoingCntl(navCntl); //Create new OutgoingCntl object
+    public static IncomingCntl inCntl = new IncomingCntl();  //Create new IncomingCntl object
 
     public NavigationCntl(){
 

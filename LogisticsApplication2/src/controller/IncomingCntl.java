@@ -47,7 +47,7 @@ public class IncomingCntl {
         System.out.println("CREATE INCOMING LOAD:\n");
         
         //Shows all Outgoing Transactions that have loadComplete = false, meaning the attached incoming transaction is incomplete
-        NavigationCntl.outLoad.showAllIncompleteOutgoing();
+        NavigationCntl.outCntl.showAllIncompleteOutgoing();
         
         //Prompts the user to choose which load they have incoming
         System.out.print("Please enter the load number that is incoming: ");

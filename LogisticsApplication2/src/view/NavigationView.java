@@ -6,8 +6,6 @@
 package view;
 
 import controller.ConfirmationCntl;
-import static controller.NavigationCntl.inLoad;
-import static controller.NavigationCntl.outLoad;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
@@ -21,6 +19,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import static controller.NavigationCntl.outCntl;
+import static controller.NavigationCntl.inCntl;
 
 /**
  *
@@ -113,7 +113,7 @@ public class NavigationView extends JFrame{
             @Override
             public void actionPerformed(ActionEvent evt) {
                 
-                outLoad.createOutgoingLoad();
+                outCntl.showCreateOutgoingLoadUI();
                 //ConfirmationCntl outC = new ConfirmationCntl(true);
         }
     }
@@ -122,7 +122,7 @@ public class NavigationView extends JFrame{
 
             @Override
             public void actionPerformed(ActionEvent evt) {
-                inLoad.createIncomingLoad();
+                inCntl.createIncomingLoad();
                 //ConfirmationCntl outC = new ConfirmationCntl(false);
         }
     }
