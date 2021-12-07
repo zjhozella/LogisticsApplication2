@@ -26,6 +26,7 @@ public class Model {
     private static ArrayList<Employee> empList = new ArrayList<>();
     
     public static OutgoingTableModel outgoingTableModel;
+    public static IncomingTableModel incomingTableModel;
     
     //Default Constructor
     public Model(){

@@ -86,6 +86,8 @@ public class OutgoingTableModel extends AbstractTableModel{
             IncomingTrans it = new IncomingTrans(Controller.getNextLoadNumber(), truckNumber, trailerNumber, dunnageIndex, false, blankEmployee, insectDetected, outTS);
             Model.addToInList(it);
             
+            
+            
         } else {
             outTrans = new OutgoingTrans(0, truckNumber, trailerNumber, dunnageIndex, false, storeNumber, sealNumber, employee, driver, insectDetected, outTS);
             outList.add(outTrans);
@@ -94,7 +96,9 @@ public class OutgoingTableModel extends AbstractTableModel{
             IncomingTrans it = new IncomingTrans(0, truckNumber, trailerNumber, dunnageIndex, false, blankEmployee, insectDetected, outTS);
             Model.addToInList(it);
         }
+        
         fireTableDataChanged(); //refreshes table
+        Model.incomingTableModel.fireTableDataChanged();
     }
     
     public void deleteOutgoing(int index){

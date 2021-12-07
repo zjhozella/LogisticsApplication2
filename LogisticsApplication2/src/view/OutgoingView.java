@@ -29,12 +29,12 @@ import model.Model;
  */
 public class OutgoingView extends JFrame{
 
-    public JPanel detailPanel, msgPanel, bottomPanel, buttonPanel;
+    public JPanel detailPanel, msgPanel, bottomPanel, buttonPanel, driverComboPanel, empComboPanel;
     public JLabel msgLabel, truckNumberL, trailerNumberL, dunnageIndexL, storeNumberL, sealNumberL, 
             driverNumL, driverCompL1, driverFirstL1, driverLastL1, empIDL, empFirstL1, empLastL1, insectDetectedL;
     public static JLabel driverCompL2, driverFirstL2, driverLastL2, empFirstL2, empLastL2;
     public JTextField truckNumberF, trailerNumberF, dunnageIndexF, storeNumberF, sealNumberF;
-    public JButton submitButton, cancelButton;
+    public JButton submitButton, cancelButton, driverAddButton, empAddButton;
     public static JComboBox dunnageC, driverC, employeeC;
     public static JCheckBox insectDetected;
     
@@ -61,6 +61,12 @@ public class OutgoingView extends JFrame{
         bottomPanel = new JPanel();
         bottomPanel.setLayout(new GridLayout(2, 1));
         buttonPanel = new JPanel(new GridLayout(1,5));
+        
+        driverComboPanel = new JPanel();
+        driverAddButton = new JButton("+");
+        
+        empComboPanel = new JPanel();
+        empAddButton = new JButton("+");
         
         truckNumberL = new JLabel("Truck #: ", SwingConstants.RIGHT);
         truckNumberF = new JTextField();
@@ -139,7 +145,7 @@ public class OutgoingView extends JFrame{
         detailPanel.add(sealNumberL);
         detailPanel.add(sealNumberF);
         detailPanel.add(driverNumL);
-        detailPanel.add(driverC);
+        detailPanel.add(driverComboPanel);
         detailPanel.add(driverCompL1);
         detailPanel.add(driverCompL2);
         detailPanel.add(driverFirstL1);
@@ -147,7 +153,7 @@ public class OutgoingView extends JFrame{
         detailPanel.add(driverLastL1);
         detailPanel.add(driverLastL2);
         detailPanel.add(empIDL);
-        detailPanel.add(employeeC);
+        detailPanel.add(empComboPanel);
         detailPanel.add(empFirstL1);
         detailPanel.add(empFirstL2);
         detailPanel.add(empLastL1);
@@ -168,7 +174,14 @@ public class OutgoingView extends JFrame{
         bottomPanel.add(msgPanel);
         bottomPanel.add(buttonPanel);
         
-        this.setSize(400, 500);
+        driverComboPanel.add(driverC);
+        driverComboPanel.add(driverAddButton);
+        
+        empComboPanel.add(employeeC);
+        empComboPanel.add(empAddButton);
+        
+        this.setSize(500, 500);
+        this.setResizable(false);
         this.setLocationRelativeTo(null);
         this.setContentPane(new JPanel(new BorderLayout()));
         this.getContentPane().add(detailPanel, BorderLayout.CENTER);
