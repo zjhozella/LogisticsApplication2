@@ -72,14 +72,27 @@ public class OutgoingTableModel extends AbstractTableModel{
         }
     }
     
-    public void newInstrument(){
+    public void newLoad(int truckNumber, int trailerNumber, int dunnageIndex, int storeNumber, int sealNumber, Driver driver, Employee employee, boolean insectDetected, Timestamp outTS){
         if (outList.size() > 0){   
-            nextOutLoadNumber = outList.get(outList.size() - 1).getLoadNumber() + 1;
-            outTrans = new OutgoingTrans(nextOutLoadNumber, 0, 0, 0, false, 0, 0, new Employee(0,"Santa", "Claus"), new Driver("dlNumber", "fn", "ln", "company"), false, new Timestamp(System.currentTimeMillis()));
+            outTrans = new OutgoingTrans(Controller.getNextLoadNumber(), truckNumber, trailerNumber, dunnageIndex, false, storeNumber, sealNumber, employee, driver, insectDetected, outTS);
             outList.add(outTrans);
+            
+            /*
+                Creates a blank Incoming Transaction to match every Outgoing Transaction that is created. This links both
+                transactions together to be consistent with the same load number, truck number, and trailer number.
+                The Incoming Transaction record will be updated when the user creates a new Incoming Transaction.
+            */
+            Employee blankEmployee = new Employee(0, null, null);
+            IncomingTrans it = new IncomingTrans(Controller.getNextLoadNumber(), truckNumber, trailerNumber, dunnageIndex, false, blankEmployee, insectDetected, outTS);
+            Model.addToInList(it);
+            
         } else {
-            outTrans = new OutgoingTrans(0, 0, 0, 0, false, 0, 0, new Employee(0,"Santa", "Claus"), new Driver("dlNumber", "fn", "ln", "company"), false, new Timestamp(System.currentTimeMillis()));
+            outTrans = new OutgoingTrans(0, truckNumber, trailerNumber, dunnageIndex, false, storeNumber, sealNumber, employee, driver, insectDetected, outTS);
             outList.add(outTrans);
+            
+            Employee blankEmployee = new Employee(0, null, null);
+            IncomingTrans it = new IncomingTrans(0, truckNumber, trailerNumber, dunnageIndex, false, blankEmployee, insectDetected, outTS);
+            Model.addToInList(it);
         }
         fireTableDataChanged(); //refreshes table
     }

@@ -215,11 +215,16 @@ public class OutgoingView extends JFrame{
         @Override
         public void actionPerformed(ActionEvent evt) {
             
+            if (truckNumberF.getText().isBlank() || trailerNumberF.getText().isBlank() || dunnageC.getSelectedIndex() == -1 || storeNumberF.getText().isBlank() || sealNumberF.getText().isBlank() || driverC.getSelectedIndex() == -1 || employeeC.getSelectedIndex() == -1){
+                JOptionPane.showMessageDialog(detailPanel, "One or more fields have been left blank!", "Submission Error", JOptionPane.ERROR_MESSAGE);
+                
+            }else{
+                JOptionPane.showMessageDialog(detailPanel, "Created New Outgoing Transaction!", "InfoBox: " + "Submission Confirmation", JOptionPane.INFORMATION_MESSAGE);
+                OutgoingView.this.setVisible(false);
+                NavigationCntl.outCntl.createOutgoingLoad();
+            }
             
             
-            JOptionPane.showMessageDialog(detailPanel, "Created New Outgoing Transaction!", "InfoBox: " + "Submission Confirmation", JOptionPane.INFORMATION_MESSAGE);
-            OutgoingView.this.setVisible(false);
-            NavigationCntl.outCntl.createOutgoingLoad();
         }
         
     }

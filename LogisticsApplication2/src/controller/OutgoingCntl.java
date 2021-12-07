@@ -67,7 +67,7 @@ import view.OutgoingView;
         
         
         
-        /*
+        /* DEPRECIATED CODE
         Date date = new Date();
         long time = date.getTime();
         Timestamp outTS = new Timestamp(time);
@@ -144,11 +144,25 @@ import view.OutgoingView;
     }
     
     public void createOutgoingLoad(){
+        
+        //Set each value of an outgoing load
         setTruckNumber(Integer.parseInt(outUI.truckNumberF.getText()));
-        //System.out.println("TRUCK NUMBER: " + getTruckNumber());
+        setTrailerNumber(Integer.parseInt(outUI.trailerNumberF.getText()));
+        setDunnageIndex(OutgoingView.dunnageC.getSelectedIndex());
+        setStoreNumber(Integer.parseInt(outUI.storeNumberF.getText()));
+        setSealNumber(Integer.parseInt(outUI.sealNumberF.getText()));
+        setInsectDetected(OutgoingView.insectDetected.isSelected());
         
+        Driver tempDriver = Model.getDrList().get(OutgoingView.driverC.getSelectedIndex());
+        Employee tempEmployee = Model.getEmpList().get(OutgoingView.employeeC.getSelectedIndex());
         
-        //outUI.setVisible(false);
+        Date date = new Date();
+        long time = date.getTime();
+        Timestamp outTS = new Timestamp(time);
+        
+        outgoingTableModel.newLoad(truckNumber, trailerNumber, dunnageIndex, storeNumber, sealNumber, tempDriver, tempEmployee, insectDetected, outTS);
+    
+        
     }
     
     //Prints all outgoing load information

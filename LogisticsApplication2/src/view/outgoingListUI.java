@@ -84,7 +84,7 @@ public class outgoingListUI extends JFrame{
 
             @Override
             public void actionPerformed(ActionEvent evt) {
-                outgoingTableModel.newInstrument();
+                //outgoingTableModel.newLoad();
                 /*
                 int selectedTableRow = InstrumentCntl.instrumentTableModel.getRowCount() - 1;
                 if (selectedTableRow != -1){
