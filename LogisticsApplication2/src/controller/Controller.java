@@ -20,6 +20,7 @@ public class Controller {
     //Stores the number that will be used for the loadNumber when we create the next load.
     private static int nextLoadNumber;
     public static NavigationCntl navCntl;
+    public static CreateEmployeeCntl createEmpCntl;
     
     public Controller(Model model){
         this.model = model;

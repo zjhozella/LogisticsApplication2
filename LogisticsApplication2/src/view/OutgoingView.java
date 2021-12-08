@@ -5,7 +5,10 @@
  */
 package view;
 
+import controller.Controller;
+import controller.CreateEmployeeCntl;
 import controller.NavigationCntl;
+import controller.OutgoingCntl;
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -67,6 +70,7 @@ public class OutgoingView extends JFrame{
         
         empComboPanel = new JPanel();
         empAddButton = new JButton("+");
+        empAddButton.addActionListener(new OnAddEmployeeButtonPressed());
         
         truckNumberL = new JLabel("Truck #: ", SwingConstants.RIGHT);
         truckNumberF = new JTextField();
@@ -111,14 +115,8 @@ public class OutgoingView extends JFrame{
         driverLastL2 = new JLabel("", SwingConstants.RIGHT);
         
         empIDL = new JLabel("Employee ID: ", SwingConstants.RIGHT);
-        String[] empIDNum = new String[Model.getEmpList().size()];
-        for (int i = 0; i < empIDNum.length; ++i){
-            empIDNum[i] = String.valueOf(Model.getEmpList().get(i).getID());
-            System.out.println("Employee " + i + ": " + String.valueOf(Model.getEmpList().get(i).getID()));
-            System.out.println("ArrayList size:" + Model.getEmpList().size());
-            System.out.println(Model.getEmpList().get(i).getFirstName());
-        }
-        employeeC = new JComboBox(empIDNum);
+        
+        employeeC = new JComboBox(fillEmployeeComboBox());
         employeeC.setSelectedIndex(-1);
         employeeC.addActionListener(new OnEmployeeIDChanged());
         
@@ -240,6 +238,29 @@ public class OutgoingView extends JFrame{
             
         }
         
+    }
+    
+    private class OnAddEmployeeButtonPressed implements ActionListener{
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            Controller.createEmpCntl = new CreateEmployeeCntl();
+            
+
+        }
+        
+    }
+    
+    public String[] fillEmployeeComboBox(){
+        String[] empIDNum = new String[Model.getEmpList().size()];
+        for (int i = 0; i < empIDNum.length; ++i){
+            empIDNum[i] = String.valueOf(Model.getEmpList().get(i).getID());
+            System.out.println("Employee " + i + ": " + String.valueOf(Model.getEmpList().get(i).getID()));
+            System.out.println("ArrayList size:" + Model.getEmpList().size());
+            System.out.println(Model.getEmpList().get(i).getFirstName());
+        }
+        
+        return empIDNum;
     }
     
     public static void printIncompleteOutgoing(){
