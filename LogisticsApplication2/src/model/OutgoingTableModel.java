@@ -98,7 +98,7 @@ public class OutgoingTableModel extends AbstractTableModel{
         }
         
         fireTableDataChanged(); //refreshes table
-        Model.incomingTableModel.fireTableDataChanged();
+        //Model.incomingTableModel.fireTableDataChanged(); UNCOMMENT WHEN INCOMING TABLE IS WORKING
     }
     
     public void deleteOutgoing(int index){

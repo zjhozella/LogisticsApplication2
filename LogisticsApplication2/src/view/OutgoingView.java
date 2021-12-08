@@ -9,7 +9,6 @@ import controller.Controller;
 import controller.CreateDriverCntl;
 import controller.CreateEmployeeCntl;
 import controller.NavigationCntl;
-import controller.OutgoingCntl;
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -33,8 +32,8 @@ import model.Model;
  */
 public class OutgoingView extends JFrame{
 
-    public JPanel detailPanel, msgPanel, bottomPanel, buttonPanel, driverComboPanel, empComboPanel;
-    public JLabel msgLabel, truckNumberL, trailerNumberL, dunnageIndexL, storeNumberL, sealNumberL, 
+    public JPanel mainPanel, bottomPanel, buttonPanel, driverComboPanel, empComboPanel;
+    public JLabel truckNumberL, trailerNumberL, dunnageIndexL, storeNumberL, sealNumberL, 
             driverNumL, driverCompL1, driverFirstL1, driverLastL1, empIDL, empFirstL1, empLastL1, insectDetectedL;
     public static JLabel driverCompL2, driverFirstL2, driverLastL2, empFirstL2, empLastL2;
     public JTextField truckNumberF, trailerNumberF, dunnageIndexF, storeNumberF, sealNumberF;
@@ -42,7 +41,7 @@ public class OutgoingView extends JFrame{
     public static JComboBox dunnageC, driverC, employeeC;
     public static JCheckBox insectDetected;
     
-    public String[] dunnageStrings = {"Empty", "1/4", "1/2", "1/3", "Full"};
+    public static String[] dunnageStrings = {"Empty", "1/4", "1/2", "1/3", "Full"};
     
     public OutgoingView(){
         super();
@@ -56,11 +55,9 @@ public class OutgoingView extends JFrame{
     
     public void initComponents(){
         
-        detailPanel = new JPanel();
-        detailPanel.setLayout(new GridLayout(13, 2));
-        detailPanel.setBorder(BorderFactory.createEmptyBorder(20, 20, 0, 100));
-        
-        msgPanel = new JPanel();
+        mainPanel = new JPanel();
+        mainPanel.setLayout(new GridLayout(13, 2));
+        mainPanel.setBorder(BorderFactory.createEmptyBorder(20, 20, 0, 100));
         
         bottomPanel = new JPanel();
         bottomPanel.setLayout(new GridLayout(2, 1));
@@ -131,37 +128,33 @@ public class OutgoingView extends JFrame{
         insectDetectedL = new JLabel("Is Insect Detected? ", SwingConstants.RIGHT);
         insectDetected = new JCheckBox ();
         
-        
-        msgLabel = new JLabel("");
-        
-        detailPanel.add(truckNumberL);
-        detailPanel.add(truckNumberF);
-        detailPanel.add(trailerNumberL);
-        detailPanel.add(trailerNumberF);
-        detailPanel.add(dunnageIndexL);
-        detailPanel.add(dunnageC);
-        detailPanel.add(storeNumberL);
-        detailPanel.add(storeNumberF);
-        detailPanel.add(sealNumberL);
-        detailPanel.add(sealNumberF);
-        detailPanel.add(driverNumL);
-        detailPanel.add(driverComboPanel);
-        detailPanel.add(driverCompL1);
-        detailPanel.add(driverCompL2);
-        detailPanel.add(driverFirstL1);
-        detailPanel.add(driverFirstL2);
-        detailPanel.add(driverLastL1);
-        detailPanel.add(driverLastL2);
-        detailPanel.add(empIDL);
-        detailPanel.add(empComboPanel);
-        detailPanel.add(empFirstL1);
-        detailPanel.add(empFirstL2);
-        detailPanel.add(empLastL1);
-        detailPanel.add(empLastL2);
-        detailPanel.add(insectDetectedL);
-        detailPanel.add(insectDetected);
-        
-        msgPanel.add(msgLabel);
+        mainPanel.add(truckNumberL);
+        mainPanel.add(truckNumberF);
+        mainPanel.add(trailerNumberL);
+        mainPanel.add(trailerNumberF);
+        mainPanel.add(dunnageIndexL);
+        mainPanel.add(dunnageC);
+        mainPanel.add(storeNumberL);
+        mainPanel.add(storeNumberF);
+        mainPanel.add(sealNumberL);
+        mainPanel.add(sealNumberF);
+        mainPanel.add(driverNumL);
+        mainPanel.add(driverComboPanel);
+        mainPanel.add(driverCompL1);
+        mainPanel.add(driverCompL2);
+        mainPanel.add(driverFirstL1);
+        mainPanel.add(driverFirstL2);
+        mainPanel.add(driverLastL1);
+        mainPanel.add(driverLastL2);
+        mainPanel.add(empIDL);
+        mainPanel.add(empComboPanel);
+        mainPanel.add(empFirstL1);
+        mainPanel.add(empFirstL2);
+        mainPanel.add(empLastL1);
+        mainPanel.add(empLastL2);
+        mainPanel.add(insectDetectedL);
+        mainPanel.add(insectDetected);
+
         
         submitButton = new JButton("Submit");
         submitButton.addActionListener(new OnSubmitButtonPressed());
@@ -171,7 +164,6 @@ public class OutgoingView extends JFrame{
         buttonPanel.add(submitButton);
         buttonPanel.add(cancelButton);
         
-        bottomPanel.add(msgPanel);
         bottomPanel.add(buttonPanel);
         
         driverComboPanel.add(driverC);
@@ -184,7 +176,7 @@ public class OutgoingView extends JFrame{
         this.setResizable(false);
         this.setLocationRelativeTo(null);
         this.setContentPane(new JPanel(new BorderLayout()));
-        this.getContentPane().add(detailPanel, BorderLayout.CENTER);
+        this.getContentPane().add(mainPanel, BorderLayout.CENTER);
         this.getContentPane().add(bottomPanel, BorderLayout.SOUTH);
         this.setTitle("Create New Outgoing Transaction");
         this.setVisible(true);
@@ -204,7 +196,7 @@ public class OutgoingView extends JFrame{
         }
     }
     
-        private class OnEmployeeIDChanged implements ActionListener {
+    private class OnEmployeeIDChanged implements ActionListener {
 
         @Override
         public void actionPerformed(ActionEvent evt) {
@@ -229,12 +221,33 @@ public class OutgoingView extends JFrame{
         public void actionPerformed(ActionEvent evt) {
             
             if (truckNumberF.getText().isBlank() || trailerNumberF.getText().isBlank() || dunnageC.getSelectedIndex() == -1 || storeNumberF.getText().isBlank() || sealNumberF.getText().isBlank() || driverC.getSelectedIndex() == -1 || employeeC.getSelectedIndex() == -1){
-                JOptionPane.showMessageDialog(detailPanel, "One or more fields have been left blank!", "Submission Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(mainPanel, "One or more fields have been left blank!", "Submission Error", JOptionPane.ERROR_MESSAGE);
                 
             }else{
-                JOptionPane.showMessageDialog(detailPanel, "Created New Outgoing Transaction!", "InfoBox: " + "Submission Confirmation", JOptionPane.INFORMATION_MESSAGE);
-                OutgoingView.this.setVisible(false);
-                NavigationCntl.outCntl.createOutgoingLoad();
+                
+                int response = JOptionPane.showConfirmDialog(mainPanel,
+                        "Load Number: " + Controller.getNextLoadNumber() +
+                        "\nTruck Number: " + truckNumberF.getText() +
+                        "\nTrailer Number: " + trailerNumberF.getText() +
+                        "\nDunnage: " + OutgoingView.dunnageStrings[dunnageC.getSelectedIndex()] + "\nStore Number: " + storeNumberF.getText() +
+                        "\nSeal Number: " + sealNumberF.getText() +
+                        "\nDriver License No.: " + Model.getDrList().get(driverC.getSelectedIndex()).getDlNumber() +
+                        "\nDriver Name: " + Model.getDrList().get(driverC.getSelectedIndex()).getFirstName() + " " + Model.getDrList().get(driverC.getSelectedIndex()).getLastName() +
+                        "\nDriver Company: " + Model.getDrList().get(driverC.getSelectedIndex()).getCompany() +
+                        "\nEmployee ID: " + Model.getEmpList().get(employeeC.getSelectedIndex()).getID() +
+                        "\nEmployee Name: " + Model.getEmpList().get(employeeC.getSelectedIndex()).getFirstName() + " " + Model.getEmpList().get(employeeC.getSelectedIndex()).getLastName() +
+                        "\nInsect Detected: " + insectDetected.isSelected(),
+                        "Is The Following Correct?", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+                
+                if(response == JOptionPane.YES_OPTION){
+                    JOptionPane.showMessageDialog(mainPanel, "Created New Outgoing Transaction!", "InfoBox: " + "Success Confirmation", JOptionPane.INFORMATION_MESSAGE);
+                    OutgoingView.this.setVisible(false);
+                    NavigationCntl.outCntl.createOutgoingLoad();
+                }else{
+                    
+                }
+                
+                
             }
             
             

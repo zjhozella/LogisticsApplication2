@@ -11,7 +11,7 @@ import static model.Model.outgoingTableModel;
 public class outgoingListUI extends JFrame{
     public OutgoingCntl outCntl;
     public static JTable outTable;
-    public JButton doneButton, detailsButton, addButton, deleteButton;
+    public JButton doneButton, detailsButton, addButton, deleteButton, menuButton;
     public JScrollPane tableScroller;
     public static JTable outLoadTable;
     public static OutgoingTrans outTrans;
@@ -45,16 +45,16 @@ public class outgoingListUI extends JFrame{
                 }
             }
         });
-        addButton = new JButton("Add");
-        addButton.addActionListener(new AddButtonListener());
+        //addButton = new JButton("Add");
+        //addButton.addActionListener(new AddButtonListener());
         deleteButton = new JButton("Delete");
-        //deleteButton.addActionListener(new DeleteButtonListener());
+        deleteButton.addActionListener(new DeleteButtonListener());
         detailsButton = new JButton("Show Details");
-        //detailsButton.addActionListener(new DetailsButtonListener());
-        //menuButton = new JButton("Menu");
-        //menuButton.addActionListener(new MenuButtonListener());
-        //buttonPanel.add(menuButton);
-        buttonPanel.add(addButton);
+        detailsButton.addActionListener(new DetailsButtonListener());
+        menuButton = new JButton("Menu");
+        menuButton.addActionListener(new MenuButtonListener());
+        buttonPanel.add(menuButton);
+        //buttonPanel.add(addButton);
         buttonPanel.add(deleteButton);
         buttonPanel.add(detailsButton);
         tableScroller = new JScrollPane(outLoadTable);
@@ -67,7 +67,7 @@ public class outgoingListUI extends JFrame{
         this.setContentPane(new JPanel(new BorderLayout()));
         this.getContentPane().add(buttonPanel, BorderLayout.SOUTH);
         this.getContentPane().add(tablePanel, BorderLayout.CENTER);
-        this.setTitle("Vintage Sounds Instrument Inventory");
+        this.setTitle("Outgoing Load List");
         this.setVisible(true);
 
         //OutgoingCntl outCntl = new OutgoingCntl();
@@ -80,6 +80,10 @@ public class outgoingListUI extends JFrame{
 
     }
 
+    
+    /**
+     * @deprecated 
+     */
     private static class AddButtonListener implements ActionListener {
 
             @Override
@@ -97,5 +101,35 @@ public class outgoingListUI extends JFrame{
             }
 */
         }
+    }
+
+    private  class DeleteButtonListener implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            //delete logic here
+        }
+
+           
+    }
+
+    private class DetailsButtonListener implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            //open detail UI here
+        }
+
+        
+    }
+
+    private class MenuButtonListener implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            outgoingListUI.this.setVisible(false);
+        }
+
+        
     }
 }

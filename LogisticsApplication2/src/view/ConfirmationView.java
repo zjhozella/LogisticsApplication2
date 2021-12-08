@@ -5,7 +5,6 @@
  */
 package view;
 
-import java.sql.Timestamp;
 import model.Model;
 
 /**
@@ -18,6 +17,8 @@ public class ConfirmationView {
     public ConfirmationView(){
         System.out.println("Please validate the following information:");
     }
+    
+    
 
     //Prints all data from the outgoing load they just created
     public void confirmOutgoing(){
