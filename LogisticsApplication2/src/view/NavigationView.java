@@ -14,6 +14,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import controller.OutListCntl;
+import controller.InListCntl;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import static controller.NavigationCntl.outCntl;
@@ -41,18 +42,21 @@ public class NavigationView extends JFrame{
         
         buttonPanel = new JPanel(new GridLayout(5,1));
         
+        //Outgoing Load button
         newOut = new JButton("New Outgoing Load");
-
         newOut.addActionListener(new NewOutgoingButtonListener());
-
-        newIn = new JButton("New Incoming Load");
         
+        //Incoming button
+        newIn = new JButton("New Incoming Load");
         newIn.addActionListener(new NewIncomingButtonListener());
         
+        // View outgoing load button
         listOut = new JButton("View All Outgoing Loads");
         listOut.addActionListener(new outListButtonListener());        
+        
         //View Incoming load button
         listIn = new JButton("View All Incoming Loads");
+        listIn.addActionListener(new inListButtonListener());
         //listOut.addActionListener(new inListButtonListener());
 
         exit = new JButton("Exit Application");
@@ -67,8 +71,6 @@ public class NavigationView extends JFrame{
         buttonPanel.add(listIn);
         buttonPanel.add(exit);
 
-        
-        
         centerPanel.add(buttonPanel);
         titlePanel = new JPanel(new FlowLayout());
         titlePanel.add(new JLabel("<html><h2 style=\"text-align:center;\">Welcome to Logistics!</h2><p style=\"text-align:center;\">Please select from the following menu options:</p></html>"));
@@ -90,20 +92,6 @@ public class NavigationView extends JFrame{
     public void disableNav(){
         this.setVisible(false);
     }
-    /* Depreciated Code
-    //Prints menu for the user to select a choice
-    public static void printMenu(){
-        System.out.println("Please select one of the options below:");
-        System.out.println("(1) - Enter New Outgoing Load");
-        System.out.println("(2) - Enter New Incoming Load");
-        System.out.println("(3) - Edit Outgoing Load");
-        System.out.println("(4) - Edit Incoming Load");
-        System.out.println("(5) - View All Outgoing Loads");
-        System.out.println("(6) - View All Incoming Loads");
-        System.out.println("(9) - Quit");
-        System.out.print("Enter your choice: ");
-    }
-    */
 
     private static class NewOutgoingButtonListener implements ActionListener {
 
@@ -138,12 +126,12 @@ public class NavigationView extends JFrame{
         }
     }
 
-    /*
+    
     private static class inListButtonListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent evt) {
-            inListCntl inListUI = new inListCntl();//Still need to make the inListCntl
+            InListCntl inListCntl = new InListCntl();
         }
     }
-    */
+
 }

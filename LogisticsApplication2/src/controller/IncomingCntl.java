@@ -4,20 +4,25 @@
  */
 package controller;
 
+import java.util.ArrayList;
+import model.*;
+import static model.Model.incomingTableModel;
+import view.IncomingView;
+
+
+/* DEPRECIATED IMPORTS
 import java.sql.Timestamp;
 import java.util.Date;
 import java.util.Scanner;
-import model.*;
-import view.IncomingView;
 import view.OutgoingView;
+
+*/
 
 /**
  *
  * @author zjhoz
  */
 public class IncomingCntl {
-    
-    private Scanner scnr = new Scanner(System.in);
     
     //All variables used for storage of data entered into the fields
     
@@ -32,14 +37,28 @@ public class IncomingCntl {
     
     //IncomingTrans attribute initialization
     private boolean insectDetected;
+
+    private NavigationCntl navigationCntl;
+    private static ArrayList<IncomingTrans> inList;
+    public IncomingView inUI;
     
     //Default incoming controller
-    public IncomingCntl(){
-        
+    public IncomingCntl(NavigationCntl newNavigationCntl){
+        //supports navigating back to the Main Menu
+        navigationCntl = newNavigationCntl;
+
+        //Get the instrument list
+        //When instantiated it will get the individual Instruments
+        //outList = outgoingTableModel;
+        inList = Model.getInList();
+
+        //Create incoming table model and pass inList
+        incomingTableModel = new IncomingTableModel(inList);
     }
     
     public void createIncomingLoad(){
         
+        /* DEPRICIATED CODE
         Date date = new Date();
         long time = date.getTime();
         Timestamp inTS = new Timestamp(time);
@@ -85,18 +104,19 @@ public class IncomingCntl {
         //Employee object creation for the incoming transaction
         Employee employee = new Employee(employeeID, employeeFN, employeeLN);
 
-        /*
+        
             Takes all of the information we collected from the user and sets it in the respective 
             place of the already created incoming transaction.
-        */
+        
         Model.getInList().get(loadNumber).setLoadComplete(loadComplete);
         Model.getInList().get(loadNumber).setDunnageIndex(dunnageIndex);
         Model.getInList().get(loadNumber).setEmployee(employee);
         Model.getInList().get(loadNumber).setInsectDetected(insectDetected);
         Model.getInList().get(loadNumber).setTsIn(inTS);
 
-       
+    */   
     }
+    
     
     /*
         Shows all Incoming Load's information
@@ -105,19 +125,20 @@ public class IncomingCntl {
         IncomingView.displayAllIncomingLoad();
     }
 
-    /**
+    /** DE
      * @return the scnr
-     */
+    
     public Scanner getScnr() {
         return scnr;
     }
 
     /**
      * @param scnr the scnr to set
-     */
+    
     public void setScnr(Scanner scnr) {
         this.scnr = scnr;
     }
+    */
 
     /**
      * @return the truckNumber

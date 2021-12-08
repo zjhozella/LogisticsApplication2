@@ -17,8 +17,6 @@ import view.OutgoingView;
  * @author zjhoz
  */
     public class OutgoingCntl {
-    
-    private Scanner scnr = new Scanner(System.in);
 
     //All variables used for storage of data entered into the fields
     
@@ -177,18 +175,16 @@ import view.OutgoingView;
 
     /**
      * @return the scnr
-     */
+    
     public Scanner getScnr() {
         return scnr;
     }
 
-    /**
-     * @param scnr the scnr to set
-     */
     public void setScnr(Scanner scnr) {
         this.scnr = scnr;
     }
-
+    */
+    
     /**
      * @return the truckNumber
      */

@@ -14,10 +14,9 @@ import view.NavigationView;
 public class NavigationCntl { 
     
     public static OutgoingCntl outCntl = new OutgoingCntl(navCntl); //Create new OutgoingCntl object
-    public static IncomingCntl inCntl = new IncomingCntl();  //Create new IncomingCntl object
+    public static IncomingCntl inCntl = new IncomingCntl(navCntl);  //Create new IncomingCntl object
 
     public NavigationCntl(){
-
 
         //Will create in instance of the NavigationView that will spawn main menu navigation.
         NavigationView navUI = new NavigationView();

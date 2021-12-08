@@ -7,7 +7,7 @@ package model;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import javax.swing.table.AbstractTableModel;
-
+import static view.incomingListUI.inTrans;
 /**
  *
  * @author zjhoz

@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package logisticsapplication2;
-
 import Tests.TestHarness;
 import controller.*;
 import model.*;
