@@ -7,14 +7,14 @@ import java.awt.event.ActionListener;
 import model.*;
 import static model.Model.incomingTableModel;
 
-
 public class incomingListUI extends JFrame{
     public IncomingCntl inCntl;
-    public static JTable inTable;
+    //public static JTable inTable;
     public JButton detailsButton, deleteButton, menuButton;
     public JScrollPane tableScroller;
     public static JTable inLoadTable;
     public static IncomingTrans inTrans;
+    public static JPanel tablePanel, buttonPanel;
 
     public incomingListUI(){
         //Default constructor
@@ -22,8 +22,8 @@ public class incomingListUI extends JFrame{
     }
 
     public void initInUI(){
-        JPanel tablePanel = new JPanel();
-        JPanel buttonPanel = new JPanel(new GridLayout(1,3));
+        tablePanel = new JPanel();
+        buttonPanel = new JPanel(new GridLayout(1,3));
         inLoadTable = new JTable(incomingTableModel);
 
         //Delete Button
@@ -55,8 +55,6 @@ public class incomingListUI extends JFrame{
         this.getContentPane().add(tablePanel, BorderLayout.CENTER);
         this.setTitle("Incoming Load List");
         this.setVisible(true);
-
-        inTable = new JTable();
         
     }
 
@@ -74,20 +72,20 @@ public class incomingListUI extends JFrame{
         @Override
         public void actionPerformed(ActionEvent evt) {
             final JLabel errLabel = new JLabel();
-            if (inTable.getSelectedRow() != -1) {            
-                int result = JOptionPane.showConfirmDialog(incomingListUI,"Are you sure you want to delete this instrument?", "Delete Instrument",
+            if (inLoadTable.getSelectedRow() != -1) {            
+                int result = JOptionPane.showConfirmDialog(tablePanel,"Are you sure you want to delete this instrument?","Delete Instrument",
                 JOptionPane.YES_NO_OPTION,
                 JOptionPane.QUESTION_MESSAGE);
 
                 if (result == JOptionPane.YES_OPTION){
-                    int selectedTableRow = inTable.getSelectedRow();
+                    int selectedTableRow = inLoadTable.getSelectedRow();
                     System.out.println("View: InstrumentListUI: selectedTableRow: " + selectedTableRow);
                     errLabel.setText("Success!!! Instrument detail has been deleted!");
-                    IncomingCntl..deleteInstrument(instrumentTable.getSelectedRow());
+                    //Insert logic to delete incoming load from list
                     JOptionPane.showMessageDialog(new JFrame(), errLabel);
                     if (selectedTableRow > 0){
                         selectedTableRow -= 1;
-                        instrumentTable.setRowSelectionInterval(selectedTableRow, selectedTableRow); //highlight row in table
+                        inLoadTable.setRowSelectionInterval(selectedTableRow, selectedTableRow); //highlight row in table
                     }
                 } else if (result == JOptionPane.NO_OPTION){
                     errLabel.setText("You selected: No");
@@ -98,13 +96,20 @@ public class incomingListUI extends JFrame{
         }
 
     // Show details button listener
-    private class DetailsButtonListener implements ActionListener {
-
+    public class DetailsButtonListener implements ActionListener{
         @Override
-        public void actionPerformed(ActionEvent e) {
-            //open detail UI here
-        }
-  
+        public void actionPerformed(ActionEvent evt){
+            System.out.println("View: InstrumentListUI: actionPerformed(): evt: " + evt);
+            System.out.println("View: InstrumentListUI: actionPerformed(): getRowCount" + inLoadTable.getRowCount());
+            int selectedTableRow = inLoadTable.getSelectedRow();
+            if (selectedTableRow != -1){
+                System.out.println("View: InstrumentListUI: actionPerformed(): selectedModelRow" + selectedTableRow);
+                int selectedModelRow = inLoadTable.convertRowIndexToModel(selectedTableRow);
+                System.out.println("View: InstrumentListUI: actionPerformed(): selectedModelRow" + selectedModelRow);
+                //BG ORIGINAL CODE InstrumentListUI.this.parentInstrumentCntl.getInstrumentDetailUI(selectedModelRow);
+                inLoad (selectedModelRow);
+            }
+       
+}    
     }
-
-}
+    }}
