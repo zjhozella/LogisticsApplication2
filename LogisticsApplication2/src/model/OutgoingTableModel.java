@@ -74,18 +74,17 @@ public class OutgoingTableModel extends AbstractTableModel{
         }
     }
     
-    /* Following code not needed: Only used to add a load
 
     public void newLoad(int truckNumber, int trailerNumber, int dunnageIndex, int storeNumber, int sealNumber, Driver driver, Employee employee, boolean insectDetected, Timestamp outTS){
         if (outList.size() > 0){   
             outTrans = new OutgoingTrans(Controller.getNextLoadNumber(), truckNumber, trailerNumber, dunnageIndex, false, storeNumber, sealNumber, employee, driver, insectDetected, outTS);
             outList.add(outTrans);
             
-            
+            /**
                 Creates a blank Incoming Transaction to match every Outgoing Transaction that is created. This links both
                 transactions together to be consistent with the same load number, truck number, and trailer number.
                 The Incoming Transaction record will be updated when the user creates a new Incoming Transaction.
-            
+            **/
             Employee blankEmployee = new Employee(0, null, null);
             IncomingTrans it = new IncomingTrans(Controller.getNextLoadNumber(), truckNumber, trailerNumber, dunnageIndex, false, blankEmployee, insectDetected, outTS);
             Model.addToInList(it);
@@ -102,10 +101,10 @@ public class OutgoingTableModel extends AbstractTableModel{
         }
         
         fireTableDataChanged(); //refreshes table
-        Model.incomingTableModel.fireTableDataChanged(); UNCOMMENT WHEN INCOMING TABLE IS WORKING
+        //Model.incomingTableModel.fireTableDataChanged(); UNCOMMENT WHEN INCOMING TABLE IS WORKING
     }
 
-    */
+    
 
 
     public void deleteOutgoing(int index){
