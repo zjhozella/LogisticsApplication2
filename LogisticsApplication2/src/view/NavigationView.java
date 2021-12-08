@@ -107,7 +107,7 @@ public class NavigationView extends JFrame{
 
             @Override
             public void actionPerformed(ActionEvent evt) {
-                inCntl.createIncomingLoad();
+                inCntl.showCreateIncomingLoadUI();
                 //ConfirmationCntl outC = new ConfirmationCntl(false);
         }
     }

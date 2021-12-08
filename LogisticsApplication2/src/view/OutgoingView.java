@@ -41,11 +41,8 @@ public class OutgoingView extends JFrame{
     public static JComboBox dunnageC, driverC, employeeC;
     public static JCheckBox insectDetected;
     
-    public static String[] dunnageStrings = {"Empty", "1/4", "1/2", "1/3", "Full"};
-    
     public OutgoingView(){
         super();
-        //Will contain all fields to collect data required for an outgoing load
 
         initComponents();
         //Outgoing entry header
@@ -80,7 +77,7 @@ public class OutgoingView extends JFrame{
         trailerNumberF.setHorizontalAlignment(JTextField.LEFT);
         
         dunnageIndexL = new JLabel("Dunnage Index: ", SwingConstants.RIGHT);
-        dunnageC = new JComboBox(dunnageStrings);
+        dunnageC = new JComboBox(Model.dunnageStrings);
         dunnageC.setSelectedIndex(0); //Defaults to Empty
         
         storeNumberL = new JLabel("Store #: ", SwingConstants.RIGHT);
@@ -96,11 +93,7 @@ public class OutgoingView extends JFrame{
          *  license numbers that are stored in the static Driver arrayList
          */
         driverNumL = new JLabel("Driver License #: ", SwingConstants.RIGHT);
-        String[] driverLicNum = new String[Model.getDrList().size()];
-        for (int i = 0; i < driverLicNum.length; ++i){
-            driverLicNum[i] = Model.getDrList().get(i).getDlNumber();
-        }
-        driverC = new JComboBox(driverLicNum);
+        driverC = new JComboBox(fillDriverComboBox());
         driverC.setSelectedIndex(-1);
         driverC.addActionListener(new OnDriverLicenseNumberChanged());
         
@@ -229,7 +222,7 @@ public class OutgoingView extends JFrame{
                         "Load Number: " + Controller.getNextLoadNumber() +
                         "\nTruck Number: " + truckNumberF.getText() +
                         "\nTrailer Number: " + trailerNumberF.getText() +
-                        "\nDunnage: " + OutgoingView.dunnageStrings[dunnageC.getSelectedIndex()] + "\nStore Number: " + storeNumberF.getText() +
+                        "\nDunnage: " + Model.dunnageStrings[dunnageC.getSelectedIndex()] + "\nStore Number: " + storeNumberF.getText() +
                         "\nSeal Number: " + sealNumberF.getText() +
                         "\nDriver License No.: " + Model.getDrList().get(driverC.getSelectedIndex()).getDlNumber() +
                         "\nDriver Name: " + Model.getDrList().get(driverC.getSelectedIndex()).getFirstName() + " " + Model.getDrList().get(driverC.getSelectedIndex()).getLastName() +
@@ -260,9 +253,7 @@ public class OutgoingView extends JFrame{
         @Override
         public void actionPerformed(ActionEvent e) {
             Controller.createEmpCntl = new CreateEmployeeCntl();
-            
-            
-
+            CreateEmployeeUI.isOutgoing = true;
         }
         
     }
@@ -276,6 +267,15 @@ public class OutgoingView extends JFrame{
 
         }
         
+    }
+    
+    public String[] fillDriverComboBox(){
+        String[] driverLicNum = new String[Model.getDrList().size()];
+        for (int i = 0; i < driverLicNum.length; ++i){
+            driverLicNum[i] = Model.getDrList().get(i).getDlNumber();
+        }
+        
+        return driverLicNum;
     }
     
     public String[] fillEmployeeComboBox(){

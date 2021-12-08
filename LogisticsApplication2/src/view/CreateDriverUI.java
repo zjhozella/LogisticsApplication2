@@ -80,7 +80,7 @@ public class CreateDriverUI extends JFrame{
                 JOptionPane.showMessageDialog(mainPanel, "One or more fields have been left blank!", "Submission Error", JOptionPane.ERROR_MESSAGE);
             }else{
                 Controller.createDrCntl.createDriver(numField.getText(), FNField.getText(), LNField.getText(), compField.getText());
-                JOptionPane.showMessageDialog(mainPanel, "Created New Employee!", "InfoBox: " + "Submission Confirmation", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(mainPanel, "Successfully Created New Driver!", "InfoBox: " + "Submission Confirmation", JOptionPane.INFORMATION_MESSAGE);
                 CreateDriverUI.this.setVisible(false);
             }
         }

@@ -60,85 +60,7 @@ import view.OutgoingView;
 
     // Take input from ConfirmationView, feed into Load object constructor for an outgoing load
     public void showCreateOutgoingLoadUI(){
-        
         outUI = new OutgoingView();
-        
-        
-        
-        /* DEPRECIATED CODE
-        Date date = new Date();
-        long time = date.getTime();
-        Timestamp outTS = new Timestamp(time);
-        
-        System.out.println("CREATE OUTGOING LOAD:\n");
-
-        System.out.print("Enter Truck Number:");
-        setTruckNumber(getScnr().nextInt());
-        
-        System.out.print("Enter Trailer Number:");
-        setTrailerNumber(getScnr().nextInt());
-        
-        dunnageIndex = 0; //default
-        loadComplete = false; //default
-        
-        System.out.print("Enter Store Number:");
-        setStoreNumber(getScnr().nextInt());
-        
-        System.out.print("Enter Seal Number:");
-        setSealNumber(getScnr().nextInt());
-        
-        System.out.print("Enter Driver License Number:");
-        setDLNumber(getScnr().next());
-        
-        System.out.print("Enter Driver First Name:");
-        setDFirstName(getScnr().next());
-        
-        System.out.print("Enter Driver Last Name:");
-        setDLastName(getScnr().next());
-        
-        System.out.print("Enter Driver Company:");
-        setDCompany(getScnr().next());
-        
-        System.out.print("Enter Employee ID:");
-        setEID(getScnr().nextInt());
-        
-        System.out.print("Enter Employee First Name:");
-        setEFirstName(getScnr().next());
-        
-        System.out.print("Enter Employee Last Name:");
-        setELastName(getScnr().next());
-
-        System.out.print("Are insects detected? 'n' - No || 'y' - Yes: ");
-        //Take input of next char 'y' or 'Y' will setInsectDetected to true, otherwise, false = default.
-        char char1 = getScnr().next().charAt(0);
-        
-        if (char1 == 'y' || char1== 'Y'){
-            setInsectDetected(true);
-        }
-
-        //Driver object creation
-        Driver driver = new Driver(DLNumber, DFirstName, DLastName, DCompany);
-        
-        //Employee object creation
-        Employee employee = new Employee(EID, EFirstName, ELastName);
-        //Blank Employee object creation
-        Employee blankEmployee = new Employee(0, null, null);
-        
-        //OutgoingTrans object creation
-        OutgoingTrans ot = new OutgoingTrans(Controller.getNextLoadNumber(), truckNumber, trailerNumber, dunnageIndex, loadComplete, storeNumber, sealNumber, employee, driver, insectDetected, outTS);
-        Model.addToOutList(ot);
-        */
-        /*
-            Creates a blank Incoming Transaction to match every Outgoing Transaction that is created. This links both
-            transactions together to be consistent with the same load number, truck number, and trailer number.
-            The Incoming Transaction record will be updated when the user creates a new Incoming Transaction.
-        */
-        //Blank IncomingTrans object creation
-        /*IncomingTrans it = new IncomingTrans(Controller.getNextLoadNumber(), truckNumber, trailerNumber, dunnageIndex, loadComplete, blankEmployee, insectDetected, outTS);
-        Model.addToInList(it);
-        
-        // Re-sets the next load number since we just created another load.
-        Controller.setNextLoadNumber();*/
     }
     
     public void createOutgoingLoad(){
@@ -172,18 +94,6 @@ import view.OutgoingView;
     public void showAllIncompleteOutgoing(){
         OutgoingView.printIncompleteOutgoing();
     }
-
-    /**
-     * @return the scnr
-    
-    public Scanner getScnr() {
-        return scnr;
-    }
-
-    public void setScnr(Scanner scnr) {
-        this.scnr = scnr;
-    }
-    */
     
     /**
      * @return the truckNumber

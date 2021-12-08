@@ -7,7 +7,8 @@ package controller;
 import model.Employee;
 import model.Model;
 import view.CreateEmployeeUI;
-import static view.OutgoingView.employeeC;
+import view.IncomingView;
+import view.OutgoingView;
 
 /**
  *
@@ -21,10 +22,20 @@ public class CreateEmployeeCntl {
         createEmpUI = new CreateEmployeeUI();
     }
     
-    public void createEmployee(int id, String fn, String ln){
-        Employee emp = new Employee(id, fn, ln);
-        Model.addToEmpList(emp);
-        employeeC.addItem(Model.getEmpList().get(Model.getEmpList().size() - 1).getID());
-        employeeC.setSelectedIndex(Model.getEmpList().size() - 1);
+    public void createEmployee(boolean isOutgoing, int id, String fn, String ln){
+        
+        if (isOutgoing){
+            Employee emp = new Employee(id, fn, ln);
+            Model.addToEmpList(emp);
+            OutgoingView.employeeC.addItem(Model.getEmpList().get(Model.getEmpList().size() - 1).getID());
+            OutgoingView.employeeC.setSelectedIndex(Model.getEmpList().size() - 1);
+        }else{
+            Employee emp = new Employee(id, fn, ln);
+            Model.addToEmpList(emp);
+            IncomingView.employeeC.addItem(Model.getEmpList().get(Model.getEmpList().size() - 1).getID());
+            IncomingView.employeeC.setSelectedIndex(Model.getEmpList().size() - 1);
+        }
+       
+        
     }
 }
