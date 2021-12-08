@@ -6,6 +6,7 @@
 package view;
 
 import controller.Controller;
+import controller.CreateDriverCntl;
 import controller.CreateEmployeeCntl;
 import controller.NavigationCntl;
 import controller.OutgoingCntl;
@@ -67,6 +68,7 @@ public class OutgoingView extends JFrame{
         
         driverComboPanel = new JPanel();
         driverAddButton = new JButton("+");
+        driverAddButton.addActionListener(new OnAddDriverButtonPressed());
         
         empComboPanel = new JPanel();
         empAddButton = new JButton("+");
@@ -245,6 +247,17 @@ public class OutgoingView extends JFrame{
         @Override
         public void actionPerformed(ActionEvent e) {
             Controller.createEmpCntl = new CreateEmployeeCntl();
+            
+
+        }
+        
+    }
+    
+    private class OnAddDriverButtonPressed implements ActionListener{
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            Controller.createDrCntl = new CreateDriverCntl();
             
 
         }
