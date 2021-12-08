@@ -261,6 +261,7 @@ public class OutgoingView extends JFrame{
         public void actionPerformed(ActionEvent e) {
             Controller.createEmpCntl = new CreateEmployeeCntl();
             
+            
 
         }
         

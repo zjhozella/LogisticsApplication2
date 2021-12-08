@@ -25,5 +25,6 @@ public class CreateEmployeeCntl {
         Employee emp = new Employee(id, fn, ln);
         Model.addToEmpList(emp);
         employeeC.addItem(Model.getEmpList().get(Model.getEmpList().size() - 1).getID());
+        employeeC.setSelectedIndex(Model.getEmpList().size() - 1);
     }
 }

@@ -25,6 +25,7 @@ public class CreateDriverCntl {
         Driver dr = new Driver(num, fn, ln, company);
         Model.addToDrList(dr);
         driverC.addItem(Model.getDrList().get(Model.getDrList().size() - 1).getDlNumber());
+        driverC.setSelectedIndex(Model.getDrList().size() - 1);
     }
     
 }
