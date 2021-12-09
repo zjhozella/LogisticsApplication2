@@ -6,7 +6,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import model.*;
 import static model.Model.incomingTableModel;
-import view.*;
 
 public class incomingListUI extends JFrame{
     public IncomingCntl inCntl;
@@ -75,7 +74,7 @@ public class incomingListUI extends JFrame{
         public void actionPerformed(ActionEvent evt) {
             final JLabel errLabel = new JLabel();
             if (inLoadTable.getSelectedRow() != -1) {            
-                int result = JOptionPane.showConfirmDialog(tablePanel,"Are you sure you want to delete this instrument?","Delete Instrument",
+                int result = JOptionPane.showConfirmDialog(tablePanel,"Are you sure you want to delete this Incoming Load?","Delete Incoming Load",
                 JOptionPane.YES_NO_OPTION,
                 JOptionPane.QUESTION_MESSAGE);
 
@@ -104,10 +103,8 @@ public class incomingListUI extends JFrame{
             int selectedTableRow = inLoadTable.getSelectedRow();
             index = selectedTableRow;
             if (selectedTableRow != -1){
-                System.out.println("View: InstrumentListUI: actionPerformed(): selectedModelRow" + selectedTableRow);
                 int selectedModelRow = inLoadTable.convertRowIndexToModel(selectedTableRow);
-                System.out.println("View: InstrumentListUI: actionPerformed(): selectedModelRow" + selectedModelRow);
-                IncomingDetailUI inDeets = new IncomingDetailUI(index);
+                IncomingDetailUI inDetails = new IncomingDetailUI(index);
 
             }    
         }

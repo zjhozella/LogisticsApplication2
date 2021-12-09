@@ -37,7 +37,7 @@ public class IncomingDetailUI extends JFrame{
     public static JLabel loadNumberL, truckNumberL1, truckNumberL2, trailerNumberL1, trailerNumberL2, dunnageIndexL,
             storeNumberL1, storeNumberL2, sealNumberL1, sealNumberL2, empIDL1, empIDL2, empNameL1, empNameL2,
             driverNumL1, driverNumL2, driverNameL1, driverNameL2, driverCompL1, driverCompL2, insectDetectedL, newEmpIDL1, newEmpNameL1, newEmpNameL2;
-    public JButton submitButton, cancelButton, empAddButton;
+    public JButton submitButton, menuButton, empAddButton;
     public static JComboBox loadNumberC, dunnageC, employeeC;
     public static JCheckBox insectDetected;
     
@@ -62,25 +62,25 @@ public class IncomingDetailUI extends JFrame{
         
         loadNumberL = new JLabel("Load Number: " + Model.getInList().get(index).getLoadNumber());
         
-        truckNumberL1 = new JLabel("Truck #: " + Model.getInList().get(index).getTruckNumber(), SwingConstants.RIGHT);
+        truckNumberL1 = new JLabel("Truck #: " + Model.getInList().get(index).getTruckNumber());
         
-        trailerNumberL1 = new JLabel("Trailer #: " + Model.getInList().get(index).getTrailerNumber(), SwingConstants.RIGHT);
+        trailerNumberL1 = new JLabel("Trailer #: " + Model.getInList().get(index).getTrailerNumber());
         
-        driverNumL1 = new JLabel("Driver Lic. #: " + Model.getOutList().get(index).getDr().getDlNumber(), SwingConstants.RIGHT);
+        driverNumL1 = new JLabel("Driver Lic. #: " + Model.getOutList().get(index).getDr().getDlNumber());
         
         driverNameL1 = new JLabel("Driver Name: " + Model.getOutList().get(index).getDr().getFirstName() + " " 
-            + Model.getOutList().get(index).getDr().getLastName(), SwingConstants.RIGHT);
+            + Model.getOutList().get(index).getDr().getLastName());
         
-        driverCompL1 = new JLabel("Driver Company: " + Model.getOutList().get(index).getDr().getCompany(), SwingConstants.RIGHT);
+        driverCompL1 = new JLabel("Driver Company: " + Model.getOutList().get(index).getDr().getCompany());
         
-        dunnageIndexL = new JLabel("Dunnage Index: " + Model.getInList().get(index).getDunnageIndex(), SwingConstants.RIGHT);
+        dunnageIndexL = new JLabel("Dunnage Index: " + Model.getInList().get(index).getDunnageIndex());
         
-        empIDL1 = new JLabel("Employee ID: " + Model.getInList().get(index).getEmployee().getID(), SwingConstants.RIGHT);
+        empIDL1 = new JLabel("Employee ID: " + Model.getInList().get(index).getEmployee().getID());
         
         empNameL1 = new JLabel("Employee Name: "+ Model.getInList().get(index).getEmployee().getFirstName() + " "
-            + Model.getInList().get(index).getEmployee().getLastName(), SwingConstants.RIGHT);
+            + Model.getInList().get(index).getEmployee().getLastName());
         
-        insectDetectedL = new JLabel("Was Insect Detected? " + Model.getInList().get(index).isInsectDetected() , SwingConstants.RIGHT);
+        insectDetectedL = new JLabel("Was Insect Detected? " + Model.getInList().get(index).isInsectDetected());
         
         mainPanel.add(loadNumberL);
         mainPanel.add(truckNumberL1);
@@ -93,36 +93,37 @@ public class IncomingDetailUI extends JFrame{
         mainPanel.add(empNameL1);
         mainPanel.add(insectDetectedL);
 
+        // Menu Button
+        menuButton = new JButton("Menu");
+        menuButton.addActionListener(new MenuButtonListener());
         
         submitButton = new JButton("Submit");
         //submitButton.addActionListener(new OnSubmitButtonPressed());
-        cancelButton = new JButton("Cancel");
-        cancelButton.addActionListener(new OnCancelButtonPressed());
-        
+        buttonPanel.add(menuButton);
         buttonPanel.add(submitButton);
-        buttonPanel.add(cancelButton);
+        
         
         bottomPanel.add(buttonPanel);
     
         empComboPanel.add(empAddButton);
         
-        this.setSize(500, 500);
+        this.setSize(400, 350);
         this.setResizable(false);
         this.setLocationRelativeTo(null);
         this.setContentPane(new JPanel(new BorderLayout()));
         this.getContentPane().add(mainPanel, BorderLayout.CENTER);
         this.getContentPane().add(bottomPanel, BorderLayout.SOUTH);
-        this.setTitle("Create New Outgoing Transaction");
+        this.setTitle("Incoming Load Details");
         this.setVisible(true);
     }
-    
-    private class OnCancelButtonPressed implements ActionListener {
+
+    private class MenuButtonListener implements ActionListener {
 
         @Override
-        public void actionPerformed(ActionEvent evt) {
-            //IncomingView.this.setVisible(false);
+        public void actionPerformed(ActionEvent e) {
+            IncomingDetailUI.this.setVisible(false);
         }
-        
     }
+
 
 }
