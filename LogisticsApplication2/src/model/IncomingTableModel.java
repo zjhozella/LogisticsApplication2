@@ -68,7 +68,7 @@ public class IncomingTableModel extends AbstractTableModel{
         }
     }
     
-    public void deleteOutgoing(int index){
+    public void deleteIncoming(int index){
         this.inList.remove(index);
         fireTableDataChanged();
     }

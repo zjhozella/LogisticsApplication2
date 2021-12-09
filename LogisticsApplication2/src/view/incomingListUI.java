@@ -31,8 +31,8 @@ public class incomingListUI extends JFrame{
         deleteButton.addActionListener(new DeleteButtonListener());
 
         // Show Details button
-        detailsButton = new JButton("Show Details");
-        detailsButton.addActionListener(new DetailsButtonListener());
+        //detailsButton = new JButton("Show Details");
+        //detailsButton.addActionListener(new DetailsButtonListener());
 
         //Menu button
         menuButton = new JButton("Menu");
@@ -82,6 +82,7 @@ public class incomingListUI extends JFrame{
                     System.out.println("View: InstrumentListUI: selectedTableRow: " + selectedTableRow);
                     errLabel.setText("Success!!! Instrument detail has been deleted!");
                     //Insert logic to delete incoming load from list
+                    incomingTableModel.deleteIncoming(inLoadTable.getSelectedRow());
                     JOptionPane.showMessageDialog(new JFrame(), errLabel);
                     if (selectedTableRow > 0){
                         selectedTableRow -= 1;
