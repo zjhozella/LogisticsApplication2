@@ -61,14 +61,9 @@ public class editInView extends JFrame{
         empComboPanel = new JPanel();
         empAddButton = new JButton("+");
         empAddButton.addActionListener(new OnAddEmployeeButtonPressed());
-        
-        //loadNumberL = new JLabel("Load Number: ", SwingConstants.RIGHT);
+
         loadbox = new JLabel("Load Number: " + Model.getInList().get(index).getLoadNumber(), SwingConstants.RIGHT);
         loadbox2 = new JLabel("", SwingConstants.LEFT);
-
-        //loadNumberC = new JComboBox(fillLoadNumberComboBox());
-        //loadNumberC.setSelectedIndex(-1);
-        //loadNumberC.addActionListener(new OnLoadNumberChanged());
         
         truckNumberL1 = new JLabel("Truck #: " + Model.getInList().get(index).getTruckNumber(), SwingConstants.RIGHT);
         truckNumberL2 = new JLabel("", SwingConstants.LEFT);
@@ -110,10 +105,10 @@ public class editInView extends JFrame{
         employeeC.addActionListener(new OnEmployeeIDChanged());
         
         newEmpNameL1 = new JLabel("Employee Name: ", SwingConstants.RIGHT);
-        newEmpNameL2 = new JLabel("", SwingConstants.RIGHT);
+        newEmpNameL2 = new JLabel("", SwingConstants.LEFT);
         
         insectDetectedL = new JLabel("Is Insect Detected? ", SwingConstants.RIGHT);
-        insectDetected = new JCheckBox ();
+        insectDetected = new JCheckBox("", Model.getInList().get(index).isInsectDetected());
         
         //mainPanel.add(loadNumberL);
         //mainPanel.add(loadNumberC);
@@ -145,6 +140,7 @@ public class editInView extends JFrame{
         mainPanel.add(newEmpNameL2);
         mainPanel.add(insectDetectedL);
         mainPanel.add(insectDetected);
+
         //Submit Button
         submitButton = new JButton("Submit");
         submitButton.addActionListener(new OnSubmitButtonPressed());
@@ -152,14 +148,14 @@ public class editInView extends JFrame{
         cancelButton = new JButton("Cancel");
         cancelButton.addActionListener(new OnCancelButtonPressed());
         
-        buttonPanel.add(submitButton);
         buttonPanel.add(cancelButton);
+        buttonPanel.add(submitButton);
         bottomPanel.add(buttonPanel);
         
         empComboPanel.add(employeeC);
         empComboPanel.add(empAddButton);
         
-        this.setSize(550, 550);
+        this.setSize(625, 600);
         this.setResizable(false);
         this.setLocationRelativeTo(null);
         this.setContentPane(new JPanel(new BorderLayout()));
@@ -177,7 +173,7 @@ public class editInView extends JFrame{
             newEmpNameL2.setText(Model.getEmpList().get(employeeC.getSelectedIndex()).getFirstName() + " " + Model.getEmpList().get(employeeC.getSelectedIndex()).getLastName());
         }  
     }
-    
+    /*
     private class OnLoadNumberChanged implements ActionListener {
 
         @Override
@@ -197,7 +193,8 @@ public class editInView extends JFrame{
         }
         
     }
-    
+    */
+
     private class OnCancelButtonPressed implements ActionListener {
 
         @Override
