@@ -8,6 +8,8 @@ package view;
 import controller.Controller;
 import controller.CreateEmployeeCntl;
 import controller.NavigationCntl;
+import controller.editInLoadCntl;
+
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -36,9 +38,9 @@ public class IncomingDetailUI extends JFrame{
     public JPanel mainPanel, bottomPanel, buttonPanel, empComboPanel;
     public static JLabel loadNumberL, truckNumberL1, truckNumberL2, trailerNumberL1, trailerNumberL2, dunnageIndexL,
             storeNumberL1, storeNumberL2, sealNumberL1, sealNumberL2, empIDL1, empIDL2, empNameL1, empNameL2,
-            driverNumL1, driverNumL2, driverNameL1, driverNameL2, driverCompL1, driverCompL2, insectDetectedL, newEmpIDL1, newEmpNameL1, newEmpNameL2;
-    public JButton submitButton, menuButton, empAddButton;
-    public static JComboBox loadNumberC, dunnageC, employeeC;
+            driverNumL1, driverNumL2, driverNameL1, driverNameL2, driverCompL1, driverCompL2, insectDetectedL, newEmpIDL1, newEmpNameL1, newEmpNameL2, storeNum, sealNum;
+    public JButton editButton, menuButton, empAddButton;
+    //public static JComboBox loadNumberC, dunnageC, employeeC;
     public static JCheckBox insectDetected;
     
     public IncomingDetailUI(int index){
@@ -65,6 +67,10 @@ public class IncomingDetailUI extends JFrame{
         truckNumberL1 = new JLabel("Truck #: " + Model.getInList().get(index).getTruckNumber());
         
         trailerNumberL1 = new JLabel("Trailer #: " + Model.getInList().get(index).getTrailerNumber());
+
+        storeNum = new JLabel("Store Number: " + Model.getOutList().get(index).getStoreNumber());
+
+        sealNum = new JLabel("Seal Number: " + Model.getOutList().get(index).getSealNumber());
         
         driverNumL1 = new JLabel("Driver Lic. #: " + Model.getOutList().get(index).getDr().getDlNumber());
         
@@ -85,6 +91,8 @@ public class IncomingDetailUI extends JFrame{
         mainPanel.add(loadNumberL);
         mainPanel.add(truckNumberL1);
         mainPanel.add(trailerNumberL1);
+        mainPanel.add(storeNum);
+        mainPanel.add(sealNum);
         mainPanel.add(driverNumL1);
         mainPanel.add(driverNameL1);
         mainPanel.add(driverCompL1);
@@ -97,10 +105,10 @@ public class IncomingDetailUI extends JFrame{
         menuButton = new JButton("Menu");
         menuButton.addActionListener(new MenuButtonListener());
         
-        submitButton = new JButton("Submit");
-        //submitButton.addActionListener(new OnSubmitButtonPressed());
+        editButton = new JButton("Edit Load");
+        editButton.addActionListener(new EditButtonListener());
         buttonPanel.add(menuButton);
-        buttonPanel.add(submitButton);
+        buttonPanel.add(editButton);
         
         
         bottomPanel.add(buttonPanel);
@@ -122,6 +130,17 @@ public class IncomingDetailUI extends JFrame{
         @Override
         public void actionPerformed(ActionEvent e) {
             IncomingDetailUI.this.setVisible(false);
+        }
+    }
+
+    private class EditButtonListener implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            IncomingDetailUI.this.setVisible(false);
+
+            editInLoadCntl newInEdit = new editInLoadCntl();
+
         }
     }
 

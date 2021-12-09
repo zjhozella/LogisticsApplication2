@@ -77,7 +77,7 @@ public class IncomingTableModel extends AbstractTableModel{
         Model.getInList().get(loadNumber).setLoadComplete(true);
         Model.getOutList().get(loadNumber).setLoadComplete(true);
         fireTableDataChanged();
-        Model.outgoingTableModel.fireTableDataChanged();
+        Model.incomingTableModel.fireTableDataChanged();
     }
     
     public void deleteIncoming(int index){
