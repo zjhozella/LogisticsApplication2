@@ -212,13 +212,13 @@ public class editInView extends JFrame{
         @Override
         public void actionPerformed(ActionEvent evt) {
             
-            if (dunnageC.getSelectedIndex() == -1 || employeeC.getSelectedIndex() == -1 || loadNumberC.getSelectedIndex() == -1){
+            if (dunnageC.getSelectedIndex() == -1 || employeeC.getSelectedIndex() == -1 /*|| loadNumberC.getSelectedIndex() == -1 */){
                 JOptionPane.showMessageDialog(mainPanel, "One or more fields have been left blank!", "Submission Error", JOptionPane.ERROR_MESSAGE);
                 
             }else{
                 
                 int response = JOptionPane.showConfirmDialog(mainPanel,
-                        "Load Number: " + loadNumberC.getSelectedIndex() +
+                        "Load Number: " + Model.getInList().get(index).getLoadNumber() +
                         "\nDunnage: " + Model.dunnageStrings[dunnageC.getSelectedIndex()] +
                         "\nEmployee ID: " + Model.getEmpList().get(employeeC.getSelectedIndex()).getID() +
                         "\nEmployee Name: " + Model.getEmpList().get(employeeC.getSelectedIndex()).getFirstName() + " " + Model.getEmpList().get(employeeC.getSelectedIndex()).getLastName() +
@@ -228,7 +228,7 @@ public class editInView extends JFrame{
                 if(response == JOptionPane.YES_OPTION){
                     JOptionPane.showMessageDialog(mainPanel, "Updated Incoming Transaction!", "InfoBox: " + "Success Confirmation", JOptionPane.INFORMATION_MESSAGE);
                     editInView.this.setVisible(false);
-                    NavigationCntl.inCntl.updateIncomingLoad(Integer.parseInt(loadNumberC.getSelectedItem().toString()));
+                    NavigationCntl.inCntl.updateIncomingLoad((Model.getInList().get(index).getLoadNumber()));
                     Model.incomingTableModel.fireTableDataChanged();
                 }
             }
