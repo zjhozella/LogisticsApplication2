@@ -15,6 +15,8 @@ public class outgoingListUI extends JFrame{
     public JScrollPane tableScroller;
     public static JTable outLoadTable;
     public static OutgoingTrans outTrans;
+    public static JPanel tablePanel, buttonPanel;
+    public static int index;
 
     public outgoingListUI(){
         //Default Constructor
@@ -22,15 +24,9 @@ public class outgoingListUI extends JFrame{
     }
 
     public void initOutUI(){
-        JPanel tablePanel = new JPanel();
-        JPanel buttonPanel = new JPanel(new GridLayout(1,3));
-        //outgoingTableModel.getColumnModel().getColumn(0).setPreferredWidth(25);
-        //instrumentTable.getColumnModel().getColumn(1).setPreferredWidth(50);
-        //System.out.println(">>>View: outgoingListUI: initComponents: outgoingTableModel.getRowCount() " + outgoingTableModel.getRowCount());
-        //clears text in new row when clicked
-        
+        tablePanel = new JPanel();
+        buttonPanel = new JPanel(new GridLayout(1,3));
         outLoadTable = new JTable(outgoingTableModel);
-        
         
         /* Code imported from Mr. G's code, should not be implemented
         In our code, FOR NOW.
@@ -51,6 +47,7 @@ public class outgoingListUI extends JFrame{
             }
         });
         */
+
         // Delete button
         deleteButton = new JButton("Delete");
         deleteButton.addActionListener(new DeleteButtonListener());
@@ -80,9 +77,6 @@ public class outgoingListUI extends JFrame{
         this.getContentPane().add(tablePanel, BorderLayout.CENTER);
         this.setTitle("Outgoing Load List");
         this.setVisible(true);
-
-        outTable = new JTable();
-
     }
 
     
@@ -110,22 +104,46 @@ public class outgoingListUI extends JFrame{
     */
 
     // Delete button listener
-    private  class DeleteButtonListener implements ActionListener {
-
+    private static class DeleteButtonListener implements ActionListener {
         @Override
-        public void actionPerformed(ActionEvent e) {
-            //delete logic here
-        }     
+        public void actionPerformed(ActionEvent evt) {
+            final JLabel errLabel = new JLabel();
+            if (outLoadTable.getSelectedRow() != -1) {            
+                int result = JOptionPane.showConfirmDialog(tablePanel,"Are you sure you want to delete this Outgoing Load?","Delete Outgoing Load",
+                JOptionPane.YES_NO_OPTION,
+                JOptionPane.QUESTION_MESSAGE);
+
+                if (result == JOptionPane.YES_OPTION){
+                    int selectedTableRow = outLoadTable.getSelectedRow();
+                    errLabel.setText("Success!!! Outgoing Load has been deleted!");
+                    outgoingTableModel.deleteOutgoing(outLoadTable.getSelectedRow());
+                    JOptionPane.showMessageDialog(new JFrame(), errLabel);
+                    if (selectedTableRow > 0){
+                        selectedTableRow -= 1;
+                        outLoadTable.setRowSelectionInterval(selectedTableRow, selectedTableRow); //highlight row in table
+                    }
+                } else if (result == JOptionPane.NO_OPTION){
+                    errLabel.setText("You selected: No");
+                } else {
+                    errLabel.setText("None selected");
+                }
+            }
+        }
     }
 
     // Show details button listener
-    private class DetailsButtonListener implements ActionListener {
-
+    public class DetailsButtonListener implements ActionListener{
         @Override
-        public void actionPerformed(ActionEvent e) {
-            //open detail UI here
+        public void actionPerformed(ActionEvent evt){
+            int selectedTableRow = outLoadTable.getSelectedRow();
+            index = selectedTableRow;
+            if (selectedTableRow != -1){
+                int selectedModelRow = outLoadTable.convertRowIndexToModel(selectedTableRow);
+                //create new OutgoingDetailUI
+                //IncomingDetailUI inDetails = new IncomingDetailUI(index);
+                OutgoingDetailUI outDetails = new OutgoingDetailUI(index);
+            }    
         }
-  
     }
 
     // Menu button listener
