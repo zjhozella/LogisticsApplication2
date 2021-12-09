@@ -16,6 +16,7 @@ public class incomingListUI extends JFrame{
     public static JTable inLoadTable;
     public static IncomingTrans inTrans;
     public static JPanel tablePanel, buttonPanel;
+    public static int index;
 
     public incomingListUI(){
         //Default constructor
@@ -33,7 +34,7 @@ public class incomingListUI extends JFrame{
 
         // Show Details button
         detailsButton = new JButton("Show Details");
-        //detailsButton.addActionListener(new DetailsButtonListener());
+        detailsButton.addActionListener(new DetailsButtonListener());
 
         //Menu button
         menuButton = new JButton("Menu");
@@ -101,13 +102,13 @@ public class incomingListUI extends JFrame{
         @Override
         public void actionPerformed(ActionEvent evt){
             int selectedTableRow = inLoadTable.getSelectedRow();
+            index = selectedTableRow;
             if (selectedTableRow != -1){
                 System.out.println("View: InstrumentListUI: actionPerformed(): selectedModelRow" + selectedTableRow);
                 int selectedModelRow = inLoadTable.convertRowIndexToModel(selectedTableRow);
                 System.out.println("View: InstrumentListUI: actionPerformed(): selectedModelRow" + selectedModelRow);
-                //BG ORIGINAL CODE InstrumentListUI.this.parentInstrumentCntl.getInstrumentDetailUI(selectedModelRow);
-                //inLoadTable.set(selectedModelRow);
-       
+                IncomingDetailUI inDeets = new IncomingDetailUI(index);
+
             }    
         }
     }
