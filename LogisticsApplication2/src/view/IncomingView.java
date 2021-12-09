@@ -61,8 +61,9 @@ public class IncomingView extends JFrame{
         empAddButton.addActionListener(new OnAddEmployeeButtonPressed());
         
         loadNumberL = new JLabel("Load Number: ", SwingConstants.RIGHT);
-        loadNumberC = new JComboBox();
+        loadNumberC = new JComboBox(fillLoadNumberComboBox());
         loadNumberC.setSelectedIndex(-1);
+        loadNumberC.addActionListener(new OnLoadNumberChanged());
         
         truckNumberL1 = new JLabel("Truck #: ", SwingConstants.RIGHT);
         truckNumberL2 = new JLabel("", SwingConstants.LEFT);
@@ -156,7 +157,7 @@ public class IncomingView extends JFrame{
         this.setContentPane(new JPanel(new BorderLayout()));
         this.getContentPane().add(mainPanel, BorderLayout.CENTER);
         this.getContentPane().add(bottomPanel, BorderLayout.SOUTH);
-        this.setTitle("Create New Outgoing Transaction");
+        this.setTitle("Add Incoming Transaction");
         this.setVisible(true);
     }
     
@@ -167,6 +168,26 @@ public class IncomingView extends JFrame{
             System.out.println("Selected Index: " + employeeC.getSelectedIndex());
             newEmpNameL2.setText(Model.getEmpList().get(employeeC.getSelectedIndex()).getFirstName() + " " + Model.getEmpList().get(employeeC.getSelectedIndex()).getLastName());
         }  
+    }
+    
+    private class OnLoadNumberChanged implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent evt) {
+            System.out.println("Selected Index: " + loadNumberC.getSelectedIndex() + " Load Number: " + loadNumberC.getSelectedItem());
+            int selectedIndex = loadNumberC.getSelectedIndex();
+            int selectedLoadNumber = Integer.parseInt(loadNumberC.getSelectedItem().toString());
+            truckNumberL2.setText(String.valueOf(Model.getOutList().get(selectedLoadNumber).getTruckNumber()));
+            trailerNumberL2.setText(String.valueOf(Model.getOutList().get(selectedLoadNumber).getTrailerNumber()));
+            storeNumberL2.setText(String.valueOf(Model.getOutList().get(selectedLoadNumber).getStoreNumber()));
+            sealNumberL2.setText(String.valueOf(Model.getOutList().get(selectedLoadNumber).getSealNumber()));
+            empIDL2.setText(String.valueOf(Model.getOutList().get(selectedLoadNumber).getEmployee().getID()));
+            empNameL2.setText(String.valueOf(Model.getOutList().get(selectedLoadNumber).getEmployee().getFirstName() + " " + Model.getOutList().get(selectedLoadNumber).getEmployee().getLastName()));
+            driverNumL2.setText(String.valueOf(Model.getOutList().get(selectedLoadNumber).getDr().getDlNumber()));
+            driverNameL2.setText(String.valueOf(Model.getOutList().get(selectedLoadNumber).getDr().getFirstName()) + " " + Model.getOutList().get(selectedLoadNumber).getDr().getLastName());
+            driverCompL2.setText(String.valueOf(Model.getOutList().get(selectedLoadNumber).getDr().getCompany()));
+        }
+        
     }
     
     private class OnCancelButtonPressed implements ActionListener {
@@ -183,7 +204,7 @@ public class IncomingView extends JFrame{
         @Override
         public void actionPerformed(ActionEvent evt) {
             
-            if (dunnageC.getSelectedIndex() == -1 || employeeC.getSelectedIndex() == -1){
+            if (dunnageC.getSelectedIndex() == -1 || employeeC.getSelectedIndex() == -1 || loadNumberC.getSelectedIndex() == -1){
                 JOptionPane.showMessageDialog(mainPanel, "One or more fields have been left blank!", "Submission Error", JOptionPane.ERROR_MESSAGE);
                 
             }else{
@@ -197,11 +218,9 @@ public class IncomingView extends JFrame{
                         "Is The Following Correct?", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
                 
                 if(response == JOptionPane.YES_OPTION){
-                    JOptionPane.showMessageDialog(mainPanel, "Created New Outgoing Transaction!", "InfoBox: " + "Success Confirmation", JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.showMessageDialog(mainPanel, "Added Incoming Transaction to Existing Load!", "InfoBox: " + "Success Confirmation", JOptionPane.INFORMATION_MESSAGE);
                     IncomingView.this.setVisible(false);
-                    NavigationCntl.outCntl.createOutgoingLoad();
-                }else{
-                    
+                    NavigationCntl.inCntl.createIncomingLoad(Integer.parseInt(loadNumberC.getSelectedItem().toString()));
                 }
             }
         }
@@ -210,7 +229,7 @@ public class IncomingView extends JFrame{
     private class OnAddEmployeeButtonPressed implements ActionListener{
 
         @Override
-        public void actionPerformed(ActionEvent e) {
+        public void actionPerformed(ActionEvent evt) {
             Controller.createEmpCntl = new CreateEmployeeCntl();
             CreateEmployeeUI.isOutgoing = false;
             
@@ -235,10 +254,15 @@ public class IncomingView extends JFrame{
         ArrayList<Integer> incompleteLoads = new ArrayList<>();
         for (int i = 0; i < Model.getOutList().size(); ++i){
             if (!Model.getOutList().get(i).isLoadComplete()){
+                System.out.println("Incomplete Load: " + Model.getOutList().get(i).getLoadNumber());
                 incompleteLoads.add(Model.getOutList().get(i).getLoadNumber());
             }
         }
         String[] incompleteLoadsArray = new String[incompleteLoads.size()];
+        for (int i = 0; i < incompleteLoadsArray.length; ++i){
+            incompleteLoadsArray[i] = incompleteLoads.get(i).toString();
+        }
+        
         return incompleteLoadsArray;
     }
     
