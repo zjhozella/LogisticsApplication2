@@ -85,7 +85,7 @@ public class OutgoingTableModel extends AbstractTableModel{
                 transactions together to be consistent with the same load number, truck number, and trailer number.
                 The Incoming Transaction record will be updated when the user creates a new Incoming Transaction.
             **/
-            Employee blankEmployee = new Employee(0, null, null);
+            Employee blankEmployee = new Employee(-1, "", "");
             IncomingTrans it = new IncomingTrans(Controller.getNextLoadNumber(), truckNumber, trailerNumber, dunnageIndex, false, blankEmployee, insectDetected, outTS);
             Model.addToInList(it);
             Controller.setNextLoadNumber();
@@ -96,7 +96,7 @@ public class OutgoingTableModel extends AbstractTableModel{
             outTrans = new OutgoingTrans(0, truckNumber, trailerNumber, dunnageIndex, false, storeNumber, sealNumber, employee, driver, insectDetected, outTS);
             outList.add(outTrans);
             
-            Employee blankEmployee = new Employee(0, null, null);
+            Employee blankEmployee = new Employee(-1, "", "");
             IncomingTrans it = new IncomingTrans(0, truckNumber, trailerNumber, dunnageIndex, false, blankEmployee, insectDetected, outTS);
             Model.addToInList(it);
             Controller.setNextLoadNumber();
