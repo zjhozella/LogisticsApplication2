@@ -50,7 +50,7 @@ public class EmpCreationUI extends JFrame{
         firstNameF = new JTextField(SwingConstants.LEFT);
         
         lastNameL = new JLabel("Employee Last Name: ", SwingConstants.RIGHT);
-        lastNameF = new JTextField(SwingConstants.RIGHT);
+        lastNameF = new JTextField(SwingConstants.LEFT);
         
         submitButton = new JButton("Submit");
         submitButton.addActionListener(new onSubmitButtonPressed());

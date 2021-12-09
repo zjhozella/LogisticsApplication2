@@ -5,6 +5,7 @@
 package view;
 
 import controller.Controller;
+import controller.DrEmpCntl;
 import controller.EmpCreationCntl;
 import controller.EmpListCntl;
 import java.awt.BorderLayout;
@@ -83,6 +84,7 @@ public class EmpListUI extends JFrame{
         @Override
         public void actionPerformed(ActionEvent e) {
             EmpListUI.this.setVisible(false);
+            DrEmpCntl drEmpCntl = new DrEmpCntl();
         }
     }
 
@@ -99,7 +101,7 @@ public class EmpListUI extends JFrame{
                 if (result == JOptionPane.YES_OPTION){
                     int selectedTableRow = empTable.getSelectedRow();
                     errLabel.setText("Success!!! Employee has been deleted!");
-                    employeeTableModel.deleteIncoming(empTable.getSelectedRow());
+                    employeeTableModel.deleteEmployee(empTable.getSelectedRow());
                     JOptionPane.showMessageDialog(new JFrame(), errLabel);
                     if (selectedTableRow > 0){
                         selectedTableRow -= 1;

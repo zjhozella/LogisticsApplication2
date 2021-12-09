@@ -81,7 +81,13 @@ public class IncomingTableModel extends AbstractTableModel{
     }
     
     public void deleteIncoming(int index){
-        this.inList.remove(index);
+        //this.inList.remove(index);
+        Model.getInList().get(index).setDunnageIndex(0);
+        Model.getInList().get(index).setEmployee(new Employee(0, "", ""));
+        Model.getInList().get(index).setInsectDetected(false);
+        Model.getInList().get(index).setTsIn(null);
+        Model.getInList().get(index).setLoadComplete(false);
+        Model.getOutList().get(index).setLoadComplete(false);
         fireTableDataChanged();
     }
 }
