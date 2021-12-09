@@ -27,6 +27,8 @@ public class Model {
     
     public static OutgoingTableModel outgoingTableModel;
     public static IncomingTableModel incomingTableModel;
+    public static EmployeeTableModel employeeTableModel;
+    public static DriverTableModel driverTableModel;
     public static String[] dunnageStrings = {"Empty", "1/4", "1/2", "1/3", "Full"};
     
     //Default Constructor

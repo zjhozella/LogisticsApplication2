@@ -6,7 +6,9 @@ package view;
 
 import controller.Controller;
 import controller.DriverCreationCntl;
+import controller.DriverListCntl;
 import controller.EmpCreationCntl;
+import controller.EmpListCntl;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
@@ -68,7 +70,7 @@ public class DrEmpUI extends JFrame{
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            Controller.driverCreationCntl = new DriverCreationCntl();
+            DriverListCntl driverListCntl = new DriverListCntl();
         }
         
     }
@@ -77,7 +79,7 @@ public class DrEmpUI extends JFrame{
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            Controller.empCreationCntl = new EmpCreationCntl();
+            EmpListCntl empListCntl = new EmpListCntl();
         }
         
     }

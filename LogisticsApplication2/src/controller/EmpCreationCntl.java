@@ -4,8 +4,11 @@
  */
 package controller;
 
+import java.util.ArrayList;
 import model.Employee;
+import model.EmployeeTableModel;
 import model.Model;
+import static model.Model.employeeTableModel;
 import view.EmpCreationUI;
 
 /**
@@ -16,13 +19,15 @@ public class EmpCreationCntl {
     
     EmpCreationUI empCreationUI;
     
+    
     public EmpCreationCntl(){
         empCreationUI = new EmpCreationUI();
+        
+        
     }
     
     public void createEmployee(int id, String fn, String ln){
-        Employee emp = new Employee(id, fn, ln);
-        Model.addToEmpList(emp);
+        employeeTableModel.newEmployee(id, fn, ln);
     }
     
 }
