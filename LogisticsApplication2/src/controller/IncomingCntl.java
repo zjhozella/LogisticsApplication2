@@ -66,10 +66,10 @@ public class IncomingCntl {
     public void createIncomingLoad(){
         
         //Set each value of an incoming load
-        setTruckNumber(Integer.parseInt(inUI.truckNumberF.getText()));
+        /*setTruckNumber(Integer.parseInt(inUI.truckNumberF.getText()));
         setTrailerNumber(Integer.parseInt(inUI.trailerNumberF.getText()));
         setDunnageIndex(IncomingView.dunnageC.getSelectedIndex());
-        setInsectDetected(IncomingView.insectDetected.isSelected());
+        setInsectDetected(IncomingView.insectDetected.isSelected());*/
         
         Employee tempEmployee = Model.getEmpList().get(IncomingView.employeeC.getSelectedIndex());
     
