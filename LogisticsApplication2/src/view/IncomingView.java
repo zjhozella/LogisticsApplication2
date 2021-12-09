@@ -33,10 +33,9 @@ import model.Model;
 public class IncomingView extends JFrame{
     
     public JPanel mainPanel, bottomPanel, buttonPanel, empComboPanel;
-    public JLabel loadNumberL, truckNumberL, trailerNumberL, dunnageIndexL,
-                 empIDL, empFirstL1, empLastL1, insectDetectedL;
-    public static JLabel empFirstL2, empLastL2;
-    public JTextField truckNumberF, trailerNumberF, dunnageIndexF;
+    public static JLabel loadNumberL, truckNumberL1, truckNumberL2, trailerNumberL1, trailerNumberL2, dunnageIndexL,
+            storeNumberL1, storeNumberL2, sealNumberL1, sealNumberL2, empIDL1, empIDL2, empNameL1, empNameL2,
+            driverNumL1, driverNumL2, driverNameL1, driverNameL2, driverCompL1, driverCompL2, insectDetectedL, newEmpIDL1, newEmpNameL1, newEmpNameL2;
     public JButton submitButton, cancelButton, empAddButton;
     public static JComboBox loadNumberC, dunnageC, employeeC;
     public static JCheckBox insectDetected;
@@ -50,7 +49,7 @@ public class IncomingView extends JFrame{
     
     public void initComponents(){
         mainPanel = new JPanel();
-        mainPanel.setLayout(new GridLayout(7, 2));
+        mainPanel.setLayout(new GridLayout(14, 2));
         mainPanel.setBorder(BorderFactory.createEmptyBorder(20, 20, 0, 100));
         
         bottomPanel = new JPanel();
@@ -65,45 +64,75 @@ public class IncomingView extends JFrame{
         loadNumberC = new JComboBox();
         loadNumberC.setSelectedIndex(-1);
         
-        truckNumberL = new JLabel("Truck #: ", SwingConstants.RIGHT);
-        truckNumberF = new JTextField();
-        truckNumberF.setHorizontalAlignment(JTextField.LEFT);
+        truckNumberL1 = new JLabel("Truck #: ", SwingConstants.RIGHT);
+        truckNumberL2 = new JLabel("", SwingConstants.LEFT);
         
-        trailerNumberL = new JLabel("Trailer #: ", SwingConstants.RIGHT);
-        trailerNumberF = new JTextField();
-        trailerNumberF.setHorizontalAlignment(JTextField.LEFT);
+        trailerNumberL1 = new JLabel("Trailer #: ", SwingConstants.RIGHT);
+        trailerNumberL2 = new JLabel("", SwingConstants.LEFT);
+        
+        storeNumberL1 = new JLabel("Store #: ", SwingConstants.RIGHT);
+        storeNumberL2 = new JLabel("", SwingConstants.LEFT);
+        
+        sealNumberL1 = new JLabel("Seal #: ", SwingConstants.RIGHT);
+        sealNumberL2 = new JLabel("", SwingConstants.LEFT);
+        
+        empIDL1 = new JLabel("Outgoing Employee ID: ", SwingConstants.RIGHT);
+        empIDL2 = new JLabel("", SwingConstants.LEFT);
+        
+        empNameL1 = new JLabel("Outgoing Employee Name: ", SwingConstants.RIGHT);
+        empNameL2 = new JLabel("", SwingConstants.LEFT);
+        
+        driverNumL1 = new JLabel("Driver Lic. #: ", SwingConstants.RIGHT);
+        driverNumL2 = new JLabel("", SwingConstants.LEFT);
+        
+        driverNameL1 = new JLabel("Driver Name: ", SwingConstants.RIGHT);
+        driverNameL2 = new JLabel("", SwingConstants.LEFT);
+        
+        driverCompL1 = new JLabel("Driver Company: ", SwingConstants.RIGHT);
+        driverCompL2 = new JLabel("", SwingConstants.LEFT);
         
         dunnageIndexL = new JLabel("Dunnage Index: ", SwingConstants.RIGHT);
         dunnageC = new JComboBox(Model.dunnageStrings);
         dunnageC.setSelectedIndex(0); //Defaults to Empty
         
-        empIDL = new JLabel("Employee ID: ", SwingConstants.RIGHT);
+        newEmpIDL1 = new JLabel("Employee ID: ", SwingConstants.RIGHT);
         
         employeeC = new JComboBox(fillEmployeeComboBox());
         employeeC.setSelectedIndex(-1);
         employeeC.addActionListener(new OnEmployeeIDChanged());
         
-        empFirstL1 = new JLabel("Employee First Name: ", SwingConstants.RIGHT);
-        empFirstL2 = new JLabel("", SwingConstants.RIGHT);
-        
-        empLastL1 = new JLabel("Employee Last Name: ", SwingConstants.RIGHT);
-        empLastL2 = new JLabel("", SwingConstants.RIGHT);
+        newEmpNameL1 = new JLabel("Employee Name: ", SwingConstants.RIGHT);
+        newEmpNameL2 = new JLabel("", SwingConstants.RIGHT);
         
         insectDetectedL = new JLabel("Is Insect Detected? ", SwingConstants.RIGHT);
         insectDetected = new JCheckBox ();
         
-        mainPanel.add(truckNumberL);
-        mainPanel.add(truckNumberF);
-        mainPanel.add(trailerNumberL);
-        mainPanel.add(trailerNumberF);
+        mainPanel.add(loadNumberL);
+        mainPanel.add(loadNumberC);
+        mainPanel.add(truckNumberL1);
+        mainPanel.add(truckNumberL2);
+        mainPanel.add(trailerNumberL1);
+        mainPanel.add(trailerNumberL2);
+        mainPanel.add(storeNumberL1);
+        mainPanel.add(storeNumberL2);
+        mainPanel.add(sealNumberL1);
+        mainPanel.add(sealNumberL2);
+        mainPanel.add(empIDL1);
+        mainPanel.add(empIDL2);
+        mainPanel.add(empNameL1);
+        mainPanel.add(empNameL2);
+        mainPanel.add(driverNumL1);
+        mainPanel.add(driverNumL2);
+        mainPanel.add(driverNameL1);
+        mainPanel.add(driverNameL2);
+        mainPanel.add(driverCompL1);
+        mainPanel.add(driverCompL2);
         mainPanel.add(dunnageIndexL);
         mainPanel.add(dunnageC);
-        mainPanel.add(empIDL);
+        mainPanel.add(newEmpIDL1);
         mainPanel.add(empComboPanel);
-        mainPanel.add(empFirstL1);
-        mainPanel.add(empFirstL2);
-        mainPanel.add(empLastL1);
-        mainPanel.add(empLastL2);
+        mainPanel.add(newEmpNameL1);
+        mainPanel.add(newEmpNameL2);
         mainPanel.add(insectDetectedL);
         mainPanel.add(insectDetected);
 
@@ -121,7 +150,7 @@ public class IncomingView extends JFrame{
         empComboPanel.add(employeeC);
         empComboPanel.add(empAddButton);
         
-        this.setSize(500, 300);
+        this.setSize(500, 500);
         this.setResizable(false);
         this.setLocationRelativeTo(null);
         this.setContentPane(new JPanel(new BorderLayout()));
@@ -136,8 +165,7 @@ public class IncomingView extends JFrame{
         @Override
         public void actionPerformed(ActionEvent evt) {
             System.out.println("Selected Index: " + employeeC.getSelectedIndex());
-            empFirstL2.setText(Model.getEmpList().get(employeeC.getSelectedIndex()).getFirstName());
-            empLastL2.setText(Model.getEmpList().get(employeeC.getSelectedIndex()).getLastName());
+            newEmpNameL2.setText(Model.getEmpList().get(employeeC.getSelectedIndex()).getFirstName() + " " + Model.getEmpList().get(employeeC.getSelectedIndex()).getLastName());
         }  
     }
     
@@ -155,15 +183,13 @@ public class IncomingView extends JFrame{
         @Override
         public void actionPerformed(ActionEvent evt) {
             
-            if (truckNumberF.getText().isBlank() || trailerNumberF.getText().isBlank() || dunnageC.getSelectedIndex() == -1 || employeeC.getSelectedIndex() == -1){
+            if (dunnageC.getSelectedIndex() == -1 || employeeC.getSelectedIndex() == -1){
                 JOptionPane.showMessageDialog(mainPanel, "One or more fields have been left blank!", "Submission Error", JOptionPane.ERROR_MESSAGE);
                 
             }else{
                 
                 int response = JOptionPane.showConfirmDialog(mainPanel,
                         "Load Number: " + Controller.getNextLoadNumber() +
-                        "\nTruck Number: " + truckNumberF.getText() +
-                        "\nTrailer Number: " + trailerNumberF.getText() +
                         "\nDunnage: " + Model.dunnageStrings[dunnageC.getSelectedIndex()] +
                         "\nEmployee ID: " + Model.getEmpList().get(employeeC.getSelectedIndex()).getID() +
                         "\nEmployee Name: " + Model.getEmpList().get(employeeC.getSelectedIndex()).getFirstName() + " " + Model.getEmpList().get(employeeC.getSelectedIndex()).getLastName() +
@@ -212,7 +238,7 @@ public class IncomingView extends JFrame{
                 incompleteLoads.add(Model.getOutList().get(i).getLoadNumber());
             }
         }
-        String[] incompleteLoadsArray = new String[incompleteLoads.length()];
+        String[] incompleteLoadsArray = new String[incompleteLoads.size()];
         return incompleteLoadsArray;
     }
     

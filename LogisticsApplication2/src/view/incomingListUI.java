@@ -6,7 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import model.*;
 import static model.Model.incomingTableModel;
-import static controller.InListCntl;
+//import static controller.InListCntl;
 import view.*;
 
 public class incomingListUI extends JFrame{
@@ -103,7 +103,7 @@ public class incomingListUI extends JFrame{
             int selectedTableRow = inLoadTable.getSelectedRow();
             if (selectedTableRow != -1){
                 int selectedModelRow = inLoadTable.convertRowIndexToModel(selectedTableRow);
-                incomingListUI.inLoadTable.getI getInstrumentDetailUI(selectedModelRow); 
+                //incomingListUI.inLoadTable.getI getInstrumentDetailUI(selectedModelRow); 
                 
             }
        
