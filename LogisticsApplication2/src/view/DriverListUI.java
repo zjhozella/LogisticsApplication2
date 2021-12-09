@@ -5,6 +5,7 @@
 package view;
 
 import controller.Controller;
+import controller.DrEmpCntl;
 import controller.DriverCreationCntl;
 import controller.DriverListCntl;
 import java.awt.BorderLayout;
@@ -87,6 +88,7 @@ public class DriverListUI extends JFrame{
         @Override
         public void actionPerformed(ActionEvent e) {
             DriverListUI.this.setVisible(false);
+            DrEmpCntl drEmpCntl = new DrEmpCntl();
         }
     }
 

@@ -68,6 +68,7 @@ public class DrEmpUI extends JFrame{
         @Override
         public void actionPerformed(ActionEvent e) {
             DriverListCntl driverListCntl = new DriverListCntl();
+            DrEmpUI.this.setVisible(false);
         }
         
     }
@@ -77,6 +78,7 @@ public class DrEmpUI extends JFrame{
         @Override
         public void actionPerformed(ActionEvent e) {
             EmpListCntl empListCntl = new EmpListCntl();
+            DrEmpUI.this.setVisible(false);
         }
         
     }
