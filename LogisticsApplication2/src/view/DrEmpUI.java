@@ -4,10 +4,7 @@
  */
 package view;
 
-import controller.Controller;
-import controller.DriverCreationCntl;
 import controller.DriverListCntl;
-import controller.EmpCreationCntl;
 import controller.EmpListCntl;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
@@ -49,7 +46,7 @@ public class DrEmpUI extends JFrame{
         listEmpB = new JButton("List All Employees");
         listEmpB.addActionListener(new onListEmployeeButtonPressed());
         
-        mainMenuB = new JButton("Back to Main Menu");
+        mainMenuB = new JButton("Close Window");
         mainMenuB.addActionListener(new onMenuButtonPressed());
 
         buttonPanel.add(listDriverB);

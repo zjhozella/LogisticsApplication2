@@ -4,10 +4,18 @@
  */
 package controller;
 
+import view.DriverListUI;
+
 /**
  *
  * @author zjhoz
  */
 public class DriverListCntl {
+    
+    public static DriverListUI driverListUI;
+    
+    public DriverListCntl(){
+        driverListUI = new DriverListUI();
+    }
     
 }

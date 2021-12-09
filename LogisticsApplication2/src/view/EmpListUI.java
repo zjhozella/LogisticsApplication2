@@ -99,7 +99,7 @@ public class EmpListUI extends JFrame{
                 if (result == JOptionPane.YES_OPTION){
                     int selectedTableRow = empTable.getSelectedRow();
                     errLabel.setText("Success!!! Employee has been deleted!");
-                    employeeTableModel.deleteIncoming(empTable.getSelectedRow());
+                    employeeTableModel.deleteEmployee(empTable.getSelectedRow());
                     JOptionPane.showMessageDialog(new JFrame(), errLabel);
                     if (selectedTableRow > 0){
                         selectedTableRow -= 1;

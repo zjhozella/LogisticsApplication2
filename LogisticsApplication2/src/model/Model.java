@@ -71,7 +71,7 @@ public class Model {
         addToOutList(ot3);
         
         //Incoming Load Test
-        Employee blankEmployee = new Employee(0, null, null);
+        Employee blankEmployee = new Employee(0, "", "");
         IncomingTrans it3 = new IncomingTrans(2, 931, 2476, 4, false, blankEmployee, false, tsIn);
         addToInList(it3);
         

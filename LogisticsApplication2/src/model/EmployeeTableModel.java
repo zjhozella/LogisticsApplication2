@@ -23,7 +23,7 @@ public class EmployeeTableModel extends AbstractTableModel{
     public EmployeeTableModel(ArrayList<Employee> empList){
         this.empList = empList;
         
-        System.out.println("EMPLOYEE TABLE MODEL: " + empList.get(0).getID());
+        
     }
     
     @Override
@@ -77,7 +77,7 @@ public class EmployeeTableModel extends AbstractTableModel{
         fireTableDataChanged(); //refreshes table
     }
     
-    public void deleteIncoming(int index){
+    public void deleteEmployee(int index){
         this.empList.remove(index);
         fireTableDataChanged();
     }
