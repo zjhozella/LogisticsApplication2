@@ -12,6 +12,7 @@ import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
@@ -32,12 +33,12 @@ import model.Model;
 public class IncomingView extends JFrame{
     
     public JPanel mainPanel, bottomPanel, buttonPanel, empComboPanel;
-    public JLabel truckNumberL, trailerNumberL, dunnageIndexL,
+    public JLabel loadNumberL, truckNumberL, trailerNumberL, dunnageIndexL,
                  empIDL, empFirstL1, empLastL1, insectDetectedL;
     public static JLabel empFirstL2, empLastL2;
     public JTextField truckNumberF, trailerNumberF, dunnageIndexF;
     public JButton submitButton, cancelButton, empAddButton;
-    public static JComboBox dunnageC, employeeC;
+    public static JComboBox loadNumberC, dunnageC, employeeC;
     public static JCheckBox insectDetected;
     
     public IncomingView(){
@@ -59,6 +60,10 @@ public class IncomingView extends JFrame{
         empComboPanel = new JPanel();
         empAddButton = new JButton("+");
         empAddButton.addActionListener(new OnAddEmployeeButtonPressed());
+        
+        loadNumberL = new JLabel("Load Number: ", SwingConstants.RIGHT);
+        loadNumberC = new JComboBox();
+        loadNumberC.setSelectedIndex(-1);
         
         truckNumberL = new JLabel("Truck #: ", SwingConstants.RIGHT);
         truckNumberF = new JTextField();
@@ -198,6 +203,17 @@ public class IncomingView extends JFrame{
         }
         
         return empIDNum;
+    }
+    
+    public String[] fillLoadNumberComboBox(){
+        ArrayList<Integer> incompleteLoads = new ArrayList<>();
+        for (int i = 0; i < Model.getOutList().size(); ++i){
+            if (!Model.getOutList().get(i).isLoadComplete()){
+                incompleteLoads.add(Model.getOutList().get(i).getLoadNumber());
+            }
+        }
+        String[] incompleteLoadsArray = new String[incompleteLoads.length()];
+        return incompleteLoadsArray;
     }
     
     //Prints all attributes of all incoming loads
