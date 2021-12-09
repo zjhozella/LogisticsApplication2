@@ -63,13 +63,12 @@ public class IncomingCntl {
         inUI = new IncomingView();
     }
     
-    public void createIncomingLoad(){
+    public void createIncomingLoad(int loadNumber){
         
         //Set each value of an incoming load
-        /*setTruckNumber(Integer.parseInt(inUI.truckNumberF.getText()));
-        setTrailerNumber(Integer.parseInt(inUI.trailerNumberF.getText()));
+        
         setDunnageIndex(IncomingView.dunnageC.getSelectedIndex());
-        setInsectDetected(IncomingView.insectDetected.isSelected());*/
+        setInsectDetected(IncomingView.insectDetected.isSelected());
         
         Employee tempEmployee = Model.getEmpList().get(IncomingView.employeeC.getSelectedIndex());
     
@@ -78,7 +77,7 @@ public class IncomingCntl {
         Timestamp inTS = new Timestamp(time);
         
         
-        //incomingTableModel.newLoad(truckNumber, trailerNumber, dunnageIndex, tempEmployee, insectDetected, inTS);
+        incomingTableModel.editLoad(loadNumber, dunnageIndex, tempEmployee, insectDetected, inTS);
     
     }
     

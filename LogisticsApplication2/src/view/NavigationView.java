@@ -47,7 +47,7 @@ public class NavigationView extends JFrame{
         newOut.addActionListener(new NewOutgoingButtonListener());
         
         //Incoming button
-        newIn = new JButton("New Incoming Load");
+        newIn = new JButton("Add Incoming Load");
         newIn.addActionListener(new NewIncomingButtonListener());
         
         // View outgoing load button

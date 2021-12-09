@@ -68,6 +68,18 @@ public class IncomingTableModel extends AbstractTableModel{
         }
     }
     
+    public void editLoad(int loadNumber, int dunnageIndex, Employee employee, boolean insectDetected, Timestamp inTS){
+
+        Model.getInList().get(loadNumber).setDunnageIndex(dunnageIndex);
+        Model.getInList().get(loadNumber).setEmployee(employee);
+        Model.getInList().get(loadNumber).setInsectDetected(insectDetected);
+        Model.getInList().get(loadNumber).setTsIn(inTS);
+        Model.getInList().get(loadNumber).setLoadComplete(true);
+        Model.getOutList().get(loadNumber).setLoadComplete(true);
+        fireTableDataChanged();
+        Model.outgoingTableModel.fireTableDataChanged();
+    }
+    
     public void deleteIncoming(int index){
         this.inList.remove(index);
         fireTableDataChanged();

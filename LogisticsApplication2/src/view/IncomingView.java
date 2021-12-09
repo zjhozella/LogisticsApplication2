@@ -157,7 +157,7 @@ public class IncomingView extends JFrame{
         this.setContentPane(new JPanel(new BorderLayout()));
         this.getContentPane().add(mainPanel, BorderLayout.CENTER);
         this.getContentPane().add(bottomPanel, BorderLayout.SOUTH);
-        this.setTitle("Create New Outgoing Transaction");
+        this.setTitle("Add Incoming Transaction");
         this.setVisible(true);
     }
     
@@ -204,7 +204,7 @@ public class IncomingView extends JFrame{
         @Override
         public void actionPerformed(ActionEvent evt) {
             
-            if (dunnageC.getSelectedIndex() == -1 || employeeC.getSelectedIndex() == -1){
+            if (dunnageC.getSelectedIndex() == -1 || employeeC.getSelectedIndex() == -1 || loadNumberC.getSelectedIndex() == -1){
                 JOptionPane.showMessageDialog(mainPanel, "One or more fields have been left blank!", "Submission Error", JOptionPane.ERROR_MESSAGE);
                 
             }else{
@@ -218,11 +218,9 @@ public class IncomingView extends JFrame{
                         "Is The Following Correct?", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
                 
                 if(response == JOptionPane.YES_OPTION){
-                    JOptionPane.showMessageDialog(mainPanel, "Created New Outgoing Transaction!", "InfoBox: " + "Success Confirmation", JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.showMessageDialog(mainPanel, "Added Incoming Transaction to Existing Load!", "InfoBox: " + "Success Confirmation", JOptionPane.INFORMATION_MESSAGE);
                     IncomingView.this.setVisible(false);
-                    NavigationCntl.outCntl.createOutgoingLoad();
-                }else{
-                    
+                    NavigationCntl.inCntl.createIncomingLoad(Integer.parseInt(loadNumberC.getSelectedItem().toString()));
                 }
             }
         }

@@ -88,6 +88,7 @@ public class OutgoingTableModel extends AbstractTableModel{
             Employee blankEmployee = new Employee(0, null, null);
             IncomingTrans it = new IncomingTrans(Controller.getNextLoadNumber(), truckNumber, trailerNumber, dunnageIndex, false, blankEmployee, insectDetected, outTS);
             Model.addToInList(it);
+            Controller.setNextLoadNumber();
             
             
             
@@ -98,10 +99,11 @@ public class OutgoingTableModel extends AbstractTableModel{
             Employee blankEmployee = new Employee(0, null, null);
             IncomingTrans it = new IncomingTrans(0, truckNumber, trailerNumber, dunnageIndex, false, blankEmployee, insectDetected, outTS);
             Model.addToInList(it);
+            Controller.setNextLoadNumber();
         }
         
         fireTableDataChanged(); //refreshes table
-        //Model.incomingTableModel.fireTableDataChanged(); UNCOMMENT WHEN INCOMING TABLE IS WORKING
+        Model.incomingTableModel.fireTableDataChanged(); 
     }
 
     
