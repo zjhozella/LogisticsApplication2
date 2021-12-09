@@ -6,7 +6,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import model.*;
 import static model.Model.incomingTableModel;
-//import static controller.InListCntl;
 import view.*;
 
 public class incomingListUI extends JFrame{
@@ -95,6 +94,7 @@ public class incomingListUI extends JFrame{
                 }
             }
         }
+    }
 
     // Show details button listener
     public class DetailsButtonListener implements ActionListener{
@@ -102,11 +102,15 @@ public class incomingListUI extends JFrame{
         public void actionPerformed(ActionEvent evt){
             int selectedTableRow = inLoadTable.getSelectedRow();
             if (selectedTableRow != -1){
+                System.out.println("View: InstrumentListUI: actionPerformed(): selectedModelRow" + selectedTableRow);
                 int selectedModelRow = inLoadTable.convertRowIndexToModel(selectedTableRow);
-                //incomingListUI.inLoadTable.getI getInstrumentDetailUI(selectedModelRow); 
-                
-            }
+                System.out.println("View: InstrumentListUI: actionPerformed(): selectedModelRow" + selectedModelRow);
+                //BG ORIGINAL CODE InstrumentListUI.this.parentInstrumentCntl.getInstrumentDetailUI(selectedModelRow);
+                //inLoadTable.set(selectedModelRow);
        
-}    
+            }    
+        }
     }
-    }}
+
+}
+    
