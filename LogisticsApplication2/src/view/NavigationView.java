@@ -5,6 +5,7 @@
  */
 package view;
 
+import controller.DrEmpCntl;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
@@ -27,7 +28,7 @@ import static controller.NavigationCntl.inCntl;
 public class NavigationView extends JFrame{
     
     public JPanel titlePanel, centerPanel, buttonPanel;
-    public JButton newOut, newIn, listOut, listIn, exit;
+    public JButton newOut, newIn, listOut, listIn, drEmpData, exit;
     
     //Will contain a frame, a panel within that frame, and 2 buttons (Outgoing, Incoming).
     //Button functionality will move the user to the respective screen
@@ -40,7 +41,7 @@ public class NavigationView extends JFrame{
     public void initNav(){
         centerPanel = new JPanel(new GridLayout(1, 1));
         
-        buttonPanel = new JPanel(new GridLayout(5,1));
+        buttonPanel = new JPanel(new GridLayout(6,1));
         
         //Outgoing Load button
         newOut = new JButton("New Outgoing Load");
@@ -59,6 +60,9 @@ public class NavigationView extends JFrame{
         listIn.addActionListener(new inListButtonListener());
         //listOut.addActionListener(new inListButtonListener());
 
+        drEmpData = new JButton("Driver/Employee Data");
+        drEmpData.addActionListener(new drEmpButtonListener());
+        
         exit = new JButton("Exit Application");
         exit.addActionListener(new exitButtonListener());
         
@@ -69,6 +73,7 @@ public class NavigationView extends JFrame{
         buttonPanel.add(newIn);
         buttonPanel.add(listOut);
         buttonPanel.add(listIn);
+        buttonPanel.add(drEmpData);
         buttonPanel.add(exit);
 
         centerPanel.add(buttonPanel);
@@ -93,7 +98,7 @@ public class NavigationView extends JFrame{
         this.setVisible(false);
     }
 
-    private static class NewOutgoingButtonListener implements ActionListener {
+    public class NewOutgoingButtonListener implements ActionListener {
 
             @Override
             public void actionPerformed(ActionEvent evt) {
@@ -103,13 +108,22 @@ public class NavigationView extends JFrame{
         }
     }
     
-    private static class NewIncomingButtonListener implements ActionListener {
+    public class NewIncomingButtonListener implements ActionListener {
 
             @Override
             public void actionPerformed(ActionEvent evt) {
                 inCntl.showCreateIncomingLoadUI();
                 //ConfirmationCntl outC = new ConfirmationCntl(false);
         }
+    }
+    
+    public class drEmpButtonListener implements ActionListener{
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            DrEmpCntl drEmpCntl = new DrEmpCntl();
+        }
+        
     }
     
     public class exitButtonListener implements ActionListener{

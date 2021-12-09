@@ -20,8 +20,15 @@ public class Controller {
     //Stores the number that will be used for the loadNumber when we create the next load.
     private static int nextLoadNumber;
     public static NavigationCntl navCntl;
+    //Creation inside of UI
     public static CreateDriverCntl createDrCntl;
     public static CreateEmployeeCntl createEmpCntl;
+    
+    //Creation separately
+    public static EmpCreationCntl empCreationCntl;
+    public static DriverCreationCntl driverCreationCntl;
+    
+    
     
     public Controller(Model model){
         this.model = model;
