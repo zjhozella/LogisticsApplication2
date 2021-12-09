@@ -1,9 +1,18 @@
+
+
 package controller;
 import java.util.Scanner;
 import model.*;
 import view.*;
 
 public class editInLoadCntl{
+    editInView inEditUI = new editInView();
+
+    //I Tried to be lazy and just call the IncomingView
+    //IncomingView newInEdit = new IncomingView();
+
+
+    /* ******  DEPRICIATED CODE *******
     Scanner scnr = new Scanner(System.in);
     boolean nav = true;
     public editInLoadCntl(){
@@ -81,11 +90,8 @@ public class editInLoadCntl{
             }
 
         }
-
-        /* DEPRECIATED CODE
-        //Create new NavigationCntl to return to main menu
-        NavigationCntl returnUI = new NavigationCntl();
-        */
         
     }
+
+    */
 }

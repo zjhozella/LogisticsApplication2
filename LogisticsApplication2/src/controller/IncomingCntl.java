@@ -10,6 +10,8 @@ import java.util.Date;
 import model.*;
 import static model.Model.incomingTableModel;
 import view.IncomingView;
+import view.editInView;
+
 import javax.swing.*;
 
 
@@ -80,6 +82,25 @@ public class IncomingCntl {
         incomingTableModel.editLoad(loadNumber, dunnageIndex, tempEmployee, insectDetected, inTS);
     
     }
+
+    public void updateIncomingLoad(int loadNumber){
+        
+        //Set each value of an incoming load
+        
+        setDunnageIndex(editInView.dunnageC.getSelectedIndex());
+        setInsectDetected(editInView.insectDetected.isSelected());
+        
+        Employee tempEmployee = Model.getEmpList().get(editInView.employeeC.getSelectedIndex());
+    
+        Date date = new Date();
+        long time = date.getTime();
+        Timestamp inTS = new Timestamp(time);
+        
+        
+        incomingTableModel.editLoad(loadNumber, dunnageIndex, tempEmployee, insectDetected, inTS);
+    
+    }
+
     
     /*
         Shows all Incoming Load's information
