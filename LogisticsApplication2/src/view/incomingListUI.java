@@ -6,6 +6,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import model.*;
 import static model.Model.incomingTableModel;
+import static controller.InListCntl;
+import view.*;
 
 public class incomingListUI extends JFrame{
     public IncomingCntl inCntl;
@@ -31,7 +33,7 @@ public class incomingListUI extends JFrame{
         deleteButton.addActionListener(new DeleteButtonListener());
 
         // Show Details button
-        //detailsButton = new JButton("Show Details");
+        detailsButton = new JButton("Show Details");
         //detailsButton.addActionListener(new DetailsButtonListener());
 
         //Menu button
@@ -79,9 +81,7 @@ public class incomingListUI extends JFrame{
 
                 if (result == JOptionPane.YES_OPTION){
                     int selectedTableRow = inLoadTable.getSelectedRow();
-                    System.out.println("View: InstrumentListUI: selectedTableRow: " + selectedTableRow);
-                    errLabel.setText("Success!!! Instrument detail has been deleted!");
-                    //Insert logic to delete incoming load from list
+                    errLabel.setText("Success!!! Incoming Load has been deleted!");
                     incomingTableModel.deleteIncoming(inLoadTable.getSelectedRow());
                     JOptionPane.showMessageDialog(new JFrame(), errLabel);
                     if (selectedTableRow > 0){
@@ -100,15 +100,11 @@ public class incomingListUI extends JFrame{
     public class DetailsButtonListener implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent evt){
-            System.out.println("View: InstrumentListUI: actionPerformed(): evt: " + evt);
-            System.out.println("View: InstrumentListUI: actionPerformed(): getRowCount" + inLoadTable.getRowCount());
             int selectedTableRow = inLoadTable.getSelectedRow();
             if (selectedTableRow != -1){
-                System.out.println("View: InstrumentListUI: actionPerformed(): selectedModelRow" + selectedTableRow);
                 int selectedModelRow = inLoadTable.convertRowIndexToModel(selectedTableRow);
-                System.out.println("View: InstrumentListUI: actionPerformed(): selectedModelRow" + selectedModelRow);
-                //BG ORIGINAL CODE InstrumentListUI.this.parentInstrumentCntl.getInstrumentDetailUI(selectedModelRow);
-                inLoad (selectedModelRow);
+                incomingListUI.inLoadTable.getI getInstrumentDetailUI(selectedModelRow); 
+                
             }
        
 }    
