@@ -33,9 +33,9 @@ import model.Model;
 public class OutgoingView extends JFrame{
 
     public JPanel mainPanel, bottomPanel, buttonPanel, driverComboPanel, empComboPanel;
-    public JLabel truckNumberL, trailerNumberL, dunnageIndexL, storeNumberL, sealNumberL, 
+    public JLabel loadNumberL1, truckNumberL, trailerNumberL, dunnageIndexL, storeNumberL, sealNumberL, 
             driverNumL, driverCompL1, driverNameL1, empIDL, empNameL1, insectDetectedL;
-    public static JLabel driverCompL2, driverNameL2, empNameL2;
+    public static JLabel loadNumberL2, driverCompL2, driverNameL2, empNameL2;
     public JTextField truckNumberF, trailerNumberF, dunnageIndexF, storeNumberF, sealNumberF;
     public JButton submitButton, cancelButton, driverAddButton, empAddButton;
     public static JComboBox dunnageC, driverC, employeeC;
@@ -53,7 +53,7 @@ public class OutgoingView extends JFrame{
     public void initComponents(){
         
         mainPanel = new JPanel();
-        mainPanel.setLayout(new GridLayout(11, 2));
+        mainPanel.setLayout(new GridLayout(12, 2));
         mainPanel.setBorder(BorderFactory.createEmptyBorder(20, 20, 0, 100));
         
         bottomPanel = new JPanel();
@@ -67,6 +67,9 @@ public class OutgoingView extends JFrame{
         empComboPanel = new JPanel();
         empAddButton = new JButton("+");
         empAddButton.addActionListener(new OnAddEmployeeButtonPressed());
+        
+        loadNumberL1 = new JLabel("Load #: ", SwingConstants.RIGHT);
+        loadNumberL2 = new JLabel(String.valueOf(Controller.getNextLoadNumber()), SwingConstants.LEFT);
         
         truckNumberL = new JLabel("Truck #: ", SwingConstants.RIGHT);
         truckNumberF = new JTextField();
@@ -115,6 +118,8 @@ public class OutgoingView extends JFrame{
         insectDetectedL = new JLabel("Is Insect Detected? ", SwingConstants.RIGHT);
         insectDetected = new JCheckBox ();
         
+        mainPanel.add(loadNumberL1);
+        mainPanel.add(loadNumberL2);
         mainPanel.add(truckNumberL);
         mainPanel.add(truckNumberF);
         mainPanel.add(trailerNumberL);
