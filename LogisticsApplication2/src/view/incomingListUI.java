@@ -74,7 +74,7 @@ public class incomingListUI extends JFrame{
         public void actionPerformed(ActionEvent evt) {
             final JLabel errLabel = new JLabel();
             if (inLoadTable.getSelectedRow() != -1) {            
-                int result = JOptionPane.showConfirmDialog(tablePanel,"Are you sure you want to delete this Incoming Load?","Delete Incoming Load",
+                int result = JOptionPane.showConfirmDialog(tablePanel,"Are you sure you want to delete this Incoming Load?\nThis will set all attributes back to their defaults...","Delete Incoming Load",
                 JOptionPane.YES_NO_OPTION,
                 JOptionPane.QUESTION_MESSAGE);
 
