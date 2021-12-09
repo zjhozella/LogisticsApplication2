@@ -34,8 +34,8 @@ public class OutgoingView extends JFrame{
 
     public JPanel mainPanel, bottomPanel, buttonPanel, driverComboPanel, empComboPanel;
     public JLabel truckNumberL, trailerNumberL, dunnageIndexL, storeNumberL, sealNumberL, 
-            driverNumL, driverCompL1, driverFirstL1, driverLastL1, empIDL, empFirstL1, empLastL1, insectDetectedL;
-    public static JLabel driverCompL2, driverFirstL2, driverLastL2, empFirstL2, empLastL2;
+            driverNumL, driverCompL1, driverNameL1, empIDL, empNameL1, insectDetectedL;
+    public static JLabel driverCompL2, driverNameL2, empNameL2;
     public JTextField truckNumberF, trailerNumberF, dunnageIndexF, storeNumberF, sealNumberF;
     public JButton submitButton, cancelButton, driverAddButton, empAddButton;
     public static JComboBox dunnageC, driverC, employeeC;
@@ -53,7 +53,7 @@ public class OutgoingView extends JFrame{
     public void initComponents(){
         
         mainPanel = new JPanel();
-        mainPanel.setLayout(new GridLayout(13, 2));
+        mainPanel.setLayout(new GridLayout(11, 2));
         mainPanel.setBorder(BorderFactory.createEmptyBorder(20, 20, 0, 100));
         
         bottomPanel = new JPanel();
@@ -98,13 +98,10 @@ public class OutgoingView extends JFrame{
         driverC.addActionListener(new OnDriverLicenseNumberChanged());
         
         driverCompL1 = new JLabel("Driver Company: ", SwingConstants.RIGHT);
-        driverCompL2 = new JLabel("", SwingConstants.RIGHT);
+        driverCompL2 = new JLabel("", SwingConstants.LEFT);
         
-        driverFirstL1 = new JLabel("Driver First Name: ", SwingConstants.RIGHT);
-        driverFirstL2 = new JLabel("", SwingConstants.RIGHT);
-        
-        driverLastL1 = new JLabel("Driver Last Name: ", SwingConstants.RIGHT);
-        driverLastL2 = new JLabel("", SwingConstants.RIGHT);
+        driverNameL1 = new JLabel("Driver Name: ", SwingConstants.RIGHT);
+        driverNameL2 = new JLabel("", SwingConstants.LEFT);
         
         empIDL = new JLabel("Employee ID: ", SwingConstants.RIGHT);
         
@@ -112,11 +109,8 @@ public class OutgoingView extends JFrame{
         employeeC.setSelectedIndex(-1);
         employeeC.addActionListener(new OnEmployeeIDChanged());
         
-        empFirstL1 = new JLabel("Employee First Name: ", SwingConstants.RIGHT);
-        empFirstL2 = new JLabel("", SwingConstants.RIGHT);
-        
-        empLastL1 = new JLabel("Employee Last Name: ", SwingConstants.RIGHT);
-        empLastL2 = new JLabel("", SwingConstants.RIGHT);
+        empNameL1 = new JLabel("Employee Name: ", SwingConstants.RIGHT);
+        empNameL2 = new JLabel("", SwingConstants.LEFT);
         
         insectDetectedL = new JLabel("Is Insect Detected? ", SwingConstants.RIGHT);
         insectDetected = new JCheckBox ();
@@ -135,16 +129,12 @@ public class OutgoingView extends JFrame{
         mainPanel.add(driverComboPanel);
         mainPanel.add(driverCompL1);
         mainPanel.add(driverCompL2);
-        mainPanel.add(driverFirstL1);
-        mainPanel.add(driverFirstL2);
-        mainPanel.add(driverLastL1);
-        mainPanel.add(driverLastL2);
+        mainPanel.add(driverNameL1);
+        mainPanel.add(driverNameL2);
         mainPanel.add(empIDL);
         mainPanel.add(empComboPanel);
-        mainPanel.add(empFirstL1);
-        mainPanel.add(empFirstL2);
-        mainPanel.add(empLastL1);
-        mainPanel.add(empLastL2);
+        mainPanel.add(empNameL1);
+        mainPanel.add(empNameL2);;
         mainPanel.add(insectDetectedL);
         mainPanel.add(insectDetected);
 
@@ -184,8 +174,7 @@ public class OutgoingView extends JFrame{
         public void actionPerformed(ActionEvent evt) {
             System.out.println("Selected Index: " + driverC.getSelectedIndex());
             driverCompL2.setText(Model.getDrList().get(driverC.getSelectedIndex()).getCompany());
-            driverFirstL2.setText(Model.getDrList().get(driverC.getSelectedIndex()).getFirstName());
-            driverLastL2.setText(Model.getDrList().get(driverC.getSelectedIndex()).getLastName());
+            driverNameL2.setText(Model.getDrList().get(driverC.getSelectedIndex()).getFirstName() + " " + Model.getDrList().get(driverC.getSelectedIndex()).getLastName());
         }
     }
     
@@ -194,8 +183,7 @@ public class OutgoingView extends JFrame{
         @Override
         public void actionPerformed(ActionEvent evt) {
             System.out.println("Selected Index: " + employeeC.getSelectedIndex());
-            empFirstL2.setText(Model.getEmpList().get(employeeC.getSelectedIndex()).getFirstName());
-            empLastL2.setText(Model.getEmpList().get(employeeC.getSelectedIndex()).getLastName());
+            empNameL2.setText(Model.getEmpList().get(employeeC.getSelectedIndex()).getFirstName() + " " + Model.getEmpList().get(employeeC.getSelectedIndex()).getLastName());
         }  
     }
     
