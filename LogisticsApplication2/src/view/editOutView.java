@@ -67,24 +67,28 @@ public class editOutView extends JFrame{
         loadNumberL1 = new JLabel("Load #: "+ Model.getOutList().get(index).getLoadNumber(), SwingConstants.RIGHT);
         loadNumberL2 = new JLabel("", SwingConstants.LEFT);
         
-        truckNumberL = new JLabel("Truck #: "+ Model.getOutList().get(index).getTruckNumber(), SwingConstants.RIGHT);
+        truckNumberL = new JLabel("Truck #: ", SwingConstants.RIGHT);
         truckNumberF = new JTextField();
+        truckNumberF.setText(String.valueOf(Model.getOutList().get(index).getTruckNumber()));
         truckNumberF.setHorizontalAlignment(JTextField.LEFT);
         
         trailerNumberL = new JLabel("Trailer #: ", SwingConstants.RIGHT);
         trailerNumberF = new JTextField();
+        trailerNumberF.setText(String.valueOf(Model.getOutList().get(index).getTrailerNumber()));
         trailerNumberF.setHorizontalAlignment(JTextField.LEFT);
         
         dunnageIndexL = new JLabel("Dunnage Index: ", SwingConstants.RIGHT);
         dunnageC = new JComboBox(Model.dunnageStrings);
-        dunnageC.setSelectedIndex(0); //Defaults to Empty
+        dunnageC.setSelectedIndex(Model.getOutList().get(index).getDunnageIndex());
         
         storeNumberL = new JLabel("Store #: ", SwingConstants.RIGHT);
         storeNumberF = new JTextField();
+        storeNumberF.setText(String.valueOf(Model.getOutList().get(index).getStoreNumber()));
         storeNumberF.setHorizontalAlignment(JTextField.LEFT);
         
         sealNumberL = new JLabel("Seal #: ", SwingConstants.RIGHT);
         sealNumberF = new JTextField();
+        sealNumberF.setText(String.valueOf(Model.getOutList().get(index).getSealNumber()));
         sealNumberF.setHorizontalAlignment(JTextField.LEFT);
         
         /**
@@ -93,26 +97,34 @@ public class editOutView extends JFrame{
          */
         driverNumL = new JLabel("Driver License #: ", SwingConstants.RIGHT);
         driverC = new JComboBox(fillDriverComboBox());
-        driverC.setSelectedIndex(-1);
+        for (int i = 0; i < Model.getDrList().size(); ++i){
+            if (Model.getOutList().get(index).getDr().getDlNumber().equalsIgnoreCase(Model.getDrList().get(i).getDlNumber())){
+                driverC.setSelectedIndex(i);
+            }
+        }
         driverC.addActionListener(new OnDriverLicenseNumberChanged());
         
         driverCompL1 = new JLabel("Driver Company: ", SwingConstants.RIGHT);
-        driverCompL2 = new JLabel("", SwingConstants.LEFT);
+        driverCompL2 = new JLabel(Model.getDrList().get(driverC.getSelectedIndex()).getCompany(), SwingConstants.LEFT);
         
         driverNameL1 = new JLabel("Driver Name: ", SwingConstants.RIGHT);
-        driverNameL2 = new JLabel("", SwingConstants.LEFT);
+        driverNameL2 = new JLabel(Model.getDrList().get(driverC.getSelectedIndex()).getFirstName() + " " + Model.getDrList().get(driverC.getSelectedIndex()).getLastName(), SwingConstants.LEFT);
         
         empIDL = new JLabel("Employee ID: ", SwingConstants.RIGHT);
         
         employeeC = new JComboBox(fillEmployeeComboBox());
-        employeeC.setSelectedIndex(-1);
+        for (int i = 0; i < Model.getEmpList().size(); ++i){
+            if (Model.getOutList().get(index).getEmployee().getID() == Model.getEmpList().get(i).getID()){
+                employeeC.setSelectedIndex(i);
+            }
+        }
         employeeC.addActionListener(new OnEmployeeIDChanged());
         
         empNameL1 = new JLabel("Employee Name: ", SwingConstants.RIGHT);
-        empNameL2 = new JLabel("", SwingConstants.LEFT);
+        empNameL2 = new JLabel(Model.getEmpList().get(employeeC.getSelectedIndex()).getFirstName() + " " + Model.getEmpList().get(employeeC.getSelectedIndex()).getLastName(), SwingConstants.LEFT);
         
         insectDetectedL = new JLabel("Is Insect Detected? ", SwingConstants.RIGHT);
-        insectDetected = new JCheckBox ();
+        insectDetected = new JCheckBox("", Model.getOutList().get(index).isInsectDetected());
         
         mainPanel.add(loadNumberL1);
         mainPanel.add(loadNumberL2);

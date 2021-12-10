@@ -67,7 +67,7 @@ public class Model {
         addToEmpList(ep3);
         
         //Outgoing Load Test
-        OutgoingTrans ot3 = new OutgoingTrans(2, 931, 2476, 0, false, 94, 129355123, ep1, dr2, false, tsOut);
+        OutgoingTrans ot3 = new OutgoingTrans(2, 931, 2476, 0, false, 94, 129355123, ep1, dr2, true, tsOut);
         addToOutList(ot3);
         
         //Incoming Load Test
