@@ -29,7 +29,7 @@ public class Model {
     public static IncomingTableModel incomingTableModel;
     public static EmployeeTableModel employeeTableModel;
     public static DriverTableModel driverTableModel;
-    public static String[] dunnageStrings = {"Empty", "1/4", "1/2", "1/3", "Full"};
+    public static String[] dunnageStrings = {"Empty", "1/4", "1/2", "3/4", "Full"};
     
     //Default Constructor
     public Model(){
