@@ -16,6 +16,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import controller.OutListCntl;
 import controller.InListCntl;
+import controller.NavigationCntl;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import static controller.NavigationCntl.outCntl;

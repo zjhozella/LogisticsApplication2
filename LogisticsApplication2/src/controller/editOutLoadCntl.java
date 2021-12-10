@@ -6,6 +6,9 @@ import java.util.Scanner;
 import javax.swing.text.Style;
 
 public class editOutLoadCntl{
+    editOutView outEditView = new editOutView();
+    
+    /* DEPRECIATED CODE****
     Scanner scnr = new Scanner(System.in);
     boolean nav = true;
 
@@ -105,5 +108,5 @@ public class editOutLoadCntl{
 
     }
 
-
+*/
 }

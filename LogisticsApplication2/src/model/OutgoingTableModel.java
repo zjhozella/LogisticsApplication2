@@ -106,8 +106,6 @@ public class OutgoingTableModel extends AbstractTableModel{
         Model.incomingTableModel.fireTableDataChanged(); 
     }
 
-    
-
 
     public void deleteOutgoing(int index){
         this.outList.remove(index);
