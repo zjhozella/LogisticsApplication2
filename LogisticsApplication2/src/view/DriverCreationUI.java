@@ -74,6 +74,7 @@ public class DriverCreationUI extends JFrame{
         buttonPanel.add(cancelButton);
         
         this.setPreferredSize(new Dimension(300,250));
+        this.setResizable(false);
         this.setLocationRelativeTo(null);
         this.setContentPane(new JPanel(new BorderLayout()));
         this.getContentPane().add(mainPanel, BorderLayout.CENTER);

@@ -18,7 +18,6 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
-import static view.CreateEmployeeUI.isOutgoing;
 
 /**
  *
@@ -71,6 +70,7 @@ public class EmpCreationUI extends JFrame{
         
         this.setPreferredSize(new Dimension(350,200));
         this.setLocationRelativeTo(null);
+        this.setResizable(false);
         this.setContentPane(new JPanel(new BorderLayout()));
         this.getContentPane().add(mainPanel, BorderLayout.CENTER);
         this.getContentPane().add(buttonPanel, BorderLayout.SOUTH);
