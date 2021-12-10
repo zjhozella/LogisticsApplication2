@@ -69,7 +69,7 @@ public class OutgoingDetailUI extends JFrame{
         empIDL1 = new JLabel("Employee ID: " + Model.getOutList().get(index).getEmployee().getID());
         
         empNameL1 = new JLabel("Employee Name: "+ Model.getOutList().get(index).getEmployee().getFirstName() + " "
-            + Model.getInList().get(index).getEmployee().getLastName());
+            + Model.getOutList().get(index).getEmployee().getLastName());
         
         insectDetectedL = new JLabel("Was Insect Detected? " + Model.getOutList().get(index).isInsectDetected());
         
