@@ -86,7 +86,7 @@ public class IncomingTableModel extends AbstractTableModel{
         //Delete from inList
         if(index < 1){
             this.inList.remove(0);
-        }else{this.inList.remove(index -1);}
+        }else{this.inList.remove(index);}
         Model.getOutList().get(index).setLoadComplete(false);
         fireTableDataChanged();
         Model.outgoingTableModel.fireTableDataChanged();
@@ -95,14 +95,19 @@ public class IncomingTableModel extends AbstractTableModel{
     
     public void deleteIncomingCombo(int index){
         //Delete from inList when done from OutgoingList
-        System.out.println("deleteIncomingCombo Index = "+index);
-        if(index < 1){
-            this.inList.remove(0);
-        }else{this.inList.remove(index -1);}
         
-        Model.getOutList().get(index).setLoadComplete(false);
-        fireTableDataChanged();
-        Model.outgoingTableModel.fireTableDataChanged();
+        System.out.println("deleteIncomingCombo Index = "+index);
+        if(index == 0 ){
+            this.inList.remove(0);
+            Model.getOutList().get(index).setLoadComplete(false);
+        }
 
+        if(index >= 1 ){
+            this.inList.remove(index);
+            Model.getOutList().get(index).setLoadComplete(false);
+        }
+        
+        Model.incomingTableModel.fireTableDataChanged();
+        Model.outgoingTableModel.fireTableDataChanged();
     }
 }

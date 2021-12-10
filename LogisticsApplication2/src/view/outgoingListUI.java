@@ -141,7 +141,7 @@ public class outgoingListUI extends JFrame{
                     }
                     */
                     outgoingTableModel.deleteOutgoing(outLoadTable.getSelectedRow());
-                    incomingTableModel.deleteIncoming(outLoadNum);
+                    incomingTableModel.deleteIncomingCombo(selectedTableRow);
                     
                     
                     
