@@ -14,6 +14,7 @@ import view.outgoingListUI;
 public class OutListCntl {
     private static outgoingListUI outListUI;
     
+    //Instantiates the Outgoing List UI
     public OutListCntl(){
         outListUI = new outgoingListUI();
     }

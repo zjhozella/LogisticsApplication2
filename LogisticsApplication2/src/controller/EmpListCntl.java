@@ -14,6 +14,7 @@ public class EmpListCntl {
     
     private static EmpListUI empListUI;
     
+    //Instantiates the Employee List UI
     public EmpListCntl(){
         empListUI = new EmpListUI();
     }

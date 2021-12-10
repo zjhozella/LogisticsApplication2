@@ -16,6 +16,7 @@ public class NavigationCntl {
     public static OutgoingCntl outCntl = new OutgoingCntl(navCntl); //Create new OutgoingCntl object
     public static IncomingCntl inCntl = new IncomingCntl(navCntl);  //Create new IncomingCntl object
 
+    //Instantiates the Navigation UI
     public NavigationCntl(){
 
         //Will create in instance of the NavigationView that will spawn main menu navigation.

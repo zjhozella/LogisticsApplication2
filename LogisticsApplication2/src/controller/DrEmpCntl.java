@@ -24,6 +24,7 @@ public class DrEmpCntl {
     private static ArrayList<Employee> empList;
     private static ArrayList<Driver> drList;
     
+    //Creates the Driver/Employee UI and passes the information to both tables
     public DrEmpCntl(){
         drEmpUI = new DrEmpUI();
         

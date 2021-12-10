@@ -12,17 +12,6 @@ import static model.Model.incomingTableModel;
 import view.IncomingView;
 import view.editInView;
 
-import javax.swing.*;
-
-
-/* DEPRECIATED IMPORTS
-import java.sql.Timestamp;
-import java.util.Date;
-import java.util.Scanner;
-import view.OutgoingView;
-
-*/
-
 /**
  *
  * @author zjhoz

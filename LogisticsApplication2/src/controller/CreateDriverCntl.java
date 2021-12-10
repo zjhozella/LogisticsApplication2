@@ -23,6 +23,15 @@ public class CreateDriverCntl {
         createDrUI = new CreateDriverUI();
     }
     
+    /**
+     * 
+     * @param creationOrigin
+     * @param num
+     * @param fn
+     * @param ln
+     * @param company 
+     * Called when any UI is creating a Driver, we can track which UI using the creationOrigin
+     */
     public void createDriver(int creationOrigin, String num, String fn, String ln, String company){
         
         switch (creationOrigin){

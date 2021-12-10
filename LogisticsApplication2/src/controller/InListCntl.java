@@ -13,6 +13,7 @@ import view.incomingListUI;
 public class InListCntl {
     private static incomingListUI inListUI;
     
+    //Instantiates the Incoming List UI
     public InListCntl(){
         inListUI = new incomingListUI();
     }

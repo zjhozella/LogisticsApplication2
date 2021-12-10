@@ -25,6 +25,14 @@ public class CreateEmployeeCntl {
         createEmpUI = new CreateEmployeeUI();
     }
     
+    /**
+     * 
+     * @param creationOrigin
+     * @param id
+     * @param fn
+     * @param ln 
+     * Called when any UI is creating a Employee, we can track which UI using the creationOrigin
+     */
     public void createEmployee(int creationOrigin, int id, String fn, String ln){
         
         switch (creationOrigin) {

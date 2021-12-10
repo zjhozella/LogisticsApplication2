@@ -14,6 +14,7 @@ public class DriverListCntl {
     
     public static DriverListUI driverListUI;
     
+    //Instantiates the DriverListUI
     public DriverListCntl(){
         driverListUI = new DriverListUI();
     }

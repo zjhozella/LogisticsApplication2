@@ -21,6 +21,7 @@ public class CreateDriverUI extends JFrame{
     public JTextField numField, compField, FNField, LNField;
     public JButton addButton, cancelButton;
  
+    //Used to track which UI is creating a new Driver
     public static int creationOrigin;
     
     public CreateDriverUI (){

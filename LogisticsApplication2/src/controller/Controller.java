@@ -74,19 +74,4 @@ public class Controller {
     public void setView(NavigationView view) {
         this.view = view;
     }
-    
-    
-    /**
-     * @return the view
-     */
-    /*public View getView() {
-        return view;
-    }*/
-
-    /**
-     * @param view the view to set
-     */
-    /*public void setView(View view) {
-        this.view = view;
-    }*/
 }

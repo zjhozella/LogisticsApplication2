@@ -22,6 +22,7 @@ public class CreateEmployeeUI extends JFrame{
     public JTextField IDField, FNField, LNField;
     public JButton addButton, cancelButton;
     
+    //Used to track which UI is creating a new Employee
     public static int creationOrigin;
  
     public CreateEmployeeUI (){
