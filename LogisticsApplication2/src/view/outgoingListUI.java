@@ -7,6 +7,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import model.*;
 import static model.Model.outgoingTableModel;
+import static model.Model.incomingTableModel;
+import static view.incomingListUI.inLoadTable;
 
 public class outgoingListUI extends JFrame{
     public OutgoingCntl outCntl;
@@ -109,14 +111,15 @@ public class outgoingListUI extends JFrame{
         public void actionPerformed(ActionEvent evt) {
             final JLabel errLabel = new JLabel();
             if (outLoadTable.getSelectedRow() != -1) {            
-                int result = JOptionPane.showConfirmDialog(tablePanel,"Are you sure you want to delete this Outgoing Load?","Delete Outgoing Load",
+                int result = JOptionPane.showConfirmDialog(tablePanel,"Are you sure you want to delete this Outgoing Load? (This will also delete the corresponding Incoming Load!)","Delete Outgoing Load",
                 JOptionPane.YES_NO_OPTION,
                 JOptionPane.QUESTION_MESSAGE);
 
                 if (result == JOptionPane.YES_OPTION){
                     int selectedTableRow = outLoadTable.getSelectedRow();
-                    errLabel.setText("Success!!! Outgoing Load has been deleted!");
+                    errLabel.setText("Success!!! Outgoing & Incoming Load has been deleted!");
                     outgoingTableModel.deleteOutgoing(outLoadTable.getSelectedRow());
+                    incomingTableModel.deleteIncoming(inLoadTable.getSelectedRow());
                     JOptionPane.showMessageDialog(new JFrame(), errLabel);
                     if (selectedTableRow > 0){
                         selectedTableRow -= 1;
