@@ -1,6 +1,7 @@
 package view;
 import java.awt.*;
 import javax.swing.*;
+import javax.swing.text.html.InlineView;
 
 import controller.*;
 import java.awt.event.ActionEvent;
@@ -119,11 +120,29 @@ public class outgoingListUI extends JFrame{
                     int selectedTableRow = outLoadTable.getSelectedRow();
                     errLabel.setText("Success!!! Outgoing & Incoming Load has been deleted!");
                     outgoingTableModel.deleteOutgoing(outLoadTable.getSelectedRow());
-                    incomingTableModel.deleteIncoming(inLoadTable.getSelectedRow());
+                    // Could not get deleteIncoming method in IncomingTableModel to work
+                    //inLoadTable.getSelectedRow();
+                    //incomingTableModel.deleteIncoming(inLoadTable.getSelectedRow());
+                    // Resetting inLoad setting manualyindex
+
+                    /*
+                    //Reset paramaters in inList only if outList load is complete
+                    if(incomingTableModel.inList.get(index).isLoadComplete()){
+                        Model.getInList().get(index).setEmployee(new Employee(0, "",""));
+                        Model.getInList().get(index).setLoadNumber(0);
+                        Model.getInList().get(index).setDunnageIndex(0);
+                        Model.getInList().get(index).setInsectDetected(false);
+                        Model.getInList().get(index).setTsIn(null);
+                        Model.getInList().get(index).setLoadComplete(false);
+                        Model.getOutList().get(index).setLoadComplete(false);
+                    }
+                    */
+                    
                     JOptionPane.showMessageDialog(new JFrame(), errLabel);
                     if (selectedTableRow > 0){
                         selectedTableRow -= 1;
                         outLoadTable.setRowSelectionInterval(selectedTableRow, selectedTableRow); //highlight row in table
+
                     }
                 } else if (result == JOptionPane.NO_OPTION){
                     errLabel.setText("You selected: No");

@@ -88,6 +88,6 @@ public class IncomingTableModel extends AbstractTableModel{
         Model.getInList().get(index).setTsIn(null);
         Model.getInList().get(index).setLoadComplete(false);
         Model.getOutList().get(index).setLoadComplete(false);
-        fireTableDataChanged();
+        //fireTableDataChanged();
     }
 }
