@@ -70,7 +70,7 @@ public class CreateDriverUI extends JFrame{
         this.setContentPane(new JPanel(new BorderLayout()));
         this.getContentPane().add(mainPanel, BorderLayout.CENTER);
         this.getContentPane().add(buttonPanel, BorderLayout.SOUTH);
-        this.setTitle("Create New Employee");
+        this.setTitle("Create New Driver");
         this.setVisible(true);
         
     }
