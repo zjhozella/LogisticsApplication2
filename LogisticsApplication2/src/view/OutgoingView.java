@@ -149,8 +149,8 @@ public class OutgoingView extends JFrame{
         cancelButton = new JButton("Cancel");
         cancelButton.addActionListener(new OnCancelButtonPressed());
         
-        buttonPanel.add(submitButton);
         buttonPanel.add(cancelButton);
+        buttonPanel.add(submitButton);
         
         bottomPanel.add(buttonPanel);
         

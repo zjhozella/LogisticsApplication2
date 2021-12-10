@@ -60,8 +60,8 @@ public class CreateDriverUI extends JFrame{
         mainPanel.add(compLabel);
         mainPanel.add(compField);
         
-        buttonPanel.add(addButton);
         buttonPanel.add(cancelButton);
+        buttonPanel.add(addButton);
         
         this.setSize(500, 200);
         this.setResizable(false);

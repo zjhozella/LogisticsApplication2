@@ -57,8 +57,8 @@ public class CreateEmployeeUI extends JFrame{
         mainPanel.add(LNLabel);
         mainPanel.add(LNField);
         
-        buttonPanel.add(addButton);
         buttonPanel.add(cancelButton);
+        buttonPanel.add(addButton);
         
         this.setSize(500, 200);
         this.setResizable(false);
