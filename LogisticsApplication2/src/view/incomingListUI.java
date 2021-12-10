@@ -9,7 +9,6 @@ import static model.Model.incomingTableModel;
 
 public class incomingListUI extends JFrame{
     public IncomingCntl inCntl;
-    //public static JTable inTable;
     public JButton detailsButton, deleteButton, menuButton;
     public JScrollPane tableScroller;
     public static JTable inLoadTable;
@@ -22,6 +21,7 @@ public class incomingListUI extends JFrame{
         initInUI();
     }
 
+    //Initialize GUI components
     public void initInUI(){
         tablePanel = new JPanel();
         buttonPanel = new JPanel(new GridLayout(1,3));
@@ -56,8 +56,9 @@ public class incomingListUI extends JFrame{
         this.getContentPane().add(tablePanel, BorderLayout.CENTER);
         this.setTitle("Incoming Load List");
         this.setVisible(true);
-
-        System.out.println("inList size = "+incomingTableModel.inList.size());
+        
+        //Testing
+        //System.out.println("inList size = "+incomingTableModel.inList.size());
     }
 
     // Menu button listener
