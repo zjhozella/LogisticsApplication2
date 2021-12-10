@@ -5,26 +5,20 @@
  */
 package view;
 
-import controller.Controller;
-import controller.CreateEmployeeCntl;
-import controller.NavigationCntl;
+
 import controller.editInLoadCntl;
 
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
+import java.util.Arrays;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
-import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
-import javax.swing.SwingConstants;
 import model.Model;
 import static view.incomingListUI.index;
 
@@ -79,7 +73,7 @@ public class IncomingDetailUI extends JFrame{
         
         driverCompL1 = new JLabel("Driver Company: " + Model.getOutList().get(index).getDr().getCompany());
         
-        dunnageIndexL = new JLabel("Dunnage Index: " + Model.getInList().get(index).getDunnageIndex());
+        dunnageIndexL = new JLabel("Dunnage: " + Model.dunnageStrings[Model.getOutList().get(index).getDunnageIndex()]);
         
         empIDL1 = new JLabel("Employee ID: " + Model.getInList().get(index).getEmployee().getID());
         
