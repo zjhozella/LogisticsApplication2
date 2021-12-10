@@ -5,8 +5,8 @@
 package view;
 
 import controller.Controller;
+import controller.CreateEmployeeCntl;
 import controller.DrEmpCntl;
-import controller.EmpCreationCntl;
 import controller.EmpListCntl;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
@@ -121,7 +121,8 @@ public class EmpListUI extends JFrame{
     public class AddButtonListener implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent evt){
-            Controller.empCreationCntl = new EmpCreationCntl();
+            Controller.createEmpCntl = new CreateEmployeeCntl();
+            CreateEmployeeUI.creationOrigin = 4;
         }
     }
     

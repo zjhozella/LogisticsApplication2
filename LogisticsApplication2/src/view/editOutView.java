@@ -32,7 +32,6 @@ public class editOutView extends JFrame{
     public static JComboBox dunnageC, driverC, employeeC;
     public static JCheckBox insectDetected;
     
-
     public editOutView(){
         super();
 
@@ -250,7 +249,7 @@ public class editOutView extends JFrame{
         @Override
         public void actionPerformed(ActionEvent e) {
             Controller.createEmpCntl = new CreateEmployeeCntl();
-            CreateEmployeeUI.isOutgoing = true;
+            CreateEmployeeUI.creationOrigin = 2; 
         }
         
     }
@@ -260,7 +259,7 @@ public class editOutView extends JFrame{
         @Override
         public void actionPerformed(ActionEvent e) {
             Controller.createDrCntl = new CreateDriverCntl();
-            
+            CreateDriverUI.creationOrigin = 1;
 
         }
         

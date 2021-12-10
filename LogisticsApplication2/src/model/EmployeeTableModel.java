@@ -4,12 +4,8 @@
  */
 package model;
 
-import controller.Controller;
-import java.sql.Timestamp;
 import java.util.ArrayList;
 import javax.swing.table.AbstractTableModel;
-import view.EmpListUI;
-import static view.EmpListUI.emp;
 
 /**
  *
@@ -69,9 +65,8 @@ public class EmployeeTableModel extends AbstractTableModel{
         }
     }
     
-    public void newEmployee(int id, String fn, String ln){
+    public void newEmployee(Employee emp){
         
-        emp = new Employee(id, fn, ln);
         empList.add(emp);
         
         fireTableDataChanged(); //refreshes table

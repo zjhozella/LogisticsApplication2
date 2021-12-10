@@ -56,6 +56,10 @@ public class editInView extends JFrame{
         bottomPanel.setLayout(new GridLayout(2, 1));
         buttonPanel = new JPanel(new GridLayout(1,5));
 
+        empComboPanel = new JPanel();
+        empAddButton = new JButton("+");
+        empAddButton.addActionListener(new OnAddEmployeeButtonPressed());
+        
         loadbox = new JLabel("Load Number: " + Model.getInList().get(index).getLoadNumber(), SwingConstants.RIGHT);
         loadbox2 = new JLabel("", SwingConstants.LEFT);
         
@@ -137,7 +141,7 @@ public class editInView extends JFrame{
         mainPanel.add(dunnageIndexL);
         mainPanel.add(dunnageC);
         mainPanel.add(newEmpIDL1);
-        mainPanel.add(employeeC);
+        mainPanel.add(empComboPanel);
         mainPanel.add(newEmpNameL1);
         mainPanel.add(newEmpNameL2);
         mainPanel.add(insectDetectedL);
@@ -153,6 +157,9 @@ public class editInView extends JFrame{
         buttonPanel.add(cancelButton);
         buttonPanel.add(submitButton);
         bottomPanel.add(buttonPanel);
+        
+        empComboPanel.add(employeeC);
+        empComboPanel.add(empAddButton);
         
         this.setSize(625, 600);
         this.setResizable(false);
@@ -215,7 +222,7 @@ public class editInView extends JFrame{
         @Override
         public void actionPerformed(ActionEvent evt) {
             Controller.createEmpCntl = new CreateEmployeeCntl();
-            CreateEmployeeUI.isOutgoing = false; 
+            CreateEmployeeUI.creationOrigin = 3; 
         }
         
     }

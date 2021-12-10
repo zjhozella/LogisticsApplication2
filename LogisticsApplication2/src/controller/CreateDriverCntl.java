@@ -6,8 +6,10 @@ package controller;
 
 import model.Driver;
 import model.Model;
+import static model.Model.driverTableModel;
 import view.CreateDriverUI;
-import static view.OutgoingView.driverC;
+import view.OutgoingView;
+import view.editOutView;
 
 /**
  *
@@ -21,11 +23,36 @@ public class CreateDriverCntl {
         createDrUI = new CreateDriverUI();
     }
     
-    public void createDriver(String num, String fn, String ln, String company){
-        Driver dr = new Driver(num, fn, ln, company);
-        Model.addToDrList(dr);
-        driverC.addItem(Model.getDrList().get(Model.getDrList().size() - 1).getDlNumber());
-        driverC.setSelectedIndex(Model.getDrList().size() - 1);
+    public void createDriver(int creationOrigin, String num, String fn, String ln, String company){
+        
+        switch (creationOrigin){
+            case 0:
+            {
+                Driver dr = new Driver(num, fn, ln, company);
+                Model.addToDrList(dr);
+                OutgoingView.driverC.addItem(Model.getDrList().get(Model.getDrList().size() - 1).getDlNumber());
+                OutgoingView.driverC.setSelectedIndex(Model.getDrList().size() - 1);
+                break;
+            }
+            case 1:
+            {
+                Driver dr = new Driver(num, fn, ln, company);
+                Model.addToDrList(dr);
+                editOutView.driverC.addItem(Model.getDrList().get(Model.getDrList().size() - 1).getDlNumber());
+                editOutView.driverC.setSelectedIndex(Model.getDrList().size() - 1);
+                break;
+            }
+            case 2:
+            {
+                Driver dr = new Driver(num, fn, ln, company);
+                driverTableModel.newDriver(dr);
+                break;
+            }
+            default:    
+                break;
+        }
+        
+        
     }
     
 }

@@ -5,8 +5,8 @@
 package view;
 
 import controller.Controller;
+import controller.CreateDriverCntl;
 import controller.DrEmpCntl;
-import controller.DriverCreationCntl;
 import controller.DriverListCntl;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
@@ -126,7 +126,8 @@ public class DriverListUI extends JFrame{
     public class AddButtonListener implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent evt){
-            Controller.driverCreationCntl = new DriverCreationCntl();
+            Controller.createDrCntl = new CreateDriverCntl();
+            CreateDriverUI.creationOrigin = 2;
         }
     }
 }

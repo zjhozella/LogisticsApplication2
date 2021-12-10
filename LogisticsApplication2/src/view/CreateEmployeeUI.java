@@ -22,7 +22,7 @@ public class CreateEmployeeUI extends JFrame{
     public JTextField IDField, FNField, LNField;
     public JButton addButton, cancelButton;
     
-    public static boolean isOutgoing;
+    public static int creationOrigin;
  
     public CreateEmployeeUI (){
         super();
@@ -78,7 +78,7 @@ public class CreateEmployeeUI extends JFrame{
             if (IDField.getText().isBlank() || FNField.getText().isBlank() || LNField.getText().isBlank()){
                 JOptionPane.showMessageDialog(mainPanel, "One or more fields have been left blank!", "Submission Error", JOptionPane.ERROR_MESSAGE);
             }else{
-                Controller.createEmpCntl.createEmployee(isOutgoing, Integer.parseInt(IDField.getText()), FNField.getText(), LNField.getText());
+                Controller.createEmpCntl.createEmployee(creationOrigin, Integer.parseInt(IDField.getText()), FNField.getText(), LNField.getText());
                 JOptionPane.showMessageDialog(mainPanel, "Successfully Created New Employee!", "InfoBox: " + "Submission Confirmation", JOptionPane.INFORMATION_MESSAGE);
                 CreateEmployeeUI.this.setVisible(false);
             }

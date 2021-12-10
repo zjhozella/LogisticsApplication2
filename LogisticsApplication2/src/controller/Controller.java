@@ -24,12 +24,6 @@ public class Controller {
     public static CreateDriverCntl createDrCntl;
     public static CreateEmployeeCntl createEmpCntl;
     
-    //Creation separately
-    public static EmpCreationCntl empCreationCntl;
-    public static DriverCreationCntl driverCreationCntl;
-    
-    
-    
     public Controller(Model model){
         this.model = model;
         //this.view = view;

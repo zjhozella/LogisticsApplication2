@@ -21,6 +21,8 @@ public class CreateDriverUI extends JFrame{
     public JTextField numField, compField, FNField, LNField;
     public JButton addButton, cancelButton;
  
+    public static int creationOrigin;
+    
     public CreateDriverUI (){
         super();
         initComponents();
@@ -51,12 +53,12 @@ public class CreateDriverUI extends JFrame{
         
         mainPanel.add(numLabel);
         mainPanel.add(numField);
-        mainPanel.add(compLabel);
-        mainPanel.add(compField);
         mainPanel.add(FNLabel);
         mainPanel.add(FNField);
         mainPanel.add(LNLabel);
         mainPanel.add(LNField);
+        mainPanel.add(compLabel);
+        mainPanel.add(compField);
         
         buttonPanel.add(addButton);
         buttonPanel.add(cancelButton);
@@ -79,7 +81,7 @@ public class CreateDriverUI extends JFrame{
             if (compField.getText().isBlank() || numField.getText().isBlank() || FNField.getText().isBlank() || LNField.getText().isBlank()){
                 JOptionPane.showMessageDialog(mainPanel, "One or more fields have been left blank!", "Submission Error", JOptionPane.ERROR_MESSAGE);
             }else{
-                Controller.createDrCntl.createDriver(numField.getText(), FNField.getText(), LNField.getText(), compField.getText());
+                Controller.createDrCntl.createDriver(creationOrigin, numField.getText(), FNField.getText(), LNField.getText(), compField.getText());
                 JOptionPane.showMessageDialog(mainPanel, "Successfully Created New Driver!", "InfoBox: " + "Submission Confirmation", JOptionPane.INFORMATION_MESSAGE);
                 CreateDriverUI.this.setVisible(false);
             }

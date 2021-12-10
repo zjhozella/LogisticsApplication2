@@ -10,7 +10,6 @@ import controller.CreateDriverCntl;
 import controller.CreateEmployeeCntl;
 import controller.NavigationCntl;
 import java.awt.BorderLayout;
-import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -247,7 +246,7 @@ public class OutgoingView extends JFrame{
         @Override
         public void actionPerformed(ActionEvent e) {
             Controller.createEmpCntl = new CreateEmployeeCntl();
-            CreateEmployeeUI.isOutgoing = true;
+            CreateEmployeeUI.creationOrigin = 0;
         }
         
     }
@@ -257,7 +256,7 @@ public class OutgoingView extends JFrame{
         @Override
         public void actionPerformed(ActionEvent e) {
             Controller.createDrCntl = new CreateDriverCntl();
-            
+            CreateDriverUI.creationOrigin = 0;
 
         }
         

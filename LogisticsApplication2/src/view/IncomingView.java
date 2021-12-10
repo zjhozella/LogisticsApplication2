@@ -230,7 +230,7 @@ public class IncomingView extends JFrame{
         @Override
         public void actionPerformed(ActionEvent evt) {
             Controller.createEmpCntl = new CreateEmployeeCntl();
-            CreateEmployeeUI.isOutgoing = false;
+            CreateEmployeeUI.creationOrigin = 1;
             
 
         }

@@ -69,9 +69,8 @@ public class DriverTableModel extends AbstractTableModel{
         }
     }
     
-    public void newDriver(String num, String fn, String ln, String comp){
+    public void newDriver(Driver dr){
         
-        dr = new Driver(num, fn, ln, comp);
         drList.add(dr);
         
         fireTableDataChanged(); //refreshes table
