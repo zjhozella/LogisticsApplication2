@@ -4,6 +4,7 @@
  */
 package model;
 
+import java.lang.management.ThreadInfo;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import javax.swing.table.AbstractTableModel;
@@ -78,19 +79,30 @@ public class IncomingTableModel extends AbstractTableModel{
         Model.getOutList().get(loadNumber).setLoadComplete(true);
         fireTableDataChanged();
         Model.incomingTableModel.fireTableDataChanged();
+
     }
     
     public void deleteIncoming(int index){
-        //this.inList.remove(index);
-        Model.getInList().get(index).setDunnageIndex(0);
-        Model.getInList().get(index).setEmployee(new Employee(0, "", ""));
-        Model.getInList().get(index).setInsectDetected(false);
-        Model.getInList().get(index).setTsIn(null);
-        Model.getInList().get(index).setLoadComplete(false);
+        //Delete from inList
+        if(index < 1){
+            this.inList.remove(0);
+        }else{this.inList.remove(index -1);}
         Model.getOutList().get(index).setLoadComplete(false);
-        Model.getInList().get(index).setLoadNumber(0);
-        Model.getInList().get(index).setTrailerNumber(0);
-        
         fireTableDataChanged();
+        Model.outgoingTableModel.fireTableDataChanged();
+
+    }
+    
+    public void deleteIncomingCombo(int index){
+        //Delete from inList when done from OutgoingList
+        System.out.println("deleteIncomingCombo Index = "+index);
+        if(index < 1){
+            this.inList.remove(0);
+        }else{this.inList.remove(index -1);}
+        
+        Model.getOutList().get(index).setLoadComplete(false);
+        fireTableDataChanged();
+        Model.outgoingTableModel.fireTableDataChanged();
+
     }
 }

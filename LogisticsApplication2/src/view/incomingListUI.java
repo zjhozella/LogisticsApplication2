@@ -56,7 +56,8 @@ public class incomingListUI extends JFrame{
         this.getContentPane().add(tablePanel, BorderLayout.CENTER);
         this.setTitle("Incoming Load List");
         this.setVisible(true);
-        
+
+        System.out.println("inList size = "+incomingTableModel.inList.size());
     }
 
     // Menu button listener

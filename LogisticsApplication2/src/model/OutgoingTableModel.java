@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import javax.swing.table.AbstractTableModel;
 import static view.outgoingListUI.outTrans;
 
+
 /**
  *
  * @author zjhoz
@@ -88,9 +89,7 @@ public class OutgoingTableModel extends AbstractTableModel{
             Employee blankEmployee = new Employee(-1, "", "");
             IncomingTrans it = new IncomingTrans(Controller.getNextLoadNumber(), truckNumber, trailerNumber, dunnageIndex, false, blankEmployee, insectDetected, outTS);
             Model.addToInList(it);
-            Controller.setNextLoadNumber();
-            
-            
+            Controller.setNextLoadNumber();  
             
         } else {
             outTrans = new OutgoingTrans(0, truckNumber, trailerNumber, dunnageIndex, false, storeNumber, sealNumber, employee, driver, insectDetected, outTS);
@@ -107,9 +106,10 @@ public class OutgoingTableModel extends AbstractTableModel{
     }
 
 
-    public void deleteOutgoing(int index){
-        this.outList.remove(index);
+    public void deleteOutgoing(int outIndex){
+        this.outList.remove(outIndex);
         fireTableDataChanged();
+        Model.incomingTableModel.fireTableDataChanged();
     }
     
 }
