@@ -69,8 +69,9 @@ public class IncomingTableModel extends AbstractTableModel{
         }
     }
     
+    //editLoad method for editing an incoming load through editInView
     public void editLoad(int loadNumber, int dunnageIndex, Employee employee, boolean insectDetected, Timestamp inTS){
-
+        //set new paramaters in inList
         Model.getInList().get(loadNumber).setDunnageIndex(dunnageIndex);
         Model.getInList().get(loadNumber).setEmployee(employee);
         Model.getInList().get(loadNumber).setInsectDetected(insectDetected);
