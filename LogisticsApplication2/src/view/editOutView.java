@@ -21,6 +21,8 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import model.Model;
+import model.outLoadList;
+
 import static view.outgoingListUI.index;
 
 public class editOutView extends JFrame{
@@ -28,7 +30,7 @@ public class editOutView extends JFrame{
     public JLabel loadNumberL1, truckNumberL, trailerNumberL, dunnageIndexL, storeNumberL, sealNumberL, 
             driverNumL, driverCompL1, driverNameL1, empIDL, empNameL1, insectDetectedL;
     public static JLabel loadNumberL2, driverCompL2, driverNameL2, empNameL2;
-    public JTextField truckNumberF, trailerNumberF, dunnageIndexF, storeNumberF, sealNumberF;
+    public static JTextField truckNumberF, trailerNumberF, dunnageIndexF, storeNumberF, sealNumberF;
     public JButton submitButton, cancelButton, driverAddButton, empAddButton;
     public static JComboBox dunnageC, driverC, employeeC;
     public static JCheckBox insectDetected;
@@ -63,7 +65,7 @@ public class editOutView extends JFrame{
         empAddButton.addActionListener(new OnAddEmployeeButtonPressed());
         
         loadNumberL1 = new JLabel("Load #: "+ Model.getOutList().get(index).getLoadNumber(), SwingConstants.RIGHT);
-        loadNumberL2 = new JLabel(String.valueOf(Controller.getNextLoadNumber()), SwingConstants.LEFT);
+        loadNumberL2 = new JLabel("", SwingConstants.LEFT);
         
         truckNumberL = new JLabel("Truck #: "+ Model.getOutList().get(index).getTruckNumber(), SwingConstants.RIGHT);
         truckNumberF = new JTextField();
@@ -160,7 +162,7 @@ public class editOutView extends JFrame{
         this.setContentPane(new JPanel(new BorderLayout()));
         this.getContentPane().add(mainPanel, BorderLayout.CENTER);
         this.getContentPane().add(bottomPanel, BorderLayout.SOUTH);
-        this.setTitle("Create New Outgoing Transaction");
+        this.setTitle("Edit Outgoing Load");
         this.setVisible(true);
         
     }
@@ -204,7 +206,7 @@ public class editOutView extends JFrame{
             }else{
                 
                 int response = JOptionPane.showConfirmDialog(mainPanel,
-                        "Load Number: " + Controller.getNextLoadNumber() +
+                        "Load Number: " + Model.getOutList().get(index).getLoadNumber() +
                         "\nTruck Number: " + truckNumberF.getText() +
                         "\nTrailer Number: " + trailerNumberF.getText() +
                         "\nDunnage: " + Model.dunnageStrings[dunnageC.getSelectedIndex()] + "\nStore Number: " + storeNumberF.getText() +
@@ -220,7 +222,8 @@ public class editOutView extends JFrame{
                 if(response == JOptionPane.YES_OPTION){
                     JOptionPane.showMessageDialog(mainPanel, "Created New Outgoing Transaction!", "InfoBox: " + "Success Confirmation", JOptionPane.INFORMATION_MESSAGE);
                     editOutView.this.setVisible(false);
-                    NavigationCntl.outCntl.createOutgoingLoad();
+                    NavigationCntl.outCntl.editOutgoingLoad(index);
+                    Model.outgoingTableModel.fireTableDataChanged();
                 }else{
                     
                 }

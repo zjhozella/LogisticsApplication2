@@ -11,6 +11,7 @@ import java.util.Scanner;
 import model.*;
 import static model.Model.outgoingTableModel;
 import view.OutgoingView;
+import view.editOutView;
 
 /**
  *
@@ -19,7 +20,7 @@ import view.OutgoingView;
     public class OutgoingCntl {
 
     //All variables used for storage of data entered into the fields
-    
+
     //Load attribute initialization
     private int truckNumber, trailerNumber, dunnageIndex, storeNumber, sealNumber;
     private boolean loadComplete;
@@ -83,6 +84,20 @@ import view.OutgoingView;
         outgoingTableModel.newLoad(truckNumber, trailerNumber, dunnageIndex, storeNumber, sealNumber, tempDriver, tempEmployee, insectDetected, outTS);
     
         
+    }
+
+    public void editOutgoingLoad(int index){
+        setTruckNumber(Integer.parseInt(editOutView.truckNumberF.getText()));
+        setTrailerNumber(Integer.parseInt(editOutView.trailerNumberF.getText()));
+        setStoreNumber(Integer.parseInt(editOutView.storeNumberF.getText()));
+        setSealNumber(Integer.parseInt(editOutView.sealNumberF.getText()));
+        setInsectDetected(editOutView.insectDetected.isSelected());
+
+        Driver tempDriver = Model.getDrList().get(editOutView.driverC.getSelectedIndex());
+        Employee tempEmployee = Model.getEmpList().get(editOutView.employeeC.getSelectedIndex());
+        
+        outgoingTableModel.editLoad(truckNumber, trailerNumber, storeNumber, sealNumber, tempDriver, tempEmployee, insectDetected);
+
     }
     
     //Prints all outgoing load information

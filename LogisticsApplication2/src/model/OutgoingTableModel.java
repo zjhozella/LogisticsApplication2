@@ -9,6 +9,8 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 import javax.swing.table.AbstractTableModel;
 import static view.outgoingListUI.outTrans;
+import static view.outgoingListUI.index;
+
 
 
 /**
@@ -103,6 +105,17 @@ public class OutgoingTableModel extends AbstractTableModel{
         
         fireTableDataChanged(); //refreshes table
         Model.incomingTableModel.fireTableDataChanged(); 
+    }
+
+    public void editLoad(int truckNumber, int trailerNumber, int storeNumber, int sealNumber, Driver driver, Employee employee, boolean insectDetected){
+        Model.getOutList().get(index).setTruckNumber(truckNumber);
+        Model.getOutList().get(index).setTrailerNumber(trailerNumber);
+        Model.getOutList().get(index).setStoreNumber(storeNumber);
+        Model.getOutList().get(index).setSealNumber(sealNumber);
+        Model.getOutList().get(index).setDr(driver);
+        Model.getOutList().get(index).setEmployee(employee);
+        Model.getOutList().get(index).setInsectDetected(insectDetected);
+        
     }
 
 
