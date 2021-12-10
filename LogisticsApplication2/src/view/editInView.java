@@ -12,7 +12,6 @@ import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.lang.ref.Cleaner;
 import java.util.ArrayList;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
@@ -22,7 +21,6 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import model.Model;
 import static view.incomingListUI.index;
@@ -57,10 +55,6 @@ public class editInView extends JFrame{
         bottomPanel = new JPanel();
         bottomPanel.setLayout(new GridLayout(2, 1));
         buttonPanel = new JPanel(new GridLayout(1,5));
-        
-        empComboPanel = new JPanel();
-        empAddButton = new JButton("+");
-        empAddButton.addActionListener(new OnAddEmployeeButtonPressed());
 
         loadbox = new JLabel("Load Number: " + Model.getInList().get(index).getLoadNumber(), SwingConstants.RIGHT);
         loadbox2 = new JLabel("", SwingConstants.LEFT);
@@ -77,41 +71,49 @@ public class editInView extends JFrame{
         sealNumberL1 = new JLabel("Seal #: " + Model.getOutList().get(index).getSealNumber(), SwingConstants.RIGHT);
         sealNumberL2 = new JLabel("", SwingConstants.LEFT);
         
-        empIDL1 = new JLabel("Outgoing Employee ID: " + Model.getOutList().get(index).getEmployee().getID(), SwingConstants.RIGHT);
+        empIDL1 = new JLabel("Outgoing Employee ID: ", SwingConstants.RIGHT);
         empIDL2 = new JLabel("", SwingConstants.LEFT);
         
-        empNameL1 = new JLabel("Outgoing Employee Name: " + Model.getOutList().get(index).getEmployee().getFirstName()
-    + " " + Model.getOutList().get(index).getEmployee().getLastName(), SwingConstants.RIGHT);
-        empNameL2 = new JLabel("", SwingConstants.LEFT);
+        empNameL1 = new JLabel("Outgoing Employee Name: ", SwingConstants.RIGHT);
+        empNameL2 = new JLabel(Model.getOutList().get(index).getEmployee().getFirstName()
+    + " " + Model.getOutList().get(index).getEmployee().getLastName(), SwingConstants.LEFT);
         
-        driverNumL1 = new JLabel("Driver Lic. #: " + Model.getOutList().get(index).getDr().getDlNumber(), SwingConstants.RIGHT);
-        driverNumL2 = new JLabel("", SwingConstants.LEFT);
+        driverNumL1 = new JLabel("Driver Lic. #: ", SwingConstants.RIGHT);
+        driverNumL2 = new JLabel(Model.getOutList().get(index).getDr().getDlNumber(), SwingConstants.LEFT);
         
-        driverNameL1 = new JLabel("Driver Name: " + Model.getOutList().get(index).getDr().getFirstName() + " " +
-            Model.getOutList().get(index).getDr().getLastName(), SwingConstants.RIGHT);
-        driverNameL2 = new JLabel("", SwingConstants.LEFT);
+        driverNameL1 = new JLabel("Driver Name: ", SwingConstants.RIGHT);
+        driverNameL2 = new JLabel(Model.getOutList().get(index).getDr().getFirstName() + " " +
+            Model.getOutList().get(index).getDr().getLastName(), SwingConstants.LEFT);
         
-        driverCompL1 = new JLabel("Driver Company: " + Model.getOutList().get(index).getDr().getCompany(), SwingConstants.RIGHT);
-        driverCompL2 = new JLabel("", SwingConstants.LEFT);
+        driverCompL1 = new JLabel("Driver Company: ", SwingConstants.RIGHT);
+        driverCompL2 = new JLabel(Model.getOutList().get(index).getDr().getCompany(), SwingConstants.LEFT);
         
         dunnageIndexL = new JLabel("Dunnage Index: ", SwingConstants.RIGHT);
         dunnageC = new JComboBox(Model.dunnageStrings);
         dunnageC.setSelectedIndex(Model.getInList().get(index).getDunnageIndex()); //Defaults to Current Index of selected load
         
-        newEmpIDL1 = new JLabel("Current Employee ID: " + Model.getInList().get(index).getEmployee().getID(), SwingConstants.RIGHT);
+        newEmpIDL1 = new JLabel("Current Employee ID: ", SwingConstants.RIGHT);
         
         employeeC = new JComboBox(fillEmployeeComboBox());
-        employeeC.setSelectedIndex(-1);// Want to populate this with employee INDEX
+        for (int i = 0; i < Model.getEmpList().size(); ++i){
+            if (Model.getInList().get(index).getEmployee().getID() == 0){
+                employeeC.setSelectedIndex(-1);
+            }else if (Model.getInList().get(index).getEmployee().getID() == Model.getEmpList().get(i).getID()){
+                employeeC.setSelectedIndex(i);
+            }
+        }
         employeeC.addActionListener(new OnEmployeeIDChanged());
         
         newEmpNameL1 = new JLabel("Employee Name: ", SwingConstants.RIGHT);
-        newEmpNameL2 = new JLabel("", SwingConstants.LEFT);
+        if (employeeC.getSelectedIndex() == -1){
+            newEmpNameL2 = new JLabel("", SwingConstants.LEFT);
+        }else{
+            newEmpNameL2 = new JLabel(Model.getEmpList().get(employeeC.getSelectedIndex()).getFirstName() + " " + Model.getEmpList().get(employeeC.getSelectedIndex()).getLastName(), SwingConstants.LEFT);
+        }
         
         insectDetectedL = new JLabel("Is Insect Detected? ", SwingConstants.RIGHT);
         insectDetected = new JCheckBox("", Model.getInList().get(index).isInsectDetected());
         
-        //mainPanel.add(loadNumberL);
-        //mainPanel.add(loadNumberC);
         mainPanel.add(loadbox);
         mainPanel.add(loadbox2);
         mainPanel.add(truckNumberL1);
@@ -135,7 +137,7 @@ public class editInView extends JFrame{
         mainPanel.add(dunnageIndexL);
         mainPanel.add(dunnageC);
         mainPanel.add(newEmpIDL1);
-        mainPanel.add(empComboPanel);
+        mainPanel.add(employeeC);
         mainPanel.add(newEmpNameL1);
         mainPanel.add(newEmpNameL2);
         mainPanel.add(insectDetectedL);
@@ -151,9 +153,6 @@ public class editInView extends JFrame{
         buttonPanel.add(cancelButton);
         buttonPanel.add(submitButton);
         bottomPanel.add(buttonPanel);
-        
-        empComboPanel.add(employeeC);
-        empComboPanel.add(empAddButton);
         
         this.setSize(625, 600);
         this.setResizable(false);
@@ -173,27 +172,6 @@ public class editInView extends JFrame{
             newEmpNameL2.setText(Model.getEmpList().get(employeeC.getSelectedIndex()).getFirstName() + " " + Model.getEmpList().get(employeeC.getSelectedIndex()).getLastName());
         }  
     }
-    /*
-    private class OnLoadNumberChanged implements ActionListener {
-
-        @Override
-        public void actionPerformed(ActionEvent evt) {
-            System.out.println("Selected Index: " + loadNumberC.getSelectedIndex() + " Load Number: " + loadNumberC.getSelectedItem());
-            int selectedIndex = loadNumberC.getSelectedIndex();
-            int selectedLoadNumber = Integer.parseInt(loadNumberC.getSelectedItem().toString());
-            truckNumberL2.setText(String.valueOf(Model.getOutList().get(selectedLoadNumber).getTruckNumber()));
-            trailerNumberL2.setText(String.valueOf(Model.getOutList().get(selectedLoadNumber).getTrailerNumber()));
-            storeNumberL2.setText(String.valueOf(Model.getOutList().get(selectedLoadNumber).getStoreNumber()));
-            sealNumberL2.setText(String.valueOf(Model.getOutList().get(selectedLoadNumber).getSealNumber()));
-            empIDL2.setText(String.valueOf(Model.getOutList().get(selectedLoadNumber).getEmployee().getID()));
-            empNameL2.setText(String.valueOf(Model.getOutList().get(selectedLoadNumber).getEmployee().getFirstName() + " " + Model.getOutList().get(selectedLoadNumber).getEmployee().getLastName()));
-            driverNumL2.setText(String.valueOf(Model.getOutList().get(selectedLoadNumber).getDr().getDlNumber()));
-            driverNameL2.setText(String.valueOf(Model.getOutList().get(selectedLoadNumber).getDr().getFirstName()) + " " + Model.getOutList().get(selectedLoadNumber).getDr().getLastName());
-            driverCompL2.setText(String.valueOf(Model.getOutList().get(selectedLoadNumber).getDr().getCompany()));
-        }
-        
-    }
-    */
 
     private class OnCancelButtonPressed implements ActionListener {
 
