@@ -118,25 +118,32 @@ public class outgoingListUI extends JFrame{
 
                 if (result == JOptionPane.YES_OPTION){
                     int selectedTableRow = outLoadTable.getSelectedRow();
-                    errLabel.setText("Success!!! Outgoing & Incoming Load has been deleted!");
-                    outgoingTableModel.deleteOutgoing(outLoadTable.getSelectedRow());
-                    // Could not get deleteIncoming method in IncomingTableModel to work
-                    //inLoadTable.getSelectedRow();
-                    //incomingTableModel.deleteIncoming(inLoadTable.getSelectedRow());
-                    // Resetting inLoad setting manualyindex
+                    //TESTS
 
+                    // Below is how to retreive the loadNumber from deleted row in table
+                    //System.out.println(outLoadTable.getValueAt(selectedTableRow, 0));
+
+                    //System.out.println("SelectedTableRow: "+selectedTableRow);
+                    //Cast Object to int for outLoadNum
+                    int outLoadNum = (int) outLoadTable.getValueAt(selectedTableRow, 0);
+                    System.out.print(outLoadNum);
+
+                    errLabel.setText("Success!!! Outgoing & Incoming Load has been deleted!");
                     /*
                     //Reset paramaters in inList only if outList load is complete
-                    if(incomingTableModel.inList.get(index).isLoadComplete()){
+                    if(!outgoingTableModel.outList.get(selectedTableRow).isLoadComplete()){
                         Model.getInList().get(index).setEmployee(new Employee(0, "",""));
                         Model.getInList().get(index).setLoadNumber(0);
                         Model.getInList().get(index).setDunnageIndex(0);
                         Model.getInList().get(index).setInsectDetected(false);
                         Model.getInList().get(index).setTsIn(null);
                         Model.getInList().get(index).setLoadComplete(false);
-                        Model.getOutList().get(index).setLoadComplete(false);
                     }
                     */
+                    outgoingTableModel.deleteOutgoing(outLoadTable.getSelectedRow());
+                    incomingTableModel.deleteIncoming(outLoadNum);
+                    
+                    
                     
                     JOptionPane.showMessageDialog(new JFrame(), errLabel);
                     if (selectedTableRow > 0){

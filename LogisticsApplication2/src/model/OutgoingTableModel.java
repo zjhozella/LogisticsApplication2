@@ -41,7 +41,7 @@ public class OutgoingTableModel extends AbstractTableModel{
     public Object getValueAt(int row, int col) {
         switch(col){
             case 0:
-                return (Object) outList.get(row).getLoadNumber();
+                return outList.get(row).getLoadNumber();
             case 1: 
                 return (Object) outList.get(row).getTruckNumber();
             case 2:
