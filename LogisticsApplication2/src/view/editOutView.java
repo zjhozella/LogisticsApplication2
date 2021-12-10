@@ -220,7 +220,7 @@ public class editOutView extends JFrame{
                         "Is The Following Correct?", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
                 
                 if(response == JOptionPane.YES_OPTION){
-                    JOptionPane.showMessageDialog(mainPanel, "Created New Outgoing Transaction!", "InfoBox: " + "Success Confirmation", JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.showMessageDialog(mainPanel, "Updated Outgoing Load!", "InfoBox: " + "Success Confirmation", JOptionPane.INFORMATION_MESSAGE);
                     editOutView.this.setVisible(false);
                     NavigationCntl.outCntl.editOutgoingLoad(index);
                     Model.outgoingTableModel.fireTableDataChanged();
