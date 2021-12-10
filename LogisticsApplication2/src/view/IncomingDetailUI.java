@@ -72,7 +72,7 @@ public class IncomingDetailUI extends JFrame{
         
         driverCompL1 = new JLabel("Driver Company: " + Model.getOutList().get(index).getDr().getCompany());
         
-        dunnageIndexL = new JLabel("Dunnage: " + Model.dunnageStrings[Model.getOutList().get(index).getDunnageIndex()]);
+        dunnageIndexL = new JLabel("Dunnage: " + Model.dunnageStrings[Model.getInList().get(index).getDunnageIndex()]);
         
         empIDL1 = new JLabel("Employee ID: " + Model.getInList().get(index).getEmployee().getID());
         
