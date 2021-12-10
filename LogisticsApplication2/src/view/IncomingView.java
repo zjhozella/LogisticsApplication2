@@ -21,7 +21,6 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import model.Model;
 
@@ -151,7 +150,7 @@ public class IncomingView extends JFrame{
         empComboPanel.add(employeeC);
         empComboPanel.add(empAddButton);
         
-        this.setSize(500, 500);
+        this.setSize(500, 550);
         this.setResizable(false);
         this.setLocationRelativeTo(null);
         this.setContentPane(new JPanel(new BorderLayout()));

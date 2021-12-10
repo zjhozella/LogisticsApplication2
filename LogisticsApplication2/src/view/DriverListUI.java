@@ -72,7 +72,9 @@ public class DriverListUI extends JFrame{
         tableScroller.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
         tableScroller.setPreferredSize(new Dimension(350,300));
         tablePanel.add(tableScroller);
+        
         this.setSize(500, 400);
+        this.setResizable(false);
         this.setLocationRelativeTo(null);
         this.setContentPane(new JPanel(new BorderLayout()));
         this.getContentPane().add(buttonPanel, BorderLayout.SOUTH);

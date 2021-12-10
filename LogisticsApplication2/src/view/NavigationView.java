@@ -16,7 +16,6 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import controller.OutListCntl;
 import controller.InListCntl;
-import controller.NavigationCntl;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -85,6 +84,7 @@ public class NavigationView extends JFrame{
   
         
         this.setPreferredSize(new Dimension(350,350));
+        this.setResizable(false);
         this.setLocationRelativeTo(null);
         this.setContentPane(new JPanel(new BorderLayout()));
         this.getContentPane().add(titlePanel, BorderLayout.NORTH);
@@ -107,7 +107,7 @@ public class NavigationView extends JFrame{
             public void actionPerformed(ActionEvent evt) {
                 
                 outCntl.showCreateOutgoingLoadUI();
-                //ConfirmationCntl outC = new ConfirmationCntl(true);
+                
         }
     }
     
@@ -116,7 +116,7 @@ public class NavigationView extends JFrame{
             @Override
             public void actionPerformed(ActionEvent evt) {
                 inCntl.showCreateIncomingLoadUI();
-                //ConfirmationCntl outC = new ConfirmationCntl(false);
+                
         }
     }
     

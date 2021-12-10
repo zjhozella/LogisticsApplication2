@@ -53,8 +53,9 @@ public class DrEmpUI extends JFrame{
         buttonPanel.add(listEmpB);
         buttonPanel.add(mainMenuB);
         
-        this.setSize(200, 100);
+        this.setSize(225, 100);
         this.setLocationRelativeTo(null);
+        this.setResizable(false);
         this.setContentPane(new JPanel(new BorderLayout()));
         this.getContentPane().add(titlePanel, BorderLayout.NORTH);
         this.getContentPane().add(buttonPanel, BorderLayout.CENTER);

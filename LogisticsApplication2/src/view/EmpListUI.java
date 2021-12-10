@@ -69,6 +69,7 @@ public class EmpListUI extends JFrame{
         tableScroller.setPreferredSize(new Dimension(350,300));
         tablePanel.add(tableScroller);
         this.setSize(500, 400);
+        this.setResizable(false);
         this.setLocationRelativeTo(null);
         this.setContentPane(new JPanel(new BorderLayout()));
         this.getContentPane().add(buttonPanel, BorderLayout.SOUTH);
