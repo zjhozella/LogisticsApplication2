@@ -82,30 +82,6 @@ public class outgoingListUI extends JFrame{
         this.setVisible(true);
     }
 
-    
-    /**
-     * @deprecated 
-    
-    private static class AddButtonListener implements ActionListener {
-
-            @Override
-            public void actionPerformed(ActionEvent evt) {
-                //outgoingTableModel.newLoad();
-                /*
-                int selectedTableRow = InstrumentCntl.instrumentTableModel.getRowCount() - 1;
-                if (selectedTableRow != -1){
-                    System.out.println("View: InstrumentListUI: actionPerformed(): selectedModelRow" + selectedTableRow);
-                    int selectedModelRow = instrumentTable.convertRowIndexToModel(selectedTableRow);
-                    System.out.println("View: InstrumentListUI: actionPerformed(): selectedModelRow" + selectedModelRow);
-                    //BG ORIGINAL CODE InstrumentListUI.this.parentInstrumentCntl.getInstrumentDetailUI(selectedModelRow);
-                    //instrumentListUI.instrumentCntl.getInstrumentDetailUI(selectedModelRow);
-                    instrumentCntl.getInstrumentDetailUI(selectedModelRow);
-            }
-
-        }       
-    }
-    */
-
     // Delete button listener
     private static class DeleteButtonListener implements ActionListener {
         @Override

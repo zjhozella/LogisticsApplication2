@@ -85,9 +85,23 @@ public class IncomingTableModel extends AbstractTableModel{
     public void deleteIncoming(int index){
         //Delete from inList
         if(index < 1){
-            this.inList.remove(0);
-        }else{this.inList.remove(index);}
-        Model.getOutList().get(index).setLoadComplete(false);
+            //this.inList.remove(0);
+            Model.getInList().get(0).setDunnageIndex(0);
+            Model.getInList().get(0).setEmployee(new Employee(0, "", ""));
+            Model.getInList().get(0).setInsectDetected(false);
+            Model.getInList().get(0).setTsIn(null);
+            Model.getInList().get(0).setLoadComplete(false);
+            Model.getOutList().get(0).setLoadComplete(false);
+        }else{
+            //this.inList.remove(index);
+            Model.getInList().get(index).setDunnageIndex(0);
+            Model.getInList().get(index).setEmployee(new Employee(0, "", ""));
+            Model.getInList().get(index).setInsectDetected(false);
+            Model.getInList().get(index).setTsIn(null);
+            Model.getInList().get(index).setLoadComplete(false);
+            Model.getOutList().get(index).setLoadComplete(false);
+        }
+        //Model.getOutList().get(index).setLoadComplete(false);
         fireTableDataChanged();
         Model.outgoingTableModel.fireTableDataChanged();
 
@@ -99,12 +113,12 @@ public class IncomingTableModel extends AbstractTableModel{
         System.out.println("deleteIncomingCombo Index = "+index);
         if(index == 0 ){
             this.inList.remove(0);
-            Model.getOutList().get(index).setLoadComplete(false);
+            //Model.getOutList().get(index).setLoadComplete(false);
         }
 
         if(index >= 1 ){
             this.inList.remove(index);
-            Model.getOutList().get(index).setLoadComplete(false);
+            //Model.getOutList().get(index).setLoadComplete(false);
         }
         
         Model.incomingTableModel.fireTableDataChanged();
