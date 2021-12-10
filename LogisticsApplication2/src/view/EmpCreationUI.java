@@ -6,6 +6,7 @@ package view;
 
 import controller.Controller;
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -68,7 +69,7 @@ public class EmpCreationUI extends JFrame{
         buttonPanel.add(submitButton);
         buttonPanel.add(cancelButton);
         
-        this.setSize(400, 400);
+        this.setPreferredSize(new Dimension(350,200));
         this.setLocationRelativeTo(null);
         this.setContentPane(new JPanel(new BorderLayout()));
         this.getContentPane().add(mainPanel, BorderLayout.CENTER);

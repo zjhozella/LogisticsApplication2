@@ -10,6 +10,7 @@ import controller.CreateDriverCntl;
 import controller.CreateEmployeeCntl;
 import controller.NavigationCntl;
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -139,7 +140,7 @@ public class OutgoingView extends JFrame{
         mainPanel.add(empIDL);
         mainPanel.add(empComboPanel);
         mainPanel.add(empNameL1);
-        mainPanel.add(empNameL2);;
+        mainPanel.add(empNameL2);
         mainPanel.add(insectDetectedL);
         mainPanel.add(insectDetected);
 
@@ -160,7 +161,7 @@ public class OutgoingView extends JFrame{
         empComboPanel.add(employeeC);
         empComboPanel.add(empAddButton);
         
-        this.setSize(500, 500);
+        this.setSize(450, 500);
         this.setResizable(false);
         this.setLocationRelativeTo(null);
         this.setContentPane(new JPanel(new BorderLayout()));
