@@ -20,6 +20,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import static controller.NavigationCntl.outCntl;
 import static controller.NavigationCntl.inCntl;
+import java.awt.Dimension;
 
 /**
  *
@@ -81,7 +82,7 @@ public class NavigationView extends JFrame{
         titlePanel.add(new JLabel("<html><h2 style=\"text-align:center;\">Welcome to Logistics!</h2><p style=\"text-align:center;\">Please select from the following menu options:</p></html>"));
   
         
-        this.setSize(700, 600);
+        this.setPreferredSize(new Dimension(350,350));
         this.setLocationRelativeTo(null);
         this.setContentPane(new JPanel(new BorderLayout()));
         this.getContentPane().add(titlePanel, BorderLayout.NORTH);
