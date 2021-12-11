@@ -76,13 +76,13 @@ public class incomingListUI extends JFrame{
         public void actionPerformed(ActionEvent evt) {
             final JLabel errLabel = new JLabel();
             if (inLoadTable.getSelectedRow() != -1) {            
-                int result = JOptionPane.showConfirmDialog(tablePanel,"Are you sure you want to reset this Incoming Load?\nThis will set all attributes back to their defaults...","Delete Incoming Load",
+                int result = JOptionPane.showConfirmDialog(tablePanel,"Are you sure you want to reset this Incoming Load?\nThis will set all attributes back to their defaults...","Reset Incoming Load",
                 JOptionPane.YES_NO_OPTION,
                 JOptionPane.QUESTION_MESSAGE);
 
                 if (result == JOptionPane.YES_OPTION){
                     int selectedTableRow = inLoadTable.getSelectedRow();
-                    errLabel.setText("Success!!! Incoming Load has been reset!");
+                    errLabel.setText("Success!!! Incoming Load has been Reset!");
                     incomingTableModel.deleteIncoming(inLoadTable.getSelectedRow());
                     JOptionPane.showMessageDialog(new JFrame(), errLabel);
                     if (selectedTableRow > 0){
