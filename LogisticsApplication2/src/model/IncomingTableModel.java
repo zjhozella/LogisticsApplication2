@@ -122,12 +122,12 @@ public class IncomingTableModel extends AbstractTableModel{
         System.out.println("deleteIncomingCombo Index = "+index);
         if(index == 0 ){
             Model.getInList().remove(0);
-            Model.getOutList().get(index).setLoadComplete(false);
+            //Model.getOutList().get(index).setLoadComplete(false);
         }
 
         if(index >= 1 ){
             Model.getInList().remove(index);
-            Model.getOutList().get(index).setLoadComplete(false);
+            //Model.getOutList().get(index).setLoadComplete(false);
         }
         
         Model.incomingTableModel.fireTableDataChanged();
