@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Scanner;
 import model.*;
+import static model.Model.incomingTableModel;
 import static model.Model.outgoingTableModel;
 import view.OutgoingView;
 import view.editOutView;
@@ -97,7 +98,11 @@ import view.editOutView;
         Employee tempEmployee = Model.getEmpList().get(editOutView.employeeC.getSelectedIndex());
         
         outgoingTableModel.editLoad(truckNumber, trailerNumber, storeNumber, sealNumber, tempDriver, tempEmployee, insectDetected);
-
+        Model.getInList().get(index).setTruckNumber(truckNumber);
+        Model.getInList().get(index).setTrailerNumber(trailerNumber);
+        Model.getInList().get(index).setStoreNumber(storeNumber);
+        Model.getInList().get(index).setDunnageIndex(dunnageIndex);
+        Model.getInList().get(index).setInsectDetected(insectDetected);
     }
     
     //Prints all outgoing load information
