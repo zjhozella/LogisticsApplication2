@@ -12,7 +12,6 @@ import static view.outgoingListUI.outTrans;
 import static view.outgoingListUI.index;
 
 
-
 /**
  *
  * @author zjhoz
@@ -21,7 +20,7 @@ public class OutgoingTableModel extends AbstractTableModel{
 
     public String[] columnNames = {"Load Number", "Truck Number", "Trailer Number", "Load Complete"};
     public ArrayList<OutgoingTrans> outList;
-    
+    public static int editOutLoadNum;
     // Should not be needed, creating no new loads here
     //public int nextOutLoadNumber;
     
@@ -120,8 +119,10 @@ public class OutgoingTableModel extends AbstractTableModel{
 
 
     public void deleteOutgoing(int outIndex){
+        
         this.outList.remove(outIndex);
         fireTableDataChanged();
+
         Model.incomingTableModel.fireTableDataChanged();
     }
     

@@ -40,7 +40,6 @@ public class IncomingDetailUI extends JFrame{
         super();
         initComponents();
         //Incoming entry header
-        System.out.println("Incoming Load Details:\n");
     }
     
     public void initComponents(){
