@@ -28,7 +28,7 @@ public class incomingListUI extends JFrame{
         inLoadTable = new JTable(incomingTableModel);
 
         //Delete Button
-        deleteButton = new JButton("Delete");
+        deleteButton = new JButton("Reset");
         deleteButton.addActionListener(new DeleteButtonListener());
 
         // Show Details button
@@ -76,13 +76,13 @@ public class incomingListUI extends JFrame{
         public void actionPerformed(ActionEvent evt) {
             final JLabel errLabel = new JLabel();
             if (inLoadTable.getSelectedRow() != -1) {            
-                int result = JOptionPane.showConfirmDialog(tablePanel,"Are you sure you want to delete this Incoming Load?\nThis will set all attributes back to their defaults...","Delete Incoming Load",
+                int result = JOptionPane.showConfirmDialog(tablePanel,"Are you sure you want to delete this Incoming Load?\nThis will reset all attributes back to their defaults...","Reset Incoming Load",
                 JOptionPane.YES_NO_OPTION,
                 JOptionPane.QUESTION_MESSAGE);
 
                 if (result == JOptionPane.YES_OPTION){
                     int selectedTableRow = inLoadTable.getSelectedRow();
-                    errLabel.setText("Success!!! Incoming Load has been deleted!");
+                    errLabel.setText("Success!!! Incoming Load has been Reset!");
                     incomingTableModel.deleteIncoming(inLoadTable.getSelectedRow());
                     JOptionPane.showMessageDialog(new JFrame(), errLabel);
                     if (selectedTableRow > 0){
