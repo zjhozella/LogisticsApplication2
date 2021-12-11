@@ -118,12 +118,12 @@ public class IncomingTableModel extends AbstractTableModel{
         
         if(index == 0 ){
             this.inList.remove(0);
-            Model.getOutList().get(index).setLoadComplete(false);
+            //Model.getOutList().get(index).setLoadComplete(false);
         }
 
         if(index >= 1 ){
             this.inList.remove(index);
-            Model.getOutList().get(index).setLoadComplete(false);
+            //Model.getOutList().get(index).setLoadComplete(false);
         }
         //Refresh tables
         Model.incomingTableModel.fireTableDataChanged();
